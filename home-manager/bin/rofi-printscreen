@@ -1,0 +1,11 @@
+#!/bin/sh
+
+# choose the kind of screenshot to take, including copieing the image or even
+# highlighting an area to copy. scrotcucks on suicidewatch right now.
+
+case "$(printf "Une zone selectionnée\\nPlein écran\\nUne zone selectionnée (copie)\\nPlein écran (copie)" | rofi -theme ~/.config/rofi/screenshot.rasi -dmenu -l 6 -i -p "Capturer quelle zone?")" in
+        "Une zone selectionnée") grim -g "$(slurp)" $HOME/Images/ss/pic-selected-"$(date '+%y%m%d-%H%M-%S').png" ;;
+	"Plein écran") grim $HOME/Images/ss/pic-full-"$(date '+%y%m%d-%H%M-%S').png" ;;
+        "Une zone selectionnée (copie)") grim -g "$(slurp)" - | wl-copy ;;
+        "Plein écran (copie)") grim - | wl-copy ;;
+esac

@@ -1,0 +1,182 @@
+# Ordinateur portable
+# Environnement
+env = HYPRLAND_LOG_WLR=1
+env = XCURSOR_THEME=Bibata-Modern-Classic
+env = XCURSOR_SIZE=24
+env = GTK_IM_MODULE=fcitx
+env = QT_IM_MODULE=fcitx
+env = XMODIFIERS=@im=fcitx
+env = SDL_IM_MODULE=fcitx
+env = GLFW_IM_MODULE=ibus
+
+
+exec-once=swaybg -i ~/.local/share/bg
+exec-once=foot --server
+exec-once=waybar
+exec-once=dunst
+exec-once=mpd
+exec-once=swayidle -w
+exec-once=wl-paste -t text --watch clipman store
+
+monitor=eDP-1,1920x1080@60,0x0,1
+workspace=DP-1,1
+
+windowrule = float, Rofi
+windowrule = noborder, Rofi
+windowrule = float, title:^(sfml)$
+windowrule = center, title:^(sfml)$
+# Fix Telegram
+windowrule = nofullscreenrequest, title:^(Lecteur multimédia)$
+
+input {
+    kb_layout=fr
+    kb_variant=
+    kb_model=pc105
+    kb_options=caps:super,terminate:ctrl_alt_bksp
+    kb_rules=evdev
+
+    follow_mouse=1
+
+    repeat_rate=50
+    repeat_delay=300
+}
+
+decoration {
+    rounding=10
+    blur=1
+    drop_shadow = true
+    shadow_range=100
+    shadow_render_power=5
+    col.shadow= 0x33000000
+    col.shadow_inactive=0x22000000
+    blur_new_optimizations=1
+  }
+
+animations {
+    enabled=1
+  }
+
+misc {
+    enable_swallow = true
+    swallow_regex="footclient"
+  }
+
+general {
+    sensitivity=1.0 # for mouse cursor
+
+    gaps_in=5
+    gaps_out=20
+    border_size=2
+    col.active_border=0xFFF5C2E7
+    col.inactive_border=0x66333333
+    layout=master
+
+}
+
+master {
+    new_on_top=true
+  }
+
+
+
+bind=SUPER,Return,exec,footclient
+
+bind=SUPER,B,exec,rofi-bluetooth -theme ~/.config/rofi/config/bluetooth.rasi
+
+bind=SUPER,C,exec,footclient -e calcurse
+bind=SUPERSHIFT,C,exec,footclient -e eva
+
+bind=SUPER,d,exec,rofi-runner
+
+bind=SUPER,E,exec,footclient -e neomutt
+
+bind=SUPER,F,fullscreen,0
+
+bind=SUPER,M,exec,footclient -e ncmpcpp
+bind=SUPERSHIFT,M,exec,pamixer -t
+
+bind=SUPER,N,exec,footclient -e lvim
+bind=SUPERSHIFT,N,exec,footclient -e newsboat
+
+bind=SUPER,P,exec,mpc toggle
+bind=SUPERSHIFT,P,exec,mpc pause; pauseallmpv
+
+bind=SUPER,Q,killactive,
+bind=SUPERSHIFT,Q,exit,
+
+bind=SUPER,R,exec,footclient -e lf
+
+bind=SUPER,S,exec,footclient -e pulsemixer
+bind=SUPERSHIFT,S,exec,bmks
+
+bind=SUPER,V,exec,ytfzf --external-menu
+
+bind=SUPER,W,exec,firefox
+bind=SUPERSHIFT,W,exec,networkmanager_dmenu -theme ~/.config/rofi/config/networkmenu.rasi
+
+bind=SUPER,X,exec,clipman pick -t rofi -T"-theme ~/.config/rofi/config/launcher.rasi"
+
+bind=SUPER,F4,exec,footclient -e btop
+bind=SUPER,F5,exec,rofi -theme ~/.config/rofi/config/launcher.rasi -show ssh
+bind=SUPER,F6,exec,rofi-mullvad-toggle
+bind=SUPER,F7,exec,rofi-td-toggle
+bind=SUPER,F8,exec,mw -Y
+bind=SUPER,F9,exec,rofi-mount
+bind=SUPER,F10,exec,rofi-umount
+bind=SUPER,F11,exec,firefox localhost:9091
+bind=SUPER,F12,exec,footclient -e transg-tui
+
+bind=,Print,exec,rofi-printscreen
+
+bind=SUPER,exclam,exec,telegram-desktop
+
+bind=SUPER,BackSpace,exec,rofi-powermenu
+bind=SUPERSHIFT,BackSpace,exec,passmenu -theme ~/.config/rofi/config/askpass.rasi
+
+bind=SUPER,space,togglefloating,
+bind=SUPER,Delete,exec,rofi-kill
+
+binde=,XF86AudioRaiseVolume,exec,pamixer -i 5
+binde=,XF86AudioLowerVolume,exec,pamixer -d 5
+bind=,XF86AudioMute,exec,pamixer --toggle-mute
+
+bind=,XF86MonBrightnessUp,exec,light -A 5
+bind=,XF86MonBrightnessDown,exec,light -U 5
+
+
+
+binde=SUPER,j,layoutmsg,cyclenext
+binde=SUPER,k,layoutmsg,cycleprev
+binde=SUPER,h,resizeactive,-99 0
+binde=SUPER,l,resizeactive,99 0
+
+binde=SUPERSHIFT,j,swapnext,none
+binde=SUPERSHIFT,k,swapnext,prev
+
+bind=SUPER,Left,focusmonitor,l
+bind=SUPER,Right,focusmonitor,r
+
+bindm=SUPER,mouse:272,movewindow
+bindm=ALT,mouse:272,resizewindow
+
+bind=SUPER,ampersand,workspace,1
+bind=SUPER,eacute,workspace,2
+bind=SUPER,quotedbl,workspace,3
+bind=SUPER,apostrophe,workspace,4
+bind=SUPER,parenleft,workspace,5
+bind=SUPER,minus,workspace,6
+bind=SUPER,egrave,workspace,7
+bind=SUPER,underscore,workspace,8
+bind=SUPER,ccedilla,workspace,9
+bind=SUPER,agrave,workspace,10
+
+bind=SUPERSHIFT,ampersand,movetoworkspacesilent,1
+bind=SUPERSHIFT,eacute,movetoworkspacesilent,2
+bind=SUPERSHIFT,quotedbl,movetoworkspacesilent,3
+bind=SUPERSHIFT,apostrophe,movetoworkspacesilent,4
+bind=SUPERSHIFT,parenleft,movetoworkspacesilent,5
+bind=SUPERSHIFT,minus,movetoworkspacesilent,6
+bind=SUPERSHIFT,egrave,movetoworkspacesilent,7
+bind=SUPERSHIFT,underscore,movetoworkspacesilent,8
+bind=SUPERSHIFT,ccedilla,movetoworkspacesilent,9
+bind=SUPERSHIFT,agrave,movetoworkspacesilent,10

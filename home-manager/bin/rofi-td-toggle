@@ -1,0 +1,19 @@
+#!/bin/sh
+
+# Check if Mullvad is connected
+check_mullvad_status() {
+  mullvad_status=$(mullvad status)
+  if echo "$mullvad_status" | grep -q "Connected"; then
+    return 0
+  else
+    return 1
+  fi
+}
+
+# If transmission-daemon is running, will ask to kill, else will ask to start.
+if pidof transmission-daemon >/dev/null ;
+then
+  [ "$(printf "No\\nYes" | rofi -dmenu -theme ~/.config/rofi/config/launcher.rasi -i -p "Turn off transmission-daemon / Mullvad?")" = "Yes" ] && killall transmission-daemon && mullvad disconnect && notify-send "transmission-daemon disabled and Mullvad disconnected."
+else
+  [ "$(printf "No\\nYes" | rofi -dmenu -theme ~/.config/rofi/config/launcher.rasi -i -p "Turn on transmission daemon / Mullvad?")" = "Yes" ] && mullvad connect && while ! check_mullvad_status; do sleep 1; done && transmission-daemon && notify-send "Mullvad connected and tranmission-daemon enabled."
+fi
