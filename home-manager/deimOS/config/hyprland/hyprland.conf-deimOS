@@ -25,8 +25,10 @@ windowrule = float, Rofi
 windowrule = noborder, Rofi
 windowrule = float, title:^(sfml)$
 windowrule = center, title:^(sfml)$
+
 # Fix Telegram
 windowrule = nofullscreenrequest, title:^(Lecteur multimédia)$
+
 
 input {
     kb_layout=fr
@@ -39,6 +41,8 @@ input {
 
     repeat_rate=50
     repeat_delay=300
+    
+    left_handed=0
 }
 
 decoration {
@@ -67,7 +71,7 @@ general {
     gaps_in=5
     gaps_out=20
     border_size=2
-    col.active_border=0xFFF5C2E7
+    col.active_border=0xFFCBA6F7
     col.inactive_border=0x66333333
     layout=master
 
@@ -81,12 +85,13 @@ master {
 
 bind=SUPER,Return,exec,footclient
 
-bind=SUPER,B,exec,rofi-bluetooth -theme ~/.config/rofi/config/bluetooth.rasi
+bind=SUPER,B,exec,blueman-manager
 
 bind=SUPER,C,exec,footclient -e calcurse
 bind=SUPERSHIFT,C,exec,footclient -e eva
 
-bind=SUPER,d,exec,rofi-runner
+bind=SUPER,d,exec,rofi-launcher
+bind=SUPERSHIFT,d,exec,rofi-runner
 
 bind=SUPER,E,exec,footclient -e neomutt
 
@@ -95,11 +100,11 @@ bind=SUPER,F,fullscreen,0
 bind=SUPER,M,exec,footclient -e ncmpcpp
 bind=SUPERSHIFT,M,exec,pamixer -t
 
-bind=SUPER,N,exec,footclient -e lvim
+bind=SUPER,N,exec,footclient -e nvim
 bind=SUPERSHIFT,N,exec,footclient -e newsboat
 
 bind=SUPER,P,exec,mpc toggle
-bind=SUPERSHIFT,P,exec,mpc pause; pauseallmpv
+bind=SUPERSHIFT,P,exec,mpc pause
 
 bind=SUPER,Q,killactive,
 bind=SUPERSHIFT,Q,exit,
@@ -109,29 +114,26 @@ bind=SUPER,R,exec,footclient -e lf
 bind=SUPER,S,exec,footclient -e pulsemixer
 bind=SUPERSHIFT,S,exec,bmks
 
-bind=SUPER,V,exec,ytfzf --external-menu
-
 bind=SUPER,W,exec,firefox
-bind=SUPERSHIFT,W,exec,networkmanager_dmenu -theme ~/.config/rofi/config/networkmenu.rasi
+bind=SUPERSHIFT,W,exec,footclient -e nmtui
 
-bind=SUPER,X,exec,clipman pick -t rofi -T"-theme ~/.config/rofi/config/launcher.rasi"
+bind=SUPER,X,exec,clipman pick -t rofi -T"-theme ~/.config/rofi/launcher.rasi"
 
-bind=SUPER,F4,exec,footclient -e btop
-bind=SUPER,F5,exec,rofi -theme ~/.config/rofi/config/launcher.rasi -show ssh
+bind=SUPER,F4,exec,footclient -e btm
+bind=SUPER,F5,exec,rofi -theme ~/.config/rofi/launcher.rasi -show ssh
 bind=SUPER,F6,exec,rofi-mullvad-toggle
 bind=SUPER,F7,exec,rofi-td-toggle
 bind=SUPER,F8,exec,mw -Y
 bind=SUPER,F9,exec,rofi-mount
 bind=SUPER,F10,exec,rofi-umount
-bind=SUPER,F11,exec,firefox localhost:9091
-bind=SUPER,F12,exec,footclient -e transg-tui
+bind=SUPER,F11,exec,firefox localhost:9091/transmission/web
 
 bind=,Print,exec,rofi-printscreen
 
 bind=SUPER,exclam,exec,telegram-desktop
 
 bind=SUPER,BackSpace,exec,rofi-powermenu
-bind=SUPERSHIFT,BackSpace,exec,passmenu -theme ~/.config/rofi/config/askpass.rasi
+bind=SUPERSHIFT,BackSpace,exec,passrofi -theme ~/.config/rofi/long-launcher.rasi
 
 bind=SUPER,space,togglefloating,
 bind=SUPER,Delete,exec,rofi-kill
@@ -142,8 +144,6 @@ bind=,XF86AudioMute,exec,pamixer --toggle-mute
 
 bind=,XF86MonBrightnessUp,exec,light -A 5
 bind=,XF86MonBrightnessDown,exec,light -U 5
-
-
 
 binde=SUPER,j,layoutmsg,cyclenext
 binde=SUPER,k,layoutmsg,cycleprev
@@ -157,7 +157,7 @@ bind=SUPER,Left,focusmonitor,l
 bind=SUPER,Right,focusmonitor,r
 
 bindm=SUPER,mouse:272,movewindow
-bindm=ALT,mouse:272,resizewindow
+bindm=SUPER,mouse:273,resizewindow
 
 bind=SUPER,ampersand,workspace,1
 bind=SUPER,eacute,workspace,2
@@ -180,3 +180,5 @@ bind=SUPERSHIFT,egrave,movetoworkspacesilent,7
 bind=SUPERSHIFT,underscore,movetoworkspacesilent,8
 bind=SUPERSHIFT,ccedilla,movetoworkspacesilent,9
 bind=SUPERSHIFT,agrave,movetoworkspacesilent,10
+
+exec-once=dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
