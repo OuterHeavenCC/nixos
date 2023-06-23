@@ -10,9 +10,9 @@
 * {
   border: none;
   font-family: 'Iosevka Nerd Font';
-  font-size: 12px;
+  font-size: 14px;
   font-feature-settings: '"zero", "ss01", "ss02", "ss03", "ss04", "ss05", "cv31"';
-  min-height: 12px;
+  min-height: 25px;
 }
 
 window#waybar {
