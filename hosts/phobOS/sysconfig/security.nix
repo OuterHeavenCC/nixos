@@ -34,6 +34,8 @@ in
      DefaultTimeoutStopSec=10s
    '';
   }; 
+  # Rentrer le mot de passe automatiquement à la connexion
+  security.pam.services.corentin.gnupg.enable = true;
 
   # Fix swaylock
   security.pam.services.swaylock = {
