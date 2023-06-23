@@ -59,21 +59,31 @@
       # Available through 'nixos-rebuild --flake .#your-hostname'
       nixosConfigurations = {
         # FIXME replace with your hostname
-        nixos = nixpkgs.lib.nixosSystem {
+        phobOS = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs; };
           modules = [
             # > Our main nixos configuration file <
-            ./nixos/configuration.nix
+            ./hosts/phobOS/configuration.nix
           ];
         };
 
+        deimOS = nixpkgs.lib.nixosSystem {
+          specialArgs = { inherit inputs outputs; };
+          modules = [
+            # > Our main nixos configuration file <
+            ./hosts/deimOS/configuration.nix
+          ];
+        };
+
+
+        # TODO M'en occuper plus tard
         iso = nixpkgs.lib.nixosSystem {
           specialArgs = {
             inherit inputs outputs;
           };
           modules = [
           (nixpkgs + "/nixos/modules/installer/cd-dvd/installation-cd-graphical-calamares.nix")
-          ./nixos/configuration.nix
+          ./hosts/liveUSB/configuration.nix
           ];
         };
 

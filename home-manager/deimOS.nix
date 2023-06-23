@@ -5,26 +5,12 @@
   # You can import other home-manager modules here
   imports = [
 
-    ./config/abook.nix
-    ./config/cursor.nix
-    ./config/dunst.nix
-    ./config/foot.nix
-    ./config/firefox.nix
-    ./config/git.nix
-    ./config/hyprland/hyprland.nix
-    ./config/lf.nix
-    ./config/ncmpcpp.nix
-    ./config/mpd.nix
-    ./config/newsboat.nix
-    ./config/nvim.nix
-    ./config/rofi/rofi.nix
-    ./config/scripts.nix
-    ./config/swayidle.nix
-    ./config/userDirs.nix
-    ./config/mpv/mpv.nix
-    ./config/waybar.nix
-    ./config/zathura.nix
-    ./config/zsh.nix
+    ./global/default.nix
+    ./deimOS/config/zsh.nix
+    ./deimOS/config/foot.nix
+    ./deimOS/config/waybar.nix
+    ./deimOS/config/scripts.nix
+    ./deimOS/config/hyprland/hyprland.nix
     # If you want to use modules your own flake exports (from modules/home-manager):
     # outputs.homeManagerModules.example
 

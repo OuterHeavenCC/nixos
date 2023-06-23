@@ -10,7 +10,7 @@
     extraSpecialArgs = { inherit inputs; };
     users = {
       # Import your home-manager configuration
-      corentin = import ../../home-manager;
+      corentin = import ../../../home-manager/deimOS.nix;
     };
   };
 }

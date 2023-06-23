@@ -12,11 +12,6 @@
     # inputs.hardware.nixosModules.common-ssd
 
     # You can also split up your configuration and import pieces of it here:
-    ../modules/nixos/minecraft-server.nix
-    ../modules/nixos/sshfs.nix
-    ../modules/nixos/jellyfin.nix
-    ../modules/nixos/kdeconnect.nix
-    #
     ./sysconfig/audio.nix
     ./sysconfig/bluetooth.nix
     ./sysconfig/boot.nix
