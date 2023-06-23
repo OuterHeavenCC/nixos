@@ -42,6 +42,10 @@ PS1=\"%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magen
       LOCATION="Quimperlé";
       BROWSER="firefox";
       EDITOR="nvim";
+      WLR_NO_HARDWARE_CURSORS=1;
+      GBM_BACKEND="nvidia-drm";
+      __GLX_VENDOR_LIBRARY_NAME="nvidia";
+      LIBVA_DRIVER_NAME="nvidia";
       PASSWORD_STORE_DIR="${config.home.homeDirectory}/.local/share/password-store";
         };
     shellAliases = {

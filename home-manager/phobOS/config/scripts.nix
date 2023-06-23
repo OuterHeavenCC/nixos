@@ -72,10 +72,5 @@
       source = ../../global/bin/transadd;
       executable = true;
     };
-    ".local/bin/wrappedhl" = {
-      enable = true;
-      source = ../bin/wrappedhl;
-      executable = true;
-    };
   };
 }
