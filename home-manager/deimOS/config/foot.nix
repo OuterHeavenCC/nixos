@@ -5,7 +5,7 @@
     enable = true;
     settings = {
       main = {
-        font = "Iosevka Nerd Font:size=14";
+        font = "Iosevka Nerd Font:size=12";
       };
       cursor = {
         color = "2e3440 d8dee9";
