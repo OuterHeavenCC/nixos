@@ -5,5 +5,6 @@
     enable = true;
     text = ''
 allow-preset-passphrase
-    ''};
+    '';
+    };
 }
