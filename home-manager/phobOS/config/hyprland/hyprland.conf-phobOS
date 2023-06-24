@@ -16,7 +16,6 @@ env = WLC_REPEAT_DELAY=50
 # Programme au démarrage
 exec-once=swww init
 exec-once=foot --server
-exec-once=mpd
 exec-once=waybar
 exec-once=wl-paste -t text --watch clipman store
 exec-once=swayidle -w
