@@ -19,8 +19,6 @@ exec-once=foot --server
 exec-once=waybar
 exec-once=wl-paste -t text --watch clipman store
 exec-once=swayidle -w
-exec-once=xrandr --output DP-1 --primary # Fix pour jeux steam
-# exec-once=gammastep -l 47.843020:-4.168680 # Sert à rien tant qu'Nvidia font rien pour Wayland
 
 # Moniteurs
 monitor=DP-2, 3840x2160@60, 5760x0,    1  # Moniteur de droite

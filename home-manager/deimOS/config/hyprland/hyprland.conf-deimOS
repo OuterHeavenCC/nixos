@@ -18,7 +18,6 @@ env = WLC_REPEAT_DELAY=50
 exec-once=swww init
 exec-once=foot --server
 exec-once=waybar
-exec-once=dunst
 exec-once=swayidle -w
 exec-once=wl-paste -t text --watch clipman store
 
