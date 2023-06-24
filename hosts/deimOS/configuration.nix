@@ -21,6 +21,7 @@
     ./sysconfig/home-manager-config.nix
     ./sysconfig/hyprland.nix
     ./sysconfig/input.nix
+    ./sysconfig/mpd.nix
     ./sysconfig/locale.nix
     ./sysconfig/locate.nix
     ./sysconfig/networking.nix

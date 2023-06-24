@@ -19,6 +19,7 @@
     #
     ./sysconfig/audio.nix
     ./sysconfig/bluetooth.nix
+    ./sysconfig/mpd.nix
     ./sysconfig/boot.nix
     ./sysconfig/display.nix
     ./sysconfig/fonts.nix

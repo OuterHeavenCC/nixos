@@ -10,7 +10,6 @@
     ./config/gpg.nix
     # ./config/gtk.nix
     ./config/lf.nix
-    ./config/mpd.nix
     ./config/mpv/mpv.nix
     ./config/ncmpcpp.nix
     ./config/newsboat.nix

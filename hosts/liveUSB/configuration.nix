@@ -14,6 +14,7 @@
     # You can also split up your configuration and import pieces of it here:
     ./sysconfig/audio.nix
     ./sysconfig/bluetooth.nix
+    ./sysconfig/mpd.nix
     ./sysconfig/boot.nix
     ./sysconfig/display.nix
     ./sysconfig/fonts.nix
