@@ -20,6 +20,7 @@
      ctpv
      du-dust
      duf
+     pciutils
      dunst
      elinks
      eva

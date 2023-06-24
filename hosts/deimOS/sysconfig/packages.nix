@@ -18,6 +18,7 @@
      mpvScripts.sponsorblock
      colordiff
      ctpv
+     pciutils
      du-dust
      duf
      dunst
