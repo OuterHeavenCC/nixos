@@ -106,7 +106,7 @@ master {
 bind=SUPER,Return,exec,footclient
 
 bind=SUPER,B,exec,blueman-manager
-bind=SUPERSHIFT,B,exec,pkil -USR1 waybar
+bind=SUPERSHIFT,B,exec,pkill -USR1 waybar
 
 bind=SUPER,C,exec,footclient -e calcurse
 bind=SUPERSHIFT,C,exec,footclient -e eva
