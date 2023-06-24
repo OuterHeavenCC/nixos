@@ -1,0 +1,205 @@
+# Ordinateur fixe
+# Environnement
+env = GDK_BACKEND=wayland,x11
+env = QT_QPA_PLATFORM="wayland,xcb"
+env = SDL_VIDEODRIVER=wayland
+env = CLUTTER_BACKEND=wayland
+env = XDG_CURRENT_DESKTOP=Hyprland
+env = XDG_SESSION_TYPE=wayland
+env = XDG_SESSION_DESKTOP=Hyprland
+env = QT_AUTO_SCREEN_SCALE_FACTOR=1
+env = QT_WAYLAND_DISABLE_WINDOWDECORATION=1
+env = QT_QPA_PLATFORMTHEME=qt5ct
+env = WLC_REPEAT_RATE=300
+env = WLC_REPEAT_DELAY=50
+
+# Programme au démarrage
+exec-once=swww init
+exec-once=foot --server
+exec-once=mpd
+exec-once=waybar
+exec-once=wl-paste -t text --watch clipman store
+exec-once=swayidle -w
+exec-once=xrandr --output DP-1 --primary # Fix pour jeux steam
+# exec-once=gammastep -l 47.843020:-4.168680 # Sert à rien tant qu'Nvidia font rien pour Wayland
+
+# Moniteurs
+monitor=DP-2, 3840x2160@60, 5760x0,    1  # Moniteur de droite
+monitor=DP-1, 1920x1080@240, 3840x0, 1       # Moniteur centré
+monitor=DP-3, 3840x2160@60, 0x0,  1  # Moniteur de gauche
+
+# Attriubtions des espaces aux moniteurs
+workspace=1,monitor:DP-3
+workspace=4,monitor:DP-3
+workspace=7,monitor:DP-3
+
+workspace=2,monitor:DP-1
+workspace=5,monitor:DP-1
+workspace=7,monitor:DP-1
+
+workspace=3,monitor:DP-2
+workspace=6,monitor:DP-2
+workspace=9,monitor:DP-2
+
+windowrule = float, Rofi
+windowrule = noborder, Rofi
+windowrule = float, title:^(sfml)$
+windowrule = center, title:^(sfml)$
+
+# Fix Telegram
+windowrule = nofullscreenrequest, title:^(Lecteur multimédia)$
+
+
+input {
+    kb_layout=fr
+    kb_variant=
+    kb_model=pc105
+    kb_options=caps:super,terminate:ctrl_alt_bksp
+    kb_rules=evdev
+
+    follow_mouse=1
+
+    repeat_rate=50
+    repeat_delay=300
+    
+    left_handed=0
+}
+
+decoration {
+    rounding=10
+    blur=1
+    drop_shadow = true
+    shadow_range=100
+    shadow_render_power=5
+    col.shadow= 0x33000000
+    col.shadow_inactive=0x22000000
+    blur_new_optimizations=1
+  }
+
+animations {
+    enabled=1
+  }
+
+misc {
+    enable_swallow = true
+    swallow_regex="footclient"
+  }
+
+general {
+    sensitivity=1.0 # for mouse cursor
+
+    gaps_in=5
+    gaps_out=20
+    border_size=2
+    col.active_border=0xFFCBA6F7
+    col.inactive_border=0x66333333
+    layout=master
+
+}
+
+master {
+    new_on_top=true
+  }
+
+
+
+bind=SUPER,Return,exec,footclient
+
+bind=SUPER,B,exec,blueman-manager
+bind=SUPERSHIFT,B,exec,pkil -USR1 waybar
+
+bind=SUPER,C,exec,footclient -e calcurse
+bind=SUPERSHIFT,C,exec,footclient -e eva
+
+bind=SUPER,d,exec,rofi-launcher
+bind=SUPERSHIFT,d,exec,rofi-runner
+
+bind=SUPER,E,exec,footclient -e neomutt
+
+bind=SUPER,F,fullscreen,0
+
+bind=SUPER,M,exec,footclient -e ncmpcpp
+bind=SUPERSHIFT,M,exec,pamixer -t
+
+bind=SUPER,N,exec,footclient -e nvim
+bind=SUPERSHIFT,N,exec,footclient -e newsboat
+
+bind=SUPER,P,exec,mpc toggle
+bind=SUPERSHIFT,P,exec,mpc pause
+
+bind=SUPER,Q,killactive,
+bind=SUPERSHIFT,Q,exit,
+
+bind=SUPER,R,exec,footclient -e lf
+
+bind=SUPER,S,exec,footclient -e pulsemixer
+bind=SUPERSHIFT,S,exec,bmks
+
+bind=SUPER,W,exec,firefox
+bind=SUPERSHIFT,W,exec,footclient -e nmtui
+
+bind=SUPER,X,exec,clipman pick -t rofi -T"-theme ~/.config/rofi/launcher.rasi"
+
+bind=SUPER,F4,exec,footclient -e btm
+bind=SUPER,F5,exec,rofi -theme ~/.config/rofi/launcher.rasi -show ssh
+bind=SUPER,F6,exec,rofi-mullvad-toggle
+bind=SUPER,F7,exec,rofi-td-toggle
+bind=SUPER,F8,exec,mw -Y
+bind=SUPER,F9,exec,rofi-mount
+bind=SUPER,F10,exec,rofi-umount
+bind=SUPER,F11,exec,firefox localhost:9091/transmission/web
+
+bind=,Print,exec,rofi-printscreen
+
+bind=SUPER,exclam,exec,telegram-desktop
+
+bind=SUPER,BackSpace,exec,rofi-powermenu
+bind=SUPERSHIFT,BackSpace,exec,passrofi -theme ~/.config/rofi/long-launcher.rasi
+
+bind=SUPER,space,togglefloating,
+bind=SUPER,Delete,exec,rofi-kill
+
+binde=,XF86AudioRaiseVolume,exec,pamixer -i 5
+binde=,XF86AudioLowerVolume,exec,pamixer -d 5
+bind=,XF86AudioMute,exec,pamixer --toggle-mute
+
+bind=,XF86MonBrightnessUp,exec,light -A 5
+bind=,XF86MonBrightnessDown,exec,light -U 5
+
+binde=SUPER,j,layoutmsg,cyclenext
+binde=SUPER,k,layoutmsg,cycleprev
+binde=SUPER,h,resizeactive,-99 0
+binde=SUPER,l,resizeactive,99 0
+
+binde=SUPERSHIFT,j,swapnext,none
+binde=SUPERSHIFT,k,swapnext,prev
+
+bind=SUPER,Left,focusmonitor,l
+bind=SUPER,Right,focusmonitor,r
+
+bindm=SUPER,mouse:272,movewindow
+bindm=SUPER,mouse:273,resizewindow
+
+bind=SUPER,ampersand,workspace,1
+bind=SUPER,eacute,workspace,2
+bind=SUPER,quotedbl,workspace,3
+bind=SUPER,apostrophe,workspace,4
+bind=SUPER,parenleft,workspace,5
+bind=SUPER,minus,workspace,6
+bind=SUPER,egrave,workspace,7
+bind=SUPER,underscore,workspace,8
+bind=SUPER,ccedilla,workspace,9
+bind=SUPER,agrave,workspace,10
+
+bind=SUPERSHIFT,ampersand,movetoworkspacesilent,1
+bind=SUPERSHIFT,eacute,movetoworkspacesilent,2
+bind=SUPERSHIFT,quotedbl,movetoworkspacesilent,3
+bind=SUPERSHIFT,apostrophe,movetoworkspacesilent,4
+bind=SUPERSHIFT,parenleft,movetoworkspacesilent,5
+bind=SUPERSHIFT,minus,movetoworkspacesilent,6
+bind=SUPERSHIFT,egrave,movetoworkspacesilent,7
+bind=SUPERSHIFT,underscore,movetoworkspacesilent,8
+bind=SUPERSHIFT,ccedilla,movetoworkspacesilent,9
+bind=SUPERSHIFT,agrave,movetoworkspacesilent,10
+
+exec-once=dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP

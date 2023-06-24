@@ -82,8 +82,8 @@
             inherit inputs outputs;
           };
           modules = [
-          (nixpkgs + "/nixos/modules/installer/cd-dvd/installation-cd-graphical-calamares.nix")
-          ./hosts/liveUSB/configuration.nix
+            (nixpkgs + "/nixos/modules/installer/cd-dvd/installation-cd-graphical-calamares.nix")
+            ./hosts/liveUSB/configuration.nix
           ];
         };
 
