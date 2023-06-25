@@ -2,6 +2,10 @@
 {
     environment.systemPackages = with pkgs; [
      ark
+     scc
+     ncdu
+     skim
+     sd
      atool
      bat
      binutils

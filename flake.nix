@@ -77,15 +77,15 @@
 
 
         # TODO M'en occuper plus tard
-        iso = nixpkgs.lib.nixosSystem {
-          specialArgs = {
-            inherit inputs outputs;
-          };
-          modules = [
-            (nixpkgs + "/nixos/modules/installer/cd-dvd/installation-cd-graphical-calamares.nix")
-            ./hosts/liveUSB/configuration.nix
-          ];
-        };
+        # iso = nixpkgs.lib.nixosSystem {
+        #   specialArgs = {
+        #     inherit inputs outputs;
+        #   };
+        #   modules = [
+        #     (nixpkgs + "/nixos/modules/installer/cd-dvd/installation-cd-graphical-calamares.nix")
+        #     ./hosts/liveUSB/configuration.nix
+        #   ];
+        # };
 
 
       # Standalone home-manager configuration entrypoint
