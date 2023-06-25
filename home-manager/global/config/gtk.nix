@@ -5,7 +5,7 @@
     enable = true;
     theme = {
       name = "catppuggin-gtk";
-      package = "pkgs.catppuccin-gtk"
+      package = "pkgs.catppuccin-gtk";
       };
     gtk2 = {
       configLocation = {
