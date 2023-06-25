@@ -3,6 +3,7 @@
 {
   imports = [
     ./config/abook.nix
+    ./config/calcurse.nix
     ./config/cursor.nix
     ./config/dunst.nix
     ./config/firefox.nix

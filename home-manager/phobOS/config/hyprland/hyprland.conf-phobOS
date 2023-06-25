@@ -138,7 +138,7 @@ bind=SUPERSHIFT,W,exec,footclient -e nmtui
 
 bind=SUPER,X,exec,clipman pick -t rofi -T"-theme ~/.config/rofi/launcher.rasi"
 
-bind=SUPER,F4,exec,footclient -e btm
+bind=SUPER,F4,exec,footclient -e btop
 bind=SUPER,F5,exec,rofi -theme ~/.config/rofi/launcher.rasi -show ssh
 bind=SUPER,F6,exec,rofi-mullvad-toggle
 bind=SUPER,F7,exec,rofi-td-toggle

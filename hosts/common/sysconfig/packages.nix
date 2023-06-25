@@ -2,26 +2,18 @@
 {
     environment.systemPackages = with pkgs; [
      ark
-     scc
-     ncdu
-     skim
-     sd
      atool
+     baobab
      bat
-     gtk-engine-murrine
      binutils
+     blanket
      bluez
-     gtk3
-     gtk4
      bottles
      bottom
-     gnome.gnome-themes-extra
-     glib
      btop
      calcurse
      catppuccin-gtk
      chafa
-     cinnamon.warpinator
      clang
      clipman
      colordiff
@@ -45,15 +37,21 @@
      gamescope
      gcc
      git
+     glib
      glibc
      glow
      gnome-epub-thumbnailer
      gnome.gnome-boxes
      gnome.gnome-calculator
      gnome.gnome-disk-utility
+     gnome.gnome-themes-extra
+     gnome.gnome-weather
      gnome.nautilus
      gnumake
      grim
+     gtk-engine-murrine
+     gtk3
+     gtk4
      hexyl
      home-manager
      hyprpicker
@@ -79,11 +77,11 @@
      mullvad
      mullvad-vpn
      musl
+     ncdu
      ncmpcpp
      neofetch
      neovim
      networkmanager_dmenu
-     newsboat
      newsboat
      nmap
      nodePackages_latest.peerflix
@@ -95,7 +93,6 @@
      pandoc
      pass-wayland
      pciutils
-     pcmanfm
      pinentry
      piper
      polkit_gnome
@@ -113,7 +110,9 @@
      rustup
      sc-im
      scanmem
-     silver-searcher
+     scc
+     sd
+     skim
      slurp
      spotify
      sqlite
@@ -132,9 +131,9 @@
      unzip
      ventoy-full
      vimv-rs
+     warp
      wev
      wget
-     whitesur-gtk-theme
      wl-clipboard
      xcodebuild
      xdg-desktop-portal
