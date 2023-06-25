@@ -7,6 +7,7 @@
     "text/*" = [ "nvim.desktop" "firefox.desktop" ];
     "text/x-python" = [ "nvim.desktop" ];
     "text/css" = [ "nvim.desktop" ];
+    "text/plain" = [ "nvim.desktop" ];
     "application/x-trash" = [ "nvim.desktop" ];
     "x-scheme-handler/magnet" = [ "userapp-transmission-gtk-F8UY61.desktop" ];
     "application/x-bittorrent" = [ "torrent.desktop" ];
