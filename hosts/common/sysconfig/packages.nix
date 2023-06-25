@@ -46,7 +46,9 @@
      glow
      gnome-epub-thumbnailer
      gnome.gnome-boxes
+     gnome.gnome-calculator
      gnome.gnome-disk-utility
+     gnome.nautilus
      gnumake
      grim
      hexyl

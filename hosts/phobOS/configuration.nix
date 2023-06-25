@@ -40,6 +40,7 @@
     ../common/sysconfig/steam.nix
     ../common/sysconfig/torrent.nix
     ../common/sysconfig/users.nix
+    ../common/sysconfig/theming.nix
     # ./users.nix
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix

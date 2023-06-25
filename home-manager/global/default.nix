@@ -9,7 +9,7 @@
     ./config/git.nix
     ./config/gpg.nix
     ./config/ledger.nix
-    ./config/gtk.nix
+    ./config/theming.nix
     ./config/lf.nix
     ./config/mpv/mpv.nix
     ./config/ncmpcpp.nix

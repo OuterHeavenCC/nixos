@@ -22,11 +22,11 @@
     });
   };
 
-  # ncmpcpp-visualizerSupport = self: super: {
-  # ncmpcpp = super.ncmpcpp.override {
-  #   visualizerSupport = true;
-  #   };
-  # };
+  ncmpcpp-visualizerSupport = self: super: {
+  ncmpcpp = super.ncmpcpp.override {
+    visualizerSupport = true;
+    };
+  };
 
   # When applied, the unstable nixpkgs set (declared in the flake inputs) will
   # be accessible through 'pkgs.unstable'
