@@ -4,7 +4,6 @@
      ark
      atool
      bat
-     gamescope
      binutils
      bluez
      bottles
@@ -13,15 +12,12 @@
      calcurse
      chafa
      cinnamon.warpinator
-     foot
      clang
      clipman
-     mpvScripts.sponsorblock
      colordiff
      ctpv
      du-dust
      duf
-     pciutils
      dunst
      elinks
      eva
@@ -34,28 +30,30 @@
      firefox
      fontconfig
      fontforge
+     foot
      fzf
+     gamescope
      gcc
      git
      glibc
      glow
      gnome-epub-thumbnailer
-     home-manager
-     xdg-user-dirs
      gnome.gnome-boxes
      gnome.gnome-disk-utility
      gnumake
-     libnotify
      grim
      hexyl
+     home-manager
      hyprpicker
      imagemagick
      imv
+     isync
      jq 
      killall
      lazygit
      ledger
      lf
+     libnotify
      libreoffice
      libsixel
      lxappearance-gtk2
@@ -65,13 +63,12 @@
      mpc-cli
      mpd
      mpv
+     mpvScripts.sponsorblock
      mullvad
      mullvad-vpn
      musl
-     mutt-wizard
      ncmpcpp
      neofetch
-     neomutt
      neovim
      networkmanager_dmenu
      newsboat
@@ -85,6 +82,7 @@
      pamixer
      pandoc
      pass-wayland
+     pciutils
      pcmanfm
      pinentry
      piper
@@ -95,7 +93,6 @@
      pulsemixer
      python3
      qemu
-     steam
      ripdrag
      ripgrep
      ripgrep-all
@@ -108,11 +105,13 @@
      slurp
      spotify
      sqlite
+     steam
      swayidle
      swaylock
      swww
      telegram-desktop
      texlive.combined.scheme-full
+     thunderbird
      tldr
      transmission
      transmission-gtk
@@ -128,6 +127,7 @@
      xcodebuild
      xdg-desktop-portal
      xdg-desktop-portal-hyprland
+     xdg-user-dirs
      xmlstarlet
      ydotool
      yt-dlp

@@ -1,7 +1,6 @@
 { config, pkgs, ... }:
 
 {
-  # TODO Faire en sorte que ça fonctionne même sans carte graphique Nvidia
   services.xserver = {
     enable = true;
     layout = "fr";

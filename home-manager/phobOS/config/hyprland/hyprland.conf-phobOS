@@ -111,7 +111,7 @@ bind=SUPERSHIFT,C,exec,footclient -e eva
 bind=SUPER,d,exec,rofi-launcher
 bind=SUPERSHIFT,d,exec,rofi-runner
 
-bind=SUPER,E,exec,footclient -e neomutt
+bind=SUPER,E,exec,thunderbird
 
 bind=SUPER,F,fullscreen,0
 
