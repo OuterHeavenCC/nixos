@@ -12,28 +12,29 @@
     # inputs.hardware.nixosModules.common-ssd
 
     # You can also split up your configuration and import pieces of it here:
-    ./sysconfig/audio.nix
-    ./sysconfig/bluetooth.nix
-    ./sysconfig/boot.nix
     ./sysconfig/display.nix
-    ./sysconfig/fonts.nix
-    ./sysconfig/gnupg.nix
     ./sysconfig/home-manager-config.nix
     ./sysconfig/hyprland.nix
-    ./sysconfig/input.nix
-    ./sysconfig/mpd.nix
-    ./sysconfig/locale.nix
-    ./sysconfig/locate.nix
     ./sysconfig/networking.nix
-    ./sysconfig/mullvad.nix
-    ./sysconfig/nix-config.nix
-    ./sysconfig/packages.nix
-    ./sysconfig/security.nix
-    ./sysconfig/ssh.nix
-    ./sysconfig/mimeApps.nix
-    ./sysconfig/users.nix
-    ./sysconfig/steam.nix
-    ./sysconfig/torrent.nix
+
+    ../common/sysconfig/audio.nix
+    ../common/sysconfig/bluetooth.nix
+    ../common/sysconfig/boot.nix
+    ../common/sysconfig/fonts.nix
+    ../common/sysconfig/gnupg.nix
+    ../common/sysconfig/input.nix
+    ../common/sysconfig/locale.nix
+    ../common/sysconfig/locate.nix
+    ../common/sysconfig/mimeApps.nix
+    ../common/sysconfig/mpd.nix
+    ../common/sysconfig/mullvad.nix
+    ../common/sysconfig/nix-config.nix
+    ../common/sysconfig/packages.nix
+    ../common/sysconfig/security.nix
+    ../common/sysconfig/ssh.nix
+    ../common/sysconfig/steam.nix
+    ../common/sysconfig/torrent.nix
+    ../common/sysconfig/users.nix
     # ./users.nix
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix

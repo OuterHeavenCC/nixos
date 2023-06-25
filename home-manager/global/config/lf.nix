@@ -38,7 +38,7 @@
       "gr" = "cd /";
       "g\/" = "cd /";
       "ge" = "cd /etc/";
-      "gn" = "cd /etc/nixos";
+      "gn" = "cd ~/nixos";
       "gh" = "cd ~";
       "gc" = "cd ~/.config";
       "gl" = "cd ~/.local";
@@ -47,7 +47,6 @@
       "gD" = "cd /mnt";
       "gi" = "cd ~/Images";
       "gj" = "cd ~/Jeux";
-      "gp" = "cd ~/Programmation";
       "gt" = "cd ~/Téléchargements";
       "gv" = "cd ~/Vidéos";
     };

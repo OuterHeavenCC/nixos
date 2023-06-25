@@ -4,6 +4,7 @@
      ark
      atool
      bat
+     gamescope
      binutils
      bluez
      bottles
@@ -18,9 +19,9 @@
      mpvScripts.sponsorblock
      colordiff
      ctpv
-     pciutils
      du-dust
      duf
+     pciutils
      dunst
      elinks
      eva
