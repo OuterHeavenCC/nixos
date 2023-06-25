@@ -6,10 +6,13 @@
      bat
      binutils
      bluez
+     gtk4
      bottles
      bottom
+     glib
      btop
      calcurse
+     catppuccin-gtk
      chafa
      cinnamon.warpinator
      clang

@@ -8,7 +8,8 @@
     ./config/firefox.nix
     ./config/git.nix
     ./config/gpg.nix
-    # ./config/gtk.nix
+    ./config/ledger.nix
+    ./config/gtk.nix
     ./config/lf.nix
     ./config/mpv/mpv.nix
     ./config/ncmpcpp.nix
