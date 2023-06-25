@@ -8,11 +8,14 @@
      sd
      atool
      bat
+     gtk-engine-murrine
      binutils
      bluez
+     gtk3
      gtk4
      bottles
      bottom
+     gnome.gnome-themes-extra
      glib
      btop
      calcurse
