@@ -104,7 +104,7 @@ bind=SUPER,F,fullscreen,0
 bind=SUPER,M,exec,footclient -e ncmpcpp
 bind=SUPERSHIFT,M,exec,pamixer -t
 
-bind=SUPER,N,exec,footclient -e nvim
+bind=SUPER,N,exec,footclient -e lvim
 bind=SUPERSHIFT,N,exec,footclient -e newsboat
 
 bind=SUPER,P,exec,mpc toggle

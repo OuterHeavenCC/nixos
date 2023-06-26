@@ -13,8 +13,8 @@
     home-manager.url = "github:nix-community/home-manager/release-23.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-    # nur.url = "github:nix-community/nur";
     # hardware.url = "github:nixos/nixos-hardware";
+    # nur.url = "github:nix-community/NUR";
 
     # Shameless plug: looking for a way to nixify your themes and make
     # everything match nicely? Try nix-colors!
@@ -50,7 +50,6 @@
       overlays = import ./overlays { inherit inputs; };
       # Reusable nixos modules you might want to export
       # These are usually stuff you would upstream into nixpkgs
-      nixosModules = import ./modules/nixos;
       # Reusable home-manager modules you might want to export
       # These are usually stuff you would upstream into home-manager
       homeManagerModules = import ./modules/home-manager;
