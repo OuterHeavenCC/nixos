@@ -16,6 +16,7 @@
     ./config/ncmpcpp.nix
     ./config/newsboat.nix
     ./config/nvim.nix
+    ./config/btop.nix
     ./config/rofi/rofi.nix
     ./config/scripts.nix
     ./config/swayidle.nix
