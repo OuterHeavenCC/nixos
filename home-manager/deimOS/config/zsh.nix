@@ -41,7 +41,7 @@ PS1=\"%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magen
       OPENER="xdg-open";
       LOCATION="Quimperlé";
       BROWSER="firefox";
-      EDITOR="nvim";
+      EDITOR="lvim";
       PASSWORD_STORE_DIR="${config.home.homeDirectory}/.local/share/password-store";
         };
     shellAliases = {
