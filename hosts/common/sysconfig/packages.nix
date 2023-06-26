@@ -4,6 +4,7 @@
      ark
      atool
      baobab
+     poetry
      bat
      binutils
      blanket
