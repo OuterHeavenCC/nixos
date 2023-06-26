@@ -6,12 +6,14 @@
     enable = true;
     settings = {
       color_theme = "catppuccin_mocha";
+      vim_keys = true;
     };
   };
 
   home.file.".config/btop/themes/catppuccin_mocha.theme" = {
     text = ''
 # Main background, empty for terminal default, need to be empty if you want transparent background
+
 theme[main_bg]="#1E1E2E"
 
 # Main text color
