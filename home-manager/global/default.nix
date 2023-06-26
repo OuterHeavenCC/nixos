@@ -21,5 +21,6 @@
     ./config/swayidle.nix
     ./config/userDirs.nix
     ./config/zathura.nix
+    ./config/browserpass.nix
   ];
 }
