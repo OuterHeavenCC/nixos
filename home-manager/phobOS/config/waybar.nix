@@ -119,15 +119,15 @@ window#waybar {
 
     battery = {
       format = "<span color='#cba6f7'>{icon}</span> {capacity}%";
-      format-icons = [ "" "" "" "" "" "" "" "" "" "" ];
-      format-charging = "<span color='#cba6f7'></span> {capacity}%";
+      format-icons = [ "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹" ];
+      format-charging = "<span color='#cba6f7'>󰂄</span> {capacity}%";
     };
 
     pulseaudio = {
       scroll-step = 2;
       format = "{icon} {volume}%";
       format-muted = "<span color='#cba6f7'> </span>";
-      "format-icons.default" = [ "<span color=\"#cba6f7\"></span> " ];
+      format-icons.default = [ "<span color=\"#cba6f7\"></span> " ];
       on-click = "pamixer -t";
     };
 

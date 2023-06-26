@@ -22,7 +22,6 @@ exec-once=swayidle -w
 exec-once=wl-paste -t text --watch clipman store
 
 monitor=eDP-1,1920x1080@60,0x0,1
-workspace=DP-1,1
 
 windowrule = float, Rofi
 windowrule = noborder, Rofi

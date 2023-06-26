@@ -80,7 +80,7 @@ window#waybar {
     layer = "top";
     modules-left = [ "custom/arch" "wlr/workspaces" ];
     modules-center = [ "clock" ];
-    modules-right = [ "pulseaudio" "cpu" "memory" "network" "clock#date" ];
+    modules-right = [ "pulseaudio" "cpu" "memory" "network" "clock#date" "battery" ];
 
     "custom/arch" = {
       format = " ";
@@ -109,7 +109,7 @@ window#waybar {
     };
 
     network = {
-      interface = "enp42s0";
+      interface = "wlp3s0";
       format = "{ifname}";
       format-wifi = "<span color='#cba6f7'> </span>{essid}";
       format-ethernet = "{ipaddr}/{cidr} <span color ='#cba6f7'>󰈀</span>";
@@ -119,15 +119,15 @@ window#waybar {
 
     battery = {
       format = "<span color='#cba6f7'>{icon}</span> {capacity}%";
-      format-icons = [ "" "" "" "" "" "" "" "" "" "" ];
-      format-charging = "<span color='#cba6f7'></span> {capacity}%";
+      format-icons = [ "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹" ];
+      format-charging = "<span color='#cba6f7'>󰂄</span> {capacity}%";
     };
 
     pulseaudio = {
       scroll-step = 2;
       format = "{icon} {volume}%";
       format-muted = "<span color='#cba6f7'> </span>";
-      "format-icons.default" = [ "<span color=\"#cba6f7\"></span> " ];
+      format-icons.default = [ "<span color=\"#cba6f7\"></span> " ];
       on-click = "pamixer -t";
     };
 
