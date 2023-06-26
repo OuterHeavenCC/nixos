@@ -3,6 +3,7 @@
 {
   imports = [
     ./config/abook.nix
+    ./config/bottom.nix
     ./config/browserpass.nix
     ./config/btop.nix
     ./config/calcurse.nix
