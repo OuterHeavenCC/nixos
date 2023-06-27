@@ -75,18 +75,17 @@ cmd open ''${{
 	image/vnd.djvu|application/pdf|application/octet-stream) setsid -f zathura $fx >/dev/null 2>&1 ;;
   text/*|application/json|x-tex) $EDITOR $fx;;
 	image/x-xcf) setsid -f gimp $f >/dev/null 2>&1 ;;
-	image/svg+xml) inkview -- $f ;;
 	image/*) setsid -f imv-dir $f 2>/dev/null;;
 	audio/*) mpv --audio-display=no $f ;;
 	video/*) setsid -f mpv $f -quiet >/dev/null 2>&1 ;;
   application/vnd.oasis.opendocument|application/vnd.openxmlformats-officedocument.wordprocessingml.document|application/vnd.oasis.opendocument.spreadsheet) setsid -f libreoffice $f ;;
   application/vnd.openxmlformats-officedocument.wordprocessingml.document) setsid -f libreoffice $f ;;
-  application/zip) ark $f ;;
+  application/zip) setsid -f ark $f ;;
   application/x-sc) sc-im $f ;;
 	application/pdf|application/vnd*|application/epub*|application/x-cbz) setsid -f zathura $fx >/dev/null 2>&1 ;;
   application/x-bittorent) tremc $f ;;
-  application/x-tiled-tsx) tiled $f ;;
-  application/x-tiled-tmx) tiled $f ;;
+  application/x-tiled-tsx) setsid -f tiled $f ;;
+  application/x-tiled-tmx) setsid -f tiled $f ;;
   *) for f in $fx; do setsid -f $OPENER $f >/dev/null 2>&1; done;;
     esac
 }}

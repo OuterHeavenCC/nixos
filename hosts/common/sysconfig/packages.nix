@@ -6,12 +6,16 @@
      baobab
      poetry
      bat
+     clang
      binutils
+     gimp
      blanket
      bluez
      bottles
+     gnumake
      bottom
      btop
+     neovide
      calcurse
      catppuccin-gtk
      chafa
@@ -45,7 +49,6 @@
      gnome.gnome-themes-extra
      gnome.gnome-weather
      gnome.nautilus
-     gnumake
      grim
      gtk-engine-murrine
      gtk3

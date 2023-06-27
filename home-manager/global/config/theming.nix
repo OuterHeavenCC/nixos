@@ -9,7 +9,7 @@
       package = pkgs.catppuccin-gtk.override {
         accents = [ "mauve" ];
         size = "compact";
-        tweaks = [ "rimless" ];
+        tweaks = [ "rimless" "black" ];
         variant = "mocha";
       };
     };

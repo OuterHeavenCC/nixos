@@ -2,6 +2,9 @@
   programs.bottom = {
     enable = true;
     settings = {
+      flags = {
+        network_use_bytes = true;
+      };
       colors = {
         table_header_color = "#f5e0dc";
         all_cpu_color = "#f5e0dc";
