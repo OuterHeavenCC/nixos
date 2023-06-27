@@ -9,7 +9,7 @@
     ./config/calcurse.nix
     ./config/cursor.nix
     ./config/dunst.nix
-    ./config/firefox.nix
+    ./config/firefox/firefox.nix
     ./config/git.nix
     ./config/gpg.nix
     ./config/ledger.nix
