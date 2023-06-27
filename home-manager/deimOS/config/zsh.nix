@@ -38,6 +38,7 @@ PS1=\"%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magen
       eval \"$(zoxide init zsh)\"
 ";
     sessionVariables = {
+      TERMINAL="foot";
       OPENER="xdg-open";
       LOCATION="Quimperlé";
       BROWSER="firefox";

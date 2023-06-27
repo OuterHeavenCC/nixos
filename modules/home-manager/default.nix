@@ -3,5 +3,6 @@
 
 {
   # List your module files here
+  kdeconnect = ./kdeconnect.nix;
   # my-module = import ./my-module.nix;
 }
