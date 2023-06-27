@@ -1,0 +1,3 @@
+[submodule "home-manager/global/config/firefox/cascade"]
+	path = home-manager/global/config/firefox/cascade
+	url = https://github.com/andreasgrafen/cascade
