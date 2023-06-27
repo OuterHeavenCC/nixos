@@ -12,20 +12,26 @@
     # inputs.hardware.nixosModules.common-ssd
 
     # You can also split up your configuration and import pieces of it here:
-    ../../modules/nixos/minecraft-server.nix
-    ../../modules/nixos/sshfs.nix
-    ../../modules/nixos/jellyfin.nix
-    ../../modules/nixos/kdeconnect.nix
-    #
-    ./sysconfig/display.nix
-    ./sysconfig/home-manager-config.nix
-    ./sysconfig/hyprland.nix
-    ./sysconfig/networking.nix
 
-    ../common/configuration.nix
-    # ./users.nix
-    # Import your generated (nixos-generate-config) hardware configuration
-    ./hardware-configuration.nix
+    ./sysconfig/audio.nix
+    ./sysconfig/bluetooth.nix
+    ./sysconfig/boot.nix
+    ./sysconfig/fonts.nix
+    ./sysconfig/gnupg.nix
+    ./sysconfig/input.nix
+    ./sysconfig/locale.nix
+    ./sysconfig/locate.nix
+    ./sysconfig/mimeApps.nix
+    ./sysconfig/mpd.nix
+    ./sysconfig/mullvad.nix
+    ./sysconfig/nix-config.nix
+    ./sysconfig/packages.nix
+    ./sysconfig/security.nix
+    ./sysconfig/ssh.nix
+    ./sysconfig/steam.nix
+    ./sysconfig/torrent.nix
+    ./sysconfig/users.nix
+    ./sysconfig/theming.nix
   ];
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion

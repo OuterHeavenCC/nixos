@@ -17,25 +17,7 @@
     ./sysconfig/hyprland.nix
     ./sysconfig/networking.nix
 
-    ../common/sysconfig/audio.nix
-    ../common/sysconfig/bluetooth.nix
-    ../common/sysconfig/boot.nix
-    ../common/sysconfig/fonts.nix
-    ../common/sysconfig/gnupg.nix
-    ../common/sysconfig/input.nix
-    ../common/sysconfig/locale.nix
-    ../common/sysconfig/locate.nix
-    ../common/sysconfig/mimeApps.nix
-    ../common/sysconfig/mpd.nix
-    ../common/sysconfig/mullvad.nix
-    ../common/sysconfig/nix-config.nix
-    ../common/sysconfig/packages.nix
-    ../common/sysconfig/security.nix
-    ../common/sysconfig/ssh.nix
-    ../common/sysconfig/steam.nix
-    ../common/sysconfig/torrent.nix
-    ../common/sysconfig/users.nix
-    ../common/sysconfig/theming.nix
+    ../common/configuration.nix
     # ./users.nix
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
