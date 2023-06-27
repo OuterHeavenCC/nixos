@@ -15,7 +15,7 @@
      calcurse
      catppuccin-gtk
      chafa
-     clang
+     cmake
      clipman
      colordiff
      ctpv
@@ -36,10 +36,7 @@
      foot
      fzf
      gamescope
-     gcc
      git
-     glib
-     glibc
      glow
      gnome-epub-thumbnailer
      gnome.gnome-boxes
@@ -125,8 +122,8 @@
      texlive.combined.scheme-full
      thunderbird
      tldr
-     transmission
-     transmission-gtk
+     # transmission
+     # transmission-gtk
      tree-sitter
      unrar
      unzip

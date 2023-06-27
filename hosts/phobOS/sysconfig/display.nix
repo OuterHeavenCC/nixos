@@ -8,7 +8,14 @@
     displayManager.lightdm.enable = false;
   };
   hardware = {
-    opengl.enable = true;
-    nvidia.modesetting.enable = true;
+    opengl = {
+      enable = true;
+      driSupport = true;
+      driSupport32Bit = true;
+    };
+    nvidia = {
+      modesetting.enable = true;
+      open = true;
+    };
   };
 }
