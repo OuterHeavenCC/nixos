@@ -36,4 +36,5 @@
       config.allowUnfree = true;
     };
   };
+
 }
