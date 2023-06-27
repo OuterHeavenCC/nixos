@@ -7,10 +7,7 @@
       id = 0;
       isDefault = true;
       name = "0";
-      search = {
-        default = "Google";
-      };
-      extensions = with pkgs.nur.repos.rycee.firefox-addons; [
+     extensions = with pkgs.nur.repos.rycee.firefox-addons; [
         vimium
         stylus
         ublock-origin
