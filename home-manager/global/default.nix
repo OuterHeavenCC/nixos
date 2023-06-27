@@ -16,6 +16,7 @@
     ./config/lf.nix
     ./config/lvim.nix
     ./config/mpv/mpv.nix
+    ./config/firefox/firefox.nix
     ./config/ncmpcpp.nix
     ./config/newsboat.nix
     ./config/nvim.nix
