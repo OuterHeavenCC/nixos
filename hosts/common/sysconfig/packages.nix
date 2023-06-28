@@ -2,13 +2,13 @@
 
 {
     environment.systemPackages = with pkgs; [
-     # transmission
-     # transmission-gtk
      ark
      atool
-     ninja
+     autoconf
+     automake
      baobab
      bat
+     binutils
      blanket
      bluez
      bottles
@@ -17,7 +17,9 @@
      calcurse
      catppuccin-gtk
      chafa
+     clang
      clipman
+     cmake
      colordiff
      ctpv
      du-dust
@@ -37,6 +39,7 @@
      foot
      fzf
      gamescope
+     gcc
      gimp
      git
      glow
@@ -47,6 +50,7 @@
      gnome.gnome-themes-extra
      gnome.gnome-weather
      gnome.nautilus
+     gnum4
      gnumake
      grim
      gtk-engine-murrine
@@ -66,9 +70,11 @@
      libnotify
      libreoffice
      libsixel
+     libtool
      lxappearance-gtk2
      mcrcon
      mediainfo
+     meson
      mlocate
      mpc-cli
      mpd
@@ -84,6 +90,7 @@
      neovim
      networkmanager_dmenu
      newsboat
+     ninja
      nmap
      nodePackages_latest.peerflix
      nodejs
@@ -96,6 +103,7 @@
      pciutils
      pinentry
      piper
+     pkg-config
      poetry
      polkit_gnome
      poppler_utils
@@ -126,6 +134,8 @@
      texlive.combined.scheme-full
      thunderbird
      tldr
+     transmission
+     transmission-gtk
      tree-sitter
      unrar
      unzip

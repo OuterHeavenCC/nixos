@@ -68,8 +68,6 @@ PS1=\"%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magen
     grep = "grep --color=auto";
     diff = "diff --color=auto";
     ka="killall";
-    nixup="doas nixos-rebuild switch --flake .#deimOS";
-    nixed="doas nvim /etc/nixos/configuration.nix";
     v="$EDITOR";
     sdn="doas shutdown -h now";
         };
