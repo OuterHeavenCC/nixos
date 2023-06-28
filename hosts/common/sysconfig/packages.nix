@@ -7,27 +7,17 @@
      ark
      atool
      ninja
-     gcc
-     gnum4
      baobab
      bat
-     meson
-     binutils
      blanket
      bluez
-     autoconf
-     automake
-     pkg-config
-     libtool
      bottles
      bottom
      btop
      calcurse
      catppuccin-gtk
      chafa
-     clang
      clipman
-     cmake
      colordiff
      ctpv
      du-dust
