@@ -6,10 +6,12 @@
      # transmission-gtk
      ark
      atool
+     ninja
      gcc
      gnum4
      baobab
      bat
+     meson
      binutils
      blanket
      bluez
