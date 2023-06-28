@@ -11,6 +11,7 @@
     ./deimOS/config/waybar.nix
     ./deimOS/config/scripts.nix
     ./deimOS/config/hyprland/hyprland.nix
+
     # If you want to use modules your own flake exports (from modules/home-manager):
     # outputs.homeManagerModules.example
 

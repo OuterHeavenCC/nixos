@@ -15,6 +15,7 @@
     ../../modules/nixos/minecraft-server.nix
     ../../modules/nixos/sshfs.nix
     ../../modules/nixos/jellyfin.nix
+    ../../modules/nixos/kdeconnect.nix
     #
     ./sysconfig/display.nix
     ./sysconfig/home-manager-config.nix

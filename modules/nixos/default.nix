@@ -6,5 +6,6 @@
   minecraft-server = ./minecraft-server.nix;
   jellyfin = ./jellyfin.nix;
   sshfs = ./sshfs.nix;
+  kdeconnect = ./kdeconnect.nix;
   # my-module = import ./my-module.nix;
 }

@@ -18,6 +18,7 @@
     ./sysconfig/networking.nix
 
     ../common/configuration.nix
+    ../../modules/nixos/kdeconnect.nix
     # ./users.nix
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
