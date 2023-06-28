@@ -1,5 +1,3 @@
-{ config, pkgs, ... }:
-
 {
   home.file.".config/swayidle/config" = {
     enable = true;

@@ -1,4 +1,4 @@
-{ inputs, outputs, lib, config, pkgs, ... }:
+{ inputs, outputs, lib, config, ... }:
 
 {
   nixpkgs = {
@@ -9,7 +9,7 @@
       # outputs.overlays.modifications
       # outputs.overlays.unstable-packages
       outputs.overlays.lf-sixel
-      # outputs.overlays.ncmpcpp-visualizerSupport
+      outputs.overlays.ncmpcpp-visualizerSupport
 
       # You can also add overlays exported from other flakes:
       # neovim-nightly-overlay.overlays.default

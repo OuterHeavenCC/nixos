@@ -1,5 +1,3 @@
-{ config, pkgs, ... }:
-
 {
   # TODO Chercher comment faire un serveur fabric ? 
   services.minecraft-server = {

@@ -1,5 +1,3 @@
-{ config, pkgs, ... }:
-
 {
   # GNUPG
   programs.gnupg.agent = {

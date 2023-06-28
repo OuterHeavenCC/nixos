@@ -1,26 +1,25 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
+
 {
     environment.systemPackages = with pkgs; [
+     # transmission
+     # transmission-gtk
      ark
      atool
      baobab
-     poetry
      bat
-     clang
      binutils
-     gimp
      blanket
      bluez
      bottles
-     gnumake
      bottom
      btop
-     neovide
      calcurse
      catppuccin-gtk
      chafa
-     cmake
+     clang
      clipman
+     cmake
      colordiff
      ctpv
      du-dust
@@ -40,6 +39,7 @@
      foot
      fzf
      gamescope
+     gimp
      git
      glow
      gnome-epub-thumbnailer
@@ -49,6 +49,7 @@
      gnome.gnome-themes-extra
      gnome.gnome-weather
      gnome.nautilus
+     gnumake
      grim
      gtk-engine-murrine
      gtk3
@@ -81,6 +82,7 @@
      ncdu
      ncmpcpp
      neofetch
+     neovide
      neovim
      networkmanager_dmenu
      newsboat
@@ -96,6 +98,7 @@
      pciutils
      pinentry
      piper
+     poetry
      polkit_gnome
      poppler_utils
      prismlauncher
@@ -125,8 +128,6 @@
      texlive.combined.scheme-full
      thunderbird
      tldr
-     # transmission
-     # transmission-gtk
      tree-sitter
      unrar
      unzip

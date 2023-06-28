@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ lib, ... }:
 
 {
   # This setups a SSH server. Very important if you're setting up a headless system.

@@ -1,5 +1,3 @@
-{ config, pkgs, ... }:
-
 {
 
   home.file.".config/calcurse/conf" = {

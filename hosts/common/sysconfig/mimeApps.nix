@@ -1,5 +1,3 @@
-{ config, pkgs, ... }:
-
 {
   xdg.mime = {
     enable = true;

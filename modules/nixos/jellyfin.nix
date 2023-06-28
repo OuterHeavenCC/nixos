@@ -1,5 +1,3 @@
-{ config, pkgs, ... }: 
-
 {
   # Jellyfin
   services.jellyfin = {

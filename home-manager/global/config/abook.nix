@@ -1,5 +1,3 @@
-{ config, pkgs, ... }:
-
 {
   programs.abook = {
     enable = true;

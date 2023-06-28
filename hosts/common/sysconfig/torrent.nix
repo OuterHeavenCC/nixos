@@ -1,5 +1,3 @@
-{ config, pkgs, ... }:
-
 {
   services.transmission = {
     enable = false;

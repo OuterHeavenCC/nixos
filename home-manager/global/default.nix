@@ -1,5 +1,3 @@
-{ inputs, outputs, lib, config, pkgs, ... }:
-
 {
   imports = [
     ./config/abook.nix

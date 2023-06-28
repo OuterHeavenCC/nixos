@@ -1,7 +1,7 @@
 # This is your home-manager configuration file
 # Use this to configure your home environment (it replaces ~/.config/nixpkgs/home.nix)
 
-{ inputs, outputs, lib, config, pkgs, ... }: {
+{ config, ... }: {
   # You can import other home-manager modules here
   imports = [
 
@@ -29,7 +29,6 @@
       # outputs.overlays.additions
       # outputs.overlays.modifications
       # outputs.overlays.unstable-packages
-      # outputs.overlays.lf-sixel
 
 
       # You can also add overlays exported from other flakes:
