@@ -14,7 +14,6 @@
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     # hardware.url = "github:nixos/nixos-hardware";
-    nur.url = "github:nix-community/NUR";
 
     # Shameless plug: looking for a way to nixify your themes and make
     # everything match nicely? Try nix-colors!
