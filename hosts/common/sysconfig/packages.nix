@@ -6,11 +6,17 @@
      # transmission-gtk
      ark
      atool
+     gcc
+     gnum4
      baobab
      bat
      binutils
      blanket
      bluez
+     autoconf
+     automake
+     pkg-config
+     libtool
      bottles
      bottom
      btop

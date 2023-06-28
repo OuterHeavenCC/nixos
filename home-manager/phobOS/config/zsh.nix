@@ -9,6 +9,11 @@ autoload -U colors && colors
 PS1=\"%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b \"
 
     ";
+    loginExtra = ''
+      if [ "$(tty)" = "/dev/tty1" ]; then
+        exec Hyprland &> /dev/null
+      fi
+'';
     initExtra = "
       zstyle ':completion:*' menu select
       zmodload zsh/complist\n# Use vim keys in tab complete menu:

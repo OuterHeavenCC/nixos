@@ -6,6 +6,11 @@
     enableAutosuggestions = true;
     enableCompletion = true;
     enableSyntaxHighlighting = true;
+    loginExtra = ''
+      if [ "$(tty)" = "/dev/tty1" ]; then
+        exec Hyprland &> /dev/null
+      fi
+'';
     initExtraFirst = "
 autoload -U colors && colors
 PS1=\"%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b \"
