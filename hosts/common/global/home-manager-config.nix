@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ inputs, config, ... }:
 
 {
   imports = [
@@ -10,7 +10,7 @@
     extraSpecialArgs = { inherit inputs; };
     users = {
       # Import your home-manager configuration
-      corentin = import ../../../home-manager/deimOS.nix;
+      corentin = import ../../../home-manager/${config.networking.hostName}.nix;
     };
   };
 }

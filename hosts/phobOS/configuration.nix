@@ -14,17 +14,16 @@
     # inputs.nix-minecraft.nixosModules.minecraft-servers
 
     # You can also split up your configuration and import pieces of it here:
-    ../../modules/nixos/minecraft/default.nix
-    ../../modules/nixos/sshfs.nix
-    ../../modules/nixos/jellyfin.nix
-    ../../modules/nixos/kdeconnect.nix
     #
     ./sysconfig/display.nix
-    ./sysconfig/home-manager-config.nix
     ./sysconfig/hyprland.nix
     ./sysconfig/networking.nix
 
-    ../common/configuration.nix
+    ../common/global
+    ../common/optional/minecraft
+    ../common/optional/sshfs.nix
+    ../common/optional/jellyfin.nix
+    ../common/optional/kdeconnect.nix
     # ./users.nix
     # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix

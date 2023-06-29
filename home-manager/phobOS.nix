@@ -9,7 +9,6 @@
     ./phobOS/config/zsh.nix
     ./phobOS/config/foot.nix
     ./phobOS/config/waybar.nix
-    ./phobOS/config/scripts.nix
     ./phobOS/config/hyprland/hyprland.nix
 
     # If you want to use modules your own flake exports (from modules/home-manager):

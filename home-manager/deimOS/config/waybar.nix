@@ -2,7 +2,7 @@
 
 {
   programs.waybar = {
-    enable = false; #TODO Temporaire
+    enable = false; #TODO temporaire
     package = pkgs.waybar.overrideAttrs (oa: {
       mesonFlags = (oa.mesonFlags or  [ ]) ++ [ "-Dexperimental=true" ];
       });

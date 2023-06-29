@@ -9,7 +9,6 @@
     ./deimOS/config/zsh.nix
     ./deimOS/config/foot.nix
     ./deimOS/config/waybar.nix
-    ./deimOS/config/scripts.nix
     ./deimOS/config/hyprland/hyprland.nix
 
     # If you want to use modules your own flake exports (from modules/home-manager):

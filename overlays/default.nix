@@ -16,9 +16,9 @@
       repo = "lf";
       rev = "r30";
       sha256 = "sha256-hlhmnkPm1x7uJMwUM/B02rXLffsXFbkxXYITKD3BERY=";
-    };
-  });
-};
+      };
+    });
+  };
 
   ncmpcpp-visualizerSupport = final: prev: {
   ncmpcpp = prev.ncmpcpp.override (old: {
