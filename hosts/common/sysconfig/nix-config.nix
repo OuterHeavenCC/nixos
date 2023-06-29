@@ -10,6 +10,7 @@
       # outputs.overlays.unstable-packages
       outputs.overlays.lf-sixel
       outputs.overlays.ncmpcpp-visualizerSupport
+      inputs.nix-minecraft.overlay
 
       # You can also add overlays exported from other flakes:
       # neovim-nightly-overlay.overlays.default
