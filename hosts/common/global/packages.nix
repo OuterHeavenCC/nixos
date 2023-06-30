@@ -7,6 +7,7 @@
      autoconf
      automake
      baobab
+     nixpkgs-fmt
      bat
      binutils
      blanket

@@ -1,4 +1,4 @@
-{ pkgs, ... }: 
+{ pkgs, config, ... }: 
 
 {
   programs.zsh.enable = true;
@@ -13,4 +13,6 @@
       extraGroups = [ "wheel" "networkmanager" "mpd" "seat" "video" "lp" "libvirtd" "rfkill" ];
     };
   };
+
+  home-manager.users.corentin = import ../../../home/corentin/${config.networking.hostName}.nix;
 }

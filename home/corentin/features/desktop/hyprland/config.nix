@@ -1,5 +1,5 @@
-# Ordinateur portable
-# Environnement
+{home}:
+''
 env = GDK_BACKEND=wayland,x11
 env = QT_QPA_PLATFORM="wayland,xcb"
 env = SDL_VIDEODRIVER=wayland
@@ -10,18 +10,14 @@ env = XDG_SESSION_DESKTOP=Hyprland
 env = QT_AUTO_SCREEN_SCALE_FACTOR=1
 env = QT_WAYLAND_DISABLE_WINDOWDECORATION=1
 env = QT_QPA_PLATFORMTHEME=qt5ct
-env = XKB_DEFAULT_LAYOUT="fr"
 env = WLC_REPEAT_RATE=300
 env = WLC_REPEAT_DELAY=50
-
 
 exec-once=swww init
 exec-once=foot --server
 exec-once=waybar
 exec-once=swayidle -w
 exec-once=wl-paste -t text --watch clipman store
-
-monitor=eDP-1,1920x1080@60,0x0,1
 
 windowrule = float, Rofi
 windowrule = noborder, Rofi
@@ -50,9 +46,14 @@ input {
 
 decoration {
     rounding=10
-    blur=1
+    blur=true
+    blur_size=5
+    blur_passes=3
+    blur_new_optimizations=true
+    blur_ignore_opacity
     drop_shadow = true
-    shadow_range=100
+    shadow_range=12
+    shadow_offset=3 3
     shadow_render_power=5
     col.shadow= 0x33000000
     col.shadow_inactive=0x22000000
@@ -61,6 +62,23 @@ decoration {
 
 animations {
     enabled=1
+    bezier=easein,0.11, 0, 0.5, 0
+    bezier=easeout,0.5, 1, 0.89, 1
+    bezier=easeinout,0.45, 0, 0.55, 1
+
+    animation=windowsIn,1,3,easeout,slide
+    animation=windowsOut,1,3,easein,slide
+    animation=windowsMove,1,3,easeout
+
+    animation=fadeIn,1,3,easeout
+    animation=fadeOut,1,3,easein
+    animation=fadeSwitch,1,3,easeout
+    animation=fadeShadow,1,3,easeout
+    animation=fadeDim,1,3,easeout
+    animation=border,1,3,easeout
+
+    animation=workspaces,1,2,easeout,slide
+
   }
 
 misc {
@@ -127,10 +145,13 @@ bind=SUPER,F4,exec,footclient -e btm
 bind=SUPER,F5,exec,rofi -theme ~/.config/rofi/launcher.rasi -show ssh
 bind=SUPER,F6,exec,rofi-mullvad-toggle
 bind=SUPER,F7,exec,rofi-td-toggle
-bind=SUPER,F8,exec,mw -Y
 bind=SUPER,F9,exec,rofi-mount
 bind=SUPER,F10,exec,rofi-umount
 bind=SUPER,F11,exec,firefox localhost:9091/transmission/web
+bind=SUPER,F12,submap,passthrough
+submap=passthrough
+bind=SUPER,F12,submap,reset
+submap=reset
 
 bind=,Print,exec,rofi-printscreen
 
@@ -157,8 +178,10 @@ binde=SUPER,l,resizeactive,99 0
 binde=SUPERSHIFT,j,swapnext,none
 binde=SUPERSHIFT,k,swapnext,prev
 
-bind=SUPER,Left,focusmonitor,l
-bind=SUPER,Right,focusmonitor,r
+bind=SUPER,left,focusmonitor,l
+bind=SUPERSHIFT,left,movewindow,mon:l
+bind=SUPER,right,focusmonitor,r
+bind=SUPERSHIFT,right,movewindow,mon:l
 
 bindm=SUPER,mouse:272,movewindow
 bindm=SUPER,mouse:273,resizewindow
@@ -186,3 +209,4 @@ bind=SUPERSHIFT,ccedilla,movetoworkspacesilent,9
 bind=SUPERSHIFT,agrave,movetoworkspacesilent,10
 
 exec-once=dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
+''

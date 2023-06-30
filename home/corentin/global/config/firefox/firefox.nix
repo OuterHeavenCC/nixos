@@ -1,4 +1,7 @@
 {
+
+  home.sessionVariables.BROWSER = "firefox";
+
   programs.firefox = {
     enable = true;
     profiles."0.default" = {

@@ -13,6 +13,14 @@ lvim.plugins = {
 }
 
 lvim.colorscheme = "catppuccin"
+
+local formatters = require "lvim.lsp.null-ls.formatters"
+formatters.setup {
+  {
+    command = "nixpkgs-fmt",
+    filetypes = { "nix" };
+  }
+}
 '';
   };
 }

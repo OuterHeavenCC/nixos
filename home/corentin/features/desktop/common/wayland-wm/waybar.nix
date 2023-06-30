@@ -2,7 +2,7 @@
 
 {
   programs.waybar = {
-    enable = false; #TODO temporaire
+    enable = true;
     package = pkgs.waybar.overrideAttrs (oa: {
       mesonFlags = (oa.mesonFlags or  [ ]) ++ [ "-Dexperimental=true" ];
       });
@@ -80,7 +80,7 @@ window#waybar {
     layer = "top";
     modules-left = [ "custom/arch" "wlr/workspaces" ];
     modules-center = [ "clock" ];
-    modules-right = [ "pulseaudio" "cpu" "memory" "network" "clock#date" "battery" ];
+    modules-right = [ "pulseaudio" "cpu" "memory" "network" "clock#date" ];
 
     "custom/arch" = {
       format = " ";
@@ -109,7 +109,7 @@ window#waybar {
     };
 
     network = {
-      interface = "wlp3s0";
+      interface = "enp42s0";
       format = "{ifname}";
       format-wifi = "<span color='#cba6f7'> </span>{essid}";
       format-ethernet = "{ipaddr}/{cidr} <span color ='#cba6f7'>󰈀</span>";

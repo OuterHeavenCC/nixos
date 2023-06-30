@@ -10,7 +10,7 @@
       if [ "$(tty)" = "/dev/tty1" ]; then
         exec Hyprland &> /dev/null
       fi
-'';
+    '';
     initExtraFirst = "
 autoload -U colors && colors
 PS1=\"%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b \"
@@ -43,41 +43,36 @@ PS1=\"%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magen
       eval \"$(zoxide init zsh)\"
 ";
     sessionVariables = {
-      TERMINAL="foot";
-      OPENER="xdg-open";
-      LOCATION="Quimperlé";
-      BROWSER="firefox";
-      EDITOR="lvim";
-      WLR_NO_HARDWARE_CURSORS=1;
-      GBM_BACKEND="nvidia-drm";
-      __GLX_VENDOR_LIBRARY_NAME="nvidia";
-      LIBVA_DRIVER_NAME="nvidia";
-      PASSWORD_STORE_DIR="${config.home.homeDirectory}/.local/share/password-store";
-        };
+      OPENER = "xdg-open";
+      LOCATION = "Quimperlé";
+      EDITOR = "lvim";
+      PASSWORD_STORE_DIR = "${config.home.homeDirectory}/.local/share/password-store";
+    };
     shellAliases = {
-    cp = "cp -iv";
-    mv = "mv -iv";
-    rm = "rm -vI";
-    du = "dust";
-    df = "duf";
-    nohup = "nohup $@ > /dev/null";
-    bc = "eva";
-    mkd = "mkdir -pv";
-    mpv = "setsid -f mpv";
-    mvd = "mullvad";
-    tsm = "transmission-remote";
-    cd = "z";
-    ledger = "ledger --init-file '~/.config/ledger/ledgerrc'";
-    ls = "exa -h --color=auto --group-directories-first --icons";
-    grep = "grep --color=auto";
-    diff = "diff --color=auto";
-    ka="killall";
-    v="$EDITOR";
-    sdn="doas shutdown -h now";
-        };
+      cp = "cp -iv";
+      mv = "mv -iv";
+      rm = "rm -vI";
+      du = "dust";
+      df = "duf";
+      nohup = "nohup $@ > /dev/null";
+      bc = "eva";
+      mkd = "mkdir -pv";
+      mpv = "setsid -f mpv";
+      mvd = "mullvad";
+      tsm = "transmission-remote";
+      cd = "z";
+      ledger = "ledger --init-file '~/.config/ledger/ledgerrc'";
+      ls = "exa -h --color=auto --group-directories-first --icons";
+      grep = "grep --color=auto";
+      diff = "diff --color=auto";
+      ka = "killall";
+      v = "$EDITOR";
+      sdn = "doas shutdown -h now";
+    };
     history = {
       path = "${config.home.homeDirectory}/.local/share/history";
       size = 10000000;
-        };
+    };
   };
 }
+

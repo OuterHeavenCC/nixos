@@ -1,11 +1,13 @@
+{ inputs, outputs, ... }:
+
 {
   imports = [
+    inputs.home-manager.nixosModules.home-manager
     ./audio.nix
     ./bluetooth.nix
     ./boot.nix
     ./fonts.nix
     ./gnupg.nix
-    ./home-manager-config.nix
     ./input.nix
     ./locale.nix
     ./locate.nix
@@ -21,4 +23,8 @@
     ./torrent.nix
     ./users.nix
   ];
+
+  home-manager.extraSpecialArgs = { inherit inputs outputs; };
+
+
 }

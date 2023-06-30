@@ -3,5 +3,6 @@
 
 {
   # List your module files here
+  monitors = import ./monitors.nix;
   # my-module = import ./my-module.nix;
 }
