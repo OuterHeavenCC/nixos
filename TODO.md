@@ -11,3 +11,7 @@ Priorité 2
 - [ ] Regarder comment faire un .iso avec mon environnement
 - [ ] Mieux gérer l'import des clés publiques pgp
 - [ ] Regarder comment rendre les thèmes modulable
+
+Priorité 3
+----------
+- [ ] Trouver comment cacher le mot de passe mcrcon même si on s'en fout un peu
