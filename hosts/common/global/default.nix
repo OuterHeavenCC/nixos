@@ -12,14 +12,12 @@
     ./locale.nix
     ./locate.nix
     ./mimeApps.nix
-    ./mpd.nix
     ./mullvad.nix
     ./nix.nix
     ./packages.nix
     ./security.nix
     ./ssh.nix
     ./xdg.nix
-    ./torrent.nix
   ];
 
   home-manager.extraSpecialArgs = { inherit inputs outputs; };

@@ -1,9 +1,9 @@
 {
   imports = [
-    ./gtk.nix
-    ./xdg.nix
-    ./mpv.nix
     ./firefox.nix
+    ./gtk.nix
+    ./mpv.nix
+    ./xdg.nix
     ./zathura.nix
   ];
 }

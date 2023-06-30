@@ -13,6 +13,7 @@
     ./ledger.nix
     ./lf.nix
     ./lvim.nix
+    ./mpd.nix
     ./ncmpcpp.nix
     ./newsboat.nix
     ./nvim.nix

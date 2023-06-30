@@ -1,9 +1,9 @@
 {
   imports = [
-    ./foot.nix
     ./dunst.nix
-    ./waybar.nix
-    ./swayidle.nix
+    ./foot.nix
     ./rofi
+    ./swayidle.nix
+    ./waybar.nix
   ];
 }
