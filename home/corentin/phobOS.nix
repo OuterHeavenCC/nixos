@@ -14,6 +14,7 @@
     ./features/games
     ./features/nvidia
     ./features/scripts
+    ./features/productivity
     ./global
 
     # outputs.homeManagerModules.monitors

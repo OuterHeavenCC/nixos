@@ -7,7 +7,6 @@
       atool
       autoconf
       automake
-      dconf
       baobab
       bat
       binutils
@@ -24,9 +23,10 @@
       cmake
       colordiff
       ctpv
+      dconf
       diffsitter
-      du-dust
       direnv
+      du-dust
       duf
       dunst
       elinks
@@ -93,6 +93,7 @@
       ncdu
       ncmpcpp
       neofetch
+      neomutt
       neovide
       neovim
       networkmanager_dmenu
