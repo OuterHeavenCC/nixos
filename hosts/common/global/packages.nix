@@ -7,6 +7,7 @@
       atool
       autoconf
       automake
+      dconf
       baobab
       bat
       binutils
