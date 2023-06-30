@@ -12,7 +12,6 @@
     ../common/optional/minecraft
     ../common/optional/sshfs.nix
     ../common/optional/jellyfin.nix
-    ../common/optional/kdeconnect.nix
 
     ./hardware-configuration.nix
 

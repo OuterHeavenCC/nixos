@@ -8,8 +8,6 @@
     ../common/global
     ../common/users/corentin
 
-    ../common/optional/kdeconnect.nix
-
     ./hardware-configuration.nix
   ];
 

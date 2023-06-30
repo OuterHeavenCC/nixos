@@ -61,7 +61,7 @@ PS1=\"%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magen
       mvd = "mullvad";
       tsm = "transmission-remote";
       cd = "z";
-      ledger = "ledger --init-file '~/.config/ledger/ledgerrc'";
+      ledger = "ledger --init-file='~/.config/ledger/ledgerrc'";
       ls = "exa -h --color=auto --group-directories-first --icons";
       grep = "grep --color=auto";
       diff = "diff --color=auto";
