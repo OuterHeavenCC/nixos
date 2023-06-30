@@ -14,14 +14,12 @@
     ./mimeApps.nix
     ./mpd.nix
     ./mullvad.nix
-    ./nix-config.nix
+    ./nix.nix
     ./packages.nix
     ./security.nix
     ./ssh.nix
-    ./steam.nix
-    ./theming.nix
+    ./xdg.nix
     ./torrent.nix
-    ./users.nix
   ];
 
   home-manager.extraSpecialArgs = { inherit inputs outputs; };

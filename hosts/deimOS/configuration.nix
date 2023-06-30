@@ -4,24 +4,34 @@
 {
   # You can import other NixOS modules here
   imports = [
-    # If you want to use modules your own flake exports (from modules/nixos):
-    # outputs.nixosModules.example
-
-    # Or modules from other flakes (such as nixos-hardware):
-    # inputs.hardware.nixosModules.common-cpu-amd
-    # inputs.hardware.nixosModules.common-ssd
-
-    # You can also split up your configuration and import pieces of it here:
-    ./sysconfig/display.nix
-    ./sysconfig/hyprland.nix
-    ./sysconfig/networking.nix
 
     ../common/global
+    ../common/users/corentin
+
     ../common/optional/kdeconnect.nix
-    # ./users.nix
-    # Import your generated (nixos-generate-config) hardware configuration
+
     ./hardware-configuration.nix
   ];
+
+  networking = {
+    hostName = "deimOS";
+    nameservers = [ "1.1.1.1" "1.0.0.1" ];
+    networkmanager.enable = true;
+  };
+
+  services.xserver = {
+    enable = true;
+    layout = "fr";
+    displayManager.lightdm.enable = false;
+    libinput.touchpad = {
+      middleEmulation = true;
+      tapping = true;
+      disableWhileTyping = true;
+    };
+  };
+  hardware = {
+    opengl.enable = true;
+  };
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "23.11";
