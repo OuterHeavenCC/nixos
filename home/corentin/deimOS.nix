@@ -1,16 +1,19 @@
 # This is your home-manager configuration file
 # Use this to configure your home environment (it replaces ~/.config/nixpkgs/home.nix)
 
-{ config, inputs, outputs, ... }: {
+{ inputs, outputs, ... }: {
   # You can import other home-manager modules here
   imports = [
 
-    ./global
-    ./features/desktop/hyprland
-    ./features/cli/zsh.nix
-    ./features/desktop/common/wayland-wm/foot.nix
-    ./features/desktop/common/wayland-wm/waybar.nix
     ../../modules/home-manager/monitors.nix
+    ./features/cli
+    ./features/desktop/common
+    ./features/desktop/common/wayland-wm
+    ./features/desktop/common/wayland-wm
+    ./features/desktop/hyprland
+    ./features/games
+    ./features/scripts
+    ./global
 
     # If you want to use modules your own flake exports (from modules/home-manager):
     # outputs.homeManagerModules.example
@@ -26,9 +29,9 @@
     {
       name = "eDP-1";
       width = 1920;
-      heigth = 1080;
-      workspace = "1";
+      height = 1080;
       x = 0;
+      workspace = "1";
     }
   ];
 

@@ -5,13 +5,16 @@
   # You can import other home-manager modules here
   imports = [
 
-    ./global
-    ./features/desktop/hyprland
-    ./features/nvidia
-    ./features/cli/zsh.nix
-    ./features/desktop/common/wayland-wm/foot.nix
-    ./features/desktop/common/wayland-wm/waybar.nix
     ../../modules/home-manager/monitors.nix
+    ./features/cli
+    ./features/desktop/common
+    ./features/desktop/common/wayland-wm
+    ./features/desktop/common/wayland-wm
+    ./features/desktop/hyprland
+    ./features/games
+    ./features/nvidia
+    ./features/scripts
+    ./global
 
     # outputs.homeManagerModules.monitors
     # If you want to use modules your own flake exports (from modules/home-manager):

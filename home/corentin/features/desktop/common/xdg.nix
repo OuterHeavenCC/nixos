@@ -10,3 +10,4 @@
       templates = "${config.home.homeDirectory}/Modèles";
     };
 }
+

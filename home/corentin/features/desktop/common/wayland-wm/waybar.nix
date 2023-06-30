@@ -80,7 +80,7 @@ window#waybar {
     layer = "top";
     modules-left = [ "custom/arch" "wlr/workspaces" ];
     modules-center = [ "clock" ];
-    modules-right = [ "pulseaudio" "cpu" "memory" "network" "clock#date" ];
+    modules-right = [ "pulseaudio" "cpu" "memory" "network" "clock#date" "battery" ];
 
     "custom/arch" = {
       format = " ";

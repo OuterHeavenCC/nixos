@@ -1,5 +1,4 @@
 {
-
   home.sessionVariables.BROWSER = "firefox";
 
   programs.firefox = {
@@ -13,5 +12,12 @@
       name = "0";
   };
 
+  };
+
+  programs.browserpass = {
+    enable = true;
+    browsers = [
+      "firefox"
+    ];
   };
 }
