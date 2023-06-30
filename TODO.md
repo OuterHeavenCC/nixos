@@ -15,3 +15,5 @@ Priorité 2
 Priorité 3
 ----------
 - [ ] Trouver comment cacher le mot de passe mcrcon même si on s'en fout un peu
+- [ ] Créer un package pour LibreOsteo
+- [ ] Regarder comment insérer les scripts proprement dans la config (Peut être via le répertoire pkgs ?)
