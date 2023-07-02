@@ -12,6 +12,7 @@
     ../common/optional/minecraft
     ../common/optional/sshfs.nix
     ../common/optional/jellyfin.nix
+    ../common/optional/ratbag.nix
 
     ./hardware-configuration.nix
 

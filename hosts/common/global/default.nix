@@ -14,7 +14,6 @@
     ./mimeApps.nix
     ./mullvad.nix
     ./nix.nix
-    ./packages.nix
     ./security.nix
     ./ssh.nix
     ./xdg.nix

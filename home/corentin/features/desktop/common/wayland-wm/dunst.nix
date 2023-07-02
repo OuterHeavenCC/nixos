@@ -21,4 +21,8 @@
       };
     };
   };
+
+  
+  home.packages = with pkgs; [ libnotify ]; # notify-send to test notifications
+
 }

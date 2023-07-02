@@ -43,7 +43,7 @@ in
         };
         neomutt = {
           enable = true;
-          extraMailboxes = [ "Archive" "Drafts" "Junk" "Sent" "Trash" ];
+          extraMailboxes = [ "Sent" ];
         };
 
         msmtp.enable = true;
@@ -51,31 +51,31 @@ in
         userName = address;
       } // common;
 
-      yahoo = rec {
-        address = "corent.cham@yahoo.fr";
-        passwordCommand = "${pass} ${address}";
+      # yahoo = rec {
+      #   address = "corent.cham@yahoo.fr";
+      #   passwordCommand = "${pass} ${address}";
 
-        imap.host = "imap.mail.yahoo.com";
-        mbsync = {
-          enable = true;
-          create = "maildir";
-          expunge = "both";
-        };
-        folders = {
-          inbox = "Inbox";
-          drafts = "Drafts";
-          sent = "Sent";
-          trash = "Trash";
-        };
-        neomutt = {
-          enable = true;
-          extraMailboxes = [ "Archive" "Drafts" "Junk" "Sent" "Trash" ];
-        };
+      #   imap.host = "imap.mail.yahoo.com";
+      #   mbsync = {
+      #     enable = true;
+      #     create = "maildir";
+      #     expunge = "both";
+      #   };
+      #   folders = {
+      #     inbox = "Inbox";
+      #     drafts = "Drafts";
+      #     sent = "Sent";
+      #     trash = "Trash";
+      #   };
+      #   neomutt = {
+      #     enable = true;
+      #     extraMailboxes = [ "Archive" "Drafts" "Junk" "Sent" "Trash" ];
+      #   };
 
-        msmtp.enable = true;
-        smtp.host = "smtp.mail.yahoo.com";
-        userName = address;
-      } // common;
+      #   msmtp.enable = true;
+      #   smtp.host = "smtp.mail.yahoo.com";
+      #   userName = address;
+      # } // common;
 
       hotmail = rec {
         address = "corent.cham@hotmail.fr";
@@ -95,7 +95,7 @@ in
         };
         neomutt = {
           enable = true;
-          extraMailboxes = [ "Archive" "Drafts" "Junk" "Sent" "Trash" ];
+          extraMailboxes = [ "Archive" "Drafts" "Junk" "Sent" ];
         };
 
         msmtp.enable = true;

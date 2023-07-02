@@ -24,6 +24,7 @@ in
       "libvirtd"
       "rfkill"
       "minecraft"
+      "games"
       ];
     };
   };

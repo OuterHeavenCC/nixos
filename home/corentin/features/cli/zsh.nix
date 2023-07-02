@@ -13,6 +13,7 @@
     '';
     initExtraFirst = "
 autoload -U colors && colors
+autoload -U compinit promptinit
 PS1=\"%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b \"
 
     ";
