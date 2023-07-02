@@ -13,6 +13,12 @@
     ../common/optional/sshfs.nix
     ../common/optional/jellyfin.nix
     ../common/optional/ratbag.nix
+    ../common/optional/xdg.nix
+    ../common/optional/audio.nix
+    ../common/optional/mullvad.nix
+    ../common/optional/mimeApps.nix
+    ../common/optional/bluetooth.nix
+    ../common/optional/boot.nix
 
     ./hardware-configuration.nix
 

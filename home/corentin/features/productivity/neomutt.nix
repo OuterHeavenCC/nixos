@@ -14,60 +14,189 @@
       mark_old = "no";
       text_flowed = "yes";
       reverse_name = "yes";
+      mime_type_query_command = ''"file --mime-type -b %s"'';
+      date_format= ''"%y/%m/%d %I:%M%p"'';
+      index_format= ''"%2C %Z %?X?A& ? %D %-15.15F %s (%-4.4c)"'';
+      sort = ''"reverse-date"'';
+      smtp_authenticators = ''"gssapi:login"'';
+      query_command = ''"abook --mutt-query '%s'"'';
+      rfc2047_parameters = "yes";
+      sleep_time = "0";		# Pause 0 seconds for informational messages
+      markers = "no";		# Disables the `+` displayed at line wraps
+      mime_forward = "yes";		# attachments are forwarded with mail
+      wait_key = "no";		# mutt won't ask "press key to continue"
+      fast_reply = "yes";			# skip to compose when replying
+      fcc_attach = "yes";			# save attachments with the body
+      forward_format = ''"Fwd: %s"'';	# format of subject when forwarding
+      forward_quote = "yes";		# include message in forwards
+      include = "yes";			# include message in replies
+      mail_check= "60"; # to avoid lags using IMAP with some email providers (yahoo for example)
+
     };
         binds = [
           {
-          action = "sidebar-toggle-visible";
-          key = "\\\\";
+          action = "noop";
+          key = "i";
+          map = [ "index" "pager" ];
+          }
+          {
+          action = "noop";
+          key = "g";
+          map = [ "index" "pager" ];
+          }
+          {
+          action = "noop";
+          key = "\\Cf";
+          map = [ "index" ];
+          }
+          {
+          action = "noop";
+          key = "M";
+          map = [ "index" "pager" ];
+          }
+          {
+          action = "noop";
+          key = "C";
+          map = [ "index" "pager" ];
+          }
+
+          # General Bindings
+          {
+          action = "first-entry";
+          key = "gg";
+          map = [ "index" ];
+          }
+          {
+          action = "next-entry";
+          key = "j";
+          map = [ "index" ];
+          }
+          {
+          action = "previous-entry";
+          key = "k";
+          map = [ "index" ];
+          }
+          {
+          action = "view-mailcap";
+          key = "<return>";
+          map = [ "attach" ];
+          }
+          {
+          action = "view-mailcap";
+          key = "l";
+          map = [ "attach" ];
+          }
+          {
+          action = "noop";
+          key = "<space>";
+          map = [ "editor" ];
+          }
+          {
+          action = "last-entry";
+          key = "G";
+          map = [ "index" ];
+          }
+          {
+          action = "exit";
+          key = "h";
+          map = [ "pager" "attach" ];
+          }
+          {
+          action = "next-line";
+          key = "j";
+          map = [ "pager" ];
+          }
+          {
+          action = "previous-line";
+          key = "k";
+          map = [ "pager" ];
+          }
+          {
+          action = "view-attachments";
+          key = "l";
+          map = [ "pager" ];
+          }
+          {
+          action = "delete-message";
+          key = "D";
+          map = [ "index" ];
+          }
+          {
+          action = "undelete-message";
+          key = "U";
+          map = [ "index" ];
+          }
+          {
+          action = "limit";
+          key = "L";
+          map = [ "index" ];
+          }
+          {
+          action = "noop";
+          key = "h";
+          map = [ "index" ];
+          }
+          {
+          action = "display-message";
+          key = "l";
+          map = [ "index" ];
+          }
+          {
+          action = "tag-entry";
+          key = "<space>";
+          map = [ "index" "query" ];
+          }
+          {
+          action = "view-raw-message";
+          key = "H";
+          map = [ "index" "pager" ];
+          }
+          {
+          action = "select-entry";
+          key = "l";
+          map = [ "browser" ];
+          }
+          {
+          action = "top-page";
+          key = "gg";
+          map = [ "pager" "browser" ];
+          }
+          {
+          action = "bottom-page";
+          key = "G";
+          map = [ "pager" "browser" ];
+          }
+          {
+          action = "half-down";
+          key = "d";
+          map = [ "index" "pager" "browser" ];
+          }
+          {
+          action = "half-up";
+          key = "u";
+          map = [ "index" "pager" "browser" ];
+          }
+          {
+          action = "sync-mailbox";
+          key = "S";
           map = [ "index" "pager" ];
           }
           {
           action = "group-reply";
-          key = "L";
+          key = "R";
           map = [ "index" "pager" ];
           }
           {
-          action = "toggle-new";
-          key = "B";
-          map = [ "index" ];
+          action = "complete-query";
+          key = "<Tab>";
+          map = [ "editor" ];
           }
       ];
           macros =
-      let
-        browserpipe =
-          "cat /dev/stdin > /tmp/muttmail.html && xdg-open /tmp/muttmail.html";
-      in
       [
         {
-          action = "<sidebar-next><sidebar-open>";
-          key = "J";
-          map = [ "index" "pager" ];
-        }
-        {
-          action = "<sidebar-prev><sidebar-open>";
-          key = "K";
-          map = [ "index" "pager" ];
-        }
-        {
-          action =
-            ":set confirmappend=no\\n<save-message>+Archive<enter>:set confirmappend=yes\\n";
-          key = "A";
-          map = [ "index" "pager" ];
-        }
-        {
-          action = "<pipe-entry>${browserpipe}<enter><exit>";
-          key = "V";
-          map = [ "attach" ];
-        }
-        {
-          action = "<pipe-message>${pkgs.urlscan}/bin/urlscan<enter><exit>";
-          key = "F";
-          map = [ "pager" ];
-        }
-        {
-          action =
-            "<view-attachments><search>html<enter><pipe-entry>${browserpipe}<enter><exit>";
-          key = "V";
+          action = "<enter-command>set my_pipe_decode=\$pipe_decode pipe_decode<return><pipe-message>abook --add-email<return><enter-command>set pipe_decode=\$my_pipe_decode; unset my_pipe_decode<return>";
+          key = "a";
           map = [ "index" "pager" ];
         }
       ];
@@ -77,137 +206,77 @@
     in ''
       alternates "${lib.concatStringsSep "|" addresses}"
     '' + ''
-      # From: https://github.com/altercation/mutt-colors-solarized/blob/master/mutt-colors-solarized-dark-16.muttrc
+# Default index colors:
+color index yellow default '.*'
+color index_author red default '.*'
+color index_number blue default
+color index_subject cyan default '.*'
 
-      # basic colors ---------------------------------------------------------
-      color normal        brightyellow    default
-      color error         red             default
-      color tilde         black           default
-      color message       cyan            default
-      color markers       red             white
-      color attachment    white           default
-      color search        brightmagenta   default
-      color status        brightyellow    black
-      color indicator     brightblack     yellow
-      color tree          cyan            default                                     # arrow in threads
+# New mail is boldened:
+color index brightyellow black "~N"
+color index_author brightred black "~N"
+color index_subject brightcyan black "~N"
 
-      # basic monocolor screen
-      mono  bold          bold
-      mono  underline     underline
-      mono  indicator     reverse
-      mono  error         bold
+# Tagged mail is highlighted:
+color index brightyellow blue "~T"
+color index_author brightred blue "~T"
+color index_subject brightcyan blue "~T"
 
-      # index ----------------------------------------------------------------
+# Other colors and aesthetic settings:
+mono bold bold
+mono underline underline
+mono indicator reverse
+mono error bold
+color normal default default
+color indicator brightblack white
+color sidebar_highlight red default
+color sidebar_divider brightblack black
+color sidebar_flagged red black
+color sidebar_new green black
+color normal brightyellow default
+color error red default
+color tilde black default
+color message cyan default
+color markers red white
+color attachment white default
+color search brightmagenta default
+color status brightyellow black
+color hdrdefault brightgreen default
+color quoted green default
+color quoted1 blue default
+color quoted2 cyan default
+color quoted3 yellow default
+color quoted4 red default
+color quoted5 brightred default
+color signature brightgreen default
+color bold black default
+color underline black default
+color normal default default
 
-      color index         red             default         "~A"                        # all messages
-      color index         blue            default         "~N"                        # new messages
-      color index         brightred       default         "~E"                        # expired messages
-      color index         blue            default         "~N"                        # new messages
-      color index         blue            default         "~O"                        # old messages
-      color index         brightmagenta   default         "~Q"                        # messages that have been replied to
-      color index         brightgreen     default         "~R"                        # read messages
-      color index         blue            default         "~U"                        # unread messages
-      color index         blue            default         "~U~$"                      # unread, unreferenced messages
-      color index         cyan            default         "~v"                        # messages part of a collapsed thread
-      color index         magenta         default         "~P"                        # messages from me
-      color index         cyan            default         "~p!~F"                     # messages to me
-      color index         cyan            default         "~N~p!~F"                   # new messages to me
-      color index         cyan            default         "~U~p!~F"                   # unread messages to me
-      color index         brightgreen     default         "~R~p!~F"                   # messages to me
-      color index         red             default         "~F"                        # flagged messages
-      color index         red             default         "~F~p"                      # flagged messages to me
-      color index         red             default         "~N~F"                      # new flagged messages
-      color index         red             default         "~N~F~p"                    # new flagged messages to me
-      color index         red             default         "~U~F~p"                    # new flagged messages to me
-      color index         brightcyan      default         "~v~(!~N)"                  # collapsed thread with no unread
-      color index         yellow          default         "~v~(~N)"                   # collapsed thread with some unread
-      color index         green           default         "~N~v~(~N)"                 # collapsed thread with unread parent
-      color index         red             black           "~v~(~F)!~N"                # collapsed thread with flagged, no unread
-      color index         yellow          black           "~v~(~F~N)"                 # collapsed thread with some unread & flagged
-      color index         green           black           "~N~v~(~F~N)"               # collapsed thread with unread parent & flagged
-      color index         green           black           "~N~v~(~F)"                 # collapsed thread with unread parent, no unread inside, but some flagged
-      color index         cyan            black           "~v~(~p)"                   # collapsed thread with unread parent, no unread inside, some to me directly
-      color index         yellow          red             "~v~(~D)"                   # thread with deleted (doesn't differentiate between all or partial)
-      color index         yellow          default         "~(~N)"                     # messages in threads with some unread
-      color index         green           default         "~S"                        # superseded messages
-      color index         black           red             "~D"                        # deleted messages
-      color index         black           red             "~N~D"                      # deleted messages
-      color index         red             default         "~T"                        # tagged messages
-
-      # message headers ------------------------------------------------------
-
-      color hdrdefault    brightgreen     default
-      color header        brightyellow    default         "^(From)"
-      color header        blue            default         "^(Subject)"
-
-      # body -----------------------------------------------------------------
-
-      color quoted        blue            default
-      color quoted1       cyan            default
-      color quoted2       yellow          default
-      color quoted3       red             default
-      color quoted4       brightred       default
-
-      color signature     brightgreen     default
-      color bold          black           default
-      color underline     black           default
-      color normal        default         default
-      color body          brightcyan      default         "[;:][-o][)/(|]"    # emoticons
-      color body          brightcyan      default         "[;:][)(|]"         # emoticons
-      color body          brightcyan      default         "[*]?((N)?ACK|CU|LOL|SCNR|BRB|BTW|CWYL|\
-                                                           |FWIW|vbg|GD&R|HTH|HTHBE|IMHO|IMNSHO|\
-                                                           |IRL|RTFM|ROTFL|ROFL|YMMV)[*]?"
-      color body          brightcyan      default         "[ ][*][^*]*[*][ ]?" # more emoticon?
-      color body          brightcyan      default         "[ ]?[*][^*]*[*][ ]" # more emoticon?
-
-      ## pgp
-
-      color body          red             default         "(BAD signature)"
-      color body          cyan            default         "(Good signature)"
-      color body          brightblack     default         "^gpg: Good signature .*"
-      color body          brightyellow    default         "^gpg: "
-      color body          brightyellow    red             "^gpg: BAD signature from.*"
-      mono  body          bold                            "^gpg: Good signature"
-      mono  body          bold                            "^gpg: BAD signature from.*"
-
-      # yes, an insance URL regex
-      color body          red             default         "([a-z][a-z0-9+-]*://(((([a-z0-9_.!~*'();:&=+$,-]|%[0-9a-f][0-9a-f])*@)?((([a-z0-9]([a-z0-9-]*[a-z0-9])?)\\.)*([a-z]([a-z0-9-]*[a-z0-9])?)\\.?|[0-9]+\\.[0-9]+\\.[0-9]+\\.[0-9]+)(:[0-9]+)?)|([a-z0-9_.!~*'()$,;:@&=+-]|%[0-9a-f][0-9a-f])+)(/([a-z0-9_.!~*'():@&=+$,-]|%[0-9a-f][0-9a-f])*(;([a-z0-9_.!~*'():@&=+$,-]|%[0-9a-f][0-9a-f])*)*(/([a-z0-9_.!~*'():@&=+$,-]|%[0-9a-f][0-9a-f])*(;([a-z0-9_.!~*'():@&=+$,-]|%[0-9a-f][0-9a-f])*)*)*)?(\\?([a-z0-9_.!~*'();/?:@&=+$,-]|%[0-9a-f][0-9a-f])*)?(#([a-z0-9_.!~*'();/?:@&=+$,-]|%[0-9a-f][0-9a-f])*)?|(www|ftp)\\.(([a-z0-9]([a-z0-9-]*[a-z0-9])?)\\.)*([a-z]([a-z0-9-]*[a-z0-9])?)\\.?(:[0-9]+)?(/([-a-z0-9_.!~*'():@&=+$,]|%[0-9a-f][0-9a-f])*(;([-a-z0-9_.!~*'():@&=+$,]|%[0-9a-f][0-9a-f])*)*(/([-a-z0-9_.!~*'():@&=+$,]|%[0-9a-f][0-9a-f])*(;([-a-z0-9_.!~*'():@&=+$,]|%[0-9a-f][0-9a-f])*)*)*)?(\\?([-a-z0-9_.!~*'();/?:@&=+$,]|%[0-9a-f][0-9a-f])*)?(#([-a-z0-9_.!~*'();/?:@&=+$,]|%[0-9a-f][0-9a-f])*)?)[^].,:;!)? \t\r\n<>\"]"
-      # and a heavy handed email regex
-      color body          magenta        default         "((@(([0-9a-z-]+\\.)*[0-9a-z-]+\\.?|#[0-9]+|\\[[0-9]?[0-9]?[0-9]\\.[0-9]?[0-9]?[0-9]\\.[0-9]?[0-9]?[0-9]\\.[0-9]?[0-9]?[0-9]\\]),)*@(([0-9a-z-]+\\.)*[0-9a-z-]+\\.?|#[0-9]+|\\[[0-9]?[0-9]?[0-9]\\.[0-9]?[0-9]?[0-9]\\.[0-9]?[0-9]?[0-9]\\.[0-9]?[0-9]?[0-9]\\]):)?[0-9a-z_.+%$-]+@(([0-9a-z-]+\\.)*[0-9a-z-]+\\.?|#[0-9]+|\\[[0-2]?[0-9]?[0-9]\\.[0-2]?[0-9]?[0-9]\\.[0-2]?[0-9]?[0-9]\\.[0-2]?[0-9]?[0-9]\\])"
-
-      # Various smilies and the like
-      color body          brightwhite     default         "<[Gg]>"                            # <g>
-      color body          brightwhite     default         "<[Bb][Gg]>"                        # <bg>
-      color body          yellow          default         " [;:]-*[})>{(<|]"                  # :-) etc...
-      # *bold*
-      color body          blue            default         "(^|[[:space:][:punct:]])\\*[^*]+\\*([[:space:][:punct:]]|$)"
-      mono  body          bold                            "(^|[[:space:][:punct:]])\\*[^*]+\\*([[:space:][:punct:]]|$)"
-      # _underline_
-      color body          blue            default         "(^|[[:space:][:punct:]])_[^_]+_([[:space:][:punct:]]|$)"
-      mono  body          underline                       "(^|[[:space:][:punct:]])_[^_]+_([[:space:][:punct:]]|$)"
-      # /italic/  (Sometimes gets directory names)
-      color body         blue            default         "(^|[[:space:][:punct:]])/[^/]+/([[:space:][:punct:]]|$)"
-      mono body          underline                       "(^|[[:space:][:punct:]])/[^/]+/([[:space:][:punct:]]|$)"
-
-      # Border lines.
-      color body          blue            default         "( *[-+=#*~_]){6,}"
-
-      # From https://github.com/jessfraz/dockerfiles/blob/master/mutt/.mutt/mutt-patch-highlighting.muttrc
-      color   body    cyan            default         ^(Signed-off-by).*
-      color   body    cyan            default         ^(Docker-DCO-1.1-Signed-off-by).*
-      color   body    brightwhite     default         ^(Cc)
-      color   body    yellow          default         "^diff \-.*"
-      color   body    brightwhite     default         "^index [a-f0-9].*"
-      color   body    brightblue      default         "^---$"
-      color   body    white           default         "^\-\-\- .*"
-      color   body    white           default         "^[\+]{3} .*"
-      color   body    green           default         "^[\+][^\+]+.*"
-      color   body    red             default         "^\-[^\-]+.*"
-      color   body    brightblue      default         "^@@ .*"
-      color   body    green           default         "LGTM"
-      color   body    brightmagenta   default         "-- Commit Summary --"
-      color   body    brightmagenta   default         "-- File Changes --"
-      color   body    brightmagenta   default         "-- Patch Links --"
+# Regex highlighting:
+color header brightmagenta default "^From"
+color header brightcyan default "^Subject"
+color header brightwhite default "^(CC|BCC)"
+color header blue default ".*"
+color body brightred default "[\-\.+_a-zA-Z0-9]+@[\-\.a-zA-Z0-9]+" # Email addresses
+color body brightblue default "(https?|ftp)://[\-\.,/%~_:?&=\#a-zA-Z0-9]+" # URL
+color body green default "\`[^\`]*\`" # Green text between ` and `
+color body brightblue default "^# \.*" # Headings as bold blue
+color body brightcyan default "^## \.*" # Subheadings as bold cyan
+color body brightgreen default "^### \.*" # Subsubheadings as bold green
+color body yellow default "^(\t| )*(-|\\*) \.*" # List items as yellow
+color body brightcyan default "[;:][-o][)/(|]" # emoticons
+color body brightcyan default "[;:][)(|]" # emoticons
+color body brightcyan default "[ ][*][^*]*[*][ ]?" # more emoticon?
+color body brightcyan default "[ ]?[*][^*]*[*][ ]" # more emoticon?
+color body red default "(BAD signature)"
+color body cyan default "(Good signature)"
+color body brightblack default "^gpg: Good signature .*"
+color body brightyellow default "^gpg: "
+color body brightyellow red "^gpg: BAD signature from.*"
+mono body bold "^gpg: Good signature"
+mono body bold "^gpg: BAD signature from.*"
+color body red default "([a-z][a-z0-9+-]*://(((([a-z0-9_.!~*'();:&=+$,-]|%[0-9a-f][0-9a-f])*@)?((([a-z0-9]([a-z0-9-]*[a-z0-9])?)\\.)*([a-z]([a-z0-9-]*[a-z0-9])?)\\.?|[0-9]+\\.[0-9]+\\.[0-9]+\\.[0-9]+)(:[0-9]+)?)|([a-z0-9_.!~*'()$,;:@&=+-]|%[0-9a-f][0-9a-f])+)(/([a-z0-9_.!~*'():@&=+$,-]|%[0-9a-f][0-9a-f])*(;([a-z0-9_.!~*'():@&=+$,-]|%[0-9a-f][0-9a-f])*)*(/([a-z0-9_.!~*'():@&=+$,-]|%[0-9a-f][0-9a-f])*(;([a-z0-9_.!~*'():@&=+$,-]|%[0-9a-f][0-9a-f])*)*)*)?(\\?([a-z0-9_.!~*'();/?:@&=+$,-]|%[0-9a-f][0-9a-f])*)?(#([a-z0-9_.!~*'();/?:@&=+$,-]|%[0-9a-f][0-9a-f])*)?|(www|ftp)\\.(([a-z0-9]([a-z0-9-]*[a-z0-9])?)\\.)*([a-z]([a-z0-9-]*[a-z0-9])?)\\.?(:[0-9]+)?(/([-a-z0-9_.!~*'():@&=+$,]|%[0-9a-f][0-9a-f])*(;([-a-z0-9_.!~*'():@&=+$,]|%[0-9a-f][0-9a-f])*)*(/([-a-z0-9_.!~*'():@&=+$,]|%[0-9a-f][0-9a-f])*(;([-a-z0-9_.!~*'():@&=+$,]|%[0-9a-f][0-9a-f])*)*)*)?(\\?([-a-z0-9_.!~*'();/?:@&=+$,]|%[0-9a-f][0-9a-f])*)?(#([-a-z0-9_.!~*'();/?:@&=+$,]|%[0-9a-f][0-9a-f])*)?)[^].,:;!)? \t\r\n<>\"]"
     '';
   };
 }

@@ -14,7 +14,6 @@ let
       showSignature = "append";
       text = ''
         ${realName}
-
         PGP: ${gpg.key}
       '';
     };
@@ -23,33 +22,59 @@ in
 {
   accounts.email = {
     maildirBasePath = "${config.home.homeDirectory}/.local/share/Mail";
-    accounts = {
-      gmail = rec {
-        primary = true;
-        address = "corent.cham@gmail.com";
-        passwordCommand = "${pass} ${address}";
+      accounts = {
+        personal = rec {
+          primary = true;
+          address = "corentin@chaminand.fr";
+          passwordCommand = "${pass} ${address}";
 
-        imap.host = "imap.gmail.com";
-        mbsync = {
-          enable = true;
-          create = "maildir";
-          expunge = "both";
-        };
-        folders = {
-          inbox = "Inbox";
-          drafts = "Drafts";
-          sent = "Sent";
-          trash = "Trash";
-        };
-        neomutt = {
-          enable = true;
-          extraMailboxes = [ "Sent" ];
-        };
+          imap.host = "mail.gandi.net";
+          mbsync = {
+            enable = true;
+            create = "maildir";
+            expunge = "both";
+          };
+          folders = {
+            inbox = "Boîte de réception";
+            sent = "Envoyés";
+            drafts = "Brouillons";
+            trash = "Corbeille";
+          };
+          neomutt = {
+            enable = true;
+            extraMailboxes = [ "Envoyés" "Brouillons" "Pourriels" "Corbeille" ];
+          };
 
-        msmtp.enable = true;
-        smtp.host = "smtp.gmail.com";
-        userName = address;
-      } // common;
+          msmtp.enable = true;
+          smtp.host = "mail.gandi.net";
+          userName = address;
+        } // common;
+
+      # gmail = rec {
+      #   primary = true;
+      #   address = "corent.cham@gmail.com";
+      #   passwordCommand = "${pass} ${address}";
+
+      #   imap.host = "imap.gmail.com";
+      #   mbsync = {
+      #     enable = true;
+      #     create = "maildir";
+      #     expunge = "both";
+      #   };
+      #   folders = {
+      #     inbox = "Inbox";
+      #     sent = "Sent";
+      #     trash = "[Gmail]/Corbeille";
+      #   };
+      #   neomutt = {
+      #     enable = true;
+      #     extraMailboxes = [ "Sent" "[Gmail]/Spam" "[Gmail]/Corbeille" ];
+      #   };
+
+      #   msmtp.enable = true;
+      #   smtp.host = "smtp.gmail.com";
+      #   userName = address;
+      # } // common;
 
       # yahoo = rec {
       #   address = "corent.cham@yahoo.fr";
@@ -77,37 +102,41 @@ in
       #   userName = address;
       # } // common;
 
-      hotmail = rec {
-        address = "corent.cham@hotmail.fr";
-        passwordCommand = "${pass} ${address}";
+      # hotmail = rec {
+      #   address = "corent.cham@hotmail.fr";
+      #   passwordCommand = "${pass} ${address}";
 
-        imap.host = "outlook.office365.com";
-        mbsync = {
-          enable = true;
-          create = "maildir";
-          expunge = "both";
-        };
-        folders = {
-          inbox = "Inbox";
-          drafts = "Drafts";
-          sent = "Sent";
-          trash = "Trash";
-        };
-        neomutt = {
-          enable = true;
-          extraMailboxes = [ "Archive" "Drafts" "Junk" "Sent" ];
-        };
+      #   imap.host = "outlook.office365.com";
+      #   mbsync = {
+      #     enable = true;
+      #     create = "maildir";
+      #     expunge = "both";
+      #   };
+      #   folders = {
+      #     inbox = "Inbox";
+      #     drafts = "Drafts";
+      #     sent = "Sent";
+      #     trash = "Trash";
+      #   };
+      #   neomutt = {
+      #     enable = true;
+      #     extraMailboxes = [ "Sent" "Junk" "Deleted" ];
+      #   };
 
-        msmtp.enable = true;
-        smtp.host = "smtp-mail.outlook.com";
-        userName = address;
-      } // common;
+      #   msmtp.enable = true;
+      #   smtp.host = "smtp-mail.outlook.com";
+      #   userName = address;
+      # } // common;
 
     };
   };
 
-  programs.mbsync.enable = true;
-  programs.msmtp.enable = true;
+  programs.mbsync.enable = true; # TODO Temporaire
+  programs.msmtp.enable = true; # TODO Temporaire
+  # programs.notmuch = {
+  #   enable = true;
+  #   hooks = { preNew = "mbsync --all"; };
+  # };
 
   systemd.user.services.mbsync = {
     Unit = { Description = "mbsync synchronization"; };

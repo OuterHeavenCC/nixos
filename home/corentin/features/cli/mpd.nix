@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 
 {
 
@@ -14,5 +14,7 @@
     user "${config.home.username}"
 '';
   };
+
+  home.packages = with pkgs; [ mpc-cli ]; # Mpd controls via CLI
 
 }
