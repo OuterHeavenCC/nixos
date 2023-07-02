@@ -20,6 +20,7 @@ in
       "network"
       "mpd"
       "seat"
+      "git"
       "lp"
       "libvirtd"
       "rfkill"
