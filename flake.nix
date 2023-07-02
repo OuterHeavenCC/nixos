@@ -66,6 +66,12 @@
           modules = [ ./hosts/deimOS/configuration.nix ];
           specialArgs = { inherit inputs outputs; };
         };
+        # Serveur
+        ares = lib.nixosSystem {
+          modules = [ ./hosts/ares/configuration.nix ];
+          specialArgs = { inherit inputs outputs; };
+        };
+  
 
       # Available through 'home-manager --flake .#corentin@hostname'
       homeConfigurations = {
@@ -76,6 +82,11 @@
         };
         "corentin@deimOS" = lib.homeManagerConfiguration {
           modules = [ ./home/corentin/deimOS.nix ];
+          pkgs = pkgsFor.x86_64-linux;
+          extraSpecialArgs = { inherit inputs outputs; };
+        };
+        "corentin@ares" = lib.homeManagerConfiguration {
+          modules = [ ./home/corentin/ares.nix ];
           pkgs = pkgsFor.x86_64-linux;
           extraSpecialArgs = { inherit inputs outputs; };
         };
