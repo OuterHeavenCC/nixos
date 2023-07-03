@@ -10,7 +10,6 @@
 
     ../common/global
     ../common/users/corentin
-    ../common/optional/nginx.nix
     ./hardware-configuration.nix
 
   ];
