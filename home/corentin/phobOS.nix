@@ -11,7 +11,6 @@
     ./features/desktop/common/wayland-wm
     ./features/desktop/common/wayland-wm
     ./features/desktop/hyprland
-    ./features/games
     ./features/nvidia
     ./features/scripts
     ./features/productivity
