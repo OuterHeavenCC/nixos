@@ -8,6 +8,8 @@
     ./mpv.nix
     ./xdg.nix
     ./zathura.nix
+    ./mpd.nix
+    ./ncmpcpp.nix
   ];
 
   home.packages = with pkgs; [
