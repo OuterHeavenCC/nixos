@@ -5,9 +5,6 @@
   programs.foot = {
     enable = true;
     settings = {
-      main = {
-        font = "Iosevka Nerd Font:size=16";
-      };
       cursor = {
         color = "2e3440 d8dee9";
       };

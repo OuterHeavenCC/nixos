@@ -10,7 +10,7 @@
 
     ../common/optional/audio.nix
     ../common/optional/xdg.nix
-    ../common/optional/mimeapps.nix
+    ../common/optional/mimeApps.nix
     ../common/optional/bluetooth.nix
     ../common/optional/boot.nix
 

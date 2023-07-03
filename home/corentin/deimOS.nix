@@ -36,4 +36,5 @@
     }
   ];
 
+    programs.foot.settings.main.font = "Iosevka Nerd Font:size=12";
 }

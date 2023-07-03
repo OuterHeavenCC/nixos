@@ -52,4 +52,7 @@
       workspace = "3";
     }
   ];
+
+      programs.foot.settings.main.font = "Iosevka Nerd Font:size=16";
+
 }
