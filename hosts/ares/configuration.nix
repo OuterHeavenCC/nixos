@@ -8,9 +8,9 @@
   # You can import other NixOS modules here
   imports = [
 
-    ./services/gandicloud.nix
     ../common/global
     ../common/users/corentin
+    ./hardware-configuration.nix
 
   ];
 
