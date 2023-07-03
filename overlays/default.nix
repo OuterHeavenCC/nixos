@@ -10,7 +10,7 @@
   # TODO Pourquoi ctpv ne fonctionne pas alors que j'ai la bonne version ? Mystère...
 
   lf-sixel = final: prev: {
-  lf = prev.lf.overrideAttrs (old: {
+  lf = prev.lf.overrideAttrs (oldAttrs: rec {
     src = prev.fetchFromGitHub {
       owner = "horriblename";
       repo = "lf";
@@ -20,9 +20,9 @@
     });
   };
 
-  ncmpcpp-visualizerSupport = self: super: 
+  ncmpcpp-visualizerSupport = final: prev: 
   {
-    ncmpcpp = super.ncmpcpp.override {
+    ncmpcpp = prev.ncmpcpp.override {
       visualizerSupport = true;
       };
   };

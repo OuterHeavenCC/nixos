@@ -1,4 +1,4 @@
-{ inputs, outputs, lib, config, ... }:
+{ inputs, outputs, lib, config, pkgs, ... }:
 
 {
   nixpkgs = {
@@ -28,6 +28,7 @@
       allowUnfree = true;
       };
     };
+
 
   nix = {
     # Collect garbage everynight at 2 a.m.

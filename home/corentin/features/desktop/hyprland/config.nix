@@ -2,7 +2,7 @@
 ''
 env = GDK_BACKEND=wayland,x11
 env = QT_QPA_PLATFORM="wayland,xcb"
-env = SDL_VIDEODRIVER=wayland
+env = SDL_VIDEODRIVER=x11
 env = CLUTTER_BACKEND=wayland
 env = XDG_CURRENT_DESKTOP=Hyprland
 env = XDG_SESSION_TYPE=wayland
