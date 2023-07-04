@@ -11,6 +11,7 @@
     ../common/global
     ../common/users/corentin
     ./hardware-configuration.nix
+    ../common/optional/nginx
 
   ];
 

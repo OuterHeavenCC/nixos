@@ -12,6 +12,7 @@
     ./features/desktop/hyprland
     ./features/scripts
     ./features/productivity
+    ./features/gaming
     ./global
 
     # If you want to use modules your own flake exports (from modules/home-manager):
