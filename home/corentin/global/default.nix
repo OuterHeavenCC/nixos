@@ -1,7 +1,12 @@
 { inputs, lib, pkgs, config, outputs, ... }:
+let
+  inherit (inputs.nix-colors) colorSchemes;
+  inherit (inputs.nix-colors.lib-contrib { inherit pkgs; }) colorschemeFromPicture nixWallpaperFromScheme;
+in
 {
   imports = [
     ../features/cli
+    inputs.nix-colors.homeManagerModule
   ] ++ (builtins.attrValues outputs.homeManagerModules);
 
     nixpkgs = {
@@ -39,5 +44,8 @@
     stateVersion = lib.mkDefault "23.05";
     sessionPath = [ "$HOME/.local/bin" ];
   };
+
+  colorscheme = lib.mkDefault colorSchemes.catppuccin-mocha;
+
 
 }

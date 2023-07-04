@@ -15,6 +15,7 @@
 
     # hardware.url = "github:nixos/nixos-hardware";
     nix-minecraft.url = "github:Infinidoge/nix-minecraft";
+    nix-colors.url = "github:misterio77/nix-colors";
 
     hyprland = {
       url = "github:hyprwm/hyprland/v0.25.0";

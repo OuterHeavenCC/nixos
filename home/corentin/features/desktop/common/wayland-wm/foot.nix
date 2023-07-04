@@ -1,3 +1,8 @@
+{ config, ... }:
+
+let 
+  inherit (config.colorscheme) colors;
+in
 {
   
   home.sessionVariables.TERMINAL = "foot";
@@ -5,32 +10,29 @@
   programs.foot = {
     enable = true;
     settings = {
-      cursor = {
-        color = "2e3440 d8dee9";
-      };
       mouse = {
         hide-when-typing = "yes";
       };
       colors = {
         alpha = 0.7;
-        foreground = "cdd6f4";
-        background= "1e1e2e";
-        regular0 = "45475a";   
-        regular1 = "f38ba8";   
-        regular2= "a6e3a1";
-        regular3 = "f9e2af";   
-        regular4 = "89b4fa";   
-        regular5= "f5c2e7";
-        regular6 = "94e2d5";   
-        regular7 = "bac2de";   
-        bright0= "585b70";
-        bright1 = "f38ba8";    
-        bright2 = "a6e3a1";    
-        bright3= "f9e2af";
-        bright4 = "89b4fa";    
-        bright5 = "f5c2e7";    
-        bright6= "94e2d5";
-        bright7 = "a6adc8";    
+        foreground = "${colors.base05}";
+        background= "${colors.base00}";
+        regular0 = "${colors.base03}";   
+        regular1 = "${colors.base08}";   
+        regular2= "${colors.base0B}";
+        regular3 = "${colors.base0A}";   
+        regular4 = "${colors.base0D}";   
+        regular5= "${colors.base06}";
+        regular6 = "${colors.base0C}";   
+        regular7 = "${colors.base07}";   
+        bright0= "${colors.base04}";
+        bright1 = "${colors.base08}";    
+        bright2 = "${colors.base0B}";    
+        bright3= "${colors.base0A}";
+        bright4 = "${colors.base0D}";    
+        bright5 = "${colors.base06}";    
+        bright6= "${colors.base0C}";
+        bright7 = "${colors.base0E}";    
       }; 
     };
   };

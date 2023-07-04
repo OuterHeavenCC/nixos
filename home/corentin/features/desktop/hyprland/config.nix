@@ -96,7 +96,7 @@ general {
     gaps_out=20
     border_size=2
     col.active_border=0xFFCBA6F7
-    col.inactive_border=0x66333333
+    col.inactive_border=0x66313244
     layout=master
 
 }

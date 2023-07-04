@@ -1,5 +1,8 @@
 { config, pkgs, ... }:
 
+let 
+  inherit (config.colorscheme) colors;
+in
 {
   programs.waybar = {
     enable = true;
@@ -21,8 +24,8 @@ window#waybar {
 
 #custom-arch, #workspaces {
   border-radius: 10px;
-  background-color: #11111b;
-  color: #cba6f7;
+  background-color: #${colors.base00};
+  color: #${colors.base0E};
   margin-top: 15px;
 	margin-right: 15px;
   padding-top: 1px;
@@ -36,18 +39,18 @@ window#waybar {
 }
 
 #workspaces button {
-  background: #11111b;
-  color: #cdd6f4;
+  background: #${colors.base00};
+  color: #${colors.base05};
 }
 
 #workspaces button.active {
-  color: #cba6f7;
+  color: #${colors.base0E};
 }
 
 #cpu, #memory, #pulseaudio, #clock, #clock#date #backlight, #custom-sound, #network, #battery{
   border-radius: 10px;
-  background-color: #11111b;
-  color: #cdd6f4;
+  background-color: #${colors.base00};
+  color: #${colors.base07};
   margin-top: 15px;
   padding-left: 10px;
   padding-right: 10px;
@@ -66,7 +69,7 @@ window#waybar {
 }
 
 #battery.warning:not(.charging) {
-  background: #f38ba8;
+  background: #${colors.base08};
   color: white;
   animation-name: blink;
   animation-duration: 0.5s;
@@ -94,50 +97,50 @@ window#waybar {
     };
 
     "clock" = {
-      format = "<span color='#cba6f7'> </span>{:%H:%M}";
+      format = "<span color='#${colors.base0E}'> </span>{:%H:%M}";
     };
 
     "clock#date" = {
-      format = "<span color=\"#cba6f7\"> </span>{: %A %d %B}";
+      format = "<span color=\"#${colors.base0E}\"> </span>{: %A %d %B}";
       on-click = "footclient -e calcurse";
     };
 
     backlight = {
       device = "radeon_b10";
-      format = "<span color='#cba6f7'>{icon}</span> {percent}%";
+      format = "<span color='#${colors.base0E}'>{icon}</span> {percent}%";
       format-icons = [ "" "" "" "" "" "" "" "" "" ];
     };
 
     network = {
       interface = "enp42s0";
       format = "{ifname}";
-      format-wifi = "<span color='#cba6f7'> </span>{essid}";
-      format-ethernet = "{ipaddr}/{cidr} <span color ='#cba6f7'>󰈀</span>";
-      format-disconnected = "<span color='#cba6f7'>󰖪 </span>No Network";
+      format-wifi = "<span color='#${colors.base0E}'> </span>{essid}";
+      format-ethernet = "{ipaddr}/{cidr} <span color ='#${colors.base0E}'>󰈀</span>";
+      format-disconnected = "<span color='#${colors.base0E}'>󰖪 </span>No Network";
       on-click = "networkmanager_dmenu -theme ${config.home.homeDirectory}/.config/rofi/config/networkmenu.rasi";
     };
 
     battery = {
-      format = "<span color='#cba6f7'>{icon}</span> {capacity}%";
+      format = "<span color='#${colors.base0E}'>{icon}</span> {capacity}%";
       format-icons = [ "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹" ];
-      format-charging = "<span color='#cba6f7'>󰂄</span> {capacity}%";
+      format-charging = "<span color='#${colors.base0E}'>󰂄</span> {capacity}%";
     };
 
     pulseaudio = {
       scroll-step = 2;
       format = "{icon} {volume}%";
-      format-muted = "<span color='#cba6f7'> </span>";
-      format-icons.default = [ "<span color=\"#cba6f7\"></span> " ];
+      format-muted = "<span color='#${colors.base0E}'> </span>";
+      format-icons.default = [ "<span color=\"#${colors.base0E}\"></span> " ];
       on-click = "pamixer -t";
     };
 
     cpu = {
-      format = "<span color=\"#cba6f7\">  CPU</span> {usage}%";
+      format = "<span color=\"#${colors.base0E}\">  CPU</span> {usage}%";
       on-click = "footclient -e btop";
     };
 
     memory = {
-      format = "<span color=\"#cba6f7\">  RAM</span> {used:0.1f}G/{total:0.1f}G";
+      format = "<span color=\"#${colors.base0E}\">  RAM</span> {used:0.1f}G/{total:0.1f}G";
       on-click = "footclient -e btop";
         };
       };

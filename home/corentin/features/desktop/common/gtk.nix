@@ -1,36 +1,32 @@
-{ pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
-{
-
+let
+  inherit (inputs.nix-colors.lib-contrib { inherit pkgs; }) gtkThemeFromScheme;
+in
+rec {
   gtk = {
     enable = true;
     theme = {
-      name = "Catppuccin-Mocha-Compact-Mauve-Dark";
-      package = pkgs.catppuccin-gtk.override {
-        accents = [ "mauve" ];
-        size = "compact";
-        tweaks = [ "rimless" "black" ];
-        variant = "mocha";
-      };
+      name = "${config.colorscheme.slug}";
+      package = gtkThemeFromScheme { scheme = config.colorscheme; };
     };
     iconTheme = {
-      name = "Zafiro-icons-Dark";
+      name = "Zafiro Icons Theme";
       package = pkgs.zafiro-icons;
+    };
+  };
+
+  services.xsettingsd = {
+    enable = true;
+    settings = {
+      "Net/ThemeName" = "${gtk.theme.name}";
+      "Net/IconThemeName" = "${gtk.iconTheme.name}";
     };
   };
 
   dconf.settings = {
     "org/gnome/desktop/interface" = {
       color-scheme = "prefer-dark";
-    };
-  };
-
-  home = {
-    pointerCursor = {
-      name = "Catppuccin-Mocha-Dark-Cursors";
-      package = pkgs.catppuccin-cursors.mochaDark;
-      size = 16;
-      gtk.enable = true;
     };
   };
 

@@ -1,4 +1,7 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
+let
+  inherit (config.colorscheme) colors;
+in
 {
   services.dunst = {
     enable = true;
@@ -12,12 +15,12 @@
         origin = "bottom-right";
         offset = "30x30";
         frame_width = 2;
-        frame_color = "#cba6f7";
+        frame_color = "#${colors.base0E}";
         separator_color = "frame"; 
         font = "Fira Code 10";
         corner_radius = 7;
-        background = "#11111B";
-        foreground = "#CDD6F4";
+        background = "#${colors.base00}";
+        foreground = "#${colors.base05}";
       };
     };
   };
