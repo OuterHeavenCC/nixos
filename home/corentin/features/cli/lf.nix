@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 {
   programs.lf = {
     enable = true;
@@ -53,8 +54,8 @@
       shellopts = "-eu";
       ifs = "\\n";
       scrolloff = 10;
-      icons = true;
       period = 1;
+      icons = true;
     };
     extraConfig = ''
 set previewer ctpv

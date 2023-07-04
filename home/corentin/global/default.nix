@@ -2,7 +2,7 @@
 {
   imports = [
     ../features/cli
-  ];
+  ] ++ (builtins.attrValues outputs.homeManagerModules);
 
     nixpkgs = {
       overlays = [

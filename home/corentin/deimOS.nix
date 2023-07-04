@@ -5,7 +5,6 @@
   # You can import other home-manager modules here
   imports = [
 
-    ../../modules/home-manager/monitors.nix
     ./features/cli
     ./features/desktop/common
     ./features/desktop/common/wayland-wm

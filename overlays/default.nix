@@ -11,7 +11,7 @@
 
   lf = 
   final: prev: {
-  lf = prev.lf.overrideAttrs (oldAttrs: rec {
+  lf = prev.lf.overrideAttrs (old: {
     src = prev.fetchFromGitHub {
       owner = "horriblename";
       repo = "lf";
