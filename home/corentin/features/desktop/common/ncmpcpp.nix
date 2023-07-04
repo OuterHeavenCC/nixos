@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 
 {
   programs.ncmpcpp = {
@@ -33,6 +33,12 @@
       progressbar_elapsed_color = "blue:b";
       statusbar_color = "red";
       statusbar_time_color = "cyan:b";
+      visualizer_data_source = "/tmp/mpd.fifo";
+      visualizer_output_name = "my_fifo";
+      visualizer_in_stereo = "yes";
+      visualizer_type = "spectrum";
+      visualizer_look = "+|";
+
     };
     bindings = [
       { key = "alt-f"; command = "toggle_fetching_lyrics_in_background"; }

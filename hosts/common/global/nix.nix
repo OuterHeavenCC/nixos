@@ -8,8 +8,7 @@
       # outputs.overlays.additions
       # outputs.overlays.modifications
       # outputs.overlays.unstable-packages
-      outputs.overlays.lf-sixel
-      outputs.overlays.ncmpcpp-visualizerSupport
+      # outputs.overlays.modifications
       inputs.nix-minecraft.overlay
 
       # You can also add overlays exported from other flakes:

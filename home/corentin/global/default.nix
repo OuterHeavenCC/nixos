@@ -5,13 +5,17 @@
   ];
 
     nixpkgs = {
+      overlays = [
+        outputs.overlays.lf
+        outputs.overlays.ncmpcpp
+      ];
 
-    config = {
-      allowUnfree = true;
-      allowUnfreePredicate = (_: true);
+      config = {
+        allowUnfree = true;
+        allowUnfreePredicate = (_: true);
+      };
+
     };
-
-  };
 
     nix = {
     package = lib.mkDefault pkgs.nix;

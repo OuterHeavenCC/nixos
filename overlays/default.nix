@@ -9,7 +9,8 @@
   # https://nixos.wiki/wiki/Overlays
   # TODO Pourquoi ctpv ne fonctionne pas alors que j'ai la bonne version ? Mystère...
 
-  lf-sixel = final: prev: {
+  lf = 
+  final: prev: {
   lf = prev.lf.overrideAttrs (oldAttrs: rec {
     src = prev.fetchFromGitHub {
       owner = "horriblename";
@@ -20,8 +21,9 @@
     });
   };
 
-  ncmpcpp-visualizerSupport = final: prev: 
-  {
+
+  ncmpcpp = 
+  final: prev: {
     ncmpcpp = prev.ncmpcpp.override {
       visualizerSupport = true;
       };
