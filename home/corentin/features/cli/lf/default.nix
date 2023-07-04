@@ -158,4 +158,6 @@ cmd unarchive ''${{
       vimv = "$vimv";
     };
   };
+
+  xdg.configFile."lf/icons".text = builtins.readFile ./icons;
 }

@@ -11,7 +11,7 @@
     ./git.nix
     ./gpg.nix
     ./ledger.nix
-    ./lf.nix
+    ./lf
     ./lvim.nix
     ./newsboat.nix
     ./nvim.nix
