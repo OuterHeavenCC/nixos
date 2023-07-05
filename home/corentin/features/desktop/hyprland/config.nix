@@ -26,7 +26,7 @@ windowrule = center, title:^(sfml)$
 
 # Fix Telegram
 windowrule = nofullscreenrequest, title:^(Lecteur multimédia)$
-windowrule = float, title:^(gnome-calculator)$
+windowrule = float, title:^(Calculatrice)$
 
 
 input {

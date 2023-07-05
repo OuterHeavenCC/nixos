@@ -20,6 +20,7 @@
     ../common/optional/bluetooth.nix
     ../common/optional/boot.nix
     ../common/optional/flatpak.nix
+    ../common/optional/waydroid.nix
 
     ./hardware-configuration.nix
 
