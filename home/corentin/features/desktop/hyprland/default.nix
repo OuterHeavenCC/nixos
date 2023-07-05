@@ -17,7 +17,7 @@
         inherit (config) monitors;
       }) +
       (import ./config.nix {
-        inherit (config) home;
+        inherit (config) home colorscheme;
       });
   };
 }

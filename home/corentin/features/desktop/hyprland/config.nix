@@ -1,4 +1,4 @@
-{home}:
+{home, colorscheme}:
 ''
 env = GDK_BACKEND=wayland,x11
 env = QT_QPA_PLATFORM="wayland,xcb"
@@ -95,8 +95,8 @@ general {
     gaps_in=5
     gaps_out=20
     border_size=2
-    col.active_border=0xFFCBA6F7
-    col.inactive_border=0x66313244
+    col.active_border=0xFF${colorscheme.colors.base0E}
+    col.inactive_border=0x66${colorscheme.colors.base02}
     layout=master
 
 }
