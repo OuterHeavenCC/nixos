@@ -16,12 +16,14 @@
     ./features/gaming
     ./global
 
+
     # outputs.homeManagerModules.monitors
     # If you want to use modules your own flake exports (from modules/home-manager):
     # outputs.homeManagerModules.example
 
     # Or modules exported from other flakes (such as nix-colors):
     # inputs.nix-colors.homeManagerModules.default
+    inputs.hyprland.homeManagerModules.default
 
     # You can also split up your configuration and import pieces of it here:
     # ./nvim.nix
@@ -53,5 +55,7 @@
   ];
 
       programs.foot.settings.main.font = "Iosevka Nerd Font:size=16";
+      wayland.windowManager.hyprland.nvidiaPatches = true;
+
 
 }
