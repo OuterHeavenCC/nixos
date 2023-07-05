@@ -12,7 +12,7 @@ lvim.plugins = {
   { "catppuccin/nvim" },
   { "folke/tokyonight.nvim"},
   { "sainnhe/everforest" },
-  { "sainnhe/gruvbox-material" }
+  { "sainnhe/gruvbox-material" },
   { "shaunsingh/nord.nvim" },
 }
 
