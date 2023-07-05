@@ -15,7 +15,7 @@ in
         origin = "bottom-right";
         offset = "30x30";
         frame_width = 2;
-        frame_color = "#${colors.base0E}";
+        frame_color = "#${colors.base07}";
         separator_color = "frame"; 
         font = "Fira Code 10";
         corner_radius = 7;

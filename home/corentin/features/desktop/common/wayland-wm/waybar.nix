@@ -25,7 +25,7 @@ window#waybar {
 #custom-arch, #workspaces {
   border-radius: 10px;
   background-color: #${colors.base00};
-  color: #${colors.base0E};
+  color: #${colors.base07};
   margin-top: 15px;
 	margin-right: 15px;
   padding-top: 1px;
@@ -44,7 +44,7 @@ window#waybar {
 }
 
 #workspaces button.active {
-  color: #${colors.base0E};
+  color: #${colors.base07};
 }
 
 #cpu, #memory, #pulseaudio, #clock, #clock#date #backlight, #custom-sound, #network, #battery{
@@ -93,54 +93,55 @@ window#waybar {
     "wlr/workspaces" = {
       format = "{name}";
       on-click = "activate";
+      tooltip = false;
       all-outputs = true;
     };
 
     "clock" = {
-      format = "<span color='#${colors.base0E}'> </span>{:%H:%M}";
+      format = "<span color='#${colors.base07}'> </span>{:%H:%M}";
     };
 
     "clock#date" = {
-      format = "<span color=\"#${colors.base0E}\"> </span>{: %A %d %B}";
+      format = "<span color=\"#${colors.base07}\"> </span>{: %A %d %B}";
       on-click = "footclient -e calcurse";
     };
 
     backlight = {
       device = "radeon_b10";
-      format = "<span color='#${colors.base0E}'>{icon}</span> {percent}%";
+      format = "<span color='#${colors.base07}'>{icon}</span> {percent}%";
       format-icons = [ "" "" "" "" "" "" "" "" "" ];
     };
 
     network = {
       interface = "enp42s0";
       format = "{ifname}";
-      format-wifi = "<span color='#${colors.base0E}'> </span>{essid}";
-      format-ethernet = "{ipaddr}/{cidr} <span color ='#${colors.base0E}'>󰈀</span>";
-      format-disconnected = "<span color='#${colors.base0E}'>󰖪 </span>No Network";
+      format-wifi = "<span color='#${colors.base07}'> </span>{essid}";
+      format-ethernet = "{ipaddr}/{cidr} <span color ='#${colors.base07}'>󰈀</span>";
+      format-disconnected = "<span color='#${colors.base07}'>󰖪 </span>No Network";
       on-click = "networkmanager_dmenu -theme ${config.home.homeDirectory}/.config/rofi/config/networkmenu.rasi";
     };
 
     battery = {
-      format = "<span color='#${colors.base0E}'>{icon}</span> {capacity}%";
+      format = "<span color='#${colors.base07}'>{icon}</span> {capacity}%";
       format-icons = [ "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹" ];
-      format-charging = "<span color='#${colors.base0E}'>󰂄</span> {capacity}%";
+      format-charging = "<span color='#${colors.base07}'>󰂄</span> {capacity}%";
     };
 
     pulseaudio = {
       scroll-step = 2;
       format = "{icon} {volume}%";
-      format-muted = "<span color='#${colors.base0E}'> </span>";
-      format-icons.default = [ "<span color=\"#${colors.base0E}\"></span> " ];
+      format-muted = "<span color='#${colors.base07}'> </span>";
+      format-icons.default = [ "<span color=\"#${colors.base07}\"></span> " ];
       on-click = "pamixer -t";
     };
 
     cpu = {
-      format = "<span color=\"#${colors.base0E}\">  CPU</span> {usage}%";
+      format = "<span color=\"#${colors.base07}\">  CPU</span> {usage}%";
       on-click = "footclient -e btm";
     };
 
     memory = {
-      format = "<span color=\"#${colors.base0E}\">  RAM</span> {used:0.1f}G/{total:0.1f}G";
+      format = "<span color=\"#${colors.base07}\">  RAM</span> {used:0.1f}G/{total:0.1f}G";
       on-click = "footclient -e btm";
         };
       };
