@@ -136,12 +136,12 @@ window#waybar {
 
     cpu = {
       format = "<span color=\"#${colors.base0E}\">  CPU</span> {usage}%";
-      on-click = "footclient -e btop";
+      on-click = "footclient -e btm";
     };
 
     memory = {
       format = "<span color=\"#${colors.base0E}\">  RAM</span> {used:0.1f}G/{total:0.1f}G";
-      on-click = "footclient -e btop";
+      on-click = "footclient -e btm";
         };
       };
     };

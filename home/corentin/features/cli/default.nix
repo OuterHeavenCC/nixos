@@ -5,7 +5,6 @@
     ./abook.nix
     ./bat.nix
     ./bottom.nix
-    ./btop.nix
     ./calcurse.nix
     ./direnv.nix
     ./git.nix
