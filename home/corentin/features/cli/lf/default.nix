@@ -73,6 +73,7 @@ cmd open ''${{
   case $(file --mime-type $f -bL) in
 	image/vnd.djvu|application/pdf|application/octet-stream) setsid -f zathura $fx >/dev/null 2>&1 ;;
   text/*|application/json|x-tex) $EDITOR $fx;;
+  text/x-tex) $EDITOR $f;;
 	image/x-xcf) setsid -f gimp $f >/dev/null 2>&1 ;;
 	image/*) setsid -f imv-dir $f 2>/dev/null;;
 	audio/*) mpv --audio-display=no $f ;;
