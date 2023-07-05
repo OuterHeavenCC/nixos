@@ -1,3 +1,4 @@
+''
 configuration {
     show-icons:                     false;
     display-drun: 		            "";
@@ -9,6 +10,9 @@ configuration {
 
 @import "font.rasi"
 @import "colors.rasi"
+
+/* Line Responsible For Button Layouts */
+/* BUTTON = FALSE */
 
 window {
     transparency:                   "real";
@@ -25,20 +29,20 @@ window {
 
 prompt {
     enabled: 			            true;
-    margin: 			            0px 8px 0px 8px;
+    margin: 			            0px 0px 0px 8px;
     padding: 			            8px;
-    background-color: 	            @IMG;
-    text-color: 	                @BG;
-    border:                  	    0px 0px 0px 0px;
+    background-color: 		        @BG;
+    text-color: 		            @FG;
+    border:                  	    0px 0px 2px 0px;
     border-color:                   @BDR;
     border-radius:                  10px;
 }
 
 textbox-prompt-colon {
     expand: 			            false;
-    str: 			                "";
+    str: 			                "󰹑";
     border-radius:                  100%;
-    background-color:               @SEL;
+    background-color:               @BG;
     text-color:                     @FG;
     padding:                        8px 12px 8px 12px;
     font:			                "Iosevka Nerd Font 10";
@@ -50,7 +54,7 @@ entry {
     placeholder-color:              @FG;
     expand:                         true;
     horizontal-align:               0;
-    placeholder:                    "";
+    placeholder:                    "Search...";
     blink:                          true;
     border:                  	    0px 0px 2px 0px;
     border-color:                   @BDR;
@@ -59,13 +63,13 @@ entry {
 }
 
 inputbar {
-    children: 		                [ textbox-prompt-colon, prompt, entry ];
+	children: 						[ textbox-prompt-colon, prompt ];
     background-color:               @BG;
     text-color:                     @FG;
     expand:                         false;
-    border:                  	    0px 0px 0px 0px;
+    border:                  		0px 0px 0px 0px;
     border-radius:                  0px;
-    border-color:                   @BDR;
+    border-color:                  	@BDR;
     margin:                         0px 0px 0px 0px;
     padding:                        0px;
     position:                       center;
@@ -81,7 +85,7 @@ case-indicator {
 listview {
     background-color:               @BG;
     columns:                        1;
-    lines:			    7;
+    lines:							5;
     spacing:                        4px;
     cycle:                          true;
     dynamic:                        true;
@@ -99,7 +103,7 @@ element {
     background-color:               @BG;
     text-color:                     @FG;
     orientation:                    horizontal;
-    border-radius:                  4px;
+    border-radius:                  10px;
     padding:                        6px 6px 6px 6px;
 }
 
@@ -119,19 +123,6 @@ element-text {
     margin:                         2px 0px 2px 6px;
 }
 
-element normal.urgent,
-element alternate.urgent {
-    background-color:               @UGT;
-    text-color:                     @FG;
-    border-radius:                  9px;
-}
-
-element normal.active,
-element alternate.active {
-    background-color:               @BGA;
-    text-color:                     @FG;
-}
-
 element selected {
     background-color:               @BGA;
     text-color:                     @SEL;
@@ -140,12 +131,25 @@ element selected {
     border-color:                  	@BDR;
 }
 
-element selected.urgent {
-    background-color:               @UGT;
-    text-color:                     @FG;
+element.active,
+element.selected.urgent {
+  background-color: @ON;
+  text-color: @BG;
+  border-color: @ON;
 }
 
-element selected.active {
-    background-color:               @BGA;
-    color:                          @FG;
+element.selected.urgent {
+  border-color: @BDR;
 }
+
+element.urgent,
+element.selected.active {
+  background-color: @OFF;
+  text-color: @BG;
+  border-color: @OFF;
+}
+
+element.selected.active {
+  border-color: @BDR;
+}
+''

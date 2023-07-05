@@ -1,3 +1,4 @@
+''
 configuration {
   show-icons:                     true;
   icon-theme:                   "WhiteSur";
@@ -18,7 +19,7 @@ text-color:                     @FG;
 border:                         2px;
 border-color:                   @BDR;
 border-radius:                  10px;
-width:                          500px;
+width:                          1000px;
 anchor:                         center;
 x-offset:                       0;
 y-offset:                       0;
@@ -38,7 +39,7 @@ textbox-prompt-colon {
   background-color:               @SEL;
   text-color:                     @FG;
   padding:                        8px 12px 8px 12px;
-  font:			                "Fira Code Nerd Font 10";
+  font:			                "Fira Code Nerd Font 8";
 }
 
 entry {
@@ -148,3 +149,4 @@ element selected.active {
   background-color:               @BGA;
   color:                          @FG;
 }
+''

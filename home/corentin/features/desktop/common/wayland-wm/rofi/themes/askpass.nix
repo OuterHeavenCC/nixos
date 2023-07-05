@@ -1,3 +1,4 @@
+''
 @import "colors.rasi"
 @import "font.rasi"
 
@@ -22,3 +23,4 @@ entry {
     width: 		            150px;
     text-color:		        @BDR;
 }
+''

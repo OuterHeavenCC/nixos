@@ -1,3 +1,4 @@
+''
 configuration {
     show-icons:                     false;
     display-run: 		            "";
@@ -145,3 +146,4 @@ element selected.active {
     background-color:               @BGA;
     color:                          @FG;
 }
+''

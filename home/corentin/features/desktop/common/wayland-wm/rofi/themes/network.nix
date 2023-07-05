@@ -1,3 +1,4 @@
+''
 configuration {
     show-icons:                     false;
     display-drun: 		            "";
@@ -10,9 +11,6 @@ configuration {
 @import "font.rasi"
 @import "colors.rasi"
 
-/* Line Responsible For Button Layouts */
-/* BUTTON = FALSE */
-
 window {
     transparency:                   "real";
     background-color:               @BG;
@@ -20,7 +18,7 @@ window {
     border:                         2px;
     border-color:                   @BDR;
     border-radius:                  10px;
-    width:                          400px;
+    width:                          300px;
     anchor:                         center;
     x-offset:                       0;
     y-offset:                       0;
@@ -39,7 +37,7 @@ prompt {
 
 textbox-prompt-colon {
     expand: 			            false;
-    str: 			                "ﱘ";
+    str: 			                "";
     border-radius:                  100%;
     background-color:               @BG;
     text-color:                     @FG;
@@ -62,7 +60,7 @@ entry {
 }
 
 inputbar {
-    children: 			            [ textbox-prompt-colon, prompt ];
+    children: 			             [textbox-prompt-colon, prompt ];
     background-color:               @BG;
     text-color:                     @FG;
     expand:                         false;
@@ -83,10 +81,10 @@ case-indicator {
 
 listview {
     background-color:               @BG;
-    columns:                        3;
-    lines:			                2;
-    spacing:                        15px;
-    cycle:                          false;
+    columns:                        1;
+    lines:			                4;
+    spacing:                        4px;
+    cycle:                          true;
     dynamic:                        true;
     layout:                         vertical;
 }
@@ -99,11 +97,11 @@ mainbox {
 }
 
 element {
-    background-color:               @BGA;
-    text-color:                     @SEL;
+    background-color:               @BG;
+    text-color:                     @FG;
     orientation:                    horizontal;
     border-radius:                  10px;
-    padding:                        8px;
+    padding:                        6px 6px 6px 6px;
 }
 
 element-icon {
@@ -117,9 +115,9 @@ element-text {
     background-color: 		        inherit;
     text-color:       		        inherit;
     expand:                         true;
-    horizontal-align:               0.5;
+    horizontal-align:               0;
     vertical-align:                 0.5;
-    margin:                         2px 0px 0px 0px;
+    margin:                         2px 0px 2px 6px;
 }
 
 element selected {
@@ -151,3 +149,4 @@ element.selected.active {
 element.selected.active {
   border-color: @BDR;
 }
+''

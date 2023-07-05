@@ -1,49 +1,48 @@
+''
 configuration {
-    show-icons:                     true;
+    show-icons:                     false;
     display-drun: 		            "";
     drun-display-format:            "{icon} {name}";
     disable-history:                false;
     click-to-exit: 		            true;
-    location:                       4;
+    location:                       0;
 }
 
 @import "font.rasi"
 @import "colors.rasi"
 
-/* Line Responsible For Button Layouts */
-/* BUTTON = TRUE */
-
 window {
     transparency:                   "real";
     background-color:               @BG;
     text-color:                     @FG;
-    border:                  	    2px;
-    border-color:                   @BGA;
+    border:                         2px;
+    border-color:                   @BDR;
     border-radius:                  10px;
-    width:                          110px;
-    x-offset:                       -2%;
+    width:                          300px;
+    anchor:                         center;
+    x-offset:                       0;
     y-offset:                       0;
 }
 
 prompt {
     enabled: 			            true;
-    margin: 			            0px 0px 0px 8px;
+    margin: 			            0px 8px 0px 8px;
     padding: 			            8px;
-    background-color: 		        @BG;
-    text-color: 		            @FG;
-    border:                  	    0px 0px 2px 0px;
+    background-color: 	            @IMG;
+    text-color: 	                @BG;
+    border:                  	    0px 0px 0px 0px;
     border-color:                   @BDR;
     border-radius:                  10px;
 }
 
 textbox-prompt-colon {
     expand: 			            false;
-    str: 			                "";
+    str: 			                "";
     border-radius:                  100%;
-    background-color:               @BG;
-    text-color:                     @BG;
+    background-color:               @SEL;
+    text-color:                     @FG;
     padding:                        8px 12px 8px 12px;
-    font:			                "Iosevka Nerd Font 13";
+    font:			                "Iosevka Nerd Font 10";
 }
 
 entry {
@@ -52,7 +51,7 @@ entry {
     placeholder-color:              @FG;
     expand:                         true;
     horizontal-align:               0;
-    placeholder:                    "Search...";
+    placeholder:                    "";
     blink:                          true;
     border:                  	    0px 0px 2px 0px;
     border-color:                   @BDR;
@@ -61,7 +60,7 @@ entry {
 }
 
 inputbar {
-    children: 		                [ textbox-prompt-colon ];
+    children: 		                [ textbox-prompt-colon, prompt, entry ];
     background-color:               @BG;
     text-color:                     @FG;
     expand:                         false;
@@ -83,8 +82,8 @@ case-indicator {
 listview {
     background-color:               @BG;
     columns:                        1;
-    lines:			                5;
-    spacing:                        15px;
+    lines:			    7;
+    spacing:                        4px;
     cycle:                          true;
     dynamic:                        true;
     layout:                         vertical;
@@ -92,8 +91,8 @@ listview {
 
 mainbox {
     background-color:               @BG;
-    children:                       [ listview ];
-    spacing:                        15px;
+    children:                       [ inputbar, listview ];
+    spacing:                       	15px;
     padding:                        15px;
 }
 
@@ -101,55 +100,54 @@ element {
     background-color:               @BG;
     text-color:                     @FG;
     orientation:                    horizontal;
-    border-radius:                  10px;
-    padding:                        20px;
+    border-radius:                  4px;
+    padding:                        6px 6px 6px 6px;
 }
 
 element-icon {
-    background-color: 		        inherit;
-    text-color:       		        inherit;
-    horizontal-align:               0.5;
-    vertical-align:                 0.5;
+    background-color: 				inherit;
+    text-color:       				inherit;
     size:                           0px;
     border:                         0px;
 }
 
 element-text {
-    background-color: 		        inherit;
-    text-color:       		        inherit;
-    font:			                "Iosevka Nerd Font Mono 20";
+    background-color: 				inherit;
+    text-color:       				inherit;
     expand:                         true;
-    horizontal-align:               0.5;
+    horizontal-align:               0;
     vertical-align:                 0.5;
-    margin:                         0px 0px 0px 0px;
+    margin:                         2px 0px 2px 6px;
+}
+
+element normal.urgent,
+element alternate.urgent {
+    background-color:               @UGT;
+    text-color:                     @FG;
+    border-radius:                  9px;
+}
+
+element normal.active,
+element alternate.active {
+    background-color:               @BGA;
+    text-color:                     @FG;
 }
 
 element selected {
     background-color:               @BGA;
     text-color:                     @SEL;
-    border:                  	    0px 0px 0px 0px;
+    border:                  		0px 0px 0px 0px;
     border-radius:                  10px;
-    border-color:                   @BDR;
+    border-color:                  	@BDR;
 }
 
-element.active,
-element.selected.urgent {
-  background-color: @ON;
-  text-color: @BG;
-  border-color: @ON;
+element selected.urgent {
+    background-color:               @UGT;
+    text-color:                     @FG;
 }
 
-element.selected.urgent {
-  border-color: @BDR;
+element selected.active {
+    background-color:               @BGA;
+    color:                          @FG;
 }
-
-element.urgent,
-element.selected.active {
-  background-color: @OFF;
-  text-color: @BG;
-  border-color: @OFF;
-}
-
-element.selected.active {
-  border-color: @BDR;
-}
+''

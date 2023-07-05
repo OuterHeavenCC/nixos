@@ -1,47 +1,50 @@
+''
 configuration {
-    show-icons:                     false;
+    show-icons:                     true;
     display-drun: 		            "";
     drun-display-format:            "{icon} {name}";
     disable-history:                false;
     click-to-exit: 		            true;
-    location:                       0;
+    location:                       4;
 }
 
 @import "font.rasi"
 @import "colors.rasi"
 
+/* Line Responsible For Button Layouts */
+/* BUTTON = TRUE */
+
 window {
     transparency:                   "real";
     background-color:               @BG;
     text-color:                     @FG;
-    border:                         2px;
-    border-color:                   @BDR;
+    border:                  	    2px;
+    border-color:                   @BGA;
     border-radius:                  10px;
-    width:                          400px;
-    anchor:                         center;
-    x-offset:                       0;
+    width:                          110px;
+    x-offset:                       -2%;
     y-offset:                       0;
 }
 
 prompt {
     enabled: 			            true;
-    margin: 			            0px 8px 0px 8px;
+    margin: 			            0px 0px 0px 8px;
     padding: 			            8px;
-    background-color: 		        @IMG;
-    text-color: 		            @BG;
-    border:                  	    0px 0px 0px 0px;
+    background-color: 		        @BG;
+    text-color: 		            @FG;
+    border:                  	    0px 0px 2px 0px;
     border-color:                   @BDR;
     border-radius:                  10px;
 }
 
 textbox-prompt-colon {
     expand: 			            false;
-    str: 			                "直";
+    str: 			                "";
     border-radius:                  100%;
-    background-color:               @SEL;
-    text-color:                     @FG;
+    background-color:               @BG;
+    text-color:                     @BG;
     padding:                        8px 12px 8px 12px;
-    font:			                "Iosevka Nerd Font 10";
+    font:			                "Iosevka Nerd Font 13";
 }
 
 entry {
@@ -50,7 +53,7 @@ entry {
     placeholder-color:              @FG;
     expand:                         true;
     horizontal-align:               0;
-    placeholder:                    "";
+    placeholder:                    "Search...";
     blink:                          true;
     border:                  	    0px 0px 2px 0px;
     border-color:                   @BDR;
@@ -59,7 +62,7 @@ entry {
 }
 
 inputbar {
-    children: 		                [ textbox-prompt-colon, prompt, entry ];
+    children: 		                [ textbox-prompt-colon ];
     background-color:               @BG;
     text-color:                     @FG;
     expand:                         false;
@@ -81,8 +84,8 @@ case-indicator {
 listview {
     background-color:               @BG;
     columns:                        1;
-    lines:			                7;
-    spacing:                        4px;
+    lines:			                5;
+    spacing:                        15px;
     cycle:                          true;
     dynamic:                        true;
     layout:                         vertical;
@@ -90,7 +93,7 @@ listview {
 
 mainbox {
     background-color:               @BG;
-    children:                       [ inputbar, listview ];
+    children:                       [ listview ];
     spacing:                        15px;
     padding:                        15px;
 }
@@ -99,37 +102,27 @@ element {
     background-color:               @BG;
     text-color:                     @FG;
     orientation:                    horizontal;
-    border-radius:                  4px;
-    padding:                        6px 6px 6px 6px;
+    border-radius:                  10px;
+    padding:                        20px;
 }
 
 element-icon {
-    background-color: 	            inherit;
+    background-color: 		        inherit;
     text-color:       		        inherit;
+    horizontal-align:               0.5;
+    vertical-align:                 0.5;
     size:                           0px;
     border:                         0px;
 }
 
 element-text {
-    background-color: 	            inherit;
+    background-color: 		        inherit;
     text-color:       		        inherit;
+    font:			                "Iosevka Nerd Font Mono 20";
     expand:                         true;
-    horizontal-align:               0;
+    horizontal-align:               0.5;
     vertical-align:                 0.5;
-    margin:                         2px 0px 2px 6px;
-}
-
-element normal.urgent,
-element alternate.urgent {
-    background-color:               @UGT;
-    text-color:                     @FG;
-    border-radius:                  9px;
-}
-
-element normal.active,
-element alternate.active {
-    background-color:               @BGA;
-    text-color:                     @FG;
+    margin:                         0px 0px 0px 0px;
 }
 
 element selected {
@@ -140,12 +133,25 @@ element selected {
     border-color:                   @BDR;
 }
 
-element selected.urgent {
-    background-color:               @UGT;
-    text-color:                     @FG;
+element.active,
+element.selected.urgent {
+  background-color: @ON;
+  text-color: @BG;
+  border-color: @ON;
 }
 
-element selected.active {
-    background-color:               @BGA;
-    color:                          @FG;
+element.selected.urgent {
+  border-color: @BDR;
 }
+
+element.urgent,
+element.selected.active {
+  background-color: @OFF;
+  text-color: @BG;
+  border-color: @OFF;
+}
+
+element.selected.active {
+  border-color: @BDR;
+}
+''

@@ -1,56 +1,17 @@
+{ config, ... }:
+
 {
-  home.file = {
-    ".config/rofi/askpass.rasi" = {
-      enable = true;
-      source = ./themes/askpass.rasi;
-    };
-    ".config/rofi/bluetooth.rasi" = {
-      enable = true;
-      source = ./themes/bluetooth.rasi;
-    };
-    ".config/rofi/colors.rasi" = {
-      enable = true;
-      source = ./themes/colors.rasi;
-    };
-    ".config/rofi/confirm.rasi" = {
-      enable = true;
-      source = ./themes/confirm.rasi;
-    };
-    ".config/rofi/font.rasi" = {
-      enable = true;
-      source = ./themes/font.rasi;
-    };
-    ".config/rofi/launcher.rasi" = {
-      enable = true;
-      source = ./themes/launcher.rasi;
-    };
-    ".config/rofi/long-launcher.rasi" = {
-      enable = true;
-      source = ./themes/long-launcher.rasi;
-    };
-    ".config/rofi/mpd.rasi" = {
-      enable = true;
-      source = ./themes/mpd.rasi;
-    };
-    ".config/rofi/network.rasi" = {
-      enable = true;
-      source = ./themes/network.rasi;
-    };
-    ".config/rofi/networkmenu.rasi" = {
-      enable = true;
-      source = ./themes/networkmenu.rasi;
-    };
-    ".config/rofi/powermenu.rasi" = {
-      enable = true;
-      source = ./themes/powermenu.rasi;
-    };
-    ".config/rofi/runner.rasi" = {
-      enable = true;
-      source = ./themes/runner.rasi;
-    };
-    ".config/rofi/screenshot.rasi" = {
-      enable = true;
-      source = ./themes/screenshot.rasi;
-    };
-  };
+  xdg.configFile."rofi/colors.rasi".text = import ./themes/colors.nix { inherit (config) colorscheme; };
+  xdg.configFile."rofi/askpass.rasi".text = import ./themes/askpass.nix;
+  xdg.configFile."rofi/bluetooth.rasi".text = import ./themes/bluetooth.nix;
+  xdg.configFile."rofi/confirm.rasi".text = import ./themes/confirm.nix;
+  xdg.configFile."rofi/font.rasi".text = import ./themes/font.nix;
+  xdg.configFile."rofi/launcher.rasi".text = import ./themes/launcher.nix;
+  xdg.configFile."rofi/long-launcher.rasi".text = import ./themes/long-launcher.nix;
+  xdg.configFile."rofi/mpd.rasi".text = import ./themes/mpd.nix;
+  xdg.configFile."rofi/network.rasi".text = import ./themes/network.nix;
+  xdg.configFile."rofi/networkmenu.rasi".text = import ./themes/networkmenu.nix;
+  xdg.configFile."rofi/powermenu.rasi".text = import ./themes/powermenu.nix;
+  xdg.configFile."rofi/runner.rasi".text = import ./themes/runner.nix;
+  xdg.configFile."rofi/screenshot.rasi".text = import ./themes/screenshot.nix;
 }
