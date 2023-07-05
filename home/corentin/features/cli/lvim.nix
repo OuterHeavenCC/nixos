@@ -10,9 +10,13 @@
 
 lvim.plugins = {
   { "catppuccin/nvim" },
+  { "folke/tokyonight.nvim"},
+  { "sainnhe/everforest" },
+  { "sainnhe/gruvbox-material" }
+  { "shaunsingh/nord.nvim" },
 }
 
-lvim.colorscheme = "catppuccin"
+lvim.colorscheme = "catppuccin-mocha"
 
 local formatters = require "lvim.lsp.null-ls.formatters"
 formatters.setup {
