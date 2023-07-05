@@ -13,7 +13,6 @@
     ./features/nvidia
     ./features/scripts
     ./features/productivity
-    ./features/gaming
     ./global
 
 

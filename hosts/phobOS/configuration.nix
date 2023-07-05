@@ -19,6 +19,7 @@
     ../common/optional/mimeApps.nix
     ../common/optional/bluetooth.nix
     ../common/optional/boot.nix
+    ../common/optional/flatpak.nix
 
     ./hardware-configuration.nix
 
