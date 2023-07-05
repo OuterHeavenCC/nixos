@@ -1,6 +1,6 @@
 {
 
-  home.file.".config/calcurse/conf" = {
+  xdg.configFile."calcurse/conf" = {
     text = ''
 appearance.calendarview=monthly
 appearance.compactpanels=no
