@@ -54,7 +54,4 @@
   ];
 
       programs.foot.settings.main.font = "Iosevka Nerd Font:size=16";
-      wayland.windowManager.hyprland.nvidiaPatches = true;
-
-
 }
