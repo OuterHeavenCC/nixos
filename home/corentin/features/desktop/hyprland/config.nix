@@ -113,7 +113,7 @@ bind=SUPER,B,exec,blueman-manager
 bind=SUPERSHIFT,B,exec,pkill -USR1 waybar
 
 bind=SUPER,C,exec,footclient -e calcurse
-bind=SUPERSHIFT,C,exec,footclient -e eva
+bind=SUPERSHIFT,C,exec,gnome-calculator
 
 bind=SUPER,d,exec,rofi-launcher
 bind=SUPERSHIFT,d,exec,rofi-runner
