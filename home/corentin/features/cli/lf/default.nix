@@ -142,7 +142,7 @@ cmd unarchive ''${{
 		*.Z) uncompress "$f" ;;
 		*.7z) 7z x "$f" ;;
 		*.xz) unxz "$f" ;;
-                *.zst) zstd -d "$f" ;;
+    *.zst) zstd -d "$f" ;;
 		*.exe) cabextract "$f" ;;
 		*) printf "extract: '%s' - unknown archive method\\n" "$f" ;;
   esac
