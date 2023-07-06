@@ -11,7 +11,6 @@ in
     nixpkgs = {
       overlays = [
         outputs.overlays.modifications
-        inputs.joshuto.overlays.default
       ];
 
       config = {

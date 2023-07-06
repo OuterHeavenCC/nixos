@@ -11,7 +11,6 @@
     ./gpg.nix
     ./ledger.nix
     ./lf
-    ./joshuto
     ./lvim.nix
     ./newsboat.nix
     ./nvim.nix
