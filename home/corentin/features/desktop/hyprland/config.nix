@@ -27,11 +27,8 @@ windowrule = float, Rofi
 windowrule = noborder, Rofi
 windowrule = float, title:^(sfml)$
 windowrule = center, title:^(sfml)$
-
-# Fix Telegram
-windowrule = nofullscreenrequest, title:^(Lecteur multimédia)$
-windowrule = float, title:^(Calculatrice)$
-
+windowrule = nofullscreenrequest, title:^(Lecteur multimédia)$          # Fix Telegram
+windowrule = float, title:^(Calculatrice)$                              # Calculatrice flottante
 
 input {
     kb_layout=fr
@@ -39,13 +36,9 @@ input {
     kb_model=pc105
     kb_options=caps:super,terminate:ctrl_alt_bksp
     kb_rules=evdev
-
     follow_mouse=1
-
     repeat_rate=50
     repeat_delay=300
-    
-    left_handed=0
 }
 
 decoration {
@@ -72,20 +65,16 @@ animations {
     bezier=easein,0.11, 0, 0.5, 0
     bezier=easeout,0.5, 1, 0.89, 1
     bezier=easeinout,0.45, 0, 0.55, 1
-
     animation=windowsIn,1,3,easeout,slide
     animation=windowsOut,1,3,easein,slide
     animation=windowsMove,1,3,easeout
-
     animation=fadeIn,1,3,easeout
     animation=fadeOut,1,3,easein
     animation=fadeSwitch,1,3,easeout
     animation=fadeShadow,1,3,easeout
     animation=fadeDim,1,3,easeout
     animation=border,1,3,easeout
-
     animation=workspaces,1,2,easeout,slide
-
   }
 
 misc {
@@ -95,14 +84,12 @@ misc {
 
 general {
     sensitivity=1.0 # for mouse cursor
-
     gaps_in=5
     gaps_out=20
     border_size=2
     col.active_border=0xFF${colorscheme.colors.base07}
     col.inactive_border=0x66${colorscheme.colors.base02}
     layout=master
-
 }
 
 master {
@@ -110,9 +97,11 @@ master {
   }
 
 
+# Bindings
 
 bind=SUPER,Return,exec,${TERMINAL}
 
+bind=SUPER,A,exec,${TERMINAL} -e abook -C ~/.config/abook/abookrc --datafile ~/.config/abook/addressbook
 bind=SUPER,B,exec,blueman-manager
 bind=SUPERSHIFT,B,exec,pkill -USR1 waybar
 
