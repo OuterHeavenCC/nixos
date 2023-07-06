@@ -41,6 +41,7 @@
     fzf                           # Fuzzy File Finder
     glow                          # Markdown preview in terminal
     gnome-epub-thumbnailer        # Epub thumbnailer for terminal
+    gcc                           # Basic programming stuff
     gnumake                       # Basic programming stuff
     hexyl                         # Hex Viewer
     httpie                        # Better curl

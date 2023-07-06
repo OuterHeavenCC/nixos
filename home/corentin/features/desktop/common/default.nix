@@ -5,11 +5,12 @@
     ./firefox.nix
     ./gtk.nix
     ./kdeconnect.nix
+    ./mpd.nix
     ./mpv.nix
+    ./ncmpcpp.nix
+    ./networkmanager_dmenu.nix
     ./xdg.nix
     ./zathura.nix
-    ./mpd.nix
-    ./ncmpcpp.nix
   ];
 
   home.packages = with pkgs; [
@@ -24,7 +25,7 @@
     libreoffice              # When pandoc isn't enought
     obs-studio               # Screen capturing tool
     piper                    # Gaming mouse management
-    prismlauncher           # Minecraft launcher
+    prismlauncher            # Minecraft launcher
     spotify                  # Peut-être à enlever si j'utilise ncmpcpp ?
     telegram-desktop         # Telegram
     thunderbird              # En attendant d'avoir une configuration neomutt plus propre

@@ -140,17 +140,15 @@ bind=SUPER,S,exec,footclient -e pulsemixer
 bind=SUPERSHIFT,S,exec,bmks
 
 bind=SUPER,W,exec,firefox
-bind=SUPERSHIFT,W,exec,footclient -e nmtui
+bind=SUPERSHIFT,W,exec,networkmanager_dmenu
 
 bind=SUPER,X,exec,clipman pick -t rofi -T"-theme ~/.config/rofi/launcher.rasi"
 
 bind=SUPER,F4,exec,footclient -e btm
 bind=SUPER,F5,exec,rofi -theme ~/.config/rofi/launcher.rasi -show ssh
 bind=SUPER,F6,exec,rofi-mullvad-toggle
-bind=SUPER,F7,exec,rofi-td-toggle
 bind=SUPER,F9,exec,rofi-mount
 bind=SUPER,F10,exec,rofi-umount
-bind=SUPER,F11,exec,firefox localhost:9091/transmission/web
 bind=SUPER,F12,submap,passthrough
 submap=passthrough
 bind=SUPER,F12,submap,reset

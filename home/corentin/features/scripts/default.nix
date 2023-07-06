@@ -55,11 +55,6 @@
       source = ./bin/rofi-runner;
       executable = true;
     };
-    ".local/bin/rofi-td-toggle" = {
-      enable = true;
-      source = ./bin/rofi-td-toggle;
-      executable = true;
-    };
     ".local/bin/rofi-umount" = {
       enable = true;
       source = ./bin/rofi-umount;
