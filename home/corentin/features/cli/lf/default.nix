@@ -11,7 +11,7 @@
       "r" = "";
       "i" = "";
       "." = "set hidden!";
-      "f" = "fzf_jump";
+      "f" = "sk_jump";
       "z" = "zi";
       "x" = "unarchive";
       "<c-r>" = "reload";
@@ -89,8 +89,8 @@ cmd open ''${{
   *) for f in $fx; do setsid -f $OPENER $f >/dev/null 2>&1; done;;
     esac
 }}
-cmd fzf_jump ''${{
-    res="$(fzf --reverse --header='Rechercher :')"
+cmd sk_jump ''${{
+    res="$(sk --reverse --header='Rechercher :')"
     if [ -f "$res" ]; then
         cmd="select"
     elif [ -d "$res" ]; then
