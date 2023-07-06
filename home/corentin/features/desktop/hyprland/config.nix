@@ -21,6 +21,7 @@ exec-once=foot --server
 exec-once=waybar
 exec-once=swayidle -w
 exec-once=wl-paste -t text --watch clipman store
+exec-once=xrandr --output DP-1 --primary              # Fix Jeux Steam
 
 windowrule = float, Rofi
 windowrule = noborder, Rofi
