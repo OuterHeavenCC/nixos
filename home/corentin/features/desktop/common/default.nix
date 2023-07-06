@@ -1,10 +1,9 @@
-{ pkgs, lib, outputs, ... }:
+{ pkgs, ... }:
 
 {
   imports = [
     ./firefox.nix
     ./gtk.nix
-    ./kdeconnect.nix
     ./mpd.nix
     ./mpv.nix
     ./ncmpcpp.nix

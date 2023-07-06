@@ -1,4 +1,3 @@
-{ inputs, outputs, ... }:
 # This is your system's configuration file.
 # Use this to configure your system environment (it replaces /etc/nixos/configuration.nix)
 
@@ -20,6 +19,7 @@
     ../common/optional/bluetooth.nix
     ../common/optional/boot.nix
     ../common/optional/flatpak.nix
+    ../common/optional/kdeconnect.nix
 
     ./hardware-configuration.nix
 

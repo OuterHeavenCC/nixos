@@ -1,4 +1,5 @@
 {
+  home.sessionVariables.EDITOR = "lvim";
   xdg.configFile."lvim/config.lua" = {
     text = ''
 -- Read the docs: https://www.lunarvim.org/docs/configuration

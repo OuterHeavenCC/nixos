@@ -5,7 +5,7 @@ let
 in
 {
   
-  home.sessionVariables.TERMINAL = "foot";
+  home.sessionVariables.TERMINAL = "footclient";
 
   programs.foot = {
     enable = true;

@@ -1,7 +1,6 @@
 { inputs, lib, pkgs, config, outputs, ... }:
 let
   inherit (inputs.nix-colors) colorSchemes;
-  inherit (inputs.nix-colors.lib-contrib { inherit pkgs; }) colorschemeFromPicture nixWallpaperFromScheme;
 in
 {
   imports = [
@@ -11,8 +10,7 @@ in
 
     nixpkgs = {
       overlays = [
-        outputs.overlays.lf
-        outputs.overlays.ncmpcpp
+        outputs.overlays.modifications
       ];
 
       config = {

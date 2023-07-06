@@ -13,6 +13,7 @@
     ../common/optional/mimeApps.nix
     ../common/optional/bluetooth.nix
     ../common/optional/boot.nix
+    ../common/optional/kdeconnect.nix
 
     ./hardware-configuration.nix
   ];

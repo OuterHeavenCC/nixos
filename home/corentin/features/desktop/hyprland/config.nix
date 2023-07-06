@@ -1,4 +1,7 @@
 {home, colorscheme}:
+let
+  inherit (home.sessionVariables) BROWSER EDITOR TERMINAL;
+in
 ''
 env = GDK_BACKEND=wayland,x11
 env = QT_QPA_PLATFORM="wayland,xcb"
@@ -86,7 +89,7 @@ animations {
 
 misc {
     enable_swallow = true
-    swallow_regex="footclient"
+    swallow_regex="${TERMINAL}"
   }
 
 general {
@@ -107,12 +110,12 @@ master {
 
 
 
-bind=SUPER,Return,exec,footclient
+bind=SUPER,Return,exec,${TERMINAL}
 
 bind=SUPER,B,exec,blueman-manager
 bind=SUPERSHIFT,B,exec,pkill -USR1 waybar
 
-bind=SUPER,C,exec,footclient -e calcurse
+bind=SUPER,C,exec,${TERMINAL} -e calcurse
 bind=SUPERSHIFT,C,exec,gnome-calculator
 
 bind=SUPER,d,exec,rofi-launcher
@@ -122,11 +125,11 @@ bind=SUPER,E,exec,thunderbird
 
 bind=SUPER,F,fullscreen,0
 
-bind=SUPER,M,exec,footclient -e ncmpcpp
+bind=SUPER,M,exec,${TERMINAL} -e ncmpcpp
 bind=SUPERSHIFT,M,exec,pamixer -t
 
-bind=SUPER,N,exec,footclient -e lvim
-bind=SUPERSHIFT,N,exec,footclient -e newsboat
+bind=SUPER,N,exec,${TERMINAL} -e ${EDITOR}
+bind=SUPERSHIFT,N,exec,${TERMINAL} -e newsboat
 
 bind=SUPER,P,exec,mpc toggle
 bind=SUPERSHIFT,P,exec,mpc pause
@@ -134,17 +137,17 @@ bind=SUPERSHIFT,P,exec,mpc pause
 bind=SUPER,Q,killactive,
 bind=SUPERSHIFT,Q,exit,
 
-bind=SUPER,R,exec,footclient -e lf
+bind=SUPER,R,exec,${TERMINAL} -e lf
 
-bind=SUPER,S,exec,footclient -e pulsemixer
+bind=SUPER,S,exec,${TERMINAL} -e pulsemixer
 bind=SUPERSHIFT,S,exec,bmks
 
-bind=SUPER,W,exec,firefox
+bind=SUPER,W,exec,${BROWSER}
 bind=SUPERSHIFT,W,exec,networkmanager_dmenu
 
 bind=SUPER,X,exec,clipman pick -t rofi -T"-theme ~/.config/rofi/launcher.rasi"
 
-bind=SUPER,F4,exec,footclient -e btm
+bind=SUPER,F4,exec,${TERMINAL} -e btm
 bind=SUPER,F5,exec,rofi -theme ~/.config/rofi/launcher.rasi -show ssh
 bind=SUPER,F6,exec,rofi-mullvad-toggle
 bind=SUPER,F9,exec,rofi-mount

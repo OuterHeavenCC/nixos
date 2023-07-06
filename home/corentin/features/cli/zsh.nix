@@ -46,7 +46,6 @@ PS1=\"%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magen
     sessionVariables = {
       OPENER = "xdg-open";
       LOCATION = "Quimperlé";
-      EDITOR = "lvim";
       PASSWORD_STORE_DIR = "${config.home.homeDirectory}/.local/share/password-store";
     };
     shellAliases = {

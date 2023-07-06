@@ -1,4 +1,3 @@
-{ pkgs, ... }:
 {
   programs.lf = {
     enable = true;
@@ -69,6 +68,7 @@ map i push A<a-b><a-b><a-f> # before extention
 map a push A<a-b> # after extention
 map br vimv # Bulk rename du répertoire actuel
 
+# Commandes générales
 cmd open ''${{
   case $(file --mime-type $f -bL) in
 	image/vnd.djvu|application/pdf|application/octet-stream) setsid -f zathura $fx >/dev/null 2>&1 ;;

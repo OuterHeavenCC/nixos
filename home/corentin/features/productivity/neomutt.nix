@@ -1,5 +1,3 @@
-{ config, pkgs, lib, ... }:
-
 {
   programs.neomutt = {
     enable = true;
@@ -200,12 +198,7 @@
           map = [ "index" "pager" ];
         }
       ];
-    extraConfig = let
-      # Collect all addresses and aliases
-      addresses = lib.flatten (lib.mapAttrsToList (n: v: [ v.address ] ++ v.aliases) config.accounts.email.accounts);
-    in ''
-      alternates "${lib.concatStringsSep "|" addresses}"
-    '' + ''
+    extraConfig = ''
 # Default index colors:
 color index yellow default '.*'
 color index_author red default '.*'
