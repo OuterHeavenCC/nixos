@@ -101,7 +101,8 @@ master {
 
 bind=SUPER,Return,exec,${TERMINAL}
 
-bind=SUPER,A,exec,${TERMINAL} -e abook -C ~/.config/abook/abookrc --datafile ~/.config/abook/addressbook
+bind=SUPERSHIFT,A,exec,${TERMINAL} -e abook -C ~/.config/abook/abookrc --datafile ~/.config/abook/addressbook
+
 bind=SUPER,B,exec,blueman-manager
 bind=SUPERSHIFT,B,exec,pkill -USR1 waybar
 
