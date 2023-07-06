@@ -13,6 +13,9 @@
     home-manager.url = "github:nix-community/home-manager/release-23.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
+    # Joshuto
+    joshuto.url = "github:kamiyaa/joshuto";
+
     # hardware.url = "github:nixos/nixos-hardware";
     nix-minecraft.url = "github:Infinidoge/nix-minecraft";
     nix-colors.url = "github:misterio77/nix-colors";
