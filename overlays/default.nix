@@ -24,6 +24,8 @@
       visualizerSupport = true;
     };
 
+    nginxStable = prev.nginxStable.override { oppenssl = prev.pkgs.libressl; };
+
   };
 
   # When applied, the unstable nixpkgs set (declared in the flake inputs) will
