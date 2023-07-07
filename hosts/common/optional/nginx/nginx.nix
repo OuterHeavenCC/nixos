@@ -1,4 +1,11 @@
 {
+
+  networking.firewall = {
+    allowedTCPPortRanges = [
+      { from = 80; to = 80; }
+    ];
+  };
+
   services.nginx = {
     enable = true;
     virtualHosts."46.226.104.146" = {
