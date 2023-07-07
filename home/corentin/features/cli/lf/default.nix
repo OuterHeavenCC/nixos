@@ -36,7 +36,7 @@
       "gr" = "cd /";
       "g\/" = "cd /";
       "ge" = "cd /etc/";
-      "gn" = "cd ~/nixos";
+      "gn" = "cd ~/Documents/git/nixos";
       "gh" = "cd ~";
       "gc" = "cd ~/.config";
       "gl" = "cd ~/.local";

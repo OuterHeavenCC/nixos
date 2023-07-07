@@ -74,7 +74,7 @@
           modules = [ ./hosts/ares/configuration.nix ];
           specialArgs = { inherit inputs outputs; };
         };
-        # LiveUSB #TODO Fix networkmanager, install seatd, set XDG_RUNTIME_DIR and LIBSEAT_BACKEND=logind
+        # TODO LiveUSB : Fix networkmanager, install seatd, set XDG_RUNTIME_DIR and LIBSEAT_BACKEND=logind
         liveUSB = lib.nixosSystem {
           specialArgs = { inherit inputs outputs; };
           modules = [ 
