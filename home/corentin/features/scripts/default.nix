@@ -65,5 +65,10 @@
       source = ./bin/transadd;
       executable = true;
     };
+    ".local/bin/ssg" = {
+      enable = true;
+      source = ./bin/ssg;
+      executanle = true;
+    };
   };
 }
