@@ -2,6 +2,6 @@
   imports = [
     ./global
     ./features/cli
-    ./website
+    ./features/website
   ];
 }
