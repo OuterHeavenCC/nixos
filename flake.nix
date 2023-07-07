@@ -34,9 +34,6 @@
       url = "gitlab:simple-nixos-mailserver/nixos-mailserver";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    
-
   };
 
 
@@ -77,39 +74,14 @@
           modules = [ ./hosts/ares/configuration.nix ];
           specialArgs = { inherit inputs outputs; };
         };
-  
-
-      # Available through 'home-manager --flake .#corentin@hostname'
-      homeConfigurations = {
-        "corentin@phobOS" = lib.homeManagerConfiguration {
-          modules = [ ./home/corentin/phobOS.nix ];
-          pkgs = pkgsFor.x86_64-linux;
-          extraSpecialArgs = { inherit inputs outputs; };
-        };
-        "corentin@deimOS" = lib.homeManagerConfiguration {
-          modules = [ ./home/corentin/deimOS.nix ];
-          pkgs = pkgsFor.x86_64-linux;
-          extraSpecialArgs = { inherit inputs outputs; };
-        };
-        "corentin@ares" = lib.homeManagerConfiguration {
-          modules = [ ./home/corentin/ares.nix ];
-          pkgs = pkgsFor.x86_64-linux;
-          extraSpecialArgs = { inherit inputs outputs; };
-        };
-
-
-        # TODO M'en occuper plus tard
-        # iso = nixpkgs.lib.nixosSystem {
-        #   specialArgs = {
-        #     inherit inputs outputs;
-        #   };
-        #   modules = [
-        #     (nixpkgs + "/nixos/modules/installer/cd-dvd/installation-cd-graphical-calamares.nix")
-        #     ./hosts/liveUSB/configuration.nix
-        #   ];
-        # };
-
-          };
+        # LiveUSB #TODO Fix networkmanager, install seatd, set XDG_RUNTIME_DIR and LIBSEAT_BACKEND=logind
+        liveUSB = lib.nixosSystem {
+          specialArgs = { inherit inputs outputs; };
+          modules = [ 
+          <nixpkgs/nixos/modules/installer/cd-dvd/installation-cd-base.nix>
+          ./hosts/liveUSB/configuration.nix
+          ];
         };
       };
+    };
 }

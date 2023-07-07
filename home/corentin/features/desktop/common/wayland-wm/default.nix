@@ -19,8 +19,6 @@
       wev                         # Show Wayland events
       wl-clipboard                # Clipboard manager for wlroots
       ydotool                     # Command line automation tool for Wayland
-      swaylock                    # Wayland lock screen
-      swayidle                    # Wayland idle management
     ];
 
 }
