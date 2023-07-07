@@ -25,9 +25,9 @@
     obs-studio               # Screen capturing tool
     piper                    # Gaming mouse management
     prismlauncher            # Minecraft launcher
-    spotify                  # Peut-être à enlever si j'utilise ncmpcpp ?
     telegram-desktop         # Telegram
     thunderbird              # En attendant d'avoir une configuration neomutt plus propre
     warp                     # File transfer
+    xournalpp                # Edition de PDF
   ];
 }
