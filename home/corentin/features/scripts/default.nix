@@ -68,7 +68,7 @@
     ".local/bin/ssg" = {
       enable = true;
       source = ./bin/ssg;
-      executanle = true;
+      executable = true;
     };
   };
 }
