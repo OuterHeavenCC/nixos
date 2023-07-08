@@ -25,10 +25,10 @@ in
       accounts = {
         personal = rec {
           primary = true;
-          address = "corentin@chaminand.fr";
+          address = "corentin@chaminand.com";
           passwordCommand = "${pass} ${address}";
 
-          imap.host = "mail.gandi.net";
+          imap.host = "mail.chaminand.com";
           mbsync = {
             enable = true;
             create = "maildir";
@@ -46,7 +46,7 @@ in
           };
 
           msmtp.enable = true;
-          smtp.host = "mail.gandi.net";
+          smtp.host = "mail.chaminand.com";
           userName = address;
         } // common;
 

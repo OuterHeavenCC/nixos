@@ -11,9 +11,10 @@
 
   services.nginx = {
     enable = true;
-    virtualHosts."chaminand.com" = {
+    virtualHosts."www.chaminand.com" = {
       enableACME = true;
       forceSSL = true;
+      globalRedirect = "chaminand.com";
       root = "/var/www/chaminand.com";
     };
   };
