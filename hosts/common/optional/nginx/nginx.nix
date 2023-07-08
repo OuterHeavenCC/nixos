@@ -17,11 +17,14 @@
     recommendedOptimisation = true;
 
     virtualHosts."chaminand.com" = {
-      enableACME = true;
       forceSSL = true;
-      globalRedirect = "chaminand.com";
-      root = "/var/www/chaminand.com";
-      locations."/".return = "302 https://chaminand.com$request_uri";
+      enableACME = true;
+      locations = {
+        "/" = {
+          root = "/var/www/chaminand.com";
+          return = "302 https://chaminand.com$request_uri";
+        };
+      };
     };
   };
   # Optional: You can configure the email address used with Let's Encrypt.
