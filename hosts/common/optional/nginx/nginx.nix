@@ -2,6 +2,9 @@
   networking.firewall = {
     allowedTCPPortRanges = [
       { from = 80; to = 80; }
+      { from = 10800; to = 10800; }
+      { from = 8000; to = 8000; }
+      { from = 8080; to = 8080; }
     ];
   };
 
