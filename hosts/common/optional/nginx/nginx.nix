@@ -16,21 +16,22 @@
     recommendedGzipSettings = true;
     recommendedOptimisation = true;
 
-    virtualHosts."chaminand.com" = {
-      forceSSL = true;
-      enableACME = true;
-      locations = {
-        "/" = {
-          root = "/var/www/chaminand.com";
-          return = "302 https://chaminand.com$request_uri";
+    virtualHosts = {
+      "chaminand.com" = {
+        forceSSL = true;
+        enableACME = true;
+        locations = {
+          "/" = {
+            root = "/var/www/chaminand.com";
+          };
         };
       };
     };
-  };
   # Optional: You can configure the email address used with Let's Encrypt.
   # This way you get renewal reminders (automated by NixOS) as well as expiration emails.
-  security.acme.acceptTerms = true;
-  security.acme.certs = {
-  "chaminand.com".email = "corent.cham@gmail.com";
+    security.acme.acceptTerms = true;
+    security.acme.certs = {
+    "chaminand.com".email = "corent.cham@gmail.com";
+    };
   };
 }
