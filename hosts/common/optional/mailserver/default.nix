@@ -17,7 +17,7 @@
     # nix-shell -p mkpasswd --run 'mkpasswd -sm bcrypt'
     loginAccounts = {
       "corentin@chaminand.com" = {
-        hashedPasswordFile = "/home/corentin/.config/mail/pwd-corentin@chaminand.com";
+        hashedPasswordFile = "/run/keys/corentin-passwordhash";
       };
     };
 
