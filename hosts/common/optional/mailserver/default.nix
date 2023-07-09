@@ -12,25 +12,6 @@
     enable = true;
     fqdn = "mail.chaminand.com";
     domains = [ "chaminand.com" ];
-    mailboxes = 
-      {
-      Drafts = {
-        auto = "subscribe";
-        specialUse = "Brouillons";
-      };
-      Junk = {
-        auto = "subscribe";
-        specialUse = "Pourriels";
-      };
-      Sent = {
-        auto = "subscribe";
-        specialUse = "Envoyés";
-      };
-      Trash = {
-        auto = "no";
-        specialUse = "Corbeille";
-      };
-    };
 
     # A list of all login accounts. To create the password hashes, use
     # nix-shell -p mkpasswd --run 'mkpasswd -sm bcrypt'
