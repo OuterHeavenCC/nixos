@@ -192,17 +192,17 @@
           }
           {
           action = "sidebar-next";
-          key = "\Cj";
+          key = "\\Cj";
           map = [ "index" "pager" ];
           }
           {
           action = "sidebar-prev";
-          key = "\Ck";
+          key = "\\Ck";
           map = [ "index" "pager" ];
           }
           {
           action = "sidebar-open";
-          key = "\Co";
+          key = "\\Co";
           map = [ "index" "pager" ];
           }
       ];
