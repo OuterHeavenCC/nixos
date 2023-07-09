@@ -21,7 +21,7 @@ let
 in
 {
   accounts.email = {
-    maildirBasePath = "${config.home.homeDirectory}/.local/share/Mail";
+    maildirBasePath = "${config.home.homeDirectory}/.local/share/mail";
       accounts = {
         # personal = rec {
         #   primary = true;
@@ -63,12 +63,12 @@ in
         };
         folders = {
           inbox = "Inbox";
-          sent = "Sent";
+          sent = "[Gmail]/Messages envoyés";
           trash = "[Gmail]/Corbeille";
         };
         neomutt = {
           enable = true;
-          extraMailboxes = [ "Sent" "[Gmail]/Spam" "[Gmail]/Corbeille" ];
+          extraMailboxes = [ "[Gmail]/Messages envoy&AOk-s" "[Gmail]/Brouillons" "[Gmail]/Spam" "[Gmail]/Corbeille" ];
         };
 
         msmtp.enable = true;
