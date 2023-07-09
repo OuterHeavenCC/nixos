@@ -13,7 +13,7 @@
       text_flowed = "yes";
       reverse_name = "yes";
       mime_type_query_command = ''"file --mime-type -b %s"'';
-      date_format= ''"%y/%m/%d %I:%M%p"'';
+      date_format= ''"%d/%m/%y %H:%M"'';
       index_format= ''"%2C %Z %?X?A& ? %D %-15.15F %s (%-4.4c)"'';
       sort = ''"reverse-date"'';
       smtp_authenticators = ''"gssapi:login"'';
