@@ -15,7 +15,8 @@
       mime_type_query_command = ''"file --mime-type -b %s"'';
       date_format= ''"%d/%m/%y %H:%M"'';
       index_format= ''"%2C %Z %?X?A& ? %D %-15.15F %s (%-4.4c)"'';
-      sort = ''"reverse-date"'';
+      sort = ''"date"'';
+      sort_aux = ''"last-date-received"'';
       smtp_authenticators = ''"gssapi:login"'';
       query_command = ''"abook --mutt-query '%s'"'';
       rfc2047_parameters = "yes";
@@ -188,6 +189,21 @@
           action = "complete-query";
           key = "<Tab>";
           map = [ "editor" ];
+          }
+          {
+          action = "sidebar-next";
+          key = "\Cj";
+          map = [ "index" "pager" ];
+          }
+          {
+          action = "sidebar-prev";
+          key = "\Ck";
+          map = [ "index" "pager" ];
+          }
+          {
+          action = "sidebar-open";
+          key = "\Co";
+          map = [ "index" "pager" ];
           }
       ];
           macros =
