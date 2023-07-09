@@ -36,7 +36,7 @@ in
           };
           folders = {
             inbox = "Inbox";
-            sent = "[Gmail]/Messages envoyés";
+            sent = "[Gmail]/Messages envoy&AOk-s";
             trash = "[Gmail]/Corbeille";
           };
           neomutt = {

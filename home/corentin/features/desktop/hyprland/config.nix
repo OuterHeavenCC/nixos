@@ -1,6 +1,6 @@
 {home, colorscheme}:
 let
-  inherit (home.sessionVariables) BROWSER EDITOR TERMINAL;
+  inherit (home.sessionVariables) BROWSER EDITOR TERMINAL MAILCLIENT;
 in
 ''
 env = GDK_BACKEND=wayland,x11
@@ -112,7 +112,7 @@ bind=SUPERSHIFT,C,exec,gnome-calculator
 bind=SUPER,d,exec,rofi-launcher
 bind=SUPERSHIFT,d,exec,rofi-runner
 
-bind=SUPER,E,exec,thunderbird
+bind=SUPER,E,exec,${MAILCLIENT}
 
 bind=SUPER,F,fullscreen,0
 
