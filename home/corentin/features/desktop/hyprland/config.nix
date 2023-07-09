@@ -112,7 +112,7 @@ bind=SUPERSHIFT,C,exec,gnome-calculator
 bind=SUPER,d,exec,rofi-launcher
 bind=SUPERSHIFT,d,exec,rofi-runner
 
-bind=SUPER,E,exec,${MAILCLIENT}
+bind=SUPER,E,exec,${TERMINAL} -e ${MAILCLIENT}
 
 bind=SUPER,F,fullscreen,0
 
