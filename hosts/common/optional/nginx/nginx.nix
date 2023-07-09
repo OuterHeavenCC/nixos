@@ -26,6 +26,11 @@
           };
         };
       };
+      "www.chaminand.com" = {
+        forceSSL = true;
+        enableACME = true;
+        globalRedirect = "chaminand.com";
+      };
     };
   # Optional: You can configure the email address used with Let's Encrypt.
   # This way you get renewal reminders (automated by NixOS) as well as expiration emails.
@@ -33,7 +38,10 @@
 
   security.acme.acceptTerms = true;
   security.acme.certs = {
-    "chaminand.com".email = "corent.cham@gmail.com";
+    "chaminand.com" = {
+      email = "corent.cham@gmail.com";
+      extraDomainNames = [ "www.chaminand.com" ];
+    };
   };
 
 }
