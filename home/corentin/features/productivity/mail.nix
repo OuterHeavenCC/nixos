@@ -35,14 +35,14 @@ in
             expunge = "both";
           };
           folders = {
-            inbox = "Boîte de réception";
-            sent = "Envoyés";
-            drafts = "Brouillons";
-            trash = "Corbeille";
+            inbox = "Inbox";
+            sent = "Sent";
+            drafts = "Drafts";
+            trash = "Trash";
           };
           neomutt = {
             enable = true;
-            extraMailboxes = [ "Envoyés" "Brouillons" "Pourriels" "Corbeille" ];
+            extraMailboxes = [ "Sent" "Drafts" "Junk" "Trash" ];
           };
 
           msmtp.enable = true;
