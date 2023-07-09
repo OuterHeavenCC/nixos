@@ -9,7 +9,7 @@
   ];
 
   mailserver = {
-    enable = true;
+    enable = false;
     fqdn = "mail.chaminand.com";
     domains = [ "chaminand.com" ];
 

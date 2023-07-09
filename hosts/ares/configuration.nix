@@ -9,6 +9,7 @@
     ../common/users/corentin
     ./hardware-configuration.nix
     ../common/optional/nginx
+    ../common/optional/mailserver
 
   ];
 
