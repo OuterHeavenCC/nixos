@@ -4,6 +4,7 @@ let
   inherit (config.colorscheme) colors;
 in
 {
+  home.sessionVariables.READER = "zathura";
   programs.zathura = {
     enable = true;
     mappings = {

@@ -22,6 +22,7 @@
     gnome.nautilus           # When lf isn't enough
     imv                      # Simple Image Viewer
     libreoffice              # When pandoc isn't enought
+    lynx                     # Terminal browser
     obs-studio               # Screen capturing tool
     piper                    # Gaming mouse management
     prismlauncher            # Minecraft launcher
