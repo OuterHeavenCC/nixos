@@ -197,6 +197,11 @@
           key = "a";
           map = [ "index" "pager" ];
         }
+        {
+          action = "<tag-pattern>~N<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter>";
+          key = "A";
+          map = [ "index" ];
+        }
       ];
     extraConfig = ''
 # Default index colors:
