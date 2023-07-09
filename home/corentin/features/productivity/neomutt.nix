@@ -34,176 +34,176 @@
     };
         binds = [
           {
-          action = "noop";
-          key = "i";
-          map = [ "index" "pager" ];
+            action = "noop";
+            key = "i";
+            map = [ "index" "pager" ];
           }
           {
-          action = "noop";
-          key = "g";
-          map = [ "index" "pager" ];
+            action = "noop";
+            key = "g";
+            map = [ "index" "pager" ];
           }
           {
-          action = "noop";
-          key = "\\Cf";
-          map = [ "index" ];
+            action = "noop";
+            key = "\\Cf";
+            map = [ "index" ];
           }
           {
-          action = "noop";
-          key = "M";
-          map = [ "index" "pager" ];
+            action = "noop";
+            key = "M";
+            map = [ "index" "pager" ];
           }
           {
-          action = "noop";
-          key = "C";
-          map = [ "index" "pager" ];
+            action = "noop";
+            key = "C";
+            map = [ "index" "pager" ];
           }
 
           # General Bindings
           {
-          action = "first-entry";
-          key = "gg";
-          map = [ "index" ];
+            action = "first-entry";
+            key = "gg";
+            map = [ "index" ];
           }
           {
-          action = "next-entry";
-          key = "j";
-          map = [ "index" ];
+            action = "next-entry";
+            key = "j";
+            map = [ "index" ];
           }
           {
-          action = "previous-entry";
-          key = "k";
-          map = [ "index" ];
+            action = "previous-entry";
+            key = "k";
+            map = [ "index" ];
           }
           {
-          action = "view-mailcap";
-          key = "<return>";
-          map = [ "attach" ];
+            action = "view-mailcap";
+            key = "<return>";
+            map = [ "attach" ];
           }
           {
-          action = "view-mailcap";
-          key = "l";
-          map = [ "attach" ];
+            action = "view-mailcap";
+            key = "l";
+            map = [ "attach" ];
           }
           {
-          action = "noop";
-          key = "<space>";
-          map = [ "editor" ];
+            action = "noop";
+            key = "<space>";
+            map = [ "editor" ];
           }
           {
-          action = "last-entry";
-          key = "G";
-          map = [ "index" ];
+            action = "last-entry";
+            key = "G";
+            map = [ "index" ];
           }
           {
-          action = "exit";
-          key = "h";
-          map = [ "pager" "attach" ];
+            action = "exit";
+            key = "h";
+            map = [ "pager" "attach" ];
           }
           {
-          action = "next-line";
-          key = "j";
-          map = [ "pager" ];
+            action = "next-line";
+            key = "j";
+            map = [ "pager" ];
           }
           {
-          action = "previous-line";
-          key = "k";
-          map = [ "pager" ];
+            action = "previous-line";
+            key = "k";
+            map = [ "pager" ];
           }
           {
-          action = "view-attachments";
-          key = "l";
-          map = [ "pager" ];
+            action = "view-attachments";
+            key = "l";
+            map = [ "pager" ];
           }
           {
-          action = "delete-message";
-          key = "D";
-          map = [ "index" ];
+            action = "delete-message";
+            key = "D";
+            map = [ "index" ];
           }
           {
-          action = "undelete-message";
-          key = "U";
-          map = [ "index" ];
+            action = "undelete-message";
+            key = "U";
+            map = [ "index" ];
           }
           {
-          action = "limit";
-          key = "L";
-          map = [ "index" ];
+            action = "limit";
+            key = "L";
+            map = [ "index" ];
           }
           {
-          action = "noop";
-          key = "h";
-          map = [ "index" ];
+            action = "noop";
+            key = "h";
+            map = [ "index" ];
           }
           {
-          action = "display-message";
-          key = "l";
-          map = [ "index" ];
+            action = "display-message";
+            key = "l";
+            map = [ "index" ];
           }
           {
-          action = "tag-entry";
-          key = "<space>";
-          map = [ "index" "query" ];
+            action = "tag-entry";
+            key = "<space>";
+            map = [ "index" "query" ];
           }
           {
-          action = "view-raw-message";
-          key = "H";
-          map = [ "index" "pager" ];
+            action = "view-raw-message";
+            key = "H";
+            map = [ "index" "pager" ];
           }
           {
-          action = "select-entry";
-          key = "l";
-          map = [ "browser" ];
+            action = "select-entry";
+            key = "l";
+            map = [ "browser" ];
           }
           {
-          action = "top-page";
-          key = "gg";
-          map = [ "pager" "browser" ];
+            action = "top-page";
+            key = "gg";
+            map = [ "pager" "browser" ];
           }
           {
-          action = "bottom-page";
-          key = "G";
-          map = [ "pager" "browser" ];
+            action = "bottom-page";
+            key = "G";
+            map = [ "pager" "browser" ];
           }
           {
-          action = "half-down";
-          key = "d";
-          map = [ "index" "pager" "browser" ];
+            action = "half-down";
+            key = "d";
+            map = [ "index" "pager" "browser" ];
           }
           {
-          action = "half-up";
-          key = "u";
-          map = [ "index" "pager" "browser" ];
+            action = "half-up";
+            key = "u";
+            map = [ "index" "pager" "browser" ];
           }
           {
-          action = "sync-mailbox";
-          key = "S";
-          map = [ "index" "pager" ];
+            action = "sync-mailbox";
+            key = "S";
+            map = [ "index" "pager" ];
           }
           {
-          action = "group-reply";
-          key = "R";
-          map = [ "index" "pager" ];
+            action = "group-reply";
+            key = "R";
+            map = [ "index" "pager" ];
           }
           {
-          action = "complete-query";
-          key = "<Tab>";
-          map = [ "editor" ];
+            action = "complete-query";
+            key = "<Tab>";
+            map = [ "editor" ];
           }
           {
-          action = "sidebar-next";
-          key = "\\Cj";
-          map = [ "index" "pager" ];
+            action = "sidebar-next";
+            key = "\\Cj";
+            map = [ "index" "pager" ];
           }
           {
-          action = "sidebar-prev";
-          key = "\\Ck";
-          map = [ "index" "pager" ];
+            action = "sidebar-prev";
+            key = "\\Ck";
+            map = [ "index" "pager" ];
           }
           {
-          action = "sidebar-open";
-          key = "\\Co";
-          map = [ "index" "pager" ];
+            action = "sidebar-open";
+            key = "\\Co";
+            map = [ "index" "pager" ];
           }
       ];
           macros =
@@ -220,6 +220,14 @@
         }
       ];
     extraConfig = ''
+
+# Noms des dossiers
+named-mailboxes "Boite de réception" +Inbox
+named-mailboxes "Messages envoyés" "+[Gmail]/Messages envoy&AOk-s"
+named-mailboxes "Pourriel" "+[Gmail]/Spam"
+named-mailboxes "Brouillons" "+[Gmail]/Brouillons"
+named-mailboxes "Corbeille" "+[Gmail]/Corbeille"
+
 # Default index colors:
 color index yellow default '.*'
 color index_author red default '.*'
