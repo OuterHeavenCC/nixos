@@ -23,58 +23,58 @@ in
   accounts.email = {
     maildirBasePath = "${config.home.homeDirectory}/.local/share/Mail";
       accounts = {
-        personal = rec {
-          primary = true;
-          address = "corentin@chaminand.com";
-          passwordCommand = "${pass} Email/${address}";
+        # personal = rec {
+        #   primary = true;
+        #   address = "corentin@chaminand.com";
+        #   passwordCommand = "${pass} Email/${address}";
 
-          imap.host = "mail.chaminand.com";
-          mbsync = {
-            enable = true;
-            create = "maildir";
-            expunge = "both";
-          };
-          folders = {
-            inbox = "Inbox";
-            sent = "Sent";
-            drafts = "Drafts";
-            trash = "Trash";
-          };
-          neomutt = {
-            enable = true;
-            extraMailboxes = [ "Sent" "Drafts" "Junk" "Trash" ];
-          };
+        #   imap.host = "mail.chaminand.com";
+        #   mbsync = {
+        #     enable = true;
+        #     create = "maildir";
+        #     expunge = "both";
+        #   };
+        #   folders = {
+        #     inbox = "Inbox";
+        #     sent = "Sent";
+        #     drafts = "Drafts";
+        #     trash = "Trash";
+        #   };
+        #   neomutt = {
+        #     enable = true;
+        #     extraMailboxes = [ "Sent" "Drafts" "Junk" "Trash" ];
+        #   };
 
-          msmtp.enable = true;
-          smtp.host = "mail.chaminand.com";
-          userName = address;
-        } // common;
+        #   msmtp.enable = true;
+        #   smtp.host = "mail.chaminand.com";
+        #   userName = address;
+        # } // common;
 
-      # gmail = rec {
-      #   primary = true;
-      #   address = "corent.cham@gmail.com";
-      #   passwordCommand = "${pass} Email/${address}";
+      gmail = rec {
+        primary = true;
+        address = "corent.cham@gmail.com";
+        passwordCommand = "${pass} Email/${address}";
 
-      #   imap.host = "imap.gmail.com";
-      #   mbsync = {
-      #     enable = true;
-      #     create = "maildir";
-      #     expunge = "both";
-      #   };
-      #   folders = {
-      #     inbox = "Inbox";
-      #     sent = "Sent";
-      #     trash = "[Gmail]/Corbeille";
-      #   };
-      #   neomutt = {
-      #     enable = true;
-      #     extraMailboxes = [ "Sent" "[Gmail]/Spam" "[Gmail]/Corbeille" ];
-      #   };
+        imap.host = "imap.gmail.com";
+        mbsync = {
+          enable = true;
+          create = "maildir";
+          expunge = "both";
+        };
+        folders = {
+          inbox = "Inbox";
+          sent = "Sent";
+          trash = "[Gmail]/Corbeille";
+        };
+        neomutt = {
+          enable = true;
+          extraMailboxes = [ "Sent" "[Gmail]/Spam" "[Gmail]/Corbeille" ];
+        };
 
-      #   msmtp.enable = true;
-      #   smtp.host = "smtp.gmail.com";
-      #   userName = address;
-      # } // common;
+        msmtp.enable = true;
+        smtp.host = "smtp.gmail.com";
+        userName = address;
+      } // common;
 
       # yahoo = rec {
       #   address = "corent.cham@yahoo.fr";
