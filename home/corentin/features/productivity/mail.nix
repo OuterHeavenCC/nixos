@@ -26,7 +26,7 @@ in
         personal = rec {
           primary = true;
           address = "corentin@chaminand.com";
-          passwordCommand = "${pass} ${address}";
+          passwordCommand = "${pass} Email/${address}";
 
           imap.host = "mail.chaminand.com";
           mbsync = {
@@ -53,7 +53,7 @@ in
       # gmail = rec {
       #   primary = true;
       #   address = "corent.cham@gmail.com";
-      #   passwordCommand = "${pass} ${address}";
+      #   passwordCommand = "${pass} Email/${address}";
 
       #   imap.host = "imap.gmail.com";
       #   mbsync = {
@@ -78,7 +78,7 @@ in
 
       # yahoo = rec {
       #   address = "corent.cham@yahoo.fr";
-      #   passwordCommand = "${pass} ${address}";
+      #   passwordCommand = "${pass} Email/${address}";
 
       #   imap.host = "imap.mail.yahoo.com";
       #   mbsync = {
@@ -104,7 +104,7 @@ in
 
       # hotmail = rec {
       #   address = "corent.cham@hotmail.fr";
-      #   passwordCommand = "${pass} ${address}";
+      #   passwordCommand = "${pass} Email/${address}";
 
       #   imap.host = "outlook.office365.com";
       #   mbsync = {
