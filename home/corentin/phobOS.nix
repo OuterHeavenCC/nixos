@@ -12,6 +12,7 @@
     ./features/desktop/hyprland
     ./features/nvidia
     ./features/scripts
+    ./features/pass
     ./features/productivity
     ./global
 

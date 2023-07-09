@@ -10,8 +10,9 @@
     ./features/desktop/common/wayland-wm
     ./features/desktop/common/wayland-wm
     ./features/desktop/hyprland
-    ./features/scripts
+    ./features/pass
     ./features/productivity
+    ./features/scripts
     ./global
 
     # If you want to use modules your own flake exports (from modules/home-manager):

@@ -3,7 +3,6 @@ let
   inherit (config.colorscheme) colors;
 in
 {
-  programs.swaylock.enable = true;
   services.swayidle = {
     enable = true;
     timeouts = [
