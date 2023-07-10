@@ -1,6 +1,7 @@
+{ pkgs, ... }:
 {
-  programs.gpg.enable = true;
-
+  home.packages = with pkgs; [ pinentry-gnome gcr ];
+  
   home.file.".pam-gnupg".text = "88921B907B0F39E17E3F734BF2D57789304EBD10";
 
   services.gpg-agent = {
@@ -12,4 +13,20 @@
 allow-preset-passphrase
   '';
   };
+
+  programs =
+    let
+      fixGpg = ''
+        gpgconf --launch gpg-agent
+      '';
+    in
+    {
+    zsh.loginExtra = fixGpg;
+      gpg = {
+        enable = true;
+        settings = {
+          trust-model = "tofu+pgp";
+        };
+      };
+    };
 }

@@ -218,6 +218,11 @@
           key = "A";
           map = [ "index" ];
         }
+        {
+          action = ''macro index \Cf "&lt;enter-command&gt;unset wait_key&lt;enter&gt;&lt;shell-escape&gt;read -p 'notmuch query: ' x; echo \$x &gt;~/.cache/mutt_terms&lt;enter&gt;&lt;limit&gt;~i \"\`notmuch search --output=messages \$(cat ~/.cache/mutt_terms) | head -n 600 | perl -le '@a=&lt;&gt;;chomp@a;s/\^id:// for@a;$,=\"|\";print@a'\`\"&lt;enter&gt;" "show only messages matching a notmuch pattern"'';
+          key = "\\Cf";
+          map = [ "index" ];
+        }
       ];
     extraConfig = ''
 

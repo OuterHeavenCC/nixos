@@ -20,38 +20,50 @@ let
   };
 in
 {
-  accounts.email = {
-    maildirBasePath = "${config.home.homeDirectory}/.local/share/mail";
-      accounts = {
-        gmail = rec {
-          primary = true;
-          address = "corent.cham@gmail.com";
-          passwordCommand = "${pass} Email/${address}";
-
-          imap.host = "imap.gmail.com";
-          mbsync = {
-            enable = true;
-            create = "maildir";
-            expunge = "both";
-          };
-          folders = {
-            inbox = "Inbox";
-            sent = "[Gmail]/Messages envoy&AOk-s";
-            trash = "[Gmail]/Corbeille";
-          };
-          neomutt = {
-            enable = true;
-            extraMailboxes = [ "[Gmail]/Messages envoy&AOk-s" "[Gmail]/Brouillons" "[Gmail]/Spam" "[Gmail]/Corbeille" ];
-          };
-
-          msmtp.enable = true;
-          smtp.host = "smtp.gmail.com";
-          userName = address;
-        } // common;
+  programs.mbsync.enable = true;
+  programs.msmtp.enable = true;
+  programs.notmuch = {
+    enable = true;
+    hooks = {
+      preNew = "mbsync --all";
     };
   };
 
-  services.mbsync.enable = true;
-  programs.msmtp.enable = true;
+  accounts.email = {
+    maildirBasePath = "${config.home.homeDirectory}/.local/share/mail";
+    accounts = {
+      gmail = rec {
+        primary = true;
+        address = "corent.cham@gmail.com";
+        passwordCommand = "${pass} Email/${address}";
+
+        imap.host = "imap.gmail.com";
+        notmuch.enable = true;
+        msmtp.enable = true;
+        mbsync = {
+          enable = true;
+          create = "maildir";
+          expunge = "both";
+        };
+        folders = {
+          inbox = "Inbox";
+          sent = "[Gmail]/Messages envoy&AOk-s";
+          trash = "[Gmail]/Corbeille";
+        };
+        neomutt = {
+          enable = true;
+          extraMailboxes = [ "[Gmail]/Messages envoy&AOk-s" "[Gmail]/Brouillons" "[Gmail]/Spam" "[Gmail]/Corbeille" ];
+        };
+
+        smtp.host = "smtp.gmail.com";
+        userName = address;
+      } // common;
+    };
+  };
+
+  services.mbsync = {
+    enable = true;
+    frequency = "*:0/5";
+  };
 
 }
