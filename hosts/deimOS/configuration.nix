@@ -14,6 +14,7 @@
     ../common/optional/bluetooth.nix
     ../common/optional/boot.nix
     ../common/optional/kdeconnect.nix
+    ../common/optional/print.nix
 
     ./hardware-configuration.nix
   ];
