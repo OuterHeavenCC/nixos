@@ -14,6 +14,10 @@ rec {
       name = "Zafiro Icons Theme";
       package = pkgs.zafiro-icons;
     };
+    cursorTheme = {
+      name = "catppuccin-cursors";
+      package = pkgs.catppuccin-cursors.mochaDark;
+    };
   };
 
   services.xsettingsd = {
