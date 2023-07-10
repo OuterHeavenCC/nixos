@@ -15,7 +15,7 @@ in
   }];
 
   # Rentrer le mot de passe automatiquement à la connexion
-  security.pam.services.corentin.gnupg.enable = true;
+  security.pam.services.login.gnupg.enable = true;
 
   # Fix swaylock
   security.pam.services.swaylock = {
