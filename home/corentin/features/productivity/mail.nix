@@ -51,28 +51,7 @@ in
     };
   };
 
-  programs.mbsync.enable = true;
+  services.mbsync.enable = true;
   programs.msmtp.enable = true;
 
-  systemd.user.services.mbsync = {
-    Unit = { Description = "mbsync synchronization"; };
-    Service =
-      let gpgCmds = import ../cli/gpg-commands.nix { inherit pkgs; };
-      in
-      {
-        Type = "oneshot";
-        ExecCondition = ''
-          /bin/sh -c "${gpgCmds.isUnlocked}"
-        '';
-        ExecStart = "${mbsync} -a";
-      };
-  };
-  systemd.user.timers.mbsync = {
-    Unit = { Description = "Automatic mbsync synchronization"; };
-    Timer = {
-      OnBootSec = "30";
-      OnUnitActiveSec = "5m";
-    };
-    Install = { WantedBy = [ "timers.target" ]; };
-  };
 }

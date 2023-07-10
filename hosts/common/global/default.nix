@@ -5,7 +5,6 @@
     inputs.home-manager.nixosModules.home-manager
     ./fonts.nix
     ./git.nix
-    ./gnupg.nix
     ./input.nix
     ./locale.nix
     ./locate.nix
