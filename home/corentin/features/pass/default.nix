@@ -7,6 +7,7 @@
 
   services.pass-secret-service = {
     enable = true;
+    storePATH = "$HOME/.password-store";
   };
 
   services.password-store-sync = {
