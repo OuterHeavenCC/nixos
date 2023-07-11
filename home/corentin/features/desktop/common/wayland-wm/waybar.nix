@@ -1,7 +1,18 @@
-{ config, pkgs, ... }:
+{ config, pkgs, home, ... }:
 
 let 
   inherit (config.colorscheme) colors;
+  # Dependencies
+  btm = "${pkgs.bottom}/bin/btm";
+  calcurse = "${pkgs.calcurse}/bin/calcurse";
+
+  terminal = "${pkgs.foot}/bin/footclient";
+  terminal-spawn = cmd: "${terminal} -e ${cmd}";
+
+  calendar = terminal-spawn calcurse;
+  systemMonitor = terminal-spawn btm;
+
+
 in
 {
   programs.waybar = {
@@ -47,7 +58,7 @@ window#waybar {
   color: #${colors.base07};
 }
 
-#cpu, #memory, #pulseaudio, #clock, #clock#date #backlight, #custom-sound, #network, #battery{
+#custom-unread-mail, #cpu, #memory, #pulseaudio, #clock, #clock#date #backlight, #network, #battery{
   border-radius: 10px;
   background-color: #${colors.base00};
   color: #${colors.base07};
@@ -103,7 +114,7 @@ window#waybar {
 
     "clock#date" = {
       format = "<span color=\"#${colors.base07}\"> </span>{: %A %d %B}";
-      on-click = "footclient -e calcurse";
+      on-click = calendar;
     };
 
     backlight = {
@@ -137,14 +148,14 @@ window#waybar {
 
     cpu = {
       format = "<span color=\"#${colors.base07}\">  CPU</span> {usage}%";
-      on-click = "footclient -e btm";
+      on-click = systemMonitor;
     };
 
     memory = {
       format = "<span color=\"#${colors.base07}\">  RAM</span> {used:0.1f}G/{total:0.1f}G";
-      on-click = "footclient -e btm";
-        };
+      on-click = systemMonitor;
       };
     };
   };
+};
 }

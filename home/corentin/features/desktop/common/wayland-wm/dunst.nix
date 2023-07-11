@@ -14,6 +14,7 @@ in
         format = ''"<b>%a\n%s</b>\n%b"'';
         origin = "bottom-right";
         offset = "30x30";
+        follow = "keyboard";
         frame_width = 2;
         frame_color = "#${colors.base07}";
         separator_color = "frame"; 
