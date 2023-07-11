@@ -11,8 +11,6 @@ let
 
   calendar = terminal-spawn calcurse;
   systemMonitor = terminal-spawn btm;
-
-
 in
 {
   programs.waybar = {

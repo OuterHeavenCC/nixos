@@ -154,7 +154,7 @@ cmd unarchive ''${{
       tar = ''%tar cvf "$f.tar" "$f"'';
       targz = ''%tar czvf "$f.tar.gz" "$f"'';
       tarbz2 = ''%tar cjvf "$f.tar.bz2" "$f"'';
-      dragon = ''%ripdrag "$f"'';
+      dragon = ''%xdragon "$f"'';
       trash = ''%set -f; trash "$fx"'';
       vimv = "$vimv";
     };

@@ -20,4 +20,8 @@
       ydotool                     # Command line automation tool for Wayland
     ];
 
+    home.sessionVariables = {
+      LIBSEAT_BACKEND = "logind";
+    };
+
 }
