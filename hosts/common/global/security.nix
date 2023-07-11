@@ -14,10 +14,14 @@ in
       keepEnv = true;
   }];
 
-  # Rentrer le mot de passe automatiquement à la connexion
-  security.pam.services.login.gnupg.enable = true;
+  # Rentrer le mot de passe automatiquement gpg à la connexion
+  security.pam.services.login.gnupg = {
+    enable = true;
+    noAutostart = true;
+    storeOnly = true;
+  };
 
-  # Fix swaylock
+  # TODO Tentative de fix swaylock ? Peut être rajouter pam_gnupg pour qu'il se relance ?
   security.pam.services.swaylock = {
     text = ''
       # Account management.
