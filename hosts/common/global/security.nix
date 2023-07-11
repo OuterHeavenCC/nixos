@@ -17,7 +17,6 @@ in
   # Rentrer le mot de passe automatiquement gpg à la connexion
   security.pam.services.login.gnupg = {
     enable = true;
-    noAutostart = true;
     storeOnly = true;
   };
 
@@ -30,6 +29,7 @@ in
     # Authentication management.
     auth sufficient pam_unix.so   likeauth try_first_pass
     auth required pam_deny.so
+    auth optional ${pkgs.pam_gnupg}/lib/security/pam_gnupg.so
 
     # Password management.
     password sufficient pam_unix.so nullok sha512
