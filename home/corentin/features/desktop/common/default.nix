@@ -2,7 +2,6 @@
 
 {
   imports = [
-    ./dragon.nix
     ./firefox.nix
     ./gtk.nix
     ./mpd.nix
