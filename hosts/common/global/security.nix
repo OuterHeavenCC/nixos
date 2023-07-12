@@ -20,6 +20,6 @@ in
     storeOnly = true;
   };
 
-  # TODO Tentative de fix swaylock ? Peut être rajouter pam_gnupg pour qu'il se relance ?
+  # Fix Swaylock
   security.pam.services.swaylock = {};
 }
