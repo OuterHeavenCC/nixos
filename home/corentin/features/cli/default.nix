@@ -75,7 +75,7 @@
     hyperfine                     # Better time command
     sc-im                         # Simple terminal spreadsheets editor
     scanmem                       # Runtime memory edit
-    scc                           # Count lines of codes
+    tokei                         # Count lines of codes
     sd                            # Better sed
     skim                          # fzf but faster
     sqlite                        # Basic programming stuff
