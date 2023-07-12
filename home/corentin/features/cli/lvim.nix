@@ -16,7 +16,7 @@ lvim.plugins = {
   { "shaunsingh/nord.nvim" },
 }
 
-lvim.colorscheme = "catppuccin-mocha"
+lvim.colorscheme = "gruvbox-material"
 
 local formatters = require "lvim.lsp.null-ls.formatters"
 formatters.setup {
