@@ -7,8 +7,8 @@ in
   xdg.configFile."swayidle/config" = {
     text =
 ''
-timeout 60 'hyprctl dispatch dpms off' resume 'hyprctl dispatch dpms on'
-timeout 65 'swaylock -f -c ${colors.base00}'
+timeout 120 'hyprctl dispatch dpms off' resume 'hyprctl dispatch dpms on'
+timeout 125 'swaylock -f -c ${colors.base00}'
 before-sleep 'swaylock -f -c ${colors.base00}'
   '';
   };
