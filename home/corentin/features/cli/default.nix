@@ -24,7 +24,8 @@
     calcurse                      # Calendar
     chafa                         # Image preview in terminal
     clipman                       # Clipboard management
-    colordiff                     # Better diff
+    delta                         # Better diff
+    dog                           # Better dig
     ctpv                          # Terminal preview
     dconf                         # Libadwaita black theme
     direnv                        # Better dev environment management
@@ -44,7 +45,7 @@
     gcc                           # Basic programming stuff
     gnumake                       # Basic programming stuff
     hexyl                         # Hex Viewer
-    httpie                        # Better curl
+    xh                            # Better curl
     imagemagick                   # Pictures modifications
     jq                            # Json processor
     killall                       # Better pkill -15
@@ -54,7 +55,6 @@
     ncdu                          # Ncurses disk usage
     neofetch                      # Mandatory I use Nix btw flex
     neomutt                       # Mail
-    nixpkgs-fmt                   # Format .nix files
     nmap                          # Network mapping tool
     nodePackages_latest.peerflix  # Torrent streaming
     nodejs                        # Basic programming stuff
@@ -72,6 +72,7 @@
     ripgrep                       # Better grep
     ripgrep-all                   # Grep for pdf
     rustup                        # Basic programming stuff
+    hyperfine                     # Better time command
     sc-im                         # Simple terminal spreadsheets editor
     scanmem                       # Runtime memory edit
     scc                           # Count lines of codes
