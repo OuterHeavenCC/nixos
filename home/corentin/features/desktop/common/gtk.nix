@@ -15,7 +15,7 @@ rec {
       package = pkgs.zafiro-icons;
     };
     cursorTheme = {
-      name = "catppuccin-cursors";
+      name = "catppuccin-cursors-themed";
       package = pkgs.catppuccin-cursors.mochaDark;
     };
   };

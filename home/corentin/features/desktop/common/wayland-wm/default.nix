@@ -6,6 +6,7 @@
     ./foot.nix
     ./rofi
     ./swayidle.nix
+    ./swaylock.nix
     ./waybar.nix
   ];
 
