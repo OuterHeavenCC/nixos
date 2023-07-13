@@ -19,16 +19,17 @@
 
   home.packages = with pkgs; [
     atool                         # Archive management
+    bandwhich                     # Networking monitoring
     bluez                         # Bluetooth management
     bottom                        # System monitor
     calcurse                      # Calendar
     chafa                         # Image preview in terminal
     clipman                       # Clipboard management
-    delta                         # Better diff
-    dog                           # Better dig
     ctpv                          # Terminal preview
     dconf                         # Libadwaita black theme
+    delta                         # Better diff
     direnv                        # Better dev environment management
+    dog                           # Better dig
     du-dust                       # Better du
     duf                           # Better df
     elinks                        # Terminal browser
@@ -40,12 +41,12 @@
     ffmpegthumbnailer             # Terminal previewer
     file                          # Determine file type
     fzf                           # Fuzzy File Finder
+    gcc                           # Basic programming stuff
     glow                          # Markdown preview in terminal
     gnome-epub-thumbnailer        # Epub thumbnailer for terminal
-    gcc                           # Basic programming stuff
     gnumake                       # Basic programming stuff
     hexyl                         # Hex Viewer
-    xh                            # Better curl
+    hyperfine                     # Better time command
     imagemagick                   # Pictures modifications
     jq                            # Json processor
     killall                       # Better pkill -15
@@ -72,20 +73,21 @@
     ripgrep                       # Better grep
     ripgrep-all                   # Grep for pdf
     rustup                        # Basic programming stuff
-    hyperfine                     # Better time command
     sc-im                         # Simple terminal spreadsheets editor
     scanmem                       # Runtime memory edit
-    tokei                         # Count lines of codes
     sd                            # Better sed
     skim                          # fzf but faster
     sqlite                        # Basic programming stuff
+    taskwarrior                   # Todo-list / calendar on the terminal
+    tealdeer                      # TLDR Man
     texlive.combined.scheme-full  # LaTex language
-    tldr                          # TLDR Man
+    tokei                         # Count lines of codes
     transmission                  # Torrents
     unrar                         # Basic archiving tool
     unzip                         # Basic archiving tool
     vimv-rs                       # Batch rename
     wget                          # Download from CLI util
+    xh                            # Better curl
     xmlstarlet                    # Preview xml in terminal
     yt-dlp                        # Better youtube-dl
     zoxide                        # Better cd
