@@ -10,7 +10,7 @@
     source-han-sans-japanese
     source-han-serif-japanese
     libertine
-    (nerdfonts.override { fonts = [ "FiraCode" "Iosevka" ]; })
+    (nerdfonts.override { fonts = [ "FiraCode" "Iosevka" "JetBrainsMono" ]; })
   ];
 
 }
