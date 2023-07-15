@@ -16,7 +16,7 @@ lvim.plugins = {
   { "shaunsingh/nord.nvim" },
 }
 
-lvim.colorscheme = "gruvbox-material"
+lvim.colorscheme = "nord"
 '';
   };
 }

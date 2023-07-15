@@ -14,6 +14,7 @@
     ./lvim.nix
     ./newsboat.nix
     ./nvim.nix
+    ./taskwarrior.nix
     ./zsh.nix
   ];
 
@@ -78,10 +79,10 @@
     sd                            # Better sed
     skim                          # fzf but faster
     sqlite                        # Basic programming stuff
-    taskwarrior                   # Todo-list / calendar on the terminal
     tealdeer                      # TLDR Man
     texlive.combined.scheme-full  # LaTex language
     tokei                         # Count lines of codes
+    timewarrior                   # Commandline time tracking and reporting tool
     transmission                  # Torrents
     unrar                         # Basic archiving tool
     unzip                         # Basic archiving tool
