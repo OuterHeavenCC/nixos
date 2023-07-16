@@ -8,7 +8,6 @@
   # You can change versions, add patches, set compilation flags, anything really.
   # https://nixos.wiki/wiki/Overlays
 
-  # TODO Pourquoi ctpv ne fonctionne pas alors que j'ai la bonne version ? Mystère...
   modifications = final: prev: {
 
     ncmpcpp = prev.ncmpcpp.override {
