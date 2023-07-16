@@ -87,6 +87,7 @@
     unrar                         # Basic archiving tool
     unzip                         # Basic archiving tool
     vimv-rs                       # Batch rename
+    ueberzugpp                    # Ueberzug replacement for wayland
     wget                          # Download from CLI util
     xh                            # Better curl
     xmlstarlet                    # Preview xml in terminal

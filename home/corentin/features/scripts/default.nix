@@ -65,5 +65,10 @@
       source = ./bin/transadd;
       executable = true;
     };
+    ".local/bin/lfub" = {
+      enable = true;
+      source = ./bin/lfub;
+      executable = true;
+    };
   };
 }

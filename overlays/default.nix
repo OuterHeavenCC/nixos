@@ -11,15 +11,6 @@
   # TODO Pourquoi ctpv ne fonctionne pas alors que j'ai la bonne version ? Mystère...
   modifications = final: prev: {
 
-    lf = prev.lf.overrideAttrs (oldAttrs: rec {
-      src = prev.fetchFromGitHub {
-        owner = "horriblename";
-        repo = "lf";
-        rev = "r30";
-        sha256 = "sha256-hlhmnkPm1x7uJMwUM/B02rXLffsXFbkxXYITKD3BERY=";
-      };
-    });
-  
     ncmpcpp = prev.ncmpcpp.override {
       visualizerSupport = true;
     };

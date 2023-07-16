@@ -2,6 +2,15 @@
   # Keyd
   services.keyd = {
     enable = true;
-    settings = { main = { capslock = "overload(meta, esc)"; }; };
+    keyboards = {
+      default = {
+        ids = ["*"];
+        settings = {
+          main = {
+            capslock = "overload(meta,esc)";
+          };
+        };
+      };
+    };
   };
 }

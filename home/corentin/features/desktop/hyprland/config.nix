@@ -101,7 +101,6 @@ master {
 
 bind=SUPER,Return,exec,${TERMINAL}
 
-bind=SUPERSHIFT,A,exec,${TERMINAL} -e abook -C ~/.config/abook/abookrc --datafile ~/.config/abook/addressbook
 
 bind=SUPER,B,exec,blueman-manager
 bind=SUPERSHIFT,B,exec,pkill -USR1 waybar
@@ -113,6 +112,7 @@ bind=SUPER,d,exec,rofi-launcher
 bind=SUPERSHIFT,d,exec,rofi-runner
 
 bind=SUPER,E,exec,${TERMINAL} -e ${MAILCLIENT}
+bind=SUPERSHIFT,E,exec,${TERMINAL} -e abook -C ~/.config/abook/abookrc --datafile ~/.config/abook/addressbook
 
 bind=SUPER,F,fullscreen,0
 
@@ -128,7 +128,7 @@ bind=SUPERSHIFT,P,exec,mpc pause
 bind=SUPER,Q,killactive,
 bind=SUPERSHIFT,Q,exit,
 
-bind=SUPER,R,exec,${TERMINAL} -e lf
+bind=SUPER,R,exec,${TERMINAL} -e lfub
 
 bind=SUPER,S,exec,${TERMINAL} -e pulsemixer
 bind=SUPERSHIFT,S,exec,bmks
