@@ -28,7 +28,6 @@
       };
       "www.chaminand.com" = {
         forceSSL = true;
-        enableACME = true;
         globalRedirect = "chaminand.com";
       };
     };
