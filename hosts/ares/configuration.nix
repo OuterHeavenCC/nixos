@@ -5,11 +5,10 @@
   # You can import other NixOS modules here
   imports = [
 
+    ./hardware-configuration.nix
     ../common/global
     ../common/users/corentin
-    ./hardware-configuration.nix
     ../common/optional/nginx
-    ../common/optional/mailserver # TODO for random reasons nixos won't rebuild without this
 
   ];
 
