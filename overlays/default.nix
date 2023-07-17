@@ -14,6 +14,16 @@
       visualizerSupport = true;
     };
 
+    # lf sixel support
+    lf = prev.lf.overrideAttrs (old: {
+      src = prev.fetchFromGitHub {
+        owner = "horriblename";
+        repo = "lf";
+        rev = "1bb0b43feafba0d5dbc40d4cf71a4f22b547be00";
+        sha256 = "CoWF3virzel8TbW79xc6xXxh6K6r9mCeoaAUYcE7VHc=";
+      };
+    });
+
     nginxStable = prev.nginxStable.override { oppenssl = prev.pkgs.libressl; };
 
   };

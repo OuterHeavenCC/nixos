@@ -1,84 +1,5 @@
 { pkgs, ... }:
 
-let
-  tar = "${pkgs.gnutar}/bin/tar";
-  xz = "${pkgs.xz}/bin/xz";
-  unzip = "${pkgs.unzip}/bin/unzip";
-  unrar = "${pkgs.unrar}/bin/unrar";
-  ssconvert= "${pkgs.gnumeric}/bin/ssconvert";
-  docx2txt = "${pkgs.python311Packages.docx2txt}/bin/docx2txt";
-  catdoc = "${pkgs.catdoc}/bin/catdoc";
-  odt2txt = "${pkgs.odt2txt}/bin/odt2txt";
-  iso-info = "${pkgs.libcdio}/bin/iso-info";
-  SevenZip = "${pkgs.p7zip}/bin/p7zip";
-  bat = "${pkgs.bat}/bin/bat";
-  pdftoppm = "${pkgs.poppler_utils}/bin/pdftoppm";
-  transmission-show = "${pkgs.transmission}/bin/transmission-show";
-
-
-  
-  previewer = pkgs.writeShellScript "previewer" ''
-image() {
-    FILE_PATH="$1"
-    X=$4
-    Y=$5
-    MW=$(($2-1))
-    MH=$3
-    ueberzugpp cmd -s $UB_SOCKET -a add -i PREVIEW -x $X -y $Y --max-width $MW --max-height $MH -f "$FILE_PATH"
-    exit 1
-}
-
-CACHE="$HOME/.cache/lf/thumbnail.$(stat --printf '%n\0%i\0%F\0%s\0%W\0%Y' -- "$(readlink -f "$1")" | sha256sum | awk '{print $1}'))"
-
-case "$(printf "%s\n" "$(readlink -f "$1")" | awk '{print tolower($0)}')" in
-	*.tgz|*.tar.gz) ${tar} tzf "$1" ;;
-	*.tar.bz2|*.tbz2) ${tar} tjf "$1" ;;
-	*.tar.txz|*.txz) ${xz} --list "$1" ;;
-	*.tar) ${tar} tf "$1" ;;
-	*.zip|*.jar|*.war|*.ear|*.oxt) ${unzip} -l "$1" ;;
-	*.rar) ${unrar} l "$1" ;;
-	*.7z) ${SevenZip} l "$1" ;;
-	*.[1-8]) man "$1" | col -b ;;
-	*.o) nm "$1";;
-	*.torrent) ${transmission-show} "$1" ;;
-	*.iso) ${iso-info} --no-header -l "$1" ;;
-	*.odt|*.ods|*.odp|*.sxw) ${odt2txt} "$1" ;;
-	*.doc) ${catdoc} "$1" ;;
-	*.docx) ${docx2txt} "$1" - ;;
-	*.xls|*.xlsx)
-		${ssconvert} --export-type=Gnumeric_stf:stf_csv "$1" "fd://1" | ${bat} --language=csv
-		;;
-	*.wav|*.mp3|*.flac|*.m4a|*.wma|*.ape|*.ac3|*.og[agx]|*.spx|*.opus|*.as[fx]|*.mka)
-		exiftool "$1"
-		;;
-	*.pdf)
-		[ ! -f "''${CACHE}.jpg" ] && \
-			${pdftoppm} -jpeg -f 1 -singlefile "$1" "$CACHE"
-		image "''${CACHE}.jpg" "$2" "$3" "$4" "$5"
-		;;
-	*.avi|*.mp4|*.wmv|*.dat|*.3gp|*.ogv|*.mkv|*.mpg|*.mpeg|*.vob|*.fl[icv]|*.m2v|*.mov|*.webm|*.ts|*.mts|*.m4v|*.r[am]|*.qt|*.divx)
-		[ ! -f "''${CACHE}.jpg" ] && \
-			ffmpegthumbnailer -i "$1" -o "''${CACHE}.jpg" -s 0 -q 5
-		image "''${CACHE}.jpg" "$2" "$3" "$4" "$5"
-		;;
-	*.bmp|*.jpg|*.jpeg|*.png|*.xpm|*.webp|*.gif|*.jfif)
-		image "$1" "$2" "$3" "$4" "$5"
-		;;
-	*.svg)
-    		[ ! -f "''${CACHE}.jpg" ] && \
-      		convert "$1" "''${CACHE}.jpg"
-    		image "''${CACHE}.jpg" "$2" "$3" "$4" "$5"
-    		;;
-	*)
-		${bat} "$1"
-		;;
-esac
-exit 0
-  '';
-  cleaner = pkgs.writeShellScript "cleaner" ''
-ueberzugpp cmd -s $UB_SOCKET -a remove -i PREVIEW
-'';
-in
 {
   programs.lf = {
     enable = true;
@@ -93,7 +14,6 @@ in
       "i" = "";
       "." = "set hidden!";
       "f" = "sk_jump";
-      "z" = "zi";
       "x" = "unarchive";
       "<c-r>" = "reload";
       "<enter>" = "enter";
@@ -131,15 +51,26 @@ in
     };
     settings = {
       drawbox = true;
-      shellopts = "-eu";
       ifs = "\\n";
       scrolloff = 10;
       period = 1;
       icons = true;
     };
+    commands = {
+      zip = ''%zip -r "$.fip" "$f"'';
+      tar = ''%tar cvf "$f.tar" "$f"'';
+      targz = ''%tar czvf "$f.tar.gz" "$f"'';
+      tarbz2 = ''%tar cjvf "$f.tar.bz2" "$f"'';
+      dragon = ''%xdragon "$f"'';
+      trash = ''%set -f; trash "$fx"'';
+      vimv = "$vimv";
+    };
     extraConfig = ''
-set previewer ${previewer}
-set cleaner ${cleaner}
+set previewer ${pkgs.ctpv}/bin/ctpv
+set cleaner ${pkgs.ctpv}/bin/ctpvclear
+&${pkgs.ctpv}/bin/ctpv -s $id
+&${pkgs.ctpv}/bin/ctpvquit $id
+
 
 map cc push A<c-u> # new rename
 map I push A<c-a> # at the very beginning
@@ -226,17 +157,8 @@ cmd unarchive ''${{
 		*) printf "extract: '%s' - unknown archive method\\n" "$f" ;;
   esac
 }}
-
 '';
-    commands = {
-      zip = ''%zip -r "$.fip" "$f"'';
-      tar = ''%tar cvf "$f.tar" "$f"'';
-      targz = ''%tar czvf "$f.tar.gz" "$f"'';
-      tarbz2 = ''%tar cjvf "$f.tar.bz2" "$f"'';
-      dragon = ''%xdragon "$f"'';
-      trash = ''%set -f; trash "$fx"'';
-      vimv = "$vimv";
-    };
   };
   xdg.configFile."lf/icons".text = builtins.readFile ./icons;
+  xdg.configFile."ctpv/config".text = ''set chafasixel'';
 }
