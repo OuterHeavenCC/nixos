@@ -24,6 +24,7 @@
     bluez                         # Bluetooth management
     bottom                        # System monitor
     calcurse                      # Calendar
+    chafa                         # Terminal graphics
     clipman                       # Clipboard management
     dconf                         # Libadwaita black theme
     delta                         # Better diff
