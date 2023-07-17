@@ -16,7 +16,7 @@ lvim.plugins = {
   { "shaunsingh/nord.nvim" },
 }
 
-lvim.colorscheme = "nord"
+lvim.colorscheme = "catppuccin-mocha"
 '';
   };
 }
