@@ -26,6 +26,7 @@
     calcurse                      # Calendar
     chafa                         # Terminal graphics
     clipman                       # Clipboard management
+    ctpv                          # Terminal previewer for lf
     dconf                         # Libadwaita black theme
     delta                         # Better diff
     direnv                        # Better dev environment management
