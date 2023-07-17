@@ -43,5 +43,4 @@
       extraDomainNames = [ "www.chaminand.com" ];
     };
   };
-
 }
