@@ -9,6 +9,7 @@
     ../common/users/corentin
     ./hardware-configuration.nix
     ../common/optional/nginx
+    ../common/optional/mailserver # TODO for random reasons nixos won't rebuild without this
 
   ];
 
