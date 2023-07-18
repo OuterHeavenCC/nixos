@@ -14,8 +14,8 @@
         desktopEntries = {
           torrent = {
             type = "Application";
-            Name = "Torrent";
-            Exec= "/usr/bin/env transadd %U";
+            name = "Torrent";
+            exec= "/usr/bin/env transadd %U";
           };
         };
     };
