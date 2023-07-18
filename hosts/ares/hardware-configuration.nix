@@ -35,7 +35,7 @@
     system.stateVersion = "23.05";
 
     fileSystems."/" =
-      { device = "/dev/disk/by-uuid/f222513b-ded1-49fa-b591-20ce86a2fe7f";
+      { device = "/dev/disk/by-label/nixos";
         fsType = "ext4";
       };
 
