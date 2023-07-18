@@ -10,11 +10,6 @@
       source = ./bin/doasedit;
       executable = true;
     };
-    ".local/bin/iplocate" = {
-      enable = true;
-      source = ./bin/iplocate;
-      executable = true;
-    };
     ".local/bin/passrofi" = {
       enable = true;
       source = ./bin/passrofi;
@@ -63,11 +58,6 @@
     ".local/bin/transadd" = {
       enable = true;
       source = ./bin/transadd;
-      executable = true;
-    };
-    ".local/bin/lfub" = {
-      enable = true;
-      source = ./bin/lfub;
       executable = true;
     };
   };

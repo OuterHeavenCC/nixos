@@ -5,11 +5,14 @@ let
   # Dependencies
   btm = "${pkgs.bottom}/bin/btm";
   calcurse = "${pkgs.calcurse}/bin/calcurse";
+  pulsemixer = "${pkgs.pulsemixer}/bin/pulsemixer";
+  networkmanager_dmenu = "${pkgs.networkmanager_dmenu}/bin/networkmanager_dmenu";
 
   terminal = "${pkgs.foot}/bin/footclient";
   terminal-spawn = cmd: "${terminal} -e ${cmd}";
 
   calendar = terminal-spawn calcurse;
+  audioMonitor = terminal-spawn pulsemixer;
   systemMonitor = terminal-spawn btm;
 in
 {
@@ -18,84 +21,18 @@ in
     package = pkgs.waybar.overrideAttrs (oa: {
       mesonFlags = (oa.mesonFlags or  [ ]) ++ [ "-Dexperimental=true" ];
       });
-    style = ''
-* {
-  border: none;
-  font-family: 'Iosevka Nerd Font';
-  font-size: 14px;
-  font-feature-settings: '"zero", "ss01", "ss02", "ss03", "ss04", "ss05", "cv31"';
-  min-height: 25px;
-}
-
-window#waybar {
-  background: transparent;
-}
-
-#custom-arch, #workspaces {
-  border-radius: 10px;
-  background-color: #${colors.base00};
-  color: #${colors.base07};
-  margin-top: 15px;
-	margin-right: 15px;
-  padding-top: 1px;
-  padding-left: 10px;
-  padding-right: 10px;
-}
-
-#custom-arch {
-  font-size: 20px;
-	margin-left: 15px;
-}
-
-#workspaces button {
-  background: #${colors.base00};
-  color: #${colors.base05};
-}
-
-#workspaces button.active {
-  color: #${colors.base07};
-}
-
-#custom-unread-mail, #cpu, #memory, #pulseaudio, #clock, #clock#date #backlight, #network, #battery{
-  border-radius: 10px;
-  background-color: #${colors.base00};
-  color: #${colors.base07};
-  margin-top: 15px;
-  padding-left: 10px;
-  padding-right: 10px;
-  margin-right: 15px;
-}
-
-#cpu #memory #pulseaudio #clock #clock#date {
-  margin-right: 0;
-}
-
-@keyframes blink {
-  to {
-    background-color: #ffffff;
-    color: black;
-  }
-}
-
-#battery.warning:not(.charging) {
-  background: #${colors.base08};
-  color: white;
-  animation-name: blink;
-  animation-duration: 0.5s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-}
-    '';
+    style = (import ./style.nix { 
+      inherit (config) colorscheme; 
+    });
     settings = {
        mainBar = {
     layer = "top";
-    modules-left = [ "custom/arch" "wlr/workspaces" ];
+    modules-left = [ "custom/nixos" "wlr/workspaces" ];
     modules-center = [ "clock" ];
     modules-right = [ "pulseaudio" "cpu" "memory" "network" "clock#date" "battery" ];
 
-    "custom/arch" = {
-      format = " ";
+    "custom/nixos" = {
+      format = " ";
       on-click = "sh ${config.home.homeDirectory}/.local/bin/rofi-powermenu";
     };
 
@@ -108,6 +45,7 @@ window#waybar {
 
     "clock" = {
       format = "<span color='#${colors.base07}'> </span>{:%H:%M}";
+      on-click = calendar;
     };
 
     "clock#date" = {
@@ -127,7 +65,7 @@ window#waybar {
       format-wifi = "<span color='#${colors.base07}'> </span>{essid}";
       format-ethernet = "{ipaddr}/{cidr} <span color ='#${colors.base07}'>󰈀</span>";
       format-disconnected = "<span color='#${colors.base07}'>󰖪 </span>No Network";
-      on-click = "networkmanager_dmenu -theme ${config.home.homeDirectory}/.config/rofi/config/networkmenu.rasi";
+      on-click = networkmanager_dmenu;
     };
 
     battery = {
@@ -141,7 +79,7 @@ window#waybar {
       format = "{icon} {volume}%";
       format-muted = "<span color='#${colors.base07}'> </span>";
       format-icons.default = [ "<span color=\"#${colors.base07}\"></span> " ];
-      on-click = "pamixer -t";
+      on-click = audioMonitor;
     };
 
     cpu = {

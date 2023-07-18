@@ -98,7 +98,6 @@ master {
 
 
 # Bindings
-
 bind=SUPER,Return,exec,${TERMINAL}
 
 
@@ -128,7 +127,7 @@ bind=SUPERSHIFT,P,exec,mpc pause
 bind=SUPER,Q,killactive,
 bind=SUPERSHIFT,Q,exit,
 
-bind=SUPER,R,exec,${TERMINAL} -e lfub
+bind=SUPER,R,exec,${TERMINAL} -e lf
 
 bind=SUPER,S,exec,${TERMINAL} -e pulsemixer
 bind=SUPERSHIFT,S,exec,bmks

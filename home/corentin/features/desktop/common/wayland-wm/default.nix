@@ -7,7 +7,7 @@
     ./rofi
     ./swayidle.nix
     ./swaylock.nix
-    ./waybar.nix
+    ./waybar
   ];
 
     home.packages = with pkgs; [
@@ -18,7 +18,6 @@
       swww                        # Wallpaper manager
       wev                         # Show Wayland events
       wl-clipboard                # Clipboard manager for wlroots
-      ydotool                     # Command line automation tool for Wayland
     ];
 
     home.sessionVariables = {
