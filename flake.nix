@@ -1,5 +1,5 @@
 {
-  description = "Your new nix config";
+  description = "My NixOS configuration";
 
   inputs = {
     # Nixpkgs
@@ -57,17 +57,17 @@
       nixosConfigurations = {
         # Desktop
         phobOS =  lib.nixosSystem {
-          modules = [ ./hosts/phobOS/configuration.nix ];
+          modules = [ ./hosts/phobOS ];
           specialArgs = { inherit inputs outputs; };
         };
         # PC Portable
         deimOS = lib.nixosSystem {
-          modules = [ ./hosts/deimOS/configuration.nix ];
+          modules = [ ./hosts/deimOS ];
           specialArgs = { inherit inputs outputs; };
         };
         # Serveur
         ares = lib.nixosSystem {
-          modules = [ ./hosts/ares/configuration.nix ];
+          modules = [ ./hosts/ares ];
           specialArgs = { inherit inputs outputs; };
         };
         # TODO LiveUSB : Fix networkmanager, install seatd, set XDG_RUNTIME_DIR and LIBSEAT_BACKEND=logind
@@ -75,7 +75,7 @@
           specialArgs = { inherit inputs outputs; };
           modules = [ 
           <nixpkgs/nixos/modules/installer/cd-dvd/installation-cd-base.nix>
-          ./hosts/liveUSB/configuration.nix
+          ./hosts/liveUSB
           ];
         };
       };
