@@ -53,5 +53,5 @@
     }
   ];
 
-      programs.foot.settings.main.font = "Iosevka Nerd Font:size=16";
+      programs.foot.settings.main.font = "Fira Code Nerd Font:size=14";
 }

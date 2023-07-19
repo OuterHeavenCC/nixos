@@ -2,7 +2,7 @@
 ''
 * {
   border: none;
-  font-family: 'Iosevka Nerd Font';
+  font-family: 'Fira Code Nerd Font';
   font-size: 14px;
   font-feature-settings: '"zero", "ss01", "ss02", "ss03", "ss04", "ss05", "cv31"';
   min-height: 25px;
@@ -14,7 +14,7 @@ window#waybar {
 
 #custom-nixos, #workspaces {
   border-radius: 10px;
-  background-color: #${colorscheme.colors.base00};
+  background-color: #11111b;
   color: #${colorscheme.colors.base07};
   margin-top: 15px;
 	margin-right: 15px;
@@ -26,10 +26,11 @@ window#waybar {
 #custom-nixos {
   font-size: 20px;
 	margin-left: 15px;
+  padding-right: 18px;
 }
 
 #workspaces button {
-  background: #${colorscheme.colors.base00};
+  background: #11111b;
   color: #${colorscheme.colors.base05};
 }
 
@@ -39,7 +40,7 @@ window#waybar {
 
 #custom-unread-mail, #cpu, #memory, #pulseaudio, #clock, #clock#date #backlight, #network, #battery{
   border-radius: 10px;
-  background-color: #${colorscheme.colors.base00};
+  background-color: #11111b;
   color: #${colorscheme.colors.base07};
   margin-top: 15px;
   padding-left: 10px;

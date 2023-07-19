@@ -32,7 +32,7 @@ in
     modules-right = [ "pulseaudio" "cpu" "memory" "network" "clock#date" "battery" ];
 
     "custom/nixos" = {
-      format = " ";
+      format = "";
       on-click = "sh ${config.home.homeDirectory}/.local/bin/rofi-powermenu";
     };
 
@@ -49,7 +49,7 @@ in
     };
 
     "clock#date" = {
-      format = "<span color=\"#${colors.base07}\"> </span>{: %A %d %B}";
+      format = "<span color=\"#${colors.base07}\"></span>{: %A %d %B}";
       on-click = calendar;
     };
 
@@ -76,19 +76,19 @@ in
 
     pulseaudio = {
       scroll-step = 2;
-      format = "{icon} {volume}%";
+      format = "{icon}{volume}%";
       format-muted = "<span color='#${colors.base07}'> </span>";
       format-icons.default = [ "<span color=\"#${colors.base07}\"></span> " ];
       on-click = audioMonitor;
     };
 
     cpu = {
-      format = "<span color=\"#${colors.base07}\">  CPU</span> {usage}%";
+      format = "<span color=\"#${colors.base07}\"> CPU</span> {usage}%";
       on-click = systemMonitor;
     };
 
     memory = {
-      format = "<span color=\"#${colors.base07}\">  RAM</span> {used:0.1f}G/{total:0.1f}G";
+      format = "<span color=\"#${colors.base07}\"> RAM</span> {used:0.1f}G/{total:0.1f}G";
       on-click = systemMonitor;
       };
     };
