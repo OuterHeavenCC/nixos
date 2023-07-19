@@ -8,7 +8,6 @@ if [[ "$DIR" == "powermenus" ]]; then
 	shutdown="󰐥"
 	reboot="󰜉"
 	lock=""
-	suspend="󰒲"
 	logout="󰍃"
 	ddir="$HOME/.config/rofi"
 else
@@ -21,7 +20,6 @@ else
 	shutdown="󰐥"
 	reboot="󰜉"
 	lock=""
-	suspend="󰒲"
 	logout="󰍃"
 	ddir="$HOME/.config/rofi"
 
@@ -29,75 +27,26 @@ else
 		shutdown="󰐥 Shutdown"
 		reboot="󰜉 Restart"
 		lock=" Lock"
-		suspend="󰒲 Sleep"
 		logout="󰍃 Logout"
 	fi
 	ddir="$HOME/.config/rofi"
 fi
 
-# Ask for confirmation
-rdialog () {
-rofi -dmenu\
-    -i\
-    -no-fixed-num-lines\
-    -p "Are You Sure? : "\
-    -theme "$ddir/confirm.rasi"
-}
-
-# Display Help
-show_msg() {
-	rofi -theme "$ddir/askpass.rasi" -e "Options : yes / no / y / n"
-}
-
 # Variable passed to rofi
-options="$lock\n$suspend\n$logout\n$reboot\n$shutdown"
+options="$lock\n$logout\n$reboot\n$shutdown"
 
 chosen="$(echo -e "$options" | $rofi_command -p "UP - $uptime" -dmenu -selected-row 0)"
 case $chosen in
     $shutdown)
-		ans=$(rdialog &)
-		if [[ $ans == "yes" ]] || [[ $ans == "YES" ]] || [[ $ans == "y" ]]; then
-			systemctl poweroff
-		elif [[ $ans == "no" ]] || [[ $ans == "NO" ]] || [[ $ans == "n" ]]; then
-			exit
-        else
-			show_msg
-        fi
+			  systemctl poweroff
         ;;
     $reboot)
-		ans=$(rdialog &)
-		if [[ $ans == "yes" ]] || [[ $ans == "YES" ]] || [[ $ans == "y" ]]; then
-			systemctl reboot
-		elif [[ $ans == "no" ]] || [[ $ans == "NO" ]] || [[ $ans == "n" ]]; then
-			exit
-        else
-			show_msg
-        fi
+			  systemctl reboot
         ;;
     $lock)
         swaylock -c 000000 --ring-color cba6f7 --ring-ver-color cba6f7 --key-hl-color 000000 --inside-color cba6f7 --inside-ver-color cba6f7 --inside-clear-color a6e3a1 --ring-clear-color a6e3a1 --ring-wrong-color f38ba8 --inside-wrong-color f38ba8 --bs-hl-color f38ba8 --text-caps-lock-color 000000
         ;;
-    $suspend)
-		ans=$(rdialog &)
-		if [[ $ans == "yes" ]] || [[ $ans == "YES" ]] || [[ $ans == "y" ]]; then
-			mpc -q pause
-			amixer set Master mute
-			sh $HOME/.local/bin/lock
-			systemctl suspend
-		elif [[ $ans == "no" ]] || [[ $ans == "NO" ]] || [[ $ans == "n" ]]; then
-			exit
-        else
-			show_msg
-        fi
-        ;;
     $logout)
-		ans=$(rdialog &)
-		if [[ $ans == "yes" ]] || [[ $ans == "YES" ]] || [[ $ans == "y" ]]; then
-			bspc quit
-		elif [[ $ans == "no" ]] || [[ $ans == "NO" ]] || [[ $ans == "n" ]]; then
-			exit
-        else
-			show_msg
-        fi
+        hyprctl dispatch exit
         ;;
 esac
