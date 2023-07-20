@@ -22,7 +22,7 @@ in
       mesonFlags = (oa.mesonFlags or  [ ]) ++ [ "-Dexperimental=true" ];
       });
     style = (import ./style.nix { 
-      inherit (config) colorscheme; 
+      inherit (config) colorscheme fontProfiles; 
     });
     settings = {
        mainBar = {

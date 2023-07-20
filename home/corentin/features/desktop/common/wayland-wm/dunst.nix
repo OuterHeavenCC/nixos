@@ -18,7 +18,7 @@ in
         frame_width = 2;
         frame_color = "#${colors.base07}";
         separator_color = "frame"; 
-        font = "Fira Code 10";
+        font = "${config.fontProfiles.regular.family} 10";
         corner_radius = 7;
         background = "#${colors.base00}";
         foreground = "#${colors.base05}";

@@ -3,7 +3,6 @@
 {
   imports = [
     inputs.home-manager.nixosModules.home-manager
-    ./fonts.nix
     ./git.nix
     ./input.nix
     ./locale.nix

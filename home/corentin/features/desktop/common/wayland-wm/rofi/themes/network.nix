@@ -1,3 +1,4 @@
+{ fontProfiles }:
 ''
 configuration {
     show-icons:                     false;
@@ -42,7 +43,7 @@ textbox-prompt-colon {
     background-color:               @BG;
     text-color:                     @FG;
     padding:                        8px 12px 8px 12px;
-    font:			                "Iosevka Nerd Font 10";
+    font:			                "${fontProfiles.regular.family} 10";
 }
 
 entry {
