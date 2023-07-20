@@ -1,4 +1,3 @@
-{ fontProfiles }:
 ''
 configuration {
     show-icons:                     true;
@@ -45,7 +44,7 @@ textbox-prompt-colon {
     background-color:               @BG;
     text-color:                     @BG;
     padding:                        8px 12px 8px 12px;
-    font:			                "${fontProfiles.regular.family} 13";
+    font:			                "Fira Code Nerd Font 13";
 }
 
 entry {
@@ -119,7 +118,7 @@ element-icon {
 element-text {
     background-color: 		        inherit;
     text-color:       		        inherit;
-    font:			                "${fontProfiles.regular.family} 20";
+    font:			                "Fira Code Nerd Font 20";
     expand:                         true;
     horizontal-align:               0.5;
     vertical-align:                 0.5;

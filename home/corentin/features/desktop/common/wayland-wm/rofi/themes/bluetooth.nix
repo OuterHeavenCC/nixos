@@ -1,4 +1,3 @@
-{ fontProfiles }:
 ''
 configuration {
     show-icons:                     false;
@@ -43,7 +42,7 @@ textbox-prompt-colon {
     background-color:               @SEL;
     text-color:                     @FG;
     padding:                        8px 12px 8px 12px;
-    font:			                "${fontProfiles.regular.family} 10";
+    font:			                "Fira Code Nerd Font 10";
 }
 
 entry {

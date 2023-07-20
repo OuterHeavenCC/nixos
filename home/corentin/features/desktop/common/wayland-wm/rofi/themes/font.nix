@@ -1,6 +1,5 @@
-{ fontProfiles }:
 ''
 * {
-    font:				 	"${fontProfiles.regular.family} 13";
+    font:				 	"Fira Code Nerd Font 13";
 }
 ''
