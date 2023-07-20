@@ -3,6 +3,4 @@
 
 { pkgs ? (import ../nixpkgs.nix) { } }: {
   # example = pkgs.callPackage ./example { };
-  bmks = pkgs.callPackage ./bmks { };
-  passrofi = pkgs.callPackage ./passrofi { };
 }

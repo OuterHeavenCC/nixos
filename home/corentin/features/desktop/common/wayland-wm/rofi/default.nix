@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 
 {
   xdg.configFile."rofi/colors.rasi".text = import ./themes/colors.nix { inherit (config) colorscheme; };
@@ -14,4 +14,17 @@
   xdg.configFile."rofi/powermenu.rasi".text = import ./themes/powermenu.nix;
   xdg.configFile."rofi/runner.rasi".text = import ./themes/runner.nix;
   xdg.configFile."rofi/screenshot.rasi".text = import ./themes/screenshot.nix;
+
+  # home.packages = with pkgs; [
+  #   bmks
+    # passrofi
+    # rofi-kill
+    # rofi-launcher
+    # rofi-mount
+    # rofi-mullvad-toggle
+    # rofi-powermenu
+    # rofi-printscreen
+    # rofi-runner
+    # rofi-umount
+  # ];
 }
