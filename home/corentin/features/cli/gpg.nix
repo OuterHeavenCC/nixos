@@ -10,7 +10,7 @@
     maxCacheTtl = 86400;
     pinentryFlavor = "gnome3";
     extraConfig = ''
-allow-preset-passphrase
+      allow-preset-passphrase
   '';
   };
 

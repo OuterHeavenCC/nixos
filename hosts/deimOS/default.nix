@@ -8,13 +8,14 @@
     ../common/global
     ../common/users/corentin
 
-    ../common/optional/audio.nix
+    ../common/optional/pipewire.nix
     ../common/optional/xdg.nix
     ../common/optional/mimeApps.nix
     ../common/optional/bluetooth.nix
-    ../common/optional/boot.nix
+    ../common/optional/systemd-boot.nix
     ../common/optional/kdeconnect.nix
-    ../common/optional/print.nix
+    ../common/optional/printer.nix
+    ../common/optional/fail2ban.nix
 
     ./hardware-configuration.nix
   ];

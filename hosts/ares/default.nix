@@ -8,7 +8,8 @@
     ./hardware-configuration.nix
     ../common/global
     ../common/users/corentin
-    ../common/optional/nginx
+    ../common/optional/fail2ban.nix
+    ./services
 
   ];
 
