@@ -3,7 +3,6 @@
 {
   imports = [
     ./firefox.nix
-    ./font.nix
     ./gtk.nix
     ./mpd.nix
     ./mpv.nix

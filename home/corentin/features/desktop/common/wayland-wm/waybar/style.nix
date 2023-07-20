@@ -1,8 +1,8 @@
-{ colorscheme, fontProfiles, ... }:
+{ colorscheme, ... }:
 ''
 * {
   border: none;
-  font-family: '${fontProfiles.regular.family}';
+  font-family: 'Fira Code Nerd Font';
   font-size: 14px;
   font-feature-settings: '"zero", "ss01", "ss02", "ss03", "ss04", "ss05", "cv31"';
   min-height: 25px;
