@@ -11,9 +11,6 @@ in
 
   wayland.windowManager.hyprland = {
     enable = true;
-    xwayland = {
-      enable = true;
-    };
     # settings = {
     #   # TODO env, exec-once, windowrule
     #   exec-once = [
