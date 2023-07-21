@@ -7,7 +7,7 @@
   };
 
   wayland.windowManager.hyprland = {
-    nvidiaPatches = true;
+    enableNvidiaPatches = true;
   };
 
 }

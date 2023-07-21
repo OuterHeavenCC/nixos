@@ -17,15 +17,6 @@
     nix-minecraft.url = "github:Infinidoge/nix-minecraft";
     nix-colors.url = "github:misterio77/nix-colors";
 
-    hyprland = {
-      url = "github:hyprwm/hyprland/v0.26.0";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    hyprwm-contrib = {
-      url = "github:hyprwm/contrib";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     firefox-addons = {
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
