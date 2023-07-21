@@ -15,7 +15,7 @@
       hyprpicker                  # Color picking tool for wlroots
       rofi-wayland                # Rofi Wayland fork
       slurp                       # Select a region in a Wayland compositor
-      swww                        # Wallpaper manager
+      wbg                         # Wallpaper manager
       wev                         # Show Wayland events
       wl-clipboard                # Clipboard manager for wlroots
     ];

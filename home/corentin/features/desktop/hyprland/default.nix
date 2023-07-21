@@ -14,7 +14,7 @@ in
     # settings = {
     #   # TODO env, exec-once, windowrule
     #   exec-once = [
-    #     ''swww init''
+    #     ''wbg ~/.local/share/bg''
     #     ''foot --server''
     #     ''waybar''
     #     ''swayidle -w''

@@ -16,7 +16,7 @@ env = QT_QPA_PLATFORMTHEME=qt5ct
 env = WLC_REPEAT_RATE=300
 env = WLC_REPEAT_DELAY=50
 
-exec-once=swww init
+exec-once=wbg ~/.local/share/bg
 exec-once=foot --server
 exec-once=waybar
 exec-once=swayidle -w

@@ -29,7 +29,6 @@
       "tp" = "trash";
       "D" = "delete";
       "chm" = "chmod";
-      "bg" = ''$swww img "$f"'';
 
       "A" = "rename";
       "br" = "vimv";
