@@ -43,6 +43,9 @@ in
       "browser.tabs.crashReporting.sendReport" = false;
       "browser.crashReports.unsubmittedCheck.autoSubmit2" = false;
 
+      # Hardware acceleration
+      "media.ffmpeg.vaapi.enabled" = true;
+
     extensions = 
     with addons; [
       ublock-origin
