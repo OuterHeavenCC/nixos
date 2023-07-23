@@ -27,6 +27,7 @@
     obs-studio               # Screen capturing tool
     piper                    # Gaming mouse management
     prismlauncher            # Minecraft launcher
+    swappy                   # Snapshot editing tool
     telegram-desktop         # Telegram
     thunderbird              # En attendant d'avoir une configuration neomutt plus propre
     warp                     # File transfer

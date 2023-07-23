@@ -6,7 +6,7 @@ let
   swaylock = "${pkgs.swaylock}/bin/swaylock";
   actionLock = "${swaylock} --daemonize -c ${colors.base00}";
 
-  lockTime = 2 * 60; 
+  lockTime = 5 * 60; 
 
   mkEvent = time: start: resume: ''
     timeout ${toString (lockTime + time)} '${start}' ${lib.optionalString (resume != null) "resume '${resume}'"}
