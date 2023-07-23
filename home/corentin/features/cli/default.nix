@@ -49,6 +49,7 @@
     hexyl                         # Hex Viewer
     hyperfine                     # Better time command
     imagemagick                   # Pictures modifications
+    iftop                         # Terminal ncurses network monitoring
     jq                            # Json processor
     killall                       # Better pkill -15
     lazygit                       # Git made easy
