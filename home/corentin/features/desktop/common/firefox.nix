@@ -15,7 +15,6 @@ in
       "browser.aboutConfig.showWarning" = false;
       "browser.newtabpage.activity-stream.showSponsored" = false;
       "browser.newtabpage.activity-stream.showSponsoredTopSites" = false;
-      "browser.startup.homepage" = "https://start.duckduckgo.com";
 
       # Telemetry
       "datareporting.policy.dataSubmissionEnabled" = false;
