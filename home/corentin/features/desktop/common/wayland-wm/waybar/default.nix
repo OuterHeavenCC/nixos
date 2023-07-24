@@ -37,10 +37,14 @@ in
     };
 
     "wlr/workspaces" = {
-      format = "{name}";
+      format = "{icon}";
       on-click = "activate";
       tooltip = false;
       all-outputs = true;
+      format-icons = {
+        active = "";
+        default = "";
+      };
     };
 
     "clock" = {
