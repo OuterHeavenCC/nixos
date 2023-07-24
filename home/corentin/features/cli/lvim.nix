@@ -14,6 +14,7 @@
         { "sainnhe/everforest" },
         { "sainnhe/gruvbox-material" },
         { "shaunsingh/nord.nvim" },
+        { "norcalli/nvim-colorizer.lua" },
       }
 
       lvim.colorscheme = "catppuccin-mocha"

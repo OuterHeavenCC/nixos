@@ -97,7 +97,7 @@ in
         gaps_in = "5";
         gaps_out = "20";
         border_size= "2";
-        "col.active_border" = "0xFF${colors.base07}";
+        "col.active_border" = "0xFF${colors.base0E}";
         "col.inactive_border" = "0x66${colors.base02}";
         layout = "master";
       };

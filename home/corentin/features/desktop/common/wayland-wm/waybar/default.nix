@@ -44,55 +44,56 @@ in
       format-icons = {
         active = "";
         default = "";
+        urgent = "";
       };
     };
 
     "clock" = {
-      format = "<span color='#${colors.base07}'> </span>{:%H:%M}";
+      format = "<span color='#${colors.base0E}'> </span>{:%H:%M}";
       on-click = calendar;
     };
 
     "clock#date" = {
-      format = "<span color=\"#${colors.base07}\"></span>{: %A %d %B}";
+      format = "<span color=\"#${colors.base0E}\"></span>{: %A %d %B}";
       on-click = calendar;
     };
 
     backlight = {
       device = "radeon_b10";
-      format = "<span color='#${colors.base07}'>{icon}</span> {percent}%";
+      format = "<span color='#${colors.base0E}'>{icon}</span> {percent}%";
       format-icons = [ "" "" "" "" "" "" "" "" "" ];
     };
 
     network = {
       interface = "enp42s0";
       format = "{ifname}";
-      format-wifi = "<span color='#${colors.base07}'> </span>{essid}";
-      format-ethernet = "{ipaddr}/{cidr} <span color ='#${colors.base07}'>󰈀</span>";
-      format-disconnected = "<span color='#${colors.base07}'>󰖪 </span>No Network";
+      format-wifi = "<span color='#${colors.base0E}'> </span>{essid}";
+      format-ethernet = "{ipaddr}/{cidr} <span color ='#${colors.base0E}'>󰈀</span>";
+      format-disconnected = "<span color='#${colors.base0E}'>󰖪 </span>No Network";
       on-click = networkmanager_dmenu;
     };
 
     battery = {
-      format = "<span color='#${colors.base07}'>{icon}</span> {capacity}%";
+      format = "<span color='#${colors.base0E}'>{icon}</span> {capacity}%";
       format-icons = [ "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹" ];
-      format-charging = "<span color='#${colors.base07}'>󰂄</span> {capacity}%";
+      format-charging = "<span color='#${colors.base0E}'>󰂄</span> {capacity}%";
     };
 
     pulseaudio = {
       scroll-step = 2;
       format = "{icon}{volume}%";
-      format-muted = "<span color='#${colors.base07}'> </span>";
-      format-icons.default = [ "<span color=\"#${colors.base07}\"></span> " ];
+      format-muted = "<span color='#${colors.base0E}'> </span>";
+      format-icons.default = [ "<span color=\"#${colors.base0E}\"></span> " ];
       on-click = audioMonitor;
     };
 
     cpu = {
-      format = "<span color=\"#${colors.base07}\"> CPU</span> {usage}%";
+      format = "<span color=\"#${colors.base0E}\"> CPU</span> {usage}%";
       on-click = systemMonitor;
     };
 
     memory = {
-      format = "<span color=\"#${colors.base07}\"> RAM</span> {used:0.1f}G/{total:0.1f}G";
+      format = "<span color=\"#${colors.base0E}\"> RAM</span> {used:0.1f}G/{total:0.1f}G";
       on-click = systemMonitor;
       };
     };

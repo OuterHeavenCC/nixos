@@ -15,7 +15,7 @@ window#waybar {
 #custom-nixos, #workspaces {
   border-radius: 10px;
   background-color: #11111b;
-  color: #${colorscheme.colors.base07};
+  color: #${colorscheme.colors.base0E};
   margin-top: 15px;
 	margin-right: 15px;
   padding-top: 1px;
@@ -35,13 +35,13 @@ window#waybar {
 }
 
 #workspaces button.active {
-  color: #${colorscheme.colors.base07};
+  color: #${colorscheme.colors.base0E};
 }
 
 #custom-unread-mail, #cpu, #memory, #pulseaudio, #clock, #clock#date #backlight, #network, #battery{
   border-radius: 10px;
   background-color: #11111b;
-  color: #${colorscheme.colors.base07};
+  color: #${colorscheme.colors.base0E};
   margin-top: 15px;
   padding-left: 10px;
   padding-right: 10px;
