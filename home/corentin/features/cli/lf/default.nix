@@ -177,7 +177,7 @@ in
       '';
     };
 
-    extraConfig = (import ./config.nix {inherit pkgs;});
+    extraConfig = (import ./extraConfig.nix {inherit pkgs;});
   };
   xdg.configFile."lf/icons".text = builtins.readFile ./icons;
   xdg.configFile."ctpv/config".text = ''set chafasixel'';           # Sixel previewing with lf-sixel
