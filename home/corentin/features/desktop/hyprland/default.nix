@@ -1,7 +1,31 @@
-{ lib, config, ... }:
+{ lib, config, pkgs, ... }:
 let
   inherit (config.home.sessionVariables) BROWSER EDITOR TERMINAL MAILCLIENT;
   inherit (config.colorscheme) colors;
+  split-monitor-workspaces = pkgs.stdenv.mkDerivation {
+        pname = "split-monitor-workspaces";
+        version = "0.1";
+
+        src = pkgs.fetchFromGitHub {
+          owner = "Duckonaut";
+          repo = "split-monitor-workspaces";
+          rev = "44785ce";
+          sha256 = "XxcUPMqytWItOmre7MV1XAhx/i2uyBbjHMKr5+B0IPE=";
+        };
+
+        nativeBuildInputs = [ pkgs.pkg-config ];
+        buildInputs = [ pkgs.hyprland ] ++ pkgs.hyprland.buildInputs;
+
+        buildPhase = ''
+          export HYPRLAND_HEADERS=${pkgs.hyprland.src}
+          make all
+        '';
+
+        installPhase = ''
+          mkdir -p $out/lib
+          cp split-monitor-workspaces.so $out/lib/libsplit-monitor-workspaces.so
+        '';
+      };
 in
 {
 
@@ -145,27 +169,27 @@ in
         ''SUPER,left,focusmonitor,l''
         ''SUPERSHIFT,left,movewindow,mon:l''
         ''SUPER,right,focusmonitor,r''
-        ''SUPERSHIFT,right,movewindow,mon:l''
-        ''SUPER,ampersand,workspace,1''
-        ''SUPER,eacute,workspace,2''
-        ''SUPER,quotedbl,workspace,3''
-        ''SUPER,apostrophe,workspace,4''
-        ''SUPER,parenleft,workspace,5''
-        ''SUPER,minus,workspace,6''
-        ''SUPER,egrave,workspace,7''
-        ''SUPER,underscore,workspace,8''
-        ''SUPER,ccedilla,workspace,9''
-        ''SUPER,agrave,workspace,10''
-        ''SUPERSHIFT,ampersand,movetoworkspacesilent,1''
-        ''SUPERSHIFT,eacute,movetoworkspacesilent,2''
-        ''SUPERSHIFT,quotedbl,movetoworkspacesilent,3''
-        ''SUPERSHIFT,apostrophe,movetoworkspacesilent,4''
-        ''SUPERSHIFT,parenleft,movetoworkspacesilent,5''
-        ''SUPERSHIFT,minus,movetoworkspacesilent,6''
-        ''SUPERSHIFT,egrave,movetoworkspacesilent,7''
-        ''SUPERSHIFT,underscore,movetoworkspacesilent,8''
-        ''SUPERSHIFT,ccedilla,movetoworkspacesilent,9''
-        ''SUPERSHIFT,agrave,movetoworkspacesilent,10''
+        ''SUPERSHIFT,right,movewindow,mon:r''
+        ''SUPER,ampersand,split-workspace,1''
+        ''SUPER,eacute,split-workspace,2''
+        ''SUPER,quotedbl,split-workspace,3''
+        ''SUPER,apostrophe,split-workspace,4''
+        ''SUPER,parenleft,split-workspace,5''
+        ''SUPER,minus,split-workspace,6''
+        ''SUPER,egrave,split-workspace,7''
+        ''SUPER,underscore,split-workspace,8''
+        ''SUPER,ccedilla,split-workspace,9''
+        ''SUPER,agrave,split-workspace,10''
+        ''SUPERSHIFT,ampersand,split-movetoworkspacesilent,1''
+        ''SUPERSHIFT,eacute,split-movetoworkspacesilent,2''
+        ''SUPERSHIFT,quotedbl,split-movetoworkspacesilent,3''
+        ''SUPERSHIFT,apostrophe,split-movetoworkspacesilent,4''
+        ''SUPERSHIFT,parenleft,split-movetoworkspacesilent,5''
+        ''SUPERSHIFT,minus,split-movetoworkspacesilent,6''
+        ''SUPERSHIFT,egrave,split-movetoworkspacesilent,7''
+        ''SUPERSHIFT,underscore,split-movetoworkspacesilent,8''
+        ''SUPERSHIFT,ccedilla,split-movetoworkspacesilent,9''
+        ''SUPERSHIFT,agrave,split-movetoworkspacesilent,10''
       ];
 
       bindm = [
@@ -184,6 +208,7 @@ in
         ''SUPERSHIFT,k,swapnext,prev''
       ];
     };
+    plugins = [ split-monitor-workspaces ];
     extraConfig =
       (import ./monitors.nix {
         inherit lib;
