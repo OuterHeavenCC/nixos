@@ -22,11 +22,11 @@ in
       ring-ver-color = "#${colors.base09}";
       inside-ver-color = "#${colors.base09}";
       inside-color = "#${colors.base01}";
-      text-color = "#${colors.base0E}";
+      text-color = "#${colors.base07}";
       text-clear-color = "#${colors.base01}";
       text-ver-color = "#${colors.base01}";
       text-wrong-color = "#${colors.base01}";
-      text-caps-lock-color = "#${colors.base0E}";
+      text-caps-lock-color = "#${colors.base07}";
       inside-clear-color = "#${colors.base0C}";
       ring-clear-color = "#${colors.base0C}";
       inside-caps-lock-color = "#${colors.base09}";

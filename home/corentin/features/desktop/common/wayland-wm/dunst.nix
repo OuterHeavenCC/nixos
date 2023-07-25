@@ -16,7 +16,7 @@ in
         offset = "30x30";
         follow = "keyboard";
         frame_width = 2;
-        frame_color = "#${colors.base0E}";
+        frame_color = "#${colors.base07}";
         separator_color = "frame"; 
         font = "Fira Code Nerd Font 10";
         corner_radius = 7;

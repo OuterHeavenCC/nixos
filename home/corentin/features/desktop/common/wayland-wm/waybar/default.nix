@@ -3,7 +3,6 @@
 let 
   inherit (config.colorscheme) colors;
   # Dependencies
-  btm = "${pkgs.bottom}/bin/btm";
   calcurse = "${pkgs.calcurse}/bin/calcurse";
   pulsemixer = "${pkgs.pulsemixer}/bin/pulsemixer";
   networkmanager_dmenu = "${pkgs.networkmanager_dmenu}/bin/networkmanager_dmenu";
@@ -13,7 +12,6 @@ let
 
   calendar = terminal-spawn calcurse;
   audioMonitor = terminal-spawn pulsemixer;
-  systemMonitor = terminal-spawn btm;
 in
 {
   programs.waybar = {
@@ -22,82 +20,64 @@ in
       mesonFlags = (oa.mesonFlags or  [ ]) ++ [ "-Dexperimental=true" ];
       });
     style = (import ./style.nix { 
-      inherit (config) colorscheme fontProfiles; 
+      inherit (config) colorscheme; 
     });
     settings = {
-       mainBar = {
-    layer = "top";
-    modules-left = [ "custom/nixos" "wlr/workspaces" ];
-    modules-center = [ "clock" ];
-    modules-right = [ "pulseaudio" "cpu" "memory" "network" "clock#date" "battery" ];
+      mainBar = {
+          layer = "top";
+          modules-left = [ "custom/nixos" "wlr/workspaces" ];
+          modules-center = [ "clock" ];
+          modules-right = [ "pulseaudio" "network" "battery" ];
 
-    "custom/nixos" = {
-      format = "";
-      on-click = "sh ${config.home.homeDirectory}/.local/bin/rofi-powermenu";
-    };
+          "custom/nixos" = {
+            format = "";
+            on-click = "sh ${config.home.homeDirectory}/.local/bin/rofi-powermenu";
+          };
 
-    "wlr/workspaces" = {
-      format = "{icon}";
-      on-click = "activate";
-      tooltip = false;
-      all-outputs = false;
-      format-icons = {
-        active = "";
-        default = "";
-        urgent = "";
-      };
-    };
+          "wlr/workspaces" = {
+            format = "{icon}";
+            on-click = "activate";
+            all-outputs = false;
+            format-icons = {
+              active = "";
+              default = "";
+              urgent = "";
+            };
+          };
 
-    "clock" = {
-      format = " {:%H:%M}";
-      on-click = calendar;
-    };
+          "clock" = {
+            format = "<span color='#${colors.base07}'></span> {:%H:%M}";
+            on-click = calendar;
+          };
 
-    "clock#date" = {
-      format = "{: %A %d %B}";
-      on-click = calendar;
-    };
+          backlight = {
+            device = "radeon_b10";
+            format = "<span color='#${colors.base07}'>{icon}</span> {percent}%";
+            format-icons = [ "" "" "" "" "" "" "" "" "" ];
+          };
 
-    backlight = {
-      device = "radeon_b10";
-      format = "{icon} {percent}%";
-      format-icons = [ "" "" "" "" "" "" "" "" "" ];
-    };
+          network = {
+            format = "{ifname}";
+            format-wifi = "<span color='#${colors.base07}'></span> {essid}";
+            format-ethernet = "<span color='#${colors.base07}'>󰌗</span>";
+            format-disconnected = "<span color='#${colors.base07}'>󰖪</span> Non connecté";
+            on-click = networkmanager_dmenu;
+          };
 
-    network = {
-      interface = "enp42s0";
-      format = "{ifname}";
-      format-wifi = " {essid}";
-      format-ethernet = "󰈀 {ipaddr}/{cidr}";
-      format-disconnected = "󰖪 No Network";
-      on-click = networkmanager_dmenu;
-    };
+          battery = {
+            format = "<span color='#${colors.base07}'>{icon}</span> {capacity}%";
+            format-icons = [ "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹" ];
+            format-charging = "<span color='#${colors.base07}'>󰂄</span> {capacity}%";
+          };
 
-
-    battery = {
-      format = "{icon} {capacity}%";
-      format-icons = [ "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹" ];
-      format-charging = "󰂄 {capacity}%";
-    };
-
-    pulseaudio = {
-      scroll-step = 2;
-      format = "{icon}{volume}%";
-      format-muted = " ";
-      format-icons.default = [ " " ];
-      on-click = audioMonitor;
-    };
-
-    cpu = {
-      format = " CPU {usage}%";
-      on-click = systemMonitor;
-    };
-
-    memory = {
-      format = " RAM {used:0.1f}G/{total:0.1f}G";
-      on-click = systemMonitor;
+          pulseaudio = {
+            scroll-step = 2;
+            format = "<span color='#${colors.base07}'>{icon}</span>{volume}%";
+            format-muted = "<span color='#${colors.base07}'></span> ";
+            format-icons.default = [ " " ];
+            on-click = audioMonitor;
+          };
       };
     };
   };
-};
 }
