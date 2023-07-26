@@ -64,7 +64,6 @@
     odt2txt                       # ODT file preview in terminal
     p7zip                         # Basic archiving tool
     pamixer                       # Pulseaudio command line mixer
-    pandoc                        # Markdown to HTML/PDF
     pciutils                      # PCI listing
     poetry                        # Python depenency and packaging tool
     poppler_utils                 # PDF manipulations
@@ -81,14 +80,12 @@
     skim                          # fzf but faster
     sqlite                        # Basic programming stuff
     tealdeer                      # TLDR Man
-    texlive.combined.scheme-full  # LaTex language
     tokei                         # Count lines of codes
     timewarrior                   # Commandline time tracking and reporting tool
     transmission                  # Torrents
     unrar                         # Basic archiving tool
     unzip                         # Basic archiving tool
     vimv-rs                       # Batch rename
-    ueberzugpp                    # Ueberzug replacement for wayland
     wget                          # Download from CLI util
     xh                            # Better curl
     xmlstarlet                    # Preview xml in terminal
