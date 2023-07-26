@@ -29,7 +29,6 @@
     prismlauncher            # Minecraft launcher
     swappy                   # Snapshot editing tool
     telegram-desktop         # Telegram
-    thunderbird              # En attendant d'avoir une configuration neomutt plus propre
     warp                     # File transfer
     xdragon                  # Transfer files from CLI to GUI apps
     xournalpp                # Edition de PDF
