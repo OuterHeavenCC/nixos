@@ -22,7 +22,7 @@
       serviceConfig.Restart = "always";
     };
 
-    boot.loader.grub.device = lib.mkForce "/dev/xvda";
+    boot.loader.grub.device = lib.mkForce "/dev/vda";
 
     # This is to get a prompt via the "openstack console url show" command
     systemd.services."getty@tty1" = {
