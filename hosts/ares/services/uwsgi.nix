@@ -1,0 +1,5 @@
+{
+  services.uwsgi = {
+    enable = true;
+  };
+}
