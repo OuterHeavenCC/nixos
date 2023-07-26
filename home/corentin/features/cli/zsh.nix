@@ -48,6 +48,14 @@
     sessionVariables = {
       OPENER = "xdg-open";
       LOCATION = "Quimperlé";
+      XDG_DATA_HOME = "$HOME/.local/share";
+      XDG_CONFIG_HOME = "$HOME/.config";
+      XDG_STATE_HOME = "$HOME/.local/state";
+      XDG_CACHE_HOME = "$HOME/.cache";
+      CARGO_HOME = ''"$XDG_DATA_HOME"/cargo'';
+      RUSTUP_HOME=''"$XDG_DATA_HOME"/rustup'';
+      CUDA_CACHE_PATH = ''"$XDG_CACHE_HOME"/nv'';
+      "data.location" = ''"$XDG_DATA_HOME"/task'';
     };
     shellAliases = {
       cp = "cp -iv";
@@ -69,6 +77,7 @@
       ka = "killall";
       v = "$EDITOR";
       sdn = "doas shutdown -h now";
+      wget = ''wget --hsts-file="$XDG_DATA_HOME/wget-hsts"'';
     };
     history = {
       path = "${config.home.homeDirectory}/.local/share/history";
