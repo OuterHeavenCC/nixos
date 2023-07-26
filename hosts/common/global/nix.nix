@@ -50,5 +50,9 @@
       # Deduplicate and optimize nix store
       auto-optimise-store = true;
     };
+
+    extraOptions = ''
+      use-xdg-base-directories = true
+    '';
   };
 }
