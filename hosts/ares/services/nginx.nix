@@ -30,15 +30,6 @@
           };
         };
       };
-      "libreosteo.chaminand.com" = {
-        forceSSL = true;
-        enableACME = true;
-        locations = {
-          "/" = {
-            root = "/var/www/libreosteo";
-          };
-        };
-      };
     };
   # Optional: You can configure the email address used with Let's Encrypt.
   # This way you get renewal reminders (automated by NixOS) as well as expiration emails.
