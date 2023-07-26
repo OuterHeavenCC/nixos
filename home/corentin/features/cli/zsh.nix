@@ -19,7 +19,8 @@
       PS1=\"%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b \"
 
     ";
-    initExtra = "
+    initExtra = ''
+      compinit -d "$XDG_CACHE_HOME"/zsh/zcompdump-"$ZSH_VERSION"                                                        
       zstyle ':completion:*' menu select
       zmodload zsh/complist\n# Use vim keys in tab complete menu:
       bindkey -M menuselect 'h' vi-backward-char
@@ -44,7 +45,7 @@
       echo -ne \'\\e[5 q\'
       preexec() { echo -ne \'\\e[5 q\' ;}
       eval \"$(zoxide init zsh)\"
-";
+'';
     sessionVariables = {
       OPENER = "xdg-open";
       LOCATION = "Quimperlé";
@@ -55,6 +56,7 @@
       CARGO_HOME = ''"$XDG_DATA_HOME"/cargo'';
       RUSTUP_HOME=''"$XDG_DATA_HOME"/rustup'';
       CUDA_CACHE_PATH = ''"$XDG_CACHE_HOME"/nv'';
+      RANDFILE = ''"$XDG_DATA_HOME"/rnd'';
     };
     shellAliases = {
       cp = "cp -iv";
