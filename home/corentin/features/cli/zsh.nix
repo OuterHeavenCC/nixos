@@ -57,8 +57,6 @@
       RUSTUP_HOME=''"$XDG_DATA_HOME"/rustup'';
       CUDA_CACHE_PATH = ''"$XDG_CACHE_HOME"/nv'';
       RANDFILE = ''"$XDG_DATA_HOME"/rnd'';
-      HISTFILE = ''"$XDG_STATE_HOME"/bash/history'';
-      "data.location" = ''"$XDG_DATA_HOME"/task'';
     };
     shellAliases = {
       cp = "cp -iv";
