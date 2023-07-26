@@ -11,9 +11,10 @@
     ./features/desktop/common/wayland-wm
     ./features/desktop/hyprland
     ./features/nvidia
-    ./features/scripts
     ./features/pass
     ./features/productivity
+    ./features/scripts
+    ./features/website
     ./global
 
 

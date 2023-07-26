@@ -13,6 +13,7 @@
     ./features/pass
     ./features/productivity
     ./features/scripts
+    ./features/website
     ./global
 
     # If you want to use modules your own flake exports (from modules/home-manager):
