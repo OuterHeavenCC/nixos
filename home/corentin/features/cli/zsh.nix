@@ -55,7 +55,6 @@
       CARGO_HOME = ''"$XDG_DATA_HOME"/cargo'';
       RUSTUP_HOME=''"$XDG_DATA_HOME"/rustup'';
       CUDA_CACHE_PATH = ''"$XDG_CACHE_HOME"/nv'';
-      "data.location" = ''"$XDG_DATA_HOME"/task'';
     };
     shellAliases = {
       cp = "cp -iv";
