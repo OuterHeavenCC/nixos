@@ -1,3 +1,5 @@
+{ config }:
+
 {
   networking.firewall = {
     allowedTCPPortRanges = [
@@ -6,6 +8,7 @@
       { from = 10800; to = 10800; }
       { from = 8000; to = 8000; }
       { from = 8080; to = 8080; }
+      { from = 43254; to = 43254; }
     ];
   };
 
@@ -27,6 +30,15 @@
         locations = {
           "/" = {
             root = "/var/www/chaminand.com";
+          };
+        };
+      };
+      "searx.chaminand.com" = {
+        forceSSL = true;
+        enableACME = true;
+        locations = {
+          "/" = {
+            proxyPass = "http://localhost:${toString config.services.searx.settings.port}";
           };
         };
       };
