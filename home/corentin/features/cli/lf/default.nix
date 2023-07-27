@@ -27,7 +27,7 @@ in
       C = "clear";
       U = "unselect";
       dd = "cut";
-      dr = "dragon";
+      dr = "xdragon";
       p = "paste";
       yy = "copy";
       mkf = "mkfile";
@@ -47,10 +47,9 @@ in
       gc = "cd ${cfg.configHome}";
       gl = "cd ~/.local";
       gsh = "cd ~/.local/bin";
-      gd = "cd ~/Documents/";
+      gd = "cd ${cfg.userDirs.documents}";
       gD = "cd /mnt";
       gi = "cd ${cfg.userDirs.pictures}";
-      gj = "cd ~/Jeux";
       gt = "cd ${cfg.userDirs.download}";
       gv = "cd ${cfg.userDirs.videos}";
       cc = "push A<c-u>"; # new rename
@@ -71,7 +70,7 @@ in
       tar = ''%tar cvf "$f.tar" "$f"'';
       targz = ''%tar czvf "$f.tar.gz" "$f"'';
       tarbz2 = ''%tar cjvf "$f.tar.bz2" "$f"'';
-      dragon = ''%xdragon "$f"'';
+      xdragon = ''%xdragon "$f"'';
       trash = ''%set -f; trash "$fx"'';
       vimv = "$vimv";
       open = ''

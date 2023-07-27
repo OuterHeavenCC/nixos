@@ -7,12 +7,17 @@ in
     xdg = {
         userDirs = {
           enable = true;
+          desktop = "${HOME}/Bureau";
+          documents = "${HOME}/Documents";
           download = "${HOME}/Téléchargements";
           music = "${HOME}/Musique";
           pictures = "${HOME}/Images";
           videos = "${HOME}/Vidéos";
           templates = "${HOME}/Modèles";
+          extraConfig = {
+            XDG_GAME_DIR = "${HOME}/Jeux";
           };
+        };
 
         desktopEntries = {
           torrent = {
