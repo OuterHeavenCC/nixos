@@ -1,5 +1,3 @@
-{ config }:
-
 {
   networking.firewall = {
     allowedTCPPortRanges = [
@@ -38,7 +36,7 @@
         enableACME = true;
         locations = {
           "/" = {
-            proxyPass = "http://localhost:${toString config.services.searx.settings.port}";
+            proxyPass = "http://localhost:43254";
           };
         };
       };
