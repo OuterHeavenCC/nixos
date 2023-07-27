@@ -1,7 +1,4 @@
 { config, lib, pkgs, ... }:
-let
-  cfg = config.server;
-in
 {
   networking.firewall = {
     allowedTCPPortRanges = [
@@ -35,7 +32,7 @@ in
           };
         };
       };
-      "search.${cfg.domainName}" = let inherit (config.services.searx) settings; in {
+      "search.chaminand.com" = let inherit (config.services.searx) settings; in {
         enableACME = true;
         forceSSL = true;
         locations."/".extraConfig = ''

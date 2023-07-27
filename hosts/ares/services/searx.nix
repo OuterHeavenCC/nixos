@@ -1,8 +1,5 @@
 { pkgs, config, lib, ... }:
 
-let
-  cfg = config.server;
-in
 {
   services.searx.enable = true;
   services.searx.package = pkgs.searxng;
@@ -23,7 +20,7 @@ in
       port = 8888;
       bind_address = "::1";
       secret_key = "@SEARX_SECRET_KEY@";
-      base_url = "https://search.${cfg.domainName}/";
+      base_url = "https://search.chaminand.com/";
       image_proxy = true;
       default_http_headers = {
         X-Content-Type-Options = "nosniff";
