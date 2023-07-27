@@ -13,6 +13,7 @@
     ./lf
     ./lvim.nix
     ./newsboat.nix
+    ./npm.nix
     ./nvim.nix
     ./taskwarrior.nix
     ./zsh.nix
@@ -60,7 +61,6 @@
     neomutt                       # Mail
     nmap                          # Network mapping tool
     nodePackages_latest.peerflix  # Torrent streaming
-    nodejs                        # Basic programming stuff
     odt2txt                       # ODT file preview in terminal
     p7zip                         # Basic archiving tool
     pamixer                       # Pulseaudio command line mixer

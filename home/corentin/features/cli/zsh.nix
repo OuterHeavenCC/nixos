@@ -55,6 +55,7 @@
       CARGO_HOME = ''"$XDG_DATA_HOME"/cargo'';
       RUSTUP_HOME=''"$XDG_DATA_HOME"/rustup'';
       CUDA_CACHE_PATH = ''"$XDG_CACHE_HOME"/nv'';
+      NPM_CONFIG_USERCONFIG= ''"$XDG_CONFIG_HOME"/npm/npmrc'';
     };
     shellAliases = {
       cp = "cp -iv";
