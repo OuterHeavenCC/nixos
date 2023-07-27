@@ -5,7 +5,8 @@ let
   # Dependencies
   calcurse = "${pkgs.calcurse}/bin/calcurse";
   pulsemixer = "${pkgs.pulsemixer}/bin/pulsemixer";
-  networkmanager_dmenu = "${pkgs.networkmanager_dmenu}/bin/networkmanager_dmenu";
+  networkmanager = "${pkgs.networkmanager_dmenu}/bin/networkmanager_dmenu";
+  powermenu = "${pkgs.rofi-powermenu}/bin/rofi-powermenu";
 
   terminal = "${pkgs.foot}/bin/footclient";
   terminal-spawn = cmd: "${terminal} -e ${cmd}";
@@ -31,7 +32,7 @@ in
 
           "custom/nixos" = {
             format = "";
-            on-click = "sh ${config.home.homeDirectory}/.local/bin/rofi-powermenu";
+            on-click = powermenu;
           };
 
           "wlr/workspaces" = {
@@ -61,7 +62,7 @@ in
             format-wifi = "<span color='#${colors.base07}'></span> {essid}";
             format-ethernet = "<span color='#${colors.base07}'>󰌗</span>";
             format-disconnected = "<span color='#${colors.base07}'>󰖪</span> Non connecté";
-            on-click = networkmanager_dmenu;
+            on-click = networkmanager;
           };
 
           battery = {

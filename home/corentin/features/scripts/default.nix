@@ -1,5 +1,10 @@
+{ pkgs, ... }:
+
 {
   # TODO Simplfier tout ce merdier
+  home.packages = with pkgs; [
+      rofi-powermenu
+    ];
   home.file = {
     ".local/bin/bmks" = {
       enable = true;
@@ -34,11 +39,6 @@
     ".local/bin/rofi-mullvad-toggle" = {
       enable = true;
       source = ./bin/rofi-mullvad-toggle;
-      executable = true;
-    };
-    ".local/bin/rofi-powermenu" = {
-      enable = true;
-      source = ./bin/rofi-powermenu;
       executable = true;
     };
     ".local/bin/rofi-printscreen" = {
