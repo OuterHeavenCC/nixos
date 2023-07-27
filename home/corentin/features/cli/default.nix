@@ -13,9 +13,7 @@
     ./lf
     ./lvim.nix
     ./newsboat.nix
-    ./npm.nix
     ./nvim.nix
-    ./taskwarrior.nix
     ./zsh.nix
   ];
 
@@ -73,7 +71,6 @@
     qemu                          # ISO Stuff
     ripgrep                       # Better grep
     ripgrep-all                   # Grep for pdf
-    rustup                        # Basic programming stuff
     sc-im                         # Simple terminal spreadsheets editor
     scanmem                       # Runtime memory edit
     sd                            # Better sed

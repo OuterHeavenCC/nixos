@@ -1,6 +1,7 @@
 { pkgs, config, ... }:
 
 let
+  cfg = config.xdg;
   pass = "${config.programs.password-store.package}/bin/pass";
 
   common = rec {
@@ -23,7 +24,7 @@ in
   programs.msmtp.enable = true;
 
   accounts.email = {
-    maildirBasePath = "${config.home.homeDirectory}/.local/share/mail";
+    maildirBasePath = "${cfg.dataHome}/mail";
     accounts = {
       gmail = rec {
         primary = true;

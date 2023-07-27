@@ -1,4 +1,5 @@
 {
+  # TODO Simplfier tout ce merdier
   home.file = {
     ".local/bin/bmks" = {
       enable = true;

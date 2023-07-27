@@ -1,10 +1,11 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 let
   zoxide = "${pkgs.zoxide}/bin/zoxide";
   lf = "${pkgs.lf}/bin/lf";
   fzf = "${pkgs.fzf}/bin/fzf";
   skim = "${pkgs.skim}/bin/sk";
   rg = "${pkgs.ripgrep}/bin/rg";
+  cfg = config.xdg;
 in
 {
   programs.lf = {
@@ -43,15 +44,15 @@ in
       ge = "cd /etc/";
       gn = "cd ~/Documents/git/nixos";
       gh = "cd ~";
-      gc = "cd ~/.config";
+      gc = "cd ${cfg.configHome}";
       gl = "cd ~/.local";
       gsh = "cd ~/.local/bin";
       gd = "cd ~/Documents/";
       gD = "cd /mnt";
-      gi = "cd ~/Images";
+      gi = "cd ${cfg.userDirs.pictures}";
       gj = "cd ~/Jeux";
-      gt = "cd ~/Téléchargements";
-      gv = "cd ~/Vidéos";
+      gt = "cd ${cfg.userDirs.download}";
+      gv = "cd ${cfg.userDirs.videos}";
       cc = "push A<c-u>"; # new rename
       I = "push A<c-a>"; # at the very beginning
       i = "push A<a-b><a-b><a-f>"; # before extention

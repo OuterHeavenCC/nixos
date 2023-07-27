@@ -1,14 +1,17 @@
 { config, ... }:
 
+let
+  HOME = config.home.homeDirectory;
+in
 {
     xdg = {
         userDirs = {
           enable = true;
-          download = "${config.home.homeDirectory}/Téléchargements";
-          music = "${config.home.homeDirectory}/Musique";
-          pictures = "${config.home.homeDirectory}/Images";
-          videos = "${config.home.homeDirectory}/Vidéos";
-          templates = "${config.home.homeDirectory}/Modèles";
+          download = "${HOME}/Téléchargements";
+          music = "${HOME}/Musique";
+          pictures = "${HOME}/Images";
+          videos = "${HOME}/Vidéos";
+          templates = "${HOME}/Modèles";
           };
 
         desktopEntries = {
@@ -19,5 +22,12 @@
           };
         };
     };
+      home.sessionVariables = {
+        XDG_DATA_HOME = "${HOME}/.local/share";
+        XDG_CONFIG_HOME = "${HOME}/.config";
+        XDG_STATE_HOME = "${HOME}/.local/state";
+        XDG_CACHE_HOME = "${HOME}/.cache";
+        OPENER = "xdg-open";
+      };
 }
 

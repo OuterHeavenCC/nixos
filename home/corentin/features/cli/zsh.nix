@@ -1,5 +1,8 @@
 { config, ... }:
 
+let
+  cfg = config.xdg;
+in
 {
   programs.zsh = {
     enable = true;
@@ -8,6 +11,7 @@
     syntaxHighlighting = {
       enable = true;
     };
+    dotDir = ".config/zsh";
     loginExtra = ''
       if [ "$(tty)" = "/dev/tty1" ]; then
         exec Hyprland &> /dev/null
@@ -45,18 +49,6 @@
       preexec() { echo -ne \'\\e[5 q\' ;}
       eval \"$(zoxide init zsh)\"
 ";
-    sessionVariables = {
-      OPENER = "xdg-open";
-      LOCATION = "Quimperlé";
-      XDG_DATA_HOME = "$HOME/.local/share";
-      XDG_CONFIG_HOME = "$HOME/.config";
-      XDG_STATE_HOME = "$HOME/.local/state";
-      XDG_CACHE_HOME = "$HOME/.cache";
-      CARGO_HOME = ''"$XDG_DATA_HOME"/cargo'';
-      RUSTUP_HOME=''"$XDG_DATA_HOME"/rustup'';
-      CUDA_CACHE_PATH = ''"$XDG_CACHE_HOME"/nv'';
-      NPM_CONFIG_USERCONFIG= ''"$XDG_CONFIG_HOME"/npm/npmrc'';
-    };
     shellAliases = {
       cp = "cp -iv";
       mv = "mv -iv";
@@ -70,17 +62,17 @@
       mvd = "mullvad";
       tsm = "transmission-remote";
       cd = "z";
-      ledger = "ledger --init-file='~/.config/ledger/ledgerrc'";
+      ledger = "ledger --init-file='${cfg.configHome}/ledger/ledgerrc'";
       ls = "exa -h --color=auto --group-directories-first --icons";
       grep = "grep --color=auto";
       diff = "diff --color=auto";
       ka = "killall";
       v = "$EDITOR";
       sdn = "doas shutdown -h now";
-      wget = ''wget --hsts-file="$XDG_DATA_HOME/wget-hsts"'';
+      wget = ''wget --hsts-file="${cfg.dataHome}/wget-hsts"'';
     };
     history = {
-      path = "${config.home.homeDirectory}/.local/share/history";
+      path = "${cfg.dataHome}/history";
       size = 10000000;
     };
   };

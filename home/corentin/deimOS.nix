@@ -10,6 +10,7 @@
     ./features/desktop/common/wayland-wm
     ./features/desktop/common/wayland-wm
     ./features/desktop/hyprland
+    ./features/dev
     ./features/pass
     ./features/productivity
     ./features/scripts

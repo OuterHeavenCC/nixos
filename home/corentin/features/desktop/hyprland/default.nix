@@ -2,6 +2,7 @@
 let
   inherit (config.home.sessionVariables) BROWSER EDITOR TERMINAL MAILCLIENT;
   inherit (config.colorscheme) colors;
+  cfg = config.xdg;
 in
 {
 
@@ -14,7 +15,7 @@ in
     enable = true;
     settings = {
       exec-once = [
-        ''wbg ~/.local/share/bg''
+        ''wbg ${cfg.dataHome}/bg''
         ''foot --server''
         ''waybar''
         ''swayidle -w''
@@ -113,7 +114,7 @@ in
         ''SUPER,d,exec,rofi-launcher''
         ''SUPERSHIFT,d,exec,rofi-runner''
         ''SUPER,E,exec,${TERMINAL} -e ${MAILCLIENT}''
-        ''SUPERSHIFT,E,exec,${TERMINAL} -e abook -C ~/.config/abook/abookrc --datafile ~/.config/abook/addressbook''
+        ''SUPERSHIFT,E,exec,${TERMINAL} -e abook -C ${cfg.configHome}/abook/abookrc --datafile ${cfg.configHome}/abook/addressbook''
         ''SUPER,F,fullscreen,0''
         ''SUPER,M,exec,${TERMINAL} -e ncmpcpp''
         ''SUPERSHIFT,M,exec,pamixer -t''
@@ -128,7 +129,7 @@ in
         ''SUPERSHIFT,S,exec,bmks''
         ''SUPER,W,exec,${BROWSER}''
         ''SUPERSHIFT,W,exec,networkmanager_dmenu''
-        ''SUPER,X,exec,clipman pick -t rofi -T"-theme ~/.config/rofi/launcher.rasi"''
+        ''SUPER,X,exec,clipman pick -t rofi -T"-theme ${cfg.configHome}/rofi/launcher.rasi"''
         ''SUPER,F4,exec,${TERMINAL} -e btm''
         ''SUPER,F6,exec,rofi-mullvad-toggle''
         ''SUPER,F9,exec,rofi-mount''
@@ -136,7 +137,7 @@ in
         '',Print,exec,rofi-printscreen''
         ''SUPER,exclam,exec,telegram-desktop''
         ''SUPER,BackSpace,exec,rofi-powermenu''
-        ''SUPERSHIFT,BackSpace,exec,passrofi -theme ~/.config/rofi/long-launcher.rasi''
+        ''SUPERSHIFT,BackSpace,exec,passrofi -theme ${cfg.configHome}/rofi/long-launcher.rasi''
         ''SUPER,space,togglefloating,''
         ''SUPER,Delete,exec,rofi-kill''
         '',XF86AudioMute,exec,pamixer --toggle-mute''
