@@ -18,10 +18,6 @@
     recommendedGzipSettings = true;
     recommendedOptimisation = true;
 
-    upstreams."libreosteo.chaminand.com".servers = {
-      "127.0.0.1:8000" = {};
-    };
-
     virtualHosts = {
       "chaminand.com" = {
         forceSSL = true;
