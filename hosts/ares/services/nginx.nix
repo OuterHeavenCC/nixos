@@ -1,3 +1,7 @@
+{ config, lib, pkgs, ... }:
+let
+  cfg = config.server;
+in
 {
   networking.firewall = {
     allowedTCPPortRanges = [
@@ -6,7 +10,7 @@
       { from = 10800; to = 10800; }
       { from = 8000; to = 8000; }
       { from = 8080; to = 8080; }
-      { from = 43254; to = 43254; }
+      { from = 8888; to = 8888; }
     ];
   };
 
@@ -31,18 +35,15 @@
           };
         };
       };
-      "searx.chaminand.com" = {
-        forceSSL = true;
+      "search.${cfg.domainName}" = let inherit (config.services.searx) settings; in {
         enableACME = true;
-        locations = {
-          "/" = {
-            proxyPass = "http://localhost:43254";
-          };
-        };
+        forceSSL = true;
+        locations."/".extraConfig = ''
+          uwsgi_pass "${lib.quoteListenAddr settings.server.bind_address}:${toString settings.server.port}";
+          include ${config.services.nginx.package}/conf/uwsgi_params;
+        '';
       };
     };
-  # Optional: You can configure the email address used with Let's Encrypt.
-  # This way you get renewal reminders (automated by NixOS) as well as expiration emails.
   };
 
   security.acme.acceptTerms = true;
