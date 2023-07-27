@@ -32,7 +32,7 @@
           };
         };
       };
-      "search.chaminand.com" = let inherit (config.services.searx) settings; in {
+      "searx.chaminand.com" = let inherit (config.services.searx) settings; in {
         enableACME = true;
         forceSSL = true;
         locations."/".extraConfig = ''
@@ -47,6 +47,9 @@
   security.acme.certs = {
     "chaminand.com" = {
       email = "corent.cham@gmail.com";
+      extraDomainNames = [
+        "searx.chaminand.com"
+      ];
     };
   };
 }
