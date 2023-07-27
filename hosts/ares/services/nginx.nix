@@ -4,11 +4,7 @@
     allowedTCPPortRanges = [
       { from = 80; to = 80; }
       { from = 443; to = 443; }
-      { from = 10800; to = 10800; }
-      { from = 8000; to = 8000; }
-      { from = 8080; to = 8080; }
-      { from = 8888; to = 8888; }
-    ];
+   ];
   };
 
   services.nginx = {
@@ -28,14 +24,6 @@
           };
         };
       };
-      "searx.chaminand.com" = let inherit (config.services.searx) settings; in {
-        enableACME = true;
-        forceSSL = true;
-        locations."/".extraConfig = ''
-          uwsgi_pass "${lib.quoteListenAddr settings.server.bind_address}:${toString settings.server.port}";
-          include ${config.services.nginx.package}/conf/uwsgi_params;
-        '';
-      };
     };
   };
 
@@ -43,9 +31,6 @@
   security.acme.certs = {
     "chaminand.com" = {
       email = "corent.cham@gmail.com";
-      extraDomainNames = [
-        "searx.chaminand.com"
-      ];
     };
   };
 }
