@@ -13,7 +13,8 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-    # hardware.url = "github:nixos/nixos-hardware";
+    hardware.url = "github:nixos/nixos-hardware";
+
     nix-minecraft.url = "github:Infinidoge/nix-minecraft";
     nix-colors.url = "github:misterio77/nix-colors";
 
