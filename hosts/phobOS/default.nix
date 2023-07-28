@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 # This is your system's configuration file.
 # Use this to configure your system environment (it replaces /etc/nixos/configuration.nix)
 
@@ -9,17 +10,17 @@
     ../common/users/corentin
 
     ./services
-    ../common/optional/sshfs.nix
-    ../common/optional/ratbag.nix
-    ../common/optional/xdg.nix
-    ../common/optional/pipewire.nix
-    ../common/optional/mullvad.nix
-    ../common/optional/mimeApps.nix
     ../common/optional/bluetooth.nix
-    ../common/optional/systemd-boot.nix
+    ../common/optional/fail2ban.nix
     ../common/optional/flatpak.nix
     ../common/optional/kdeconnect.nix
-    ../common/optional/fail2ban.nix
+    ../common/optional/mimeApps.nix
+    ../common/optional/mullvad.nix
+    ../common/optional/pipewire.nix
+    ../common/optional/ratbag.nix
+    ../common/optional/sshfs.nix
+    ../common/optional/systemd-boot.nix
+    ../common/optional/xdg.nix
 
     ./hardware-configuration.nix
 
@@ -46,6 +47,9 @@
       enable = true;
       driSupport = true;
       driSupport32Bit = true;
+      extraPackages = with pkgs; [
+        vaapiVdpau
+      ];
     };
     nvidia = {
       modesetting.enable = true;
