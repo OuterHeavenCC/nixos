@@ -14,6 +14,7 @@
     ./lvim.nix
     ./newsboat.nix
     ./nvim.nix
+    ./taskwarrior.nix
     ./zsh.nix
   ];
 
