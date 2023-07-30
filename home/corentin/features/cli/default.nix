@@ -11,9 +11,8 @@
     ./gpg.nix
     ./ledger.nix
     ./lf
-    ./lvim.nix
     ./newsboat.nix
-    ./nvim.nix
+    ./nvim
     ./taskwarrior.nix
     ./zsh.nix
   ];
