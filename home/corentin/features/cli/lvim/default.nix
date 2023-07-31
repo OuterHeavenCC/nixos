@@ -6,6 +6,7 @@
   };
 
   home.sessionVariables.EDITOR = "lvim";
+
   xdg.configFile."lvim/config.lua" = {
     text = ''
       lvim.plugins = {
@@ -19,5 +20,10 @@
 
       lvim.colorscheme = "catppuccin-mocha"
 '';
+  };
+
+  xdg.configFile."lvim/luasnippets" = {
+    recursive = true;
+    source = ./luasnippets;
   };
 }
