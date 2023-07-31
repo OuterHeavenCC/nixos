@@ -12,7 +12,8 @@
     ./ledger.nix
     ./lf
     ./newsboat.nix
-    ./nvim
+    ./lvim
+    ./newsboat.nix
     ./taskwarrior.nix
     ./zsh.nix
   ];
