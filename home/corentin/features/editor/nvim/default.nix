@@ -15,11 +15,16 @@
   };
 
   home.packages = with pkgs; [
-    nodePackages.pyright
-    nodePackages.bash-language-server
-    lua-language-server
-    ccls
-    nil
+    nodePackages_latest.pyright                           # Python
+    nodePackages_latest.bash-language-server              # Bash
+    lua-language-server                                   # Lua
+    ccls                                                  # C
+    nil                                                   # Nix
+    # Web stuff LSP
+    nodePackages_latest.vscode-html-languageserver-bin
+    nodePackages_latest.vscode-css-languageserver-bin
+    nodePackages_latest.vscode-json-languageserver
+    nodePackages_latest.typescript-language-server
   ];
 
 }

@@ -64,10 +64,47 @@ require("lspconfig").lua_ls.setup {
   },
 }
 
-require("lspconfig").rust_analyzer.setup {}
-require("lspconfig").pyright.setup{}
-require("lspconfig").bashls.setup{}
-require("lspconfig").ccls.setup{}
-require("lspconfig").nil_ls.setup{}
+require("lspconfig").rust_analyzer.setup {
+  on_attach = M.on_attach,
+  capabilities = M.capabilities,
+}
+
+require("lspconfig").pyright.setup{
+  on_attach = M.on_attach,
+  capabilities = M.capabilities,
+}
+require("lspconfig").bashls.setup{
+  on_attach = M.on_attach,
+  capabilities = M.capabilities,
+}
+require("lspconfig").ccls.setup{
+  on_attach = M.on_attach,
+  capabilities = M.capabilities,
+}
+require("lspconfig").nil_ls.setup{
+  on_attach = M.on_attach,
+  capabilities = M.capabilities,
+}
+
+-- Web stuff
+require("lspconfig").cssls.setup{
+  on_attach = M.on_attach,
+  capabilities = M.capabilities,
+  cmd = { "css-languageserver", "--stdio" },
+}
+require("lspconfig").html.setup{
+  on_attach = M.on_attach,
+  capabilities = M.capabilities,
+  cmd = { "html-languageserver", "--stdio" },
+}
+require("lspconfig").jsonls.setup{
+  on_attach = M.on_attach,
+  capabilities = M.capabilities,
+  cmd = { "vscode-json-languageserver", "--stdio" },
+}
+require("lspconfig").tsserver.setup{
+  on_attach = M.on_attach,
+  capabilities = M.capabilities,
+}
 
 return M
