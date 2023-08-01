@@ -11,7 +11,7 @@
     ./features/desktop/common/wayland-wm
     ./features/desktop/hyprland
     ./features/dev
-    ./features/editor/lvim
+    ./features/editor/nvim
     ./features/nvidia
     ./features/pass
     ./features/productivity
