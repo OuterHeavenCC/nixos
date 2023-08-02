@@ -42,6 +42,7 @@ in
         ''float, title:^(sfml)$''
         ''center, title:^(sfml)$''
         ''nofullscreenrequest, title:^(Lecteur multimédia)$''          # Fix Telegram
+        ''tile, title:^(Battle.net)$''
         ''float, title:^(Calculatrice)$''                              # Calculatrice flottante
       ];
       input = {
