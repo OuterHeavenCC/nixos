@@ -136,7 +136,7 @@ in
 
 		"custom/powermenu"= {
 			format= "";
-			on-click= powermenu;
+			on-click= "sleep 0.1; ${powermenu}";        # Fix rofi+hyprland+waybar (see https://github.com/Alexays/Waybar/issues/1968)
       tooltip = false;
 		};
 

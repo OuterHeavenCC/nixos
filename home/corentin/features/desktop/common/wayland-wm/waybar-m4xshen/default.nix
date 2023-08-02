@@ -51,7 +51,7 @@ in
 
           "custom/nixos" = {
             format = "";
-            on-click = powermenu;
+            on-click = "sleep 0.1; ${powermenu}";
           };
 
           "custom/unread-mail" = {
