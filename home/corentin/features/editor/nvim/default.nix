@@ -9,9 +9,8 @@
 
   home.sessionVariables.EDITOR = "nvim";
 
-  xdg.configFile."nvim" = {
-    recursive = true;
-    source = ./NvChad;
+  xdg.configFile."nvim" = { 
+    source = "${pkgs.nvchad}";
   };
 
   home.packages = with pkgs; [

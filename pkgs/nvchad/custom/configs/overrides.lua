@@ -1,4 +1,6 @@
-local options = {
+local M = {}
+
+M.treesitter = {
   ensure_installed = { "lua",
     "c",
     "ledger",
@@ -13,13 +15,6 @@ local options = {
     "markdown",
     "python",
     "latex", },
-
-  highlight = {
-    enable = true,
-    use_languagetree = true,
-  },
-
-  indent = { enable = true },
 }
 
-return options
+return M

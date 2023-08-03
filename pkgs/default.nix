@@ -5,4 +5,5 @@
   # example = pkgs.callPackage ./example { };
   split-monitor-workspaces = pkgs.callPackage ./split-monitor-workspaces { };
   rofi-powermenu = pkgs.callPackage ./rofi-powermenu { };
+  nvchad = pkgs.callPackage ./nvchad { };
 }
