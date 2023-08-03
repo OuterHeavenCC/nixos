@@ -90,7 +90,7 @@ in
           "wlr/workspaces" = {
             format = "{icon}";
             on-click = "activate";
-            all-outputs = false;
+            all-outputs = true;
             format-icons = {
               active = "";
               default = "";

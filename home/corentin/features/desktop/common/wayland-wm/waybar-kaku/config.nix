@@ -59,7 +59,7 @@ in
 
 		"wlr/workspaces"= {
 			active-only= false;
-			all-outputs= false;
+			all-outputs= true;
 			disable-scroll= false;
 			on-scroll-up= "hyprctl dispatch workspace e-1";
 			on-scroll-down= "hyprctl dispatch workspace e+1";
