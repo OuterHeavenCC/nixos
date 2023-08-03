@@ -4,17 +4,19 @@
 , rofi-wayland
 , findutils
 , coreutils
-, swaylock
-, gnugrep
-, systemd
+, fzf
+, gawk
+, gnused
+, dmenu
+, firefox
 }:
 
 with lib;
 
 stdenv.mkDerivation {
-  name = "rofi-powermenu";
+  name = "bmks";
   version = "1.0";
-  src = ./rofi-powermenu;
+  src = ./bmks;
 
   nativeBuildInputs = [ makeWrapper ];
 
@@ -23,23 +25,25 @@ stdenv.mkDerivation {
   dontConfigure = true;
 
   installPhase = ''
-    install -Dm 0755 $src $out/bin/rofi-powermenu
-    wrapProgram $out/bin/rofi-powermenu --set PATH \
+    install -Dm 0755 $src $out/bin/bmks
+    wrapProgram $out/bin/bmks --set PATH \
       "${
         makeBinPath [
           findutils
           coreutils
-          swaylock
-          gnugrep
           rofi-wayland
-          systemd
+          fzf
+          gawk
+          gnused
+          dmenu
+          firefox
         ]
       }"
   '';
 
   meta = {
-    description = "A rofi script for power menu";
-    license = licenses.mit;
+    description = "Browser independent bookmark manager for linux ";
+    license = licenses.unlicense;
     platforms = platforms.all;
   };
 }

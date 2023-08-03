@@ -186,7 +186,7 @@ in {
         "SUPERSHIFT,k,swapnext,prev"
       ];
     };
-    # plugins = with pkgs; [ monitor-workspaces ];
+    # plugins = with pkgs; [ split-monitor-workspaces ];
     extraConfig = (import ./monitors.nix {
       inherit lib;
       inherit (config) monitors;

@@ -2,7 +2,7 @@
 
 pkgs.stdenv.mkDerivation {
   pname = "split-monitor-workspaces";
-  version = "0.1";
+  version = "0.2";
 
   src = pkgs.fetchFromGitHub {
     owner = "Duckonaut";

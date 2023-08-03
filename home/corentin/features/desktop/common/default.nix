@@ -14,8 +14,6 @@
 
   home.packages = with pkgs; [
     audacity                 # Audio recording
-    baobab                   # Disk management tool
-    blanket                  # White noise stuff
     bottles                  # Better lutris
     gimp                     # GNU Image Manipulation Program
     gnome.gnome-boxes        # QEMU Made easy

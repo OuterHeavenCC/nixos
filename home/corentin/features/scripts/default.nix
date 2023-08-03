@@ -4,18 +4,9 @@
   # TODO Simplfier tout ce merdier
   home.packages = with pkgs; [
       rofi-powermenu
+      bmks
     ];
   home.file = {
-    ".local/bin/bmks" = {
-      enable = true;
-      source = ./bin/bmks;
-      executable = true;
-    };
-    ".local/bin/doasedit" = {
-      enable = true;
-      source = ./bin/doasedit;
-      executable = true;
-    };
     ".local/bin/passrofi" = {
       enable = true;
       source = ./bin/passrofi;
