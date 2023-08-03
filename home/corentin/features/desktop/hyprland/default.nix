@@ -127,6 +127,7 @@ in
         ''SUPERSHIFT,Q,exit,''
         ''SUPER,R,exec,${TERMINAL} -e lf''
         ''SUPER,S,exec,${TERMINAL} -e pulsemixer''
+        ''SUPER,T,exec,${TERMINAL} -e taskwarrior-tui''
         ''SUPERSHIFT,S,exec,bmks''
         ''SUPER,W,exec,${BROWSER}''
         ''SUPERSHIFT,W,exec,networkmanager_dmenu''

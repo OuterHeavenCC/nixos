@@ -78,7 +78,6 @@
     sqlite                        # Basic programming stuff
     tealdeer                      # TLDR Man
     tokei                         # Count lines of codes
-    timewarrior                   # Commandline time tracking and reporting tool
     transmission                  # Torrents
     unrar                         # Basic archiving tool
     unzip                         # Basic archiving tool

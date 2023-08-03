@@ -24,7 +24,6 @@
     };
   };
 
-
   outputs = { self, nixpkgs, home-manager, ... }@inputs:
     let
       inherit (self) outputs;
@@ -32,8 +31,7 @@
       systems = [ "x86_64-linux" "aarch64-linux" ];
       forEachSystem = f: lib.genAttrs systems (sys: f pkgsFor.${sys});
       pkgsFor = nixpkgs.legacyPackages;
-    in
-    {
+    in {
       inherit lib;
       nixosModules = import ./modules/nixos;
       homeManagerModules = import ./modules/home-manager;
@@ -44,11 +42,10 @@
       devShells = forEachSystem (pkgs: import ./shell.nix { inherit pkgs; });
       formatter = forEachSystem (pkgs: pkgs.nixpkgs-fmt);
 
-
       # Available through 'nixos-rebuild --flake .#your-hostname'
       nixosConfigurations = {
         # Desktop
-        phobOS =  lib.nixosSystem {
+        phobOS = lib.nixosSystem {
           modules = [ ./hosts/phobOS ];
           specialArgs = { inherit inputs outputs; };
         };
@@ -62,6 +59,6 @@
           modules = [ ./hosts/ares ];
           specialArgs = { inherit inputs outputs; };
         };
-        };
       };
+    };
 }
