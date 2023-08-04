@@ -42,6 +42,7 @@ in
   };
 
   colorscheme = lib.mkDefault colorSchemes.catppuccin-mocha;
+  # colorscheme = lib.mkDefault colorSchemes.rose-pine;
   # colorscheme = lib.mkDefault colorSchemes.nord;
   # colorscheme = lib.mkDefault colorSchemes.tokyo-night-storm;
   # colorscheme = lib.mkDefault colorSchemes.gruvbox-dark-hard;
