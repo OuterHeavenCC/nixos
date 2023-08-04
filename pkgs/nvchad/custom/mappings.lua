@@ -7,6 +7,11 @@ M.general = {
     ["n"] = { "nzzzv" },
     ["N"] = { "Nzzzv" },
   },
+
+  i = {
+    ["<A-n>"] = { "<Plug>luasnip-next-choice" },
+    ["<A-p>"] = { "<Plug>luasnip-prev-choice" },
+  }
 }
 
 return M
