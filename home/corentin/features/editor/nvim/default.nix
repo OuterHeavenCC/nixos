@@ -17,6 +17,7 @@
     lua-language-server # Lua
     ccls # C
     nil # Nix
+    texlab # Latex
     # Web stuff LSP
     nodePackages_latest.vscode-html-languageserver-bin
     nodePackages_latest.vscode-css-languageserver-bin

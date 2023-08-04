@@ -13,6 +13,7 @@ local servers =  {
   "html",
   "jsonls",
   "tsserver",
+  "texlab",
 }
 
 for _, lsp in ipairs(servers) do

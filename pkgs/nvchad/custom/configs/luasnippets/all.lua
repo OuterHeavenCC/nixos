@@ -237,15 +237,19 @@ ls.add_snippets("all", {
     fmt(
       [[
         M. {} {}
+
         Ostéopathe D.O. 
         {}
+
         {}, {}
+
         {}
+
         {}
 
           Cher Docteur,
 
-        Merci de bien vouloir recevoir en consultation {} né le {}. 
+        Merci de bien vouloir recevoir en consultation {} né(e) le {}. 
         Motif(s) de consultation : {}
 
         Examen clinique : 
