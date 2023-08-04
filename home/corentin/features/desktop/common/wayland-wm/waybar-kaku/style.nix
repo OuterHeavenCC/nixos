@@ -136,7 +136,7 @@ window#waybar {
 #custom-powermenu {
     color: #${colorscheme.colors.base07};
     background-color: #${colorscheme.colors.base00};
-    border-radius: 0px 24px 0px 0px;
+    border-radius: 0px 0px 24px 0px;
     margin: 0px 0px 0px 0px;
     padding: 0 20px 0 13px;
     font-size: 20px;

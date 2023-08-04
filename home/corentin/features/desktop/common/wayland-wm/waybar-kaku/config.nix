@@ -43,10 +43,11 @@ in
     modules-left= ["custom/powermenu" "custom/playerctl" "custom/playerlabel"];
     modules-center= [ "wlr/workspaces" ];
     modules-right= [
-			"tray" 
+      "network"
       "custom/unread-mail"
       "battery" 
 			"pulseaudio" 
+			"tray" 
 			"clock" 
     ];
 		clock= {
