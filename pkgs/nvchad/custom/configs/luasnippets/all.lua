@@ -233,5 +233,51 @@ ls.add_snippets("all", {
       }
     )
   ),
+  s("courrier_reorientation",
+    fmt(
+      [[
+        M. {} {}
+        Ostéopathe D.O. 
+        {}
+        {}, {}
+        {}
+        {}
 
+          Cher Docteur,
+
+        Merci de bien vouloir recevoir en consultation {} né le {}. 
+        Motif(s) de consultation : {}
+
+        Examen clinique : 
+
+        {}
+
+        Antécédent(s) notable(s) : {}
+        
+        Face à ce tableau clinique, je préfère me remettre à votre expertise pour d'éventuels examens complémentaires. 
+
+        Je reste à votre disposition pour tout renseignement complémentaire. 
+
+        Je vous prie de croire, Madame, Monsieur, en l'expression de mes sentiments les meilleurs. 
+
+        {}
+        Ostéopathe D.O.
+      ]],
+      {
+        i(1, "NOM"),
+        i(2, "PRÉNOM"),
+        i(3, "ADRESSE"),
+        i(4, "CODE POSTAL"),
+        i(5, "VILLE"),
+        i(6, "TÉLÉPHONE"),
+        i(7, "MAIL"),
+        i(8, "NOM / PRÉNOM PATIENT"),
+        i(9, "DATE NAISSANCE PATIENT"),
+        i(10, "MOTIF DE CONSULTATION"),
+        i(11, "EXAMEN CLINIQUE"),
+        i(12, "ANTÉCÉDENTS"),
+        i(13, "NOM PRENOM")
+      }
+    )
+  )
 })
