@@ -14,6 +14,7 @@
     ../common/optional/pipewire.nix
     ../common/optional/xdg.nix
     ../common/optional/mimeApps.nix
+    ../common/optional/mullvad.nix
     ../common/optional/bluetooth.nix
     ../common/optional/systemd-boot.nix
     ../common/optional/kdeconnect.nix
