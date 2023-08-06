@@ -70,6 +70,7 @@ in
       v = "$EDITOR";
       sdn = "doas shutdown -h now";
       wget = ''wget --hsts-file="${cfg.dataHome}/wget-hsts"'';
+      groff = ''groff -k'';
     };
     history = {
       path = "${cfg.dataHome}/history";
