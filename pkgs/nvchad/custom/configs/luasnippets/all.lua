@@ -20,6 +20,11 @@ local types = require("luasnip.util.types")
 local conds = require("luasnip.extras.conditions")
 local conds_expand = require("luasnip.extras.conditions.expand")
 
+local date_input = function (args, snip, old_state, fmt)
+  local fmt = fmt or "%d/%m/%Y"
+  return sn(nil, i(1, os.date(fmt)))
+end
+
 ls.add_snippets("all", {
   s("dn4",
     fmt(
@@ -230,6 +235,20 @@ ls.add_snippets("all", {
         i(7, "ADULTE/ENFANT"),
         i(8, "PRIX"),
         i(9, "NOM Prénom"),
+      }
+    )
+  ),
+  s("template_mail",
+    fmt(
+      [[ 
+      Bonjour,
+
+      Vous trouverez ci-joint votre facture concernant la consultation du {}.
+
+      Bonne journée.
+      ]],
+      {
+    d(1, date_input, {}),
       }
     )
   ),
