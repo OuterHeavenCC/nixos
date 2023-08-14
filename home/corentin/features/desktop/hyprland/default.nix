@@ -53,16 +53,12 @@ in {
         repeat_delay = "300";
       };
       decoration = {
-        # blur = {                      # TODO Reactiver à partir d'hyprland 0.28
-        #   size = "5";
-        #   passes = "3";
-        #   ignore_opacity = "1";
-        #   new_optimizations = "1";
-        # };
-        blur_size = "5";
-        blur_passes = "5";
-        blur_ignore_opacity = "1";
-        blur_new_optimizations = "1"; 
+        blur = {                     
+          size = "5";
+          passes = "3";
+          ignore_opacity = "1";
+          new_optimizations = "1";
+        };
         active_opacity = "0.94";
         inactive_opacity = "0.84";
         fullscreen_opacity = "1.0";
