@@ -7,5 +7,4 @@
   rofi-powermenu = pkgs.callPackage ./rofi-powermenu { };
   nvchad = pkgs.callPackage ./nvchad { };
   bmks = pkgs.callPackage ./bmks { };
-  signpdf = pkgs.python3Packages.callPackage ./signpdf { };
 }
