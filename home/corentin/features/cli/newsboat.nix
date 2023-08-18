@@ -39,6 +39,12 @@
         tags = [ "tech" "news" ];
         url = "https://www.laquadrature.net/feed/";
       }
+      {
+        title = "Gestion de la douleur en thérapie manuelle";
+        tags = [ "sciences" "travail" ];
+        url = "https://gestiondeladouleurenthrapiemanuelle.wordpress.com/rss
+";
+      }
 
     ];
 
