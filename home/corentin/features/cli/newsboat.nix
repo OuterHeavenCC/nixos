@@ -42,8 +42,7 @@
       {
         title = "Gestion de la douleur en thérapie manuelle";
         tags = [ "sciences" "travail" ];
-        url = "https://gestiondeladouleurenthrapiemanuelle.wordpress.com/rss
-";
+        url = "https://gestiondeladouleurenthrapiemanuelle.wordpress.com/rss";
       }
 
     ];

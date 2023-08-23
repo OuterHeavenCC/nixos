@@ -70,7 +70,6 @@
     python3                       # Basic programming stuff
     qemu                          # ISO Stuff
     ripgrep                       # Better grep
-    ripgrep-all                   # Grep for pdf
     sc-im                         # Simple terminal spreadsheets editor
     scanmem                       # Runtime memory edit
     sd                            # Better sed
