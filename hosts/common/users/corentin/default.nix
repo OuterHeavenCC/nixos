@@ -26,10 +26,12 @@ in
         "seat"
         "git"
         "lp"
+        "lpadmin"
         "libvirtd"
         "rfkill"
         "minecraft"
         "games"
+        "wheel"
       ];
     };
   };
