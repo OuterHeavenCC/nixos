@@ -34,7 +34,7 @@
     duf                           # Better df
     elinks                        # Terminal browser
     eva                           # Calculator
-    exa                           # Better ls
+    eza                           # Better ls
     exiftool                      # Metadata
     fd                            # Better find
     ffmpeg                        # Media converter and more
