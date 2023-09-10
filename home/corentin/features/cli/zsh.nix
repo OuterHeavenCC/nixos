@@ -63,7 +63,7 @@ in
       tsm = "transmission-remote";
       cd = "z";
       ledger = "ledger --init-file='${cfg.configHome}/ledger/ledgerrc'";
-      ls = "exa -h --color=auto --group-directories-first --icons";
+      ls = "eza -h --color=auto --group-directories-first --icons";
       grep = "grep --color=auto";
       diff = "diff --color=auto";
       ka = "killall";

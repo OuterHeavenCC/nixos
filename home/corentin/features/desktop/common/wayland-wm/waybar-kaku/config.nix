@@ -57,10 +57,9 @@ in
 		};
 	
 
-		"wlr/workspaces"= {
+		"hyprland/workspaces"= {
 			active-only= false;
 			all-outputs= false;
-			disable-scroll= false;
 			on-scroll-up= "hyprctl dispatch workspace e-1";
 			on-scroll-down= "hyprctl dispatch workspace e+1";
 			format= "{icon}";
@@ -69,7 +68,6 @@ in
 				urgent= "";
 				active= "";
 				default= "";
-			sort-by-number= true;
 			};
 		};
 
