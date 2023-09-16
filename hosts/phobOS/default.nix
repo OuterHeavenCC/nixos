@@ -11,10 +11,10 @@
     ../common/global
     ../common/users/corentin
 
-    ./services
     ../common/optional/bluetooth.nix
     ../common/optional/fail2ban.nix
     ../common/optional/flatpak.nix
+    # ../common/optional/gaming.nix
     ../common/optional/kdeconnect.nix
     ../common/optional/mimeApps.nix
     ../common/optional/mullvad.nix
@@ -23,6 +23,7 @@
     ../common/optional/sshfs.nix
     ../common/optional/systemd-boot.nix
     ../common/optional/xdg.nix
+    ./services
 
     ./hardware-configuration.nix
 
@@ -55,7 +56,6 @@
     };
     nvidia = {
       modesetting.enable = true;
-      open = true;
     };
   };
 

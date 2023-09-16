@@ -41,7 +41,7 @@ in
     margin-left= 0;
     margin-right= 0;
     modules-left= ["custom/powermenu" "custom/playerctl" "custom/playerlabel"];
-    modules-center= [ "wlr/workspaces" ];
+    modules-center= [ "hyprland/workspaces" ];
     modules-right= [
       "network"
       "custom/unread-mail"

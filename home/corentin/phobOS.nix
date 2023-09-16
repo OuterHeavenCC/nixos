@@ -12,7 +12,7 @@
     ./features/desktop/hyprland
     ./features/dev
     ./features/editor/nvim
-    # ./features/gaming # TODO Reactiver quand ce sera stable, en attendant utiliser les flatpak
+    # ./features/gaming
     ./features/nvidia
     ./features/pass
     ./features/productivity

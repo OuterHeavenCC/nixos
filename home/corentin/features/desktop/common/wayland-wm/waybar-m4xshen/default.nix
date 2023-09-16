@@ -45,7 +45,7 @@ in
     settings = {
       mainBar = {
           layer = "top";
-          modules-left = [ "custom/nixos" "wlr/workspaces" ];
+          modules-left = [ "custom/nixos" "hyprland/workspaces" ];
           modules-center = [ "clock" ];
           modules-right = [ "pulseaudio" "custom/unread-mail" "network" "battery" ];
 
@@ -87,7 +87,7 @@ in
             on-click = mail;
           };
 
-          "wlr/workspaces" = {
+          "hyprland/workspaces" = {
             format = "{icon}";
             on-click = "activate";
             all-outputs = false;
