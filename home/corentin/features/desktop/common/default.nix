@@ -15,11 +15,13 @@
   home.packages = with pkgs; [
     audacity                 # Audio recording
     bottles                  # Better lutris
+    discord
     gimp                     # GNU Image Manipulation Program
     gnome.gnome-boxes        # QEMU Made easy
     gnome.gnome-calculator   # When eva isn't enough
     gnome.nautilus           # When lf isn't enough
     imv                      # Simple Image Viewer
+    krita
     libreoffice              # When pandoc isn't enought
     lynx                     # Terminal browser
     obs-studio               # Screen capturing tool

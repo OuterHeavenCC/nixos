@@ -10,6 +10,11 @@
     # Also see the 'unstable-packages' overlay at 'overlays/default.nix'.
     hyprland.url = "github:hyprwm/Hyprland";
 
+    split-monitor-workspaces = {
+      url = "github:Duckonaut/split-monitor-workspaces";
+      inputs.hyprland.follows = "hyprland";
+    };
+
     # Home manager
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
