@@ -85,6 +85,7 @@
     wget                          # Download from CLI util
     xh                            # Better curl
     xmlstarlet                    # Preview xml in terminal
+    xxd                           # Hex Viewer
     yt-dlp                        # Better youtube-dl
     zoxide                        # Better cd
   ];
