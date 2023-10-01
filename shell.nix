@@ -6,5 +6,10 @@
     # Enable experimental features without having to specify the argument
     NIX_CONFIG = "experimental-features = nix-command flakes";
     nativeBuildInputs = with pkgs; [ nix home-manager git ];
+
+    shellHook = with pkgs; ''
+        LD_LIBRARY_PATH=${stdenv.cc.cc.lib}/lib/:/run/opengl-driver/lib/:/run/opengl-driver-32/lib/
+        QT_PLUGIN_PATH=${qt5.qtbase}/${qt5.qtbase.qtPluginPrefix}
+  '';
   };
 }
