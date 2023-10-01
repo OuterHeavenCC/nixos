@@ -41,6 +41,7 @@
     ffmpegthumbnailer             # Terminal previewer
     file                          # Determine file type
     fzf                           # Fuzzy File Finder
+    gamemode
     gcc                           # Basic programming stuff
     glow                          # Markdown preview in terminal
     gnome-epub-thumbnailer        # Epub thumbnailer for terminal
