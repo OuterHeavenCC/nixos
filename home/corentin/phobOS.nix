@@ -12,7 +12,7 @@
     ./features/desktop/hyprland
     ./features/dev
     ./features/editor/nvim
-    # ./features/gaming
+    ./features/gaming
     ./features/nvidia
     ./features/pass
     ./features/productivity
