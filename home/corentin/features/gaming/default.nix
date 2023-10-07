@@ -22,5 +22,7 @@ in
     gamescope
     protontricks
     mangohud
+    gamemode
+    samrewritten
   ];
 }
