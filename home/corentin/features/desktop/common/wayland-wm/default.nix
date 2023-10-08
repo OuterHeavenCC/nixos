@@ -18,6 +18,7 @@
       wbg                         # Wallpaper manager
       wev                         # Show Wayland events
       wl-clipboard                # Clipboard manager for wlroots
+      grimblast
     ];
 
     home.sessionVariables = {
