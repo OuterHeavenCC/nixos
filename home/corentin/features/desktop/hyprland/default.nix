@@ -38,10 +38,9 @@ in {
         "WLR_DRM_NO_ATOMIC,1"
       ];
       windowrule = [
-        "float, Rofi"
-        "noborder, Rofi"
         "float, title:^(sfml)$"
         "center, title:^(sfml)$"
+        "noanim, Rofi"
         "nofullscreenrequest, title:^(Lecteur multimédia)$" # Fix Telegram
         "tile, title:^(Battle.net)$"
         "float, title:^(Calculatrice)$" # Calculatrice flottante
