@@ -40,7 +40,6 @@ in {
       windowrule = [
         "float, title:^(sfml)$"
         "center, title:^(sfml)$"
-        "noanim, Rofi"
         "nofullscreenrequest, title:^(Lecteur multimédia)$" # Fix Telegram
         "tile, title:^(Battle.net)$"
         "float, title:^(Calculatrice)$" # Calculatrice flottante
