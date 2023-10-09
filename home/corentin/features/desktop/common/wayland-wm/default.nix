@@ -7,7 +7,7 @@
     ./rofi
     ./swayidle.nix
     ./swaylock.nix
-    ./waybar-kaku
+    ./waybar-m4xshen
   ];
 
     home.packages = with pkgs; [

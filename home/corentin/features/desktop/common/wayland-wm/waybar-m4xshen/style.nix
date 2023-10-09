@@ -42,7 +42,7 @@ window#waybar {
   color: #${colorscheme.colors.base08};
 }
 
-#custom-unread-mail, #cpu, #memory, #pulseaudio, #clock, #clock#date #backlight, #network, #battery{
+#custom-mail, #cpu, #memory, #pulseaudio, #clock, #clock#date #backlight, #network, #battery{
   border-radius: 10px;
   background-color: #11111b;
   color: #${colorscheme.colors.base05};
