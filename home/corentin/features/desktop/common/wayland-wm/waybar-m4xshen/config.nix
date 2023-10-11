@@ -35,7 +35,7 @@ in
           layer = "top";
           modules-left = [ "custom/nixos" "hyprland/workspaces" ];
           modules-center = [ "clock" ];
-          modules-right = [ "custom/mail" "pulseaudio" "network" "battery" ];
+          modules-right = [ "tray" "custom/mail" "pulseaudio" "network" "battery" ];
 
           "custom/nixos" = {
             format = "";
@@ -104,6 +104,12 @@ in
             format-disconnected = "<span color='#${colors.base07}'>󰖪</span> Non connecté";
             on-click = networkManager;
           };
+
+          tray= {
+            icon-size= 16;
+            spacing= 5;
+          };
+
 
           battery = {
             format = "<span color='#${colors.base07}'>{icon}</span> {capacity}%";
