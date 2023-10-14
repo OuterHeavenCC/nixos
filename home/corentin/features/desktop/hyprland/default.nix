@@ -191,11 +191,28 @@ in {
         "SUPERSHIFT,j,swapnext,none"
         "SUPERSHIFT,k,swapnext,prev"
       ];
-    };
-    plugins = [ inputs.split-monitor-workspaces.packages.${pkgs.system}.split-monitor-workspaces ];
-    extraConfig = (import ./monitors.nix {
-      inherit lib;
-      inherit (config) monitors;
-    });
+
+      monitor = map (m: let
+        resolution = "${toString m.width}x${toString m.height}@${toString m.refreshRate}";
+        position = "${toString m.x}x${toString m.y}";
+      in
+        "${m.name},${if m.enabled then "${resolution},${position},1" else "disable"}"
+      ) (config.monitors);
+
+      workspace = map (m:
+        "${m.name},${m.workspace}"
+      ) (lib.filter (m: m.enabled && m.workspace != null) config.monitors);
+      };
+
+      plugins = [ inputs.split-monitor-workspaces.packages.${pkgs.system}.split-monitor-workspaces ];
+
+      extraConfig = ''
+        # Passthrough mode (e.g. for VNC, Gaming)
+        bind=SUPER,F12,submap,passthrough
+        submap=passthrough
+        bind=SUPER,F12,submap,reset
+        submap=reset
+      '';
+
   };
 }
