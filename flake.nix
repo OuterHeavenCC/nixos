@@ -70,7 +70,7 @@
           specialArgs = { inherit inputs outputs; };
         };
       };
-            homeConfigurations = {
+      homeConfigurations = {
         # Desktops
         "corentin@phobOS" = lib.homeManagerConfiguration {
           modules = [ ./home/corentin/phobOS.nix ];
@@ -87,7 +87,6 @@
           pkgs = pkgsFor.x86_64-linux;
           extraSpecialArgs = { inherit inputs outputs; };
         };
-
       };
     };
 }
