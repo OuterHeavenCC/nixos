@@ -3,8 +3,8 @@
 let
   inherit (config.colorscheme) colors;
 
-  swaylock = "${pkgs.swaylock}/bin/swaylock";
-  actionLock = "${swaylock} --daemonize -c ${colors.base00}";
+  swaylock = "${config.programs.swaylock.package}/bin/swaylock";
+  actionLock = "${swaylock} --daemonize -i ${config.xdg.dataHome}/bg";
 
   lockTime = 5 * 60; 
 

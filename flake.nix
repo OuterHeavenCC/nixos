@@ -70,5 +70,24 @@
           specialArgs = { inherit inputs outputs; };
         };
       };
+            homeConfigurations = {
+        # Desktops
+        "corentin@phobOS" = lib.homeManagerConfiguration {
+          modules = [ ./home/corentin/phobOS.nix ];
+          pkgs = pkgsFor.x86_64-linux;
+          extraSpecialArgs = { inherit inputs outputs; };
+        };
+        "corentin@deimOS" = lib.homeManagerConfiguration {
+          modules = [ ./home/corentin/deimOS.nix ];
+          pkgs = pkgsFor.x86_64-linux;
+          extraSpecialArgs = { inherit inputs outputs; };
+        };
+        "corentin@ares" = lib.homeManagerConfiguration {
+          modules = [ ./home/corentin/ares.nix ];
+          pkgs = pkgsFor.x86_64-linux;
+          extraSpecialArgs = { inherit inputs outputs; };
+        };
+
+      };
     };
 }
