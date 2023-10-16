@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 
 selected="$(ps -a -u $USER | \
-            rofi -theme ~/.config/rofi/long-launcher.rasi -dmenu -i -p "Rechercher le processus à terminer" \
+            fuzzel -d -w 100 -p "Rechercher le processus à terminer : " \
             awk '{print $1" "$4}')"; 
 
 if [[ ! -z $selected ]]; then
 
     answer="$(echo -e "Oui\nNon" | \
-            rofi -theme ~/.config/rofi/long-launcher.rasi -dmenu -i -p "$selected va être terminé, êtes-vous sûr ?")"
+            fuzzel -d -w 100 -p "$selected va être terminé, êtes-vous sûr ? ")"
 
     if [[ $answer == "Oui" ]]; then
         selpid="$(awk '{print $1}' <<< $selected)"; 

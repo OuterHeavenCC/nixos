@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # set prefered launcher
-PREFERED_LAUNCHER=rofi
+PREFERED_LAUNCHER=fuzzel
 # set path where urls will be stored
 URL_FILE_PATH=$HOME/.config/bmks
 # name of file urls will be stored in
@@ -47,7 +47,8 @@ bmks_del() {
 	case $PREFERED_LAUNCHER in
 		dmenu) sed -i "/$(cat $URL_FILE_PATH/$URL_FILE_NAME | sort | dmenu -c -i -l $(cat $URL_FILE_PATH/$URL_FILE_NAME | wc -l))/d" $URL_FILE_PATH/$URL_FILE_NAME ;;
 		fzf) sed -i "/$(cat $URL_FILE_PATH/$URL_FILE_NAME | sort | fzf)/d" $URL_FILE_PATH/$URL_FILE_NAME ;;
-		rofi) sed -i "/$(cat $URL_FILE_PATH/$URL_FILE_NAME | sort | rofi -dmenu -theme ~/.config/rofi/launcher.rasi $(cat $URL_FILE_PATH/$URL_FILE_NAME | wc -l))/d" $URL_FILE_PATH/$URL_FILE_NAME ;;
+		rofi) sed -i "/$(cat $URL_FILE_PATH/$URL_FILE_NAME | sort | rofi -dmenu $(cat $URL_FILE_PATH/$URL_FILE_NAME | wc -l))/d" $URL_FILE_PATH/$URL_FILE_NAME ;;
+		fuzzel) sed -i "/$(cat $URL_FILE_PATH/$URL_FILE_NAME | sort | fuzzel -d $(cat $URL_FILE_PATH/$URL_FILE_NAME | wc -l))/d" $URL_FILE_PATH/$URL_FILE_NAME ;;
 	esac
 }
 
@@ -56,7 +57,8 @@ bmks_display() {
 	case $PREFERED_LAUNCHER in
 		dmenu) cat $URL_FILE_PATH/$URL_FILE_NAME | sort | dmenu -c -i -l $(cat $URL_FILE_PATH/$URL_FILE_NAME | wc -l) | awk '{print $(NF)}' | xargs -I '{}' $BROWSER {} ;;
 		fzf) cat $URL_FILE_PATH/$URL_FILE_NAME | sort | fzf | awk '{print $(NF)}' | xargs -I '{}' $BROWSER {} ;;
-		rofi) cat $URL_FILE_PATH/$URL_FILE_NAME | sort | rofi -dmenu -theme ~/.config/rofi/launcher.rasi $(cat $URL_FILE_PATH/$URL_FILE_NAME | wc -l) | awk '{print $(NF)}' | xargs -I '{}' $BROWSER {} ;;
+		rofi) cat $URL_FILE_PATH/$URL_FILE_NAME | sort | rofi -dmenu $(cat $URL_FILE_PATH/$URL_FILE_NAME | wc -l) | awk '{print $(NF)}' | xargs -I '{}' $BROWSER {} ;;
+		fuzzel) cat $URL_FILE_PATH/$URL_FILE_NAME | sort | fuzzel -d $(cat $URL_FILE_PATH/$URL_FILE_NAME | wc -l) | awk '{print $(NF)}' | xargs -I '{}' $BROWSER {} ;;
 	esac
 }
 
@@ -74,6 +76,7 @@ case "$1" in
 	"ls") bmks_ls ;;
 	"dmenu") PREFERED_LAUNCHER=$1; bmks_display ;;
 	"rofi") PREFERED_LAUNCHER=$1; bmks_display ;;
+  "fuzzel") PREFERED_LAUNCHER=$1; bmks_display;;
 	"fzf") PREFERED_LAUNCHER=$1; bmks_display ;;
 	*) bmks_display ;;
 esac

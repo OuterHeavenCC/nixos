@@ -1,23 +1,20 @@
 { lib
 , stdenv
 , makeWrapper
-, rofi-wayland
 , fuzzel
 , findutils
 , coreutils
-, fzf
-, gawk
-, gnused
-, dmenu
-, firefox
+, swaylock
+, gnugrep
+, systemd
 }:
 
 with lib;
 
 stdenv.mkDerivation {
-  name = "bmks";
+  name = "powermenu";
   version = "1.1";
-  src = ./bmks;
+  src = ./powermenu;
 
   nativeBuildInputs = [ makeWrapper ];
 
@@ -26,26 +23,23 @@ stdenv.mkDerivation {
   dontConfigure = true;
 
   installPhase = ''
-    install -Dm 0755 $src $out/bin/bmks
-    wrapProgram $out/bin/bmks --set PATH \
+    install -Dm 0755 $src $out/bin/powermenu
+    wrapProgram $out/bin/powermenu --set PATH \
       "${
         makeBinPath [
           findutils
           coreutils
-          rofi-wayland
+          swaylock
+          gnugrep
           fuzzel
-          fzf
-          gawk
-          gnused
-          dmenu
-          firefox
+          systemd
         ]
       }"
   '';
 
   meta = {
-    description = "Browser independent bookmark manager for linux ";
-    license = licenses.unlicense;
+    description = "A script for power menu";
+    license = licenses.mit;
     platforms = platforms.all;
   };
 }

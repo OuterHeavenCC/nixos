@@ -1,20 +1,18 @@
 { lib
 , stdenv
 , makeWrapper
-, rofi-wayland
-, findutils
+, fuzzel
 , coreutils
-, swaylock
-, gnugrep
-, systemd
+, procps
+, gawk
 }:
 
 with lib;
 
 stdenv.mkDerivation {
-  name = "rofi-powermenu";
+  name = "killmenu";
   version = "1.0";
-  src = ./rofi-powermenu;
+  src = ./killmenu;
 
   nativeBuildInputs = [ makeWrapper ];
 
@@ -23,22 +21,20 @@ stdenv.mkDerivation {
   dontConfigure = true;
 
   installPhase = ''
-    install -Dm 0755 $src $out/bin/rofi-powermenu
-    wrapProgram $out/bin/rofi-powermenu --set PATH \
+    install -Dm 0755 $src $out/bin/killmenu
+    wrapProgram $out/bin/killmenu --set PATH \
       "${
         makeBinPath [
-          findutils
           coreutils
-          swaylock
-          gnugrep
-          rofi-wayland
-          systemd
+          fuzzel
+          procps
+          gawk
         ]
       }"
   '';
 
   meta = {
-    description = "A rofi script for power menu";
+    description = "A script for killing processes";
     license = licenses.mit;
     platforms = platforms.all;
   };

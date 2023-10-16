@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+
+menu_command="fuzzel -d -l 5"
+
+shutdown="󰐥 Eteindre"
+reboot="󰜉 Redémarrer"
+suspend="󰜗 Hiberner"
+lock=" Verrouiller"
+logout="󰍃 Déconnexion"
+
+# Variable passed to rofi
+options="$lock\n$logout\n$suspend\n$reboot\n$shutdown"
+
+chosen="$(echo -e "$options" | $menu_command)"
+case $chosen in
+    $shutdown)
+			  systemctl poweroff
+        ;;
+    $reboot)
+			  systemctl reboot
+        ;;
+    $suspend)
+        systemctl suspend
+        ;;
+    $lock)
+        swaylock -c 000000 --ring-color cba6f7 --ring-ver-color cba6f7 --key-hl-color 000000 --inside-color cba6f7 --inside-ver-color cba6f7 --inside-clear-color a6e3a1 --ring-clear-color a6e3a1 --ring-wrong-color f38ba8 --inside-wrong-color f38ba8 --bs-hl-color f38ba8 --text-caps-lock-color 000000
+        ;;
+    $logout)
+        loginctl kill-user $(whoami)
+        ;;
+esac
+
+exit 0 

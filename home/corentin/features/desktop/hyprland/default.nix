@@ -5,7 +5,11 @@ let
   cfg = config.xdg;
 in {
 
-  imports = [ ../common ../common/wayland-wm ];
+  imports = [ 
+  ../common
+  ../common/wayland-wm
+  
+  ];
 
   wayland.windowManager.hyprland = {
     enable = true;
@@ -20,22 +24,22 @@ in {
         "xrandr --output DP-1 --primary" # Fix Jeux Steam
       ];
       env = [
-        "GDK_BACKEND=wayland,x11"
-        ''QT_QPA_PLATFORM="wayland,xcb"''
-        "SDL_VIDEODRIVER=x11"
-        "CLUTTER_BACKEND=wayland"
-        "XDG_CURRENT_DESKTOP=Hyprland"
-        "XDG_SESSION_TYPE=wayland"
-        "XDG_SESSION_DESKTOP=Hyprland"
-        "QT_AUTO_SCREEN_SCALE_FACTOR=1"
-        "QT_WAYLAND_DISABLE_WINDOWDECORATION=1"
-        "QT_QPA_PLATFORMTHEME=qt5ct"
-        "WLC_REPEAT_RATE=300"
-        "WLC_REPEAT_DELAY=50"
-        "NIXOS_OZONE_WL=1"
-        "MOZ_ENABLE_WAYLAND=1"
-        "MOZ_WEBRENDER=1"
-        "WLR_DRM_NO_ATOMIC,1"
+        "GDK_BACKEND,wayland,x11"
+        "QT_QPA_PLATFORM,wayland;xcb"
+        "SDL_VIDEODRIVER,wayland"
+        "CLUTTER_BACKEND,wayland"
+        "XDG_CURRENT_DESKTOP,Hyprland"
+        "XDG_SESSION_TYPE,wayland"
+        "XDG_SESSION_DESKTOP,Hyprland"
+        "QT_AUTO_SCREEN_SCALE_FACTOR,1"
+        "QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
+        "QT_QPA_PLATFORMTHEME,qt5ct"
+        "WLC_REPEAT_RATE,300"
+        "WLC_REPEAT_DELAY,50"
+        "NIXOS_OZONE_WL,1"
+        "MOZ_ENABLE_WAYLAND,1"
+        "MOZ_WEBRENDER,1"
+        "WLR_DRM_NO_ATOMIC,1" # Allow Tearing
       ];
       windowrule = [
         "float, title:^(sfml)$"
@@ -58,40 +62,42 @@ in {
       };
       decoration = {
         blur = {                     
-          size = "5";
-          passes = "3";
-          ignore_opacity = "1";
-          new_optimizations = "1";
+          enabled = true;
+          size = 5;
+          passes = 3;
+          ignore_opacity = 1;
+          new_optimizations = 1;
         };
-        active_opacity = "0.94";
-        inactive_opacity = "0.84";
-        fullscreen_opacity = "1.0";
-        rounding = "10";
-        drop_shadow = "1";
-        shadow_range = "12";
+        active_opacity = 0.92;
+        inactive_opacity = 0.75;
+        fullscreen_opacity = 1.0;
+        rounding = 5;
+        drop_shadow = true;
+        shadow_range = 12;
         shadow_offset = "3 3";
-        shadow_render_power = "5";
-        "col.shadow" = "0x33000000";
-        "col.shadow_inactive" = "0x22000000";
+        shadow_render_power = 5;
+        "col.shadow" = "0x44000000";
+        "col.shadow_inactive" = "0x66000000";
       };
       animations = {
-        enabled = "1";
+        enabled = true;
         bezier = [
           "easein,0.11, 0, 0.5, 0"
           "easeout,0.5, 1, 0.89, 1"
-          "easeinout,0.45, 0, 0.55, 1"
+          "easeinback,0.36, 0, 0.66, -0.56"
+          "easeoutback,0.34, 1.56, 0.64, 1"
         ];
         animation = [
-          "windowsIn,1,3,easeout,slide"
-          "windowsOut,1,3,easein,slide"
-          "windowsMove,1,3,easeout"
+          "windowsIn,1,3,easeoutback,slide"
+          "windowsOut,1,3,easeinback,slide"
+          "windowsMove,1,3,easeoutback"
+          "workspaces,1,2,easeoutback,slide"
           "fadeIn,1,3,easeout"
           "fadeOut,1,3,easein"
           "fadeSwitch,1,3,easeout"
           "fadeShadow,1,3,easeout"
           "fadeDim,1,3,easeout"
           "border,1,3,easeout"
-          "workspaces,1,2,easeout,slide"
         ];
       };
       misc = {
@@ -115,8 +121,7 @@ in {
         "SUPERSHIFT,B,exec,pkill -USR1 waybar"
         "SUPER,C,exec,${TERMINAL} -e calcurse"
         "SUPERSHIFT,C,exec,gnome-calculator"
-        "SUPER,d,exec,rofi-launcher"
-        "SUPERSHIFT,d,exec,rofi-runner"
+        "SUPER,d,exec,fuzzel"
         "SUPER,E,exec,${TERMINAL} -e ${MAILCLIENT}"
         "SUPERSHIFT,E,exec,${TERMINAL} -e abook -C ${cfg.configHome}/abook/abookrc --datafile ${cfg.configHome}/abook/addressbook"
         "SUPER,F,fullscreen,0"
@@ -127,27 +132,23 @@ in {
         "SUPER,P,exec,mpc toggle"
         "SUPERSHIFT,P,exec,mpc pause"
         "SUPER,Q,killactive,"
-        "SUPERSHIFT,Q,exit,"
         "SUPER,R,exec,${TERMINAL} -e lf"
         "SUPER,S,exec,${TERMINAL} -e pulsemixer"
         "SUPER,T,exec,${TERMINAL} -e taskwarrior-tui"
         "SUPERSHIFT,S,exec,bmks"
         "SUPER,W,exec,${BROWSER}"
         "SUPERSHIFT,W,exec,networkmanager_dmenu"
-        ''
-          SUPER,X,exec,clipman pick -t rofi -T"-theme ${cfg.configHome}/rofi/launcher.rasi"''
+        ''SUPER,X,exec,clipman pick -t CUSTOM -T"fuzzel -d -w 100"''
         "SUPER,F4,exec,${TERMINAL} -e btm"
-        "SUPER,F6,exec,rofi-mullvad-toggle"
-        "SUPER,F9,exec,rofi-mount"
-        "SUPER,F10,exec,rofi-umount"
-        ",Print,exec,grimblast copy output"
-        "SUPER,Print,exec,grimblast copy area"
-        "ALT,Print,exec,grimblast copy active"
+        ",Print,exec,grimblast --notify --freeze copy output"
+        "CONTROL,Print,exec,grimblast --notify --freeze copy screen"
+        "SUPER,Print,exec,grimblast --notify --freeze copy area"
+        "ALT,Print,exec,grimblast --notify --freeze copy active"
         "SUPER,exclam,exec,telegram-desktop"
-        "SUPER,BackSpace,exec,rofi-powermenu"
-        "SUPERSHIFT,BackSpace,exec,passrofi -theme ${cfg.configHome}/rofi/long-launcher.rasi"
+        "SUPER,BackSpace,exec,powermenu"
+        "SUPERSHIFT,BackSpace,exec,passfuzzel"
         "SUPER,space,togglefloating,"
-        "SUPER,Delete,exec,rofi-kill"
+        "SUPER,Delete,exec,killmenu"
         ",XF86AudioMute,exec,pamixer --toggle-mute"
         ",XF86MonBrightnessUp,exec,light -A 5"
         ",XF86MonBrightnessDown,exec,light -U 5"

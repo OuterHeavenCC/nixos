@@ -3,7 +3,8 @@
 
 { pkgs ? (import ../nixpkgs.nix) { } }: {
   # example = pkgs.callPackage ./example { };
-  rofi-powermenu = pkgs.callPackage ./rofi-powermenu { };
+  powermenu = pkgs.callPackage ./powermenu { };
   nvchad = pkgs.callPackage ./nvchad { };
   bmks = pkgs.callPackage ./bmks { };
+  killmenu = pkgs.callPackage ./killmenu { };
 }

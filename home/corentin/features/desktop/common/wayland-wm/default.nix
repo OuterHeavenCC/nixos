@@ -2,9 +2,9 @@
 
 {
   imports = [
-    ./bemenu.nix
     ./dunst.nix
     ./foot.nix
+    ./fuzzel.nix
     ./rofi
     ./swayidle.nix
     ./swaylock.nix
@@ -12,7 +12,6 @@
   ];
 
     home.packages = with pkgs; [
-      bemenu
       grim                        # Grab images from a Wayland compositor
       hyprpicker                  # Color picking tool for wlroots
       rofi-wayland                # Rofi Wayland fork

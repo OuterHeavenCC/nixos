@@ -10,7 +10,7 @@ let
   calcurse = "${pkgs.calcurse}/bin/calcurse";
   terminal = "${pkgs.foot}/bin/footclient";
   terminal-spawn = cmd: "${terminal} -e ${cmd}";
-  powermenu = "${pkgs.rofi-powermenu}/bin/rofi-powermenu";
+  powermenu = "${pkgs.powermenu}/bin/powermenu";
   audioMonitor = terminal-spawn pulsemixer;
   mail = terminal-spawn neomutt;
   calendar = terminal-spawn calcurse;

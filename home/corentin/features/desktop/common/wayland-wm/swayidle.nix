@@ -1,28 +1,34 @@
 { pkgs, lib, config, ... }:
 
 let
-  inherit (config.colorscheme) colors;
+  swaylock = "${config.programs.swaylock.package}/bin/swaylock";
+  hyprctl = "${config.wayland.windowManager.hyprland.package}/bin/hyprctl";
+  pgrep = "${pkgs.procps}/bin/pgrep";
 
-  swaylock = "${pkgs.swaylock}/bin/swaylock";
-  actionLock = "${swaylock} --daemonize -c ${colors.base00}";
+  isLocked = "${pgrep} -x ${swaylock}";
+  lockTime = 1 * 60; 
 
-  lockTime = 5 * 60; 
-
-  mkEvent = time: start: resume: ''
-    timeout ${toString (lockTime + time)} '${start}' ${lib.optionalString (resume != null) "resume '${resume}'"}
-  '';
+  # Makes two timeouts: one for when the screen is not locked (lockTime+timeout) and one for when it is.
+  afterLockTimeout = { timeout, command, resumeCommand ? null }: [
+    { timeout = lockTime + timeout; inherit command resumeCommand; }
+    { command = "${isLocked} && ${command}"; inherit resumeCommand timeout; }
+  ];
 in
 {
-  home.packages = with pkgs; [ swayidle ];
-  xdg.configFile."swayidle/config".text = ''
-    timeout ${toString lockTime} '${actionLock}'
-  '' +
-  # Hyprland - Turn off screen (DPMS)
-  lib.optionalString config.wayland.windowManager.hyprland.enable
-    (let hyprctl = "${config.wayland.windowManager.hyprland.package}/bin/hyprctl";
-    in mkEvent 40 "${hyprctl} dispatch dpms off" "${hyprctl} dispatch dpms on") +
-  # Sway - Turn off screen (DPMS)
-  lib.optionalString config.wayland.windowManager.sway.enable
-    (let swaymsg = "${config.wayland.windowManager.sway.package}/bin/swaymsg";
-    in mkEvent 40 "${swaymsg} 'output * dpms off'" "${swaymsg} 'output * dpms on'");
+  services.swayidle = {
+    enable = true;
+    systemdTarget = "graphical-session.target";
+    timeouts =
+      # Lock screen
+      [{
+        timeout = lockTime;
+        command = "${swaylock} -i ${config.xdg.dataHome}/bg --daemonize";
+      }] ++
+      # Turn off displays (hyprland)
+      (lib.optionals config.wayland.windowManager.hyprland.enable (afterLockTimeout {
+        timeout = 40;
+        command = "${hyprctl} dispatch dpms off";
+        resumeCommand = "${hyprctl} dispatch dpms on";
+      }));
+  };
 }

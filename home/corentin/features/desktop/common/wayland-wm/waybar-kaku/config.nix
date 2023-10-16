@@ -12,7 +12,7 @@ let
 
   terminal = "${pkgs.foot}/bin/footclient";
   terminal-spawn = cmd: "${terminal} -e ${cmd}";
-  powermenu = "${pkgs.rofi-powermenu}/bin/rofi-powermenu";
+  powermenu = "${pkgs.powermenu}/bin/powermenu";
   audioMonitor = terminal-spawn pulsemixer;
   mail = terminal-spawn neomutt;
 
@@ -134,7 +134,7 @@ in
 
 		"custom/powermenu"= {
 			format= "";
-			on-click= "sleep 0.1; ${powermenu}";        # Fix rofi+hyprland+waybar (see https://github.com/Alexays/Waybar/issues/1968)
+			on-click= "sleep 0.1; ${powermenu}";
       tooltip = false;
 		};
 
