@@ -115,43 +115,78 @@ in {
         allow_tearing = true;
       };
       master = { new_on_top = true; };
-      bind = [
+      bind = let
+
+        blueman-manager = "${pkgs.blueman}/bin/blueman-manager";
+        bmks = "${pkgs.bmks}/bin/bmks";
+        calcurse = "${pkgs.calcurse}/bin/calcurse";
+        clipman = "${pkgs.clipman}/bin/clipman";
+        fuzzel = "${pkgs.fuzzel}/bin/fuzzel";
+        gnome-calculator = "${pkgs.gnome.gnome-calculator}/bin/gnome-calculator";
+        light = "${pkgs.light}/bin/light";
+        mpc = "${pkgs.mpc-cli}/bin/mpc";
+        networkmanager_dmenu = "${pkgs.networkmanager_dmenu}/bin/networkmanager_dmenu";
+        newsboat = "${pkgs.newsboat}/bin/newsboat";
+        powermenu = "${pkgs.powermenu}/bin/powermenu";
+        pulsemixer = "${pkgs.pulsemixer}/bin/pulsemixer";
+        taskwarrior-tui = "${pkgs.taskwarrior-tui}/bin/taskwarrior-tui";
+        telegram-desktop = "${pkgs.telegram-desktop}/bin/telegram-desktop";
+        abook = "${pkgs.abook}/bin/abook";
+        btm = "${pkgs.bottom}/bin/btm";
+        pamixer = "${pkgs.pamixer}/bin/pamixer";
+        lf = "${pkgs.lf}/bin/lf";
+        ncmpcpp = "${pkgs.ncmpcpp}/bin/ncmpcpp";
+        killmenu = "${pkgs.killmenu}/bin/killmenu";
+        grimblast = "${inputs.hyprland-contrib.packages.${pkgs.system}.grimblast}/bin/grimblast";
+
+      in [
         "SUPER,Return,exec,${TERMINAL}"
-        "SUPER,B,exec,blueman-manager"
+        "SUPER,B,exec,${blueman-manager}"
         "SUPERSHIFT,B,exec,pkill -USR1 waybar"
-        "SUPER,C,exec,${TERMINAL} -e calcurse"
-        "SUPERSHIFT,C,exec,gnome-calculator"
-        "SUPER,d,exec,fuzzel"
+        "SUPER,C,exec,${TERMINAL} -e ${calcurse}"
+        "SUPERSHIFT,C,exec,${gnome-calculator}"
+        "SUPER,d,exec,${fuzzel}"
         "SUPER,E,exec,${TERMINAL} -e ${MAILCLIENT}"
-        "SUPERSHIFT,E,exec,${TERMINAL} -e abook -C ${cfg.configHome}/abook/abookrc --datafile ${cfg.configHome}/abook/addressbook"
-        "SUPER,F,fullscreen,0"
-        "SUPER,M,exec,${TERMINAL} -e ncmpcpp"
-        "SUPERSHIFT,M,exec,pamixer -t"
+        "SUPERSHIFT,E,exec,${TERMINAL} -e ${abook} -C ${cfg.configHome}/abook/abookrc --datafile ${cfg.configHome}/abook/addressbook"
+        "SUPER,M,exec,${TERMINAL} -e ${ncmpcpp}"
+        "SUPERSHIFT,M,exec,${pamixer} -t"
         "SUPER,N,exec,${TERMINAL} -e ${EDITOR}"
-        "SUPERSHIFT,N,exec,${TERMINAL} -e newsboat"
-        "SUPER,P,exec,mpc toggle"
-        "SUPERSHIFT,P,exec,mpc pause"
-        "SUPER,Q,killactive,"
-        "SUPER,R,exec,${TERMINAL} -e lf"
-        "SUPER,S,exec,${TERMINAL} -e pulsemixer"
-        "SUPER,T,exec,${TERMINAL} -e taskwarrior-tui"
-        "SUPERSHIFT,S,exec,bmks"
+        "SUPERSHIFT,N,exec,${TERMINAL} -e ${newsboat}"
+        "SUPER,P,exec,${mpc} toggle"
+        "SUPERSHIFT,P,exec,${mpc} pause"
+        "SUPER,R,exec,${TERMINAL} -e ${lf}"
+        "SUPER,S,exec,${TERMINAL} -e ${pulsemixer}"
+        "SUPER,T,exec,${TERMINAL} -e ${taskwarrior-tui}"
+        "SUPERSHIFT,S,exec,${bmks}"
         "SUPER,W,exec,${BROWSER}"
-        "SUPERSHIFT,W,exec,networkmanager_dmenu"
-        ''SUPER,X,exec,clipman pick -t CUSTOM -T"fuzzel -d -w 100"''
-        "SUPER,F4,exec,${TERMINAL} -e btm"
-        ",Print,exec,grimblast --notify --freeze copy output"
-        "CONTROL,Print,exec,grimblast --notify --freeze copy screen"
-        "SUPER,Print,exec,grimblast --notify --freeze copy area"
-        "ALT,Print,exec,grimblast --notify --freeze copy active"
-        "SUPER,exclam,exec,telegram-desktop"
-        "SUPER,BackSpace,exec,powermenu"
+        "SUPERSHIFT,W,exec,${networkmanager_dmenu}"
+        ''SUPER,X,exec,${clipman} pick -t CUSTOM -T"${fuzzel} -d -w 100"''
+        "SUPER,F4,exec,${TERMINAL} -e ${btm}"
+        "SUPER,exclam,exec,${telegram-desktop}"
+        "SUPER,BackSpace,exec,${powermenu}"
         "SUPERSHIFT,BackSpace,exec,passfuzzel"
+        "SUPER,Delete,exec,${killmenu}"
+        ",XF86AudioMute,exec,${pamixer} --toggle-mute"
+
+        # Screenshots
+
+        ",Print,exec,${grimblast} --notify --freeze copy output"
+        "CONTROL,Print,exec,${grimblast} --notify --freeze copy screen"
+        "SUPER,Print,exec,${grimblast} --notify --freeze copy area"
+        "ALT,Print,exec,${grimblast} --notify --freeze copy active"
+
+
+        # Lumière
+
+        ",XF86MonBrightnessUp,exec,${light} -A 5"
+        ",XF86MonBrightnessDown,exec,${light} -U 5"
+
+        # Basic Binds
+
+        "SUPER,F,fullscreen,0"
+        "SUPER,Q,killactive,"
         "SUPER,space,togglefloating,"
-        "SUPER,Delete,exec,killmenu"
-        ",XF86AudioMute,exec,pamixer --toggle-mute"
-        ",XF86MonBrightnessUp,exec,light -A 5"
-        ",XF86MonBrightnessDown,exec,light -U 5"
+
         "SUPER,left,focusmonitor,l"
         "SUPERSHIFT,h,focusmonitor,l"
         "SUPERSHIFT,left,movewindow,mon:l"
@@ -168,6 +203,7 @@ in {
         "SUPER,underscore,split-workspace,8"
         "SUPER,ccedilla,split-workspace,9"
         "SUPER,agrave,split-workspace,10"
+
         "SUPERSHIFT,ampersand,split-movetoworkspacesilent,1"
         "SUPERSHIFT,eacute,split-movetoworkspacesilent,2"
         "SUPERSHIFT,quotedbl,split-movetoworkspacesilent,3"
@@ -182,9 +218,11 @@ in {
 
       bindm = [ "SUPER,mouse:272,movewindow" "SUPER,mouse:273,resizewindow" ];
 
-      binde = [
-        ",XF86AudioRaiseVolume,exec,pamixer -i 5"
-        ",XF86AudioLowerVolume,exec,pamixer -d 5"
+      binde = let 
+        pamixer = "${pkgs.pamixer}/bin/pamixer";
+      in [
+        ",XF86AudioRaiseVolume,exec,${pamixer} -i 5"
+        ",XF86AudioLowerVolume,exec,${pamixer} -d 5"
         "SUPER,j,layoutmsg,cyclenext"
         "SUPER,k,layoutmsg,cycleprev"
         "SUPER,h,resizeactive,-99 0"

@@ -84,6 +84,7 @@
     xh                            # Better curl
     xmlstarlet                    # Preview xml in terminal
     xxd                           # Hex Viewer
+    ydotool                       # Generic Linux command-line automation tool
     yt-dlp                        # Better youtube-dl
     zoxide                        # Better cd
   ];
