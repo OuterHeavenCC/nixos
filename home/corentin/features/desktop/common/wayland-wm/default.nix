@@ -5,6 +5,7 @@
     ./dunst.nix
     ./foot.nix
     ./fuzzel.nix
+    ./gammastep.nix
     ./rofi
     ./swayidle.nix
     ./swaylock.nix
