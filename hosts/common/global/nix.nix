@@ -1,6 +1,8 @@
 { inputs, lib, config, ... }:
 
 {
+  programs.nix-ld.enable = true;
+
   nixpkgs = {
     # You can add overlays here
     overlays = [

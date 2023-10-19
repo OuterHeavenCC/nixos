@@ -4,11 +4,13 @@
   imports = [
     inputs.home-manager.nixosModules.home-manager
     ./fonts.nix
+    ./geoclue2.nix
     ./git.nix
     ./input.nix
     ./locale.nix
     ./locate.nix
     ./nix.nix
+    ./podman.nix
     ./security.nix
     ./ssh.nix
   ];

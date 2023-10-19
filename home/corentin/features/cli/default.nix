@@ -12,6 +12,7 @@
     ./ledger.nix
     ./lf
     ./newsboat.nix
+    ./nix-index.nix
     ./taskwarrior.nix
     ./zsh.nix
   ];
@@ -28,6 +29,7 @@
     dconf                         # Libadwaita black theme
     delta                         # Better diff
     direnv                        # Better dev environment management
+    distrobox
     dog                           # Better dig
     du-dust                       # Better du
     duf                           # Better df

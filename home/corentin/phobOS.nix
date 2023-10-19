@@ -55,4 +55,8 @@
   ];
 
       programs.foot.settings.main.font = "Fira Code Nerd Font:size=14";
+      # TODO Temporaire
+      nixpkgs.config.permittedInsecurePackages = [
+        "libxls-1.6.2"
+      ];
 }
