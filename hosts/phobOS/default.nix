@@ -43,6 +43,9 @@
     enable = true;
     layout = "fr";
     videoDrivers = ["nvidia"];
+    displayManager.lightdm = {
+      enable = false;
+    };
   };
   hardware = {
     opengl = {
@@ -51,11 +54,13 @@
       driSupport32Bit = true;
       extraPackages = with pkgs; [
         vaapiVdpau
+        libvdpau-va-gl
+        nvidia-vaapi-driver
       ];
     };
     nvidia = {
       modesetting.enable = true;
-      package = config.boot.kernelPackages.nvidiaPackages.beta;
+      # package = config.boot.kernelPackages.nvidiaPackages.beta;
     };
   };
 

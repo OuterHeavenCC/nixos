@@ -11,16 +11,8 @@ rec {
       package = gtkThemeFromScheme { scheme = config.colorscheme; };
     };
     iconTheme = {
-      name = "Zafiro Icons Theme";
+      name = "Zafiro-icons-Dark";
       package = pkgs.zafiro-icons;
-    };
-  };
-
-  services.xsettingsd = {
-    enable = true;
-    settings = {
-      "Net/ThemeName" = "${gtk.theme.name}";
-      "Net/IconThemeName" = "${gtk.iconTheme.name}";
     };
   };
 

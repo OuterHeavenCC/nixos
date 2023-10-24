@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./cursor.nix
     ./firefox.nix
     ./gtk.nix
     ./mpd.nix
