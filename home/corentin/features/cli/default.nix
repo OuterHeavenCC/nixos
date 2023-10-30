@@ -14,6 +14,7 @@
     ./newsboat.nix
     ./nix-index.nix
     ./taskwarrior.nix
+    ./ytfzf.nix
     ./zsh.nix
   ];
 

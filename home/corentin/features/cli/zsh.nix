@@ -12,11 +12,6 @@ in
       enable = true;
     };
     dotDir = ".config/zsh";
-    loginExtra = ''
-      if [ "$(tty)" = "/dev/tty1" ]; then
-        exec Hyprland &> /dev/null
-      fi
-    '';
     initExtraFirst = "
       autoload -U colors && colors
       autoload -U compinit promptinit
@@ -71,6 +66,7 @@ in
       sdn = "doas shutdown -h now";
       wget = ''wget --hsts-file="${cfg.dataHome}/wget-hsts"'';
       groff = ''groff -k'';
+      nixpkgs = "nix-env -f '<nixpkgs>'";
     };
     history = {
       path = "${cfg.dataHome}/history";

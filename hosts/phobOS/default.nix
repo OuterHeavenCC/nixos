@@ -46,6 +46,8 @@
     displayManager.lightdm = {
       enable = false;
     };
+    # displayManager.sddm.enable = true;
+    # desktopManager.plasma5.enable = true;
   };
   hardware = {
     opengl = {
@@ -60,6 +62,7 @@
     };
     nvidia = {
       modesetting.enable = true;
+      open = false;
       # package = config.boot.kernelPackages.nvidiaPackages.beta;
     };
   };

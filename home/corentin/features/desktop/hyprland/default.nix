@@ -8,6 +8,8 @@ in {
   imports = [ 
   ../common
   ../common/wayland-wm
+
+  ./tty-init.nix
   
   ];
 
@@ -46,7 +48,9 @@ in {
         "center, title:^(sfml)$"
         "nofullscreenrequest, title:^(Lecteur multimédia)$" # Fix Telegram
         "tile, title:^(Battle.net)$"
+        "opaque, class:^(mpv)$"
         "float, title:^(Calculatrice)$" # Calculatrice flottante
+        
       ];
 
       windowrulev2 = [
@@ -138,6 +142,7 @@ in {
         ncmpcpp = "${pkgs.ncmpcpp}/bin/ncmpcpp";
         killmenu = "${pkgs.killmenu}/bin/killmenu";
         grimblast = "${inputs.hyprland-contrib.packages.${pkgs.system}.grimblast}/bin/grimblast";
+        ytfzf = "${pkgs.ytfzf}/bin/ytfzf";
 
       in [
         "SUPER,Return,exec,${TERMINAL}"
@@ -156,6 +161,7 @@ in {
         "SUPERSHIFT,P,exec,${mpc} pause"
         "SUPER,R,exec,${TERMINAL} -e ${lf}"
         "SUPER,S,exec,${TERMINAL} -e ${pulsemixer}"
+        "SUPER,V,exec,${ytfzf} -D"
         "SUPER,T,exec,${TERMINAL} -e ${taskwarrior-tui}"
         "SUPERSHIFT,S,exec,${bmks}"
         "SUPER,W,exec,${BROWSER}"

@@ -1,7 +1,8 @@
-{ lib, ... }:
+{ lib, config, ... }:
 
 let
   inherit (lib) mkOption types;
+  cfg = config.monitors;
 in
 {
   options.monitors = mkOption {
@@ -11,7 +12,7 @@ in
           type = types.str;
           example = "DP-1";
         };
-        noBar = mkOption {
+        primary = mkOption {
           type = types.bool;
           default = false;
         };
@@ -45,5 +46,13 @@ in
         };
       };
     });
+    default = [ ];
+  };
+  config = {
+    assertions = [{
+      assertion = ((lib.length config.monitors) != 0) ->
+        ((lib.length (lib.filter (m: m.primary) config.monitors)) == 1);
+      message = "Exactly one monitor must be set to primary.";
+    }];
   };
 }

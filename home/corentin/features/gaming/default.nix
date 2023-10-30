@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, config, ... }:
 
 let 
 steam-with-pkgs = pkgs.steam.override {
@@ -13,16 +13,26 @@ steam-with-pkgs = pkgs.steam.override {
       stdenv.cc.cc.lib
       libkrb5
       keyutils
+      gamescope
+      mangohud
   ];
 };
+  monitor = lib.head (lib.filter (m: m.primary) config.monitors);
+
+  steam-session = pkgs.makeDesktopItem {
+    name = "Steam Session";
+    desktopName = "Steam Session";
+    exec = "${pkgs.gamescope}/bin/gamescope -W ${toString monitor.width} -H ${toString monitor.height} -O ${monitor.name} -e -- steam -gamepadui";
+    type = "Application";
+  };
+
 in
 {
   home.packages = with pkgs; [
     steam-with-pkgs
+    steam-session
     gamescope
     protontricks
-    mangohud
-    gamemode
     samrewritten
     steam-run
   ];

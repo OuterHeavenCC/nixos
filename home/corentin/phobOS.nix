@@ -45,6 +45,7 @@
       height = 1080;
       refreshRate = 240;
       x = 3840;
+      primary = true;
     }
     {
       name = "DP-2";
