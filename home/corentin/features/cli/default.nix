@@ -3,6 +3,7 @@
 {
   imports = [
     ./abook.nix
+    ./android.nix
     ./bat.nix
     ./bottom.nix
     ./calcurse.nix

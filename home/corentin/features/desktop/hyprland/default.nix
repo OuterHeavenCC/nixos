@@ -24,6 +24,7 @@ in {
         "swayidle -w"
         "wl-paste -t text --watch clipman store"
         "xrandr --output DP-1 --primary" # Fix Jeux Steam
+        "gammastep-indicator"
       ];
       env = [
         "GDK_BACKEND,wayland,x11"

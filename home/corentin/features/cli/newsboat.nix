@@ -44,6 +44,11 @@
         tags = [ "sciences" "travail" ];
         url = "https://gestiondeladouleurenthrapiemanuelle.wordpress.com/rss";
       }
+      {
+        title = "Muscle and Feels";
+        tags = [ "sciences" "sport" ];
+        url = "https://feeds.buzzsprout.com/2050318.rss";
+      }
 
     ];
 
