@@ -10,6 +10,7 @@
     shellHook = with pkgs; ''
         LD_LIBRARY_PATH=${stdenv.cc.cc.lib}/lib/:/run/opengl-driver/lib/:/run/opengl-driver-32/lib/
         QT_PLUGIN_PATH=${qt5.qtbase}/${qt5.qtbase.qtPluginPrefix}
+        echo "Welcome"
   '';
   };
 }

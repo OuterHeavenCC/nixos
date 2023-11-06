@@ -67,6 +67,7 @@ in
       wget = ''wget --hsts-file="${cfg.dataHome}/wget-hsts"'';
       groff = ''groff -k'';
       nixpkgs = "nix-env -f '<nixpkgs>'";
+      nix-shell = "nix-shell --command zsh";
     };
     history = {
       path = "${cfg.dataHome}/history";
