@@ -5,6 +5,7 @@
     ./cursor.nix
     ./firefox.nix
     ./gtk.nix
+    ./libreoffice.nix
     ./mpd.nix
     ./mpv.nix
     ./ncmpcpp.nix
@@ -23,7 +24,6 @@
     gnome.nautilus           # When lf isn't enough
     imv                      # Simple Image Viewer
     krita
-    libreoffice              # When pandoc isn't enought
     lynx                     # Terminal browser
     obs-studio               # Screen capturing tool
     piper                    # Gaming mouse management
