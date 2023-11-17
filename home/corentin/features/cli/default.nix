@@ -27,10 +27,12 @@
     calcurse                      # Calendar
     chafa                         # Terminal graphics
     clipman                       # Clipboard management
-    ctpv                          # Terminal previewer for lf
     dconf                         # Libadwaita black theme
     delta                         # Better diff
     direnv                        # Better dev environment management
+    catdoc                        # .doc preview in terminal
+    catdocx                       # .docx preview in terminal
+    libcdio                       # .iso preview in terminal
     distrobox
     dog                           # Better dig
     du-dust                       # Better du
@@ -73,7 +75,6 @@
     python3                       # Basic programming stuff
     qemu                          # ISO Stuff
     ripgrep                       # Better grep
-    sc-im                         # Simple terminal spreadsheets editor
     scanmem                       # Runtime memory edit
     sd                            # Better sed
     skim                          # fzf but faster

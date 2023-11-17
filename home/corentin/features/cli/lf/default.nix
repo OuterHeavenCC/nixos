@@ -63,6 +63,8 @@ in {
       scrolloff = 10;
       period = 1;
       icons = true;
+      sixel = true;
+      mouse = true;
     };
     commands = {
       zip = ''%zip -r "$.fip" "$f"'';
@@ -84,7 +86,6 @@ in {
                 video/*) setsid -f mpv $f -quiet >/dev/null 2>&1 ;;
                 application/vnd.oasis.opendocument|application/vnd.openxmlformats-officedocument.wordprocessingml.document|application/vnd.oasis.opendocument.spreadsheet) setsid -f libreoffice $f ;;
                 application/vnd.openxmlformats-officedocument.wordprocessingml.document) setsid -f libreoffice $f ;;
-                application/x-sc) sc-im $f ;;
                 application/pdf|application/vnd*|application/epub*|application/x-cbz) setsid -f zathura $fx >/dev/null 2>&1 ;;
                *) for f in $fx; do setsid -f $OPENER $f >/dev/null 2>&1; done;;
                esac
@@ -176,9 +177,8 @@ in {
       '';
     };
 
-    extraConfig = (import ./extraConfig.nix { inherit pkgs; });
+    previewer.source = ./preview;
+
   };
   xdg.configFile."lf/icons".text = builtins.readFile ./icons;
-  xdg.configFile."ctpv/config".text =
-    "set chafasixel"; # Sixel previewing with lf-sixel
 }

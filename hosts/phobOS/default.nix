@@ -17,7 +17,7 @@
     ../common/optional/android.nix
     # ../common/optional/gaming.nix
     ../common/optional/kdeconnect.nix
-    # ../common/optional/waydroid.nix
+    ../common/optional/waydroid.nix
     ../common/optional/mimeApps.nix
     ../common/optional/mullvad.nix
     ../common/optional/pipewire.nix

@@ -56,6 +56,9 @@ in {
 
       windowrulev2 = [
         "immediate, class:^(GameThread)$"
+        "immediate, class:^(gamescope-wl)$"
+        "immediate, class:^(Turbo-Overkill)$"
+        "immediate, class:^(teardown.exe)$"
       ];
       input = {
         kb_layout = "fr";
