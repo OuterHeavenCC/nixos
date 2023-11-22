@@ -16,7 +16,10 @@
 
     nginxStable = prev.nginxStable.override { oppenssl = prev.pkgs.libressl; };
 
+    # inherit (inputs.nixos-master.legacyPackages.${final.system}) resholve afew;
+
   };
+
 
   # When applied, the unstable nixpkgs set (declared in the flake inputs) will
   # be accessible through 'pkgs.unstable'

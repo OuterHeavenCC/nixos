@@ -59,6 +59,7 @@ in {
         "immediate, class:^(gamescope-wl)$"
         "immediate, class:^(Turbo-Overkill)$"
         "immediate, class:^(teardown.exe)$"
+        "immediate, class:^(AlanWake2.exe)$"
       ];
       input = {
         kb_layout = "fr";

@@ -14,7 +14,6 @@ steam-with-pkgs = pkgs.steam.override {
       libkrb5
       keyutils
       gamescope
-      mangohud
   ];
 };
   monitor = lib.head (lib.filter (m: m.primary) config.monitors);
@@ -28,6 +27,11 @@ steam-with-pkgs = pkgs.steam.override {
 
 in
 {
+
+  imports = [
+    ./mangohud.nix
+  ];
+
   home.packages = with pkgs; [
     steam-with-pkgs
     steam-session
