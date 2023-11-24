@@ -10,6 +10,7 @@
     ./mpv.nix
     ./ncmpcpp.nix
     ./networkmanager_dmenu.nix
+    ./tor.nix
     ./xdg.nix
     ./zathura.nix
   ];
