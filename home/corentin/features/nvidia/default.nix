@@ -11,6 +11,4 @@ in {
     WLR_EGL_NO_MODIFIRES = "1";
   };
 
-  wayland.windowManager.hyprland = { enableNvidiaPatches = true; };
-
 }

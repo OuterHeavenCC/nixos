@@ -5,7 +5,7 @@
   xdg.portal = {
     enable = true;
     wlr.enable = true;
-    extraPortals = [ 
+    configPackages = [ 
       pkgs.xdg-desktop-portal-hyprland
     ];
   };

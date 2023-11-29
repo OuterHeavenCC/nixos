@@ -204,27 +204,27 @@ in {
         "SUPER,right,focusmonitor,r"
         "SUPERSHIFT,l,focusmonitor,r"
         "SUPERSHIFT,right,movewindow,mon:r"
-        "SUPER,ampersand,split-workspace,1"
-        "SUPER,eacute,split-workspace,2"
-        "SUPER,quotedbl,split-workspace,3"
-        "SUPER,apostrophe,split-workspace,4"
-        "SUPER,parenleft,split-workspace,5"
-        "SUPER,minus,split-workspace,6"
-        "SUPER,egrave,split-workspace,7"
-        "SUPER,underscore,split-workspace,8"
-        "SUPER,ccedilla,split-workspace,9"
-        "SUPER,agrave,split-workspace,10"
+        "SUPER,ampersand,workspace,1"
+        "SUPER,eacute,workspace,2"
+        "SUPER,quotedbl,workspace,3"
+        "SUPER,apostrophe,workspace,4"
+        "SUPER,parenleft,workspace,5"
+        "SUPER,minus,workspace,6"
+        "SUPER,egrave,workspace,7"
+        "SUPER,underscore,workspace,8"
+        "SUPER,ccedilla,workspace,9"
+        "SUPER,agrave,workspace,10"
 
-        "SUPERSHIFT,ampersand,split-movetoworkspacesilent,1"
-        "SUPERSHIFT,eacute,split-movetoworkspacesilent,2"
-        "SUPERSHIFT,quotedbl,split-movetoworkspacesilent,3"
-        "SUPERSHIFT,apostrophe,split-movetoworkspacesilent,4"
-        "SUPERSHIFT,parenleft,split-movetoworkspacesilent,5"
-        "SUPERSHIFT,minus,split-movetoworkspacesilent,6"
-        "SUPERSHIFT,egrave,split-movetoworkspacesilent,7"
-        "SUPERSHIFT,underscore,split-movetoworkspacesilent,8"
-        "SUPERSHIFT,ccedilla,split-movetoworkspacesilent,9"
-        "SUPERSHIFT,agrave,split-movetoworkspacesilent,10"
+        "SUPERSHIFT,ampersand,movetoworkspacesilent,1"
+        "SUPERSHIFT,eacute,movetoworkspacesilent,2"
+        "SUPERSHIFT,quotedbl,movetoworkspacesilent,3"
+        "SUPERSHIFT,apostrophe,movetoworkspacesilent,4"
+        "SUPERSHIFT,parenleft,movetoworkspacesilent,5"
+        "SUPERSHIFT,minus,movetoworkspacesilent,6"
+        "SUPERSHIFT,egrave,movetoworkspacesilent,7"
+        "SUPERSHIFT,underscore,movetoworkspacesilent,8"
+        "SUPERSHIFT,ccedilla,movetoworkspacesilent,9"
+        "SUPERSHIFT,agrave,movetoworkspacesilent,10"
       ];
 
       bindm = [ "SUPER,mouse:272,movewindow" "SUPER,mouse:273,resizewindow" ];
@@ -254,7 +254,7 @@ in {
       ) (lib.filter (m: m.enabled && m.workspace != null) config.monitors);
       };
 
-      plugins = [ inputs.split-monitor-workspaces.packages.${pkgs.system}.split-monitor-workspaces ];
+      # plugins = [ inputs.split-monitor-workspaces.packages.${pkgs.system}.split-monitor-workspaces ];
 
       extraConfig = ''
         # Passthrough mode (e.g. for VNC, Gaming)
