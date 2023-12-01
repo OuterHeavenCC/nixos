@@ -1,6 +1,8 @@
 { inputs, lib, config, ... }:
 
 {
+
+
   programs.nix-ld.enable = true;
 
   nixpkgs = {
@@ -51,6 +53,11 @@
       experimental-features = "nix-command flakes";
       # Deduplicate and optimize nix store
       auto-optimise-store = true;
+
+      # AI Stuff
+      trusted-substituters = ["https://ai.cachix.org"];
+      trusted-public-keys = ["ai.cachix.org-1:N9dzRK+alWwoKXQlnn0H6aUx0lU/mspIoz8hMvGvbbc="];
+
 
     };
     extraOptions = ''
