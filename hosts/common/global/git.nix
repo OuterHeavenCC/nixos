@@ -1,3 +1,6 @@
 {
-  programs.git.enable = true; # Git ne fonctionne pas très bien sans ça apparement
+  programs.git = {
+    enable = true;
+    lfs.enable = true;
+  };
 }
