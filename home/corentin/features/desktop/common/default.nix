@@ -18,6 +18,7 @@
   home.packages = with pkgs; [
     audacity                 # Audio recording
     bottles                  # Better lutris
+    calibre                  # Ebook manager
     discord
     gimp                     # GNU Image Manipulation Program
     gnome.gnome-boxes        # QEMU Made easy
