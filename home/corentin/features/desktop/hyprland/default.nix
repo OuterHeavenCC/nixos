@@ -60,6 +60,9 @@ in {
         "immediate, class:^(Turbo-Overkill)$"
         "immediate, class:^(teardown.exe)$"
         "immediate, class:^(AlanWake2.exe)$"
+        "immediate, class:^(ProjectCoral-Wi)$"
+        "immediate, class:^(steam_app_1158160)$"
+        "immediate, class:^(Subnautica.exe)$"
       ];
       input = {
         kb_layout = "fr";
@@ -254,7 +257,7 @@ in {
       ) (lib.filter (m: m.enabled && m.workspace != null) config.monitors);
       };
 
-      # plugins = [ inputs.split-monitor-workspaces.packages.${pkgs.system}.split-monitor-workspaces ];
+      plugins = [ inputs.split-monitor-workspaces.packages.${pkgs.system}.split-monitor-workspaces ];
 
       extraConfig = ''
         # Passthrough mode (e.g. for VNC, Gaming)
