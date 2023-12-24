@@ -10,7 +10,11 @@
     # at the same time. Here's an working example:
     # nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     # Also see the 'unstable-packages' overlay at 'overlays/default.nix'.
-    hyprland.url = "github:hyprwm/Hyprland";
+    hyprland = {
+      url = "github:hyprwm/hyprland";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     hyprland-contrib = {
       url = "github:hyprwm/contrib";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -41,8 +45,11 @@
       inherit (self) outputs;
       lib = nixpkgs.lib // home-manager.lib;
       systems = [ "x86_64-linux" "aarch64-linux" ];
-      forEachSystem = f: lib.genAttrs systems (sys: f pkgsFor.${sys});
-      pkgsFor = nixpkgs.legacyPackages;
+      forEachSystem = f: lib.genAttrs systems (system: f pkgsFor.${system});
+      pkgsFor = lib.genAttrs systems (system: import nixpkgs {
+        inherit system;
+        config.allowUnfree = true;
+      });
     in {
       inherit lib;
       nixosModules = import ./modules/nixos;

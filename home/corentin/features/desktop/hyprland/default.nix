@@ -9,13 +9,14 @@ in {
   ../common
   ../common/wayland-wm
 
+  ./basic-binds.nix
   ./tty-init.nix
   
   ];
 
   wayland.windowManager.hyprland = {
     enable = true;
-    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+    package = pkgs.inputs.hyprland.hyprland;
     settings = {
       exec-once = [
         "wbg ${cfg.dataHome}/bg"
@@ -195,54 +196,13 @@ in {
         ",XF86MonBrightnessUp,exec,${light} -A 5"
         ",XF86MonBrightnessDown,exec,${light} -U 5"
 
-        # Basic Binds
-
-        "SUPER,F,fullscreen,0"
-        "SUPER,Q,killactive,"
-        "SUPER,space,togglefloating,"
-
-        "SUPER,left,focusmonitor,l"
-        "SUPERSHIFT,h,focusmonitor,l"
-        "SUPERSHIFT,left,movewindow,mon:l"
-        "SUPER,right,focusmonitor,r"
-        "SUPERSHIFT,l,focusmonitor,r"
-        "SUPERSHIFT,right,movewindow,mon:r"
-        "SUPER,ampersand,split-workspace,1"
-        "SUPER,eacute,split-workspace,2"
-        "SUPER,quotedbl,split-workspace,3"
-        "SUPER,apostrophe,split-workspace,4"
-        "SUPER,parenleft,split-workspace,5"
-        "SUPER,minus,split-workspace,6"
-        "SUPER,egrave,split-workspace,7"
-        "SUPER,underscore,split-workspace,8"
-        "SUPER,ccedilla,split-workspace,9"
-        "SUPER,agrave,split-workspace,10"
-
-        "SUPERSHIFT,ampersand,split-movetoworkspacesilent,1"
-        "SUPERSHIFT,eacute,split-movetoworkspacesilent,2"
-        "SUPERSHIFT,quotedbl,split-movetoworkspacesilent,3"
-        "SUPERSHIFT,apostrophe,split-movetoworkspacesilent,4"
-        "SUPERSHIFT,parenleft,split-movetoworkspacesilent,5"
-        "SUPERSHIFT,minus,split-movetoworkspacesilent,6"
-        "SUPERSHIFT,egrave,split-movetoworkspacesilent,7"
-        "SUPERSHIFT,underscore,split-movetoworkspacesilent,8"
-        "SUPERSHIFT,ccedilla,split-movetoworkspacesilent,9"
-        "SUPERSHIFT,agrave,split-movetoworkspacesilent,10"
       ];
-
-      bindm = [ "SUPER,mouse:272,movewindow" "SUPER,mouse:273,resizewindow" ];
 
       binde = let 
         pamixer = "${pkgs.pamixer}/bin/pamixer";
       in [
         ",XF86AudioRaiseVolume,exec,${pamixer} -i 5"
         ",XF86AudioLowerVolume,exec,${pamixer} -d 5"
-        "SUPER,j,layoutmsg,cyclenext"
-        "SUPER,k,layoutmsg,cycleprev"
-        "SUPER,h,resizeactive,-99 0"
-        "SUPER,l,resizeactive,99 0"
-        "SUPERSHIFT,j,swapnext,none"
-        "SUPERSHIFT,k,swapnext,prev"
       ];
 
       monitor = map (m: let
@@ -257,7 +217,7 @@ in {
       ) (lib.filter (m: m.enabled && m.workspace != null) config.monitors);
       };
 
-      plugins = [ inputs.split-monitor-workspaces.packages.${pkgs.system}.split-monitor-workspaces ];
+      plugins = [ pkgs.inputs.split-monitor-workspaces.split-monitor-workspaces ];
 
       extraConfig = ''
         # Passthrough mode (e.g. for VNC, Gaming)
