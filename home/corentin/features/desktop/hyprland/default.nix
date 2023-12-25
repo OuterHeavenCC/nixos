@@ -18,14 +18,24 @@ in {
     enable = true;
     package = pkgs.inputs.hyprland.hyprland;
     settings = {
-      exec-once = [
-        "wbg ${cfg.dataHome}/bg"
-        "foot --server"
-        "waybar"
-        "swayidle -w"
-        "wl-paste -t text --watch clipman store"
-        "xrandr --output DP-1 --primary" # Fix Jeux Steam
-        "gammastep-indicator"
+      exec-once = let 
+        wbg = "${pkgs.wbg}/bin/wbg";
+        foot = "${pkgs.foot}/bin/foot";
+        waybar = "${pkgs.waybar}/bin/waybar";
+        swayidle = "${pkgs.swayidle}/bin/swayidle";
+        xrandr = "${pkgs.xorg.xrandr}/bin/xrandr";
+        wl-paste = "${pkgs.wl-clipboard}/bin/wl-paste";
+        gammastep-indicator = "${pkgs.gammastep}/bin/gammastep-indicator";
+        cliphist = "${pkgs.cliphist}/bin/cliphist";
+      in [
+        "${wbg} ${config.wallpaper}"
+        "${foot} --server"
+        "${waybar}"
+        "${swayidle} -w"
+        "${wl-paste} --type text --watch ${cliphist} store" 
+        "${wl-paste} --type image --watch ${cliphist} store"
+        "${xrandr} --output DP-1 --primary" # Fix Jeux Steam
+        "${gammastep-indicator}"
       ];
       env = [
         "GDK_BACKEND,wayland,x11"
@@ -61,8 +71,7 @@ in {
         "immediate, class:^(Turbo-Overkill)$"
         "immediate, class:^(teardown.exe)$"
         "immediate, class:^(AlanWake2.exe)$"
-        "immediate, class:^(ProjectCoral-Wi)$"
-        "immediate, class:^(steam_app_1158160)$"
+        "immediate, class:^(ProjectCoral-Windows.exe)$"
         "immediate, class:^(Subnautica.exe)$"
       ];
       input = {
@@ -130,33 +139,35 @@ in {
       master = { new_on_top = true; };
       bind = let
 
+        abook = "${pkgs.abook}/bin/abook";
         blueman-manager = "${pkgs.blueman}/bin/blueman-manager";
         bmks = "${pkgs.bmks}/bin/bmks";
+        btm = "${pkgs.bottom}/bin/btm";
         calcurse = "${pkgs.calcurse}/bin/calcurse";
-        clipman = "${pkgs.clipman}/bin/clipman";
+        cliphist = "${pkgs.cliphist}/bin/cliphist";
         fuzzel = "${pkgs.fuzzel}/bin/fuzzel";
         gnome-calculator = "${pkgs.gnome.gnome-calculator}/bin/gnome-calculator";
+        grimblast = "${inputs.hyprland-contrib.packages.${pkgs.system}.grimblast}/bin/grimblast";
+        killmenu = "${pkgs.killmenu}/bin/killmenu";
+        lf = "${pkgs.lf}/bin/lf";
         light = "${pkgs.light}/bin/light";
         mpc = "${pkgs.mpc-cli}/bin/mpc";
+        ncmpcpp = "${pkgs.ncmpcpp}/bin/ncmpcpp";
         networkmanager_dmenu = "${pkgs.networkmanager_dmenu}/bin/networkmanager_dmenu";
         newsboat = "${pkgs.newsboat}/bin/newsboat";
+        pamixer = "${pkgs.pamixer}/bin/pamixer";
         powermenu = "${pkgs.powermenu}/bin/powermenu";
         pulsemixer = "${pkgs.pulsemixer}/bin/pulsemixer";
         taskwarrior-tui = "${pkgs.taskwarrior-tui}/bin/taskwarrior-tui";
         telegram-desktop = "${pkgs.telegram-desktop}/bin/telegram-desktop";
-        abook = "${pkgs.abook}/bin/abook";
-        btm = "${pkgs.bottom}/bin/btm";
-        pamixer = "${pkgs.pamixer}/bin/pamixer";
-        lf = "${pkgs.lf}/bin/lf";
-        ncmpcpp = "${pkgs.ncmpcpp}/bin/ncmpcpp";
-        killmenu = "${pkgs.killmenu}/bin/killmenu";
-        grimblast = "${inputs.hyprland-contrib.packages.${pkgs.system}.grimblast}/bin/grimblast";
+        waybar = "${pkgs.waybar}/bin/waybar";
+        wl-copy = "${pkgs.wl-clipboard}/bin/wl-copy";
         ytfzf = "${pkgs.ytfzf}/bin/ytfzf";
 
       in [
         "SUPER,Return,exec,${TERMINAL}"
         "SUPER,B,exec,${blueman-manager}"
-        "SUPERSHIFT,B,exec,pkill -USR1 waybar"
+        "SUPERSHIFT,B,exec,pkill -USR1 ${waybar}"
         "SUPER,C,exec,${TERMINAL} -e ${calcurse}"
         "SUPERSHIFT,C,exec,${gnome-calculator}"
         "SUPER,d,exec,${fuzzel}"
@@ -175,7 +186,7 @@ in {
         "SUPERSHIFT,S,exec,${bmks}"
         "SUPER,W,exec,${BROWSER}"
         "SUPERSHIFT,W,exec,${networkmanager_dmenu}"
-        ''SUPER,X,exec,${clipman} pick -t CUSTOM -T"${fuzzel} -d -w 100"''
+        "SUPER,X,exec,${cliphist} list | ${fuzzel} -d | cliphist decode | ${wl-copy}"
         "SUPER,F4,exec,${TERMINAL} -e ${btm}"
         "SUPER,exclam,exec,${telegram-desktop}"
         "SUPER,BackSpace,exec,${powermenu}"
