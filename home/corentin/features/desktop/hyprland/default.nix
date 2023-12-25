@@ -71,8 +71,11 @@ in {
         "immediate, class:^(Turbo-Overkill)$"
         "immediate, class:^(teardown.exe)$"
         "immediate, class:^(AlanWake2.exe)$"
-        "immediate, class:^(ProjectCoral-Windows.exe)$"
         "immediate, class:^(Subnautica.exe)$"
+        "immediate, class:^(ProjectCoral-Win64-Shipping.exe)$"
+        "immediate, class:^(ObraDinn.exe)$"
+        "immediate, class:^(Subnautica.exe)$"
+        "immediate, class:^(MonsterHunterWorld.exe)$"
       ];
       input = {
         kb_layout = "fr";
