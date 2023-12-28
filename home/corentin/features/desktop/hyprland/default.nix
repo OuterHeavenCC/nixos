@@ -75,6 +75,8 @@ in {
         "immediate, class:^(ProjectCoral-Win64-Shipping.exe)$"
         "immediate, class:^(ObraDinn.exe)$"
         "immediate, class:^(Subnautica.exe)$"
+        "immediate, class:^(Dead Space.exe)$"
+        "immediate, class:^(SubnauticaZero.exe)$"
         "immediate, class:^(MonsterHunterWorld.exe)$"
       ];
       input = {
