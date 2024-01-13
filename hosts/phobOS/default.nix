@@ -15,7 +15,7 @@
     ../common/optional/fail2ban.nix
     ../common/optional/flatpak.nix
     ../common/optional/android.nix
-    # ../common/optional/gaming.nix
+    ../common/optional/gaming.nix
     ../common/optional/kdeconnect.nix
     ../common/optional/waydroid.nix
     ../common/optional/mimeApps.nix

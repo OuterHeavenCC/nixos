@@ -35,6 +35,7 @@
       height = 1080;
       x = 0;
       primary = true;
+      vrr = 0;
     }
   ];
 

@@ -13,19 +13,8 @@ let
           stdenv.cc.cc.lib
           libkrb5
           keyutils
-          gamescope
       ];
     };
-
-  monitor = lib.head (lib.filter (m: m.primary) config.monitors);
-
-  steam-session = pkgs.makeDesktopItem {
-    name = "Steam Session";
-    desktopName = "Steam Session";
-    exec = "${pkgs.gamescope}/bin/gamescope -W ${toString monitor.width} -H ${toString monitor.height} -O ${monitor.name} -e -- steam -gamepadui";
-    type = "Application";
-  };
-
 in
 {
 
@@ -35,11 +24,9 @@ in
   ];
 
   home.packages = with pkgs; [
-    gamescope
     protontricks
     samrewritten
     steam-run
-    steam-session
     steam-with-pkgs
     steamtinkerlaunch
     xorg.xwininfo

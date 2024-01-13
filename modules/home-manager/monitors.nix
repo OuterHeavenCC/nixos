@@ -44,6 +44,10 @@ in
           type = types.nullOr types.str;
           default = null;
         };
+        vrr = mkOption {
+          type = types.int;
+          default = 0;
+        };
       };
     });
     default = [ ];

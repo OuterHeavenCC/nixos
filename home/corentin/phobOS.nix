@@ -38,6 +38,7 @@
       width = 3840;
       height = 2160;
       x = 0;
+      vrr = 0;        # 2 means only in fullscreen
     }
     {
       name = "DP-1";
@@ -46,12 +47,14 @@
       refreshRate = 240;
       x = 3840;
       primary = true;
+      vrr = 0;
     }
     {
       name = "DP-2";
       width = 3840;
       height = 2160;
       x = 5760;
+      vrr = 0;
     }
   ];
 
