@@ -77,6 +77,7 @@ in {
         "immediate, class:^(Dead Space.exe)$"
         "immediate, class:^(SubnauticaZero.exe)$"
         "immediate, class:^(MonsterHunterWorld.exe)$"
+        "immediate, class:^(SummonersWar.exe)$"
       ];
       input = {
         kb_layout = "fr";

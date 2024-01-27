@@ -68,7 +68,6 @@
     p7zip                         # Basic archiving tool
     pamixer                       # Pulseaudio command line mixer
     pciutils                      # PCI listing
-    poetry                        # Python depenency and packaging tool
     poppler_utils                 # PDF manipulations
     procs                         # Better ps
     pulsemixer                    # Ncurses Pulseaudio/Pipewire control
