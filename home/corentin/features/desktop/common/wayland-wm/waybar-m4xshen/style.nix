@@ -15,7 +15,7 @@ window#waybar {
 #custom-nixos, #workspaces {
   border-radius: 10px;
   background-color: #11111b;
-  color: #${colorscheme.colors.base07};
+  color: #${colorscheme.palette.base07};
   margin-top: 15px;
 	margin-right: 15px;
   padding-top: 1px;
@@ -31,21 +31,21 @@ window#waybar {
 
 #workspaces button {
   background: #11111b;
-  color: #${colorscheme.colors.base05};
+  color: #${colorscheme.palette.base05};
 }
 
 #workspaces button.active {
-  color: #${colorscheme.colors.base07};
+  color: #${colorscheme.palette.base07};
 }
 
 #workspaces button.urgent {
-  color: #${colorscheme.colors.base08};
+  color: #${colorscheme.palette.base08};
 }
 
 #custom-mail, #cpu, #memory, #tray, #pulseaudio, #clock, #clock#date #backlight, #network, #battery{
   border-radius: 10px;
   background-color: #11111b;
-  color: #${colorscheme.colors.base05};
+  color: #${colorscheme.palette.base05};
   margin-top: 15px;
   padding-left: 10px;
   padding-right: 10px;
@@ -68,7 +68,7 @@ window#waybar {
 }
 
 #battery.warning:not(.charging) {
-  background: #${colorscheme.colors.base08};
+  background: #${colorscheme.palette.base08};
   color: white;
   animation-name: blink;
   animation-duration: 0.5s;

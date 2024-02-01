@@ -2,7 +2,7 @@
 
 {
   programs.mangohud = {
-    enable = true;
+    enable = false;
     settings = {
       toggle_hud = "Shift_L+F12";
     };

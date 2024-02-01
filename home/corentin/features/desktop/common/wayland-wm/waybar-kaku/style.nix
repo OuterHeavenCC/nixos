@@ -11,16 +11,16 @@
 
 window#waybar {
     background: rgba(16, 18, 19, 0.8);
-    border-bottom: 1px solid #${colorscheme.colors.base00};
-    color: #${colorscheme.colors.base05}
+    border-bottom: 1px solid #${colorscheme.palette.base00};
+    color: #${colorscheme.palette.base05}
 }
 
 #workspaces {
-	background: #${colorscheme.colors.base00};
+	background: #${colorscheme.palette.base00};
 	margin: 5px 5px;
   padding: 8px 5px;
 	border-radius: 16px;
-  border: solid 0px #${colorscheme.colors.base05};
+  border: solid 0px #${colorscheme.palette.base05};
   font-weight: normal;
   font-style: normal;
 }
@@ -28,14 +28,14 @@ window#waybar {
     padding: 0px 5px;
     margin: 0px 3px;
     border-radius: 16px;
-    color: #${colorscheme.colors.base02};
-    background-color: #${colorscheme.colors.base02};
+    color: #${colorscheme.palette.base02};
+    background-color: #${colorscheme.palette.base02};
     transition: all 0.3s ease-in-out;
 }
 
 #workspaces button.active {
-    color: #${colorscheme.colors.base05};
-    background-color: #${colorscheme.colors.base05};
+    color: #${colorscheme.palette.base05};
+    background-color: #${colorscheme.palette.base05};
     border-radius: 16px;
     min-width: 50px;
     background-size: 400% 400%;
@@ -43,8 +43,8 @@ window#waybar {
 }
 
 #workspaces button:hover {
-	background-color: #${colorscheme.colors.base05};
-	color: #${colorscheme.colors.base05};
+	background-color: #${colorscheme.palette.base05};
+	color: #${colorscheme.palette.base05};
 	border-radius: 16px;
   min-width: 50px;
   background-size: 400% 400%;
@@ -55,23 +55,23 @@ window#waybar {
 	padding: 5px 5px 5px 5px;
 	margin: 5px 5px 5px 5px;
   border-radius: 8px;
-  border: solid 0px #${colorscheme.colors.base0F};
+  border: solid 0px #${colorscheme.palette.base0F};
 }
 
 #custom-date {
-	color: #${colorscheme.colors.base08};
+	color: #${colorscheme.palette.base08};
 }
 
 #tray {
-    background: #${colorscheme.colors.base00};
+    background: #${colorscheme.palette.base00};
     margin: 5px 5px 5px 5px;
     border-radius: 16px;
     padding: 0px 5px;
 }
 
 #clock {
-    color: #${colorscheme.colors.base05};
-    background-color: #${colorscheme.colors.base00};
+    color: #${colorscheme.palette.base05};
+    background-color: #${colorscheme.palette.base00};
     border-radius: 0px 0px 0px 24px;
     padding-left: 13px;
     padding-right: 15px;
@@ -84,22 +84,22 @@ window#waybar {
 
 
 #battery {
-    color: #${colorscheme.colors.base0B};
+    color: #${colorscheme.palette.base0B};
 }
 
 #battery.charging {
-    color: #${colorscheme.colors.base0B};
+    color: #${colorscheme.palette.base0B};
 }
 
 #battery.warning:not(.charging) {
-    background-color: #${colorscheme.colors.base08};
-    color: #${colorscheme.colors.base04};
+    background-color: #${colorscheme.palette.base08};
+    color: #${colorscheme.palette.base04};
     border-radius: 5px 5px 5px 5px;
 }
 
 #backlight {
-    background-color: #${colorscheme.colors.base02};
-    color: #${colorscheme.colors.base08};
+    background-color: #${colorscheme.palette.base02};
+    color: #${colorscheme.palette.base08};
     border-radius: 0px 0px 0px 0px;
     margin: 5px;
     margin-left: 0px;
@@ -108,34 +108,34 @@ window#waybar {
 }
 
 #network {
-    color: #${colorscheme.colors.base05};
+    color: #${colorscheme.palette.base05};
     border-radius: 8px;
     margin-right: 5px;
 }
 
 #pulseaudio {
-    color: #${colorscheme.colors.base05};
+    color: #${colorscheme.palette.base05};
     border-radius: 8px;
     margin-left: 0px;
     font-weight: bold;
 }
 
 #pulseaudio.muted {
-    color: #${colorscheme.colors.base02};
+    color: #${colorscheme.palette.base02};
     border-radius: 8px;
     margin-left: 0px;
     font-weight: bold;
 }
 
 #custom-randwall {
-    color: #${colorscheme.colors.base05};
+    color: #${colorscheme.palette.base05};
     border-radius: 8px;
     margin-right: 0px;
 }
 
 #custom-powermenu {
-    color: #${colorscheme.colors.base07};
-    background-color: #${colorscheme.colors.base00};
+    color: #${colorscheme.palette.base07};
+    background-color: #${colorscheme.palette.base00};
     border-radius: 0px 0px 24px 0px;
     margin: 0px 0px 0px 0px;
     padding: 0 20px 0 13px;
@@ -143,7 +143,7 @@ window#waybar {
 }
 
 #custom-powermenu button:hover {
-    background-color: #${colorscheme.colors.base08};
+    background-color: #${colorscheme.palette.base08};
     color: transparent;
     border-radius: 8px;
     margin-right: -5px;
@@ -151,7 +151,7 @@ window#waybar {
 }
 
 #custom-playerctl {
-	background: #${colorscheme.colors.base00};
+	background: #${colorscheme.palette.base00};
   padding: 0px 5px 0px 10px;
 	border-radius: 16px;
   margin: 5px 7px;
@@ -172,7 +172,7 @@ window#waybar {
 }
 
 #window {
-    background: #${colorscheme.colors.base00};
+    background: #${colorscheme.palette.base00};
     padding-left: 15px;
     padding-right: 15px;
     border-radius: 16px;
@@ -184,13 +184,13 @@ window#waybar {
 
 #custom-wf-recorder {
     padding: 0 20px;
-    color: #${colorscheme.colors.base08};
-    background-color: #${colorscheme.colors.base00};
+    color: #${colorscheme.palette.base08};
+    background-color: #${colorscheme.palette.base00};
 }
 
 #cpu {
-    background-color: #${colorscheme.colors.base00};
-    /*color: #${colorscheme.colors.base0A};*/
+    background-color: #${colorscheme.palette.base00};
+    /*color: #${colorscheme.palette.base0A};*/
     border-radius: 16px;
     margin: 5px;
     margin-left: 5px;
@@ -200,8 +200,8 @@ window#waybar {
 }
 
 #memory {
-    background-color: #${colorscheme.colors.base00};
-    /*color: #${colorscheme.colors.base0C};*/
+    background-color: #${colorscheme.palette.base00};
+    /*color: #${colorscheme.palette.base0C};*/
     border-radius: 16px;
     margin: 5px;
     margin-left: 5px;
@@ -211,8 +211,8 @@ window#waybar {
 }
 
 #disk {
-    background-color: #${colorscheme.colors.base00};
-    /*color: #${colorscheme.colors.base0B};*/
+    background-color: #${colorscheme.palette.base00};
+    /*color: #${colorscheme.palette.base0B};*/
     border-radius: 16px;
     margin: 5px;
     margin-left: 5px;
@@ -222,8 +222,8 @@ window#waybar {
 }
 
 #custom-randwall {
-    background-color: #${colorscheme.colors.base00};
-    /*color: #${colorscheme.colors.base07};*/
+    background-color: #${colorscheme.palette.base00};
+    /*color: #${colorscheme.palette.base07};*/
     border-radius: 16px;
     margin: 5px;
     margin-left: 5px;
