@@ -1,5 +1,5 @@
 { pkgs, ... }:
 
 {
-  networking.firewall.allowedTCPPortRanges = [ 8080 ];
+  networking.firewall.allowedTCPPorts = [ 8080 ];
 }

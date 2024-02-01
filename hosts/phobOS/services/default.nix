@@ -3,6 +3,6 @@
     ./minecraft
     ./jellyfin.nix
     ./summonerswar.nix
-    ./ai.nix
+    # ./ai.nix
   ];
 }

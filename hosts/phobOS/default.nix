@@ -7,6 +7,7 @@
   imports = [
 
     inputs.hardware.nixosModules.common-cpu-amd
+    inputs.hardware.nixosModules.common-gpu-nvidia
 
     ../common/global
     ../common/users/corentin
