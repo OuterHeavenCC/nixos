@@ -226,7 +226,7 @@ in {
         position = "${toString m.x}x${toString m.y}";
         vrr = "${toString m.vrr}";
       in
-        "${m.name},${if m.enabled then "${resolution},${position},1,vrr,${vrr},bitdepth,10" else "disable"}"
+        "${m.name},${if m.enabled then "${resolution},${position},1,vrr,${vrr}" else "disable"}"
       ) (config.monitors);
 
       workspace = map (m:
