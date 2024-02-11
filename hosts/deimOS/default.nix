@@ -20,6 +20,7 @@
     ../common/optional/kdeconnect.nix
     ../common/optional/printer.nix
     ../common/optional/fail2ban.nix
+    ../common/optional/waydroid.nix
 
     ./hardware-configuration.nix
   ];
@@ -49,6 +50,12 @@
   };
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
+
+      networking.firewall = {
+    allowedTCPPorts = [ 8888 ];
+    allowedUDPPorts = [ 8888 ];
+  };
+
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "23.11";

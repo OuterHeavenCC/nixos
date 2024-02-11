@@ -62,7 +62,7 @@ in {
         "tile, title:^(Battle.net)$"
         "opaque, class:^(mpv)$"
         "float, title:^(Calculatrice)$" # Calculatrice flottante
-        
+        "float, title:^(Waydroid)$"
       ];
 
       windowrulev2 = [
