@@ -20,27 +20,27 @@
   ];
 
   home.packages = with pkgs; [
+    appimage-run                  # Run appimage format
     atool                         # Archive management
     bandwhich                     # Networking monitoring
     bluez                         # Bluetooth management
     bottom                        # System monitor
     calcurse                      # Calendar
+    catdoc                        # .doc preview in terminal
+    catdocx                       # .docx preview in terminal
     chafa                         # Terminal graphics
     cliphist                      # Clipboard management
     dconf                         # Libadwaita black theme
     delta                         # Better diff
     direnv                        # Better dev environment management
-    catdoc                        # .doc preview in terminal
-    catdocx                       # .docx preview in terminal
-    libcdio                       # .iso preview in terminal
     distrobox
     dog                           # Better dig
     du-dust                       # Better du
     duf                           # Better df
     elinks                        # Terminal browser
     eva                           # Calculator
-    eza                           # Better ls
     exiftool                      # Metadata
+    eza                           # Better ls
     fd                            # Better find
     ffmpeg                        # Media converter and more
     ffmpegthumbnailer             # Terminal previewer
@@ -52,11 +52,12 @@
     gnumake                       # Basic programming stuff
     hexyl                         # Hex Viewer
     hyperfine                     # Better time command
-    imagemagick                   # Pictures modifications
     iftop                         # Terminal ncurses network monitoring
+    imagemagick                   # Pictures modifications
     jq                            # Json processor
     killall                       # Better pkill -15
     lazygit                       # Git made easy
+    libcdio                       # .iso preview in terminal
     mcrcon                        # Minecraft server management
     mediainfo                     # Media metadata
     ncdu                          # Ncurses disk usage
@@ -76,6 +77,7 @@
     ripgrep                       # Better grep
     scanmem                       # Runtime memory edit
     sd                            # Better sed
+    silver-searcher               # A code-searching tool
     skim                          # fzf but faster
     sqlite                        # Basic programming stuff
     tealdeer                      # TLDR Man

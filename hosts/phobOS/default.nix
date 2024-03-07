@@ -15,7 +15,8 @@
     ../common/optional/fail2ban.nix
     ../common/optional/flatpak.nix
     ../common/optional/android.nix
-    ../common/optional/gaming.nix
+    ../common/optional/printer.nix
+    # ../common/optional/gaming.nix
     ../common/optional/kdeconnect.nix
     ../common/optional/waydroid.nix
     ../common/optional/mimeApps.nix
@@ -70,6 +71,7 @@
   };
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.supportedFilesystems = [ "ntfs" ];
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "23.11";

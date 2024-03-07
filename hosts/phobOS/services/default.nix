@@ -2,7 +2,7 @@
   imports = [
     ./minecraft
     ./jellyfin.nix
-    ./summonerswar.nix
+    ./summonerswar
     # ./ai.nix
   ];
 }

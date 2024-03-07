@@ -40,7 +40,7 @@ in {
       env = [
         "GDK_BACKEND,wayland,x11"
         "QT_QPA_PLATFORM,wayland;xcb"
-        "SDL_VIDEODRIVER,wayland"
+        # "SDL_VIDEODRIVER,wayland"
         "CLUTTER_BACKEND,wayland"
         "XDG_CURRENT_DESKTOP,Hyprland"
         "XDG_SESSION_TYPE,wayland"
@@ -58,7 +58,6 @@ in {
       windowrule = [
         "float, title:^(sfml)$"
         "center, title:^(sfml)$"
-        "nofullscreenrequest, title:^(Lecteur multimédia)$" # Fix Telegram
         "tile, title:^(Battle.net)$"
         "opaque, class:^(mpv)$"
         "float, title:^(Calculatrice)$" # Calculatrice flottante

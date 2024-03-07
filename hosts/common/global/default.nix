@@ -3,6 +3,7 @@
 {
   imports = [
     inputs.home-manager.nixosModules.home-manager
+    ./autoupgrade.nix
     ./fonts.nix
     ./geoclue2.nix
     ./git.nix

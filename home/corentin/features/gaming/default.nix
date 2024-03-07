@@ -20,7 +20,6 @@ in
 
   imports = [
     ./mangohud.nix
-    ./yuzu.nix
   ];
 
   home.packages = with pkgs; [
@@ -31,5 +30,6 @@ in
     steamtinkerlaunch
     xorg.xwininfo
     xdotool
+    gamescope
   ];
 }
