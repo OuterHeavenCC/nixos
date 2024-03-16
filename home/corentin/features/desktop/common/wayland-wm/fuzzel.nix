@@ -17,7 +17,7 @@ in
         layer = "overlay";
       };
 
-      palette = {
+      colors = {
         background = "${palette.base01}fa";
         text = "${palette.base05}fa";
         match = "${palette.base04}fa";
