@@ -44,7 +44,7 @@
 
   services.xserver = {
     enable = true;
-    layout = "fr";
+    xkb.layout = "fr";
     videoDrivers = ["nvidia"];
     displayManager.lightdm = {
       enable = false;

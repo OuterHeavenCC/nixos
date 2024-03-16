@@ -20,7 +20,7 @@
     bottles                  # Better lutris
     calibre                  # Ebook manager
     discord
-    gimp-with-plugins
+    gimp
     gnome.gnome-boxes        # QEMU Made easy
     gnome.gnome-calculator   # When eva isn't enough
     gnome.nautilus           # When lf isn't enough

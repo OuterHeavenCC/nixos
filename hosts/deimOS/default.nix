@@ -37,7 +37,7 @@
 
   services.xserver = {
     enable = true;
-    layout = "fr";
+    xkb.layout = "fr";
     displayManager.lightdm.enable = false;
     libinput.touchpad = {
       middleEmulation = true;

@@ -1,6 +1,6 @@
 { pkgs, ... }:
 {
-  home.packages = with pkgs; [ pinentry-gnome gcr ];
+  home.packages = with pkgs; [ gcr ];
   
   xdg.configFile."pam-gnupg".text = "88921B907B0F39E17E3F734BF2D57789304EBD10";
 
@@ -8,11 +8,13 @@
     enable = true;
     defaultCacheTtl = 86400;
     maxCacheTtl = 86400;
-    pinentryFlavor = "gnome3";
     extraConfig = ''
       allow-preset-passphrase
   '';
   };
+
+  services.gpg-agent.pinentryPackage = pkgs.pinentry-gnome3;
+
 
   programs =
     let

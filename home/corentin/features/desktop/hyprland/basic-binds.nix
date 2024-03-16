@@ -58,12 +58,12 @@
     ] ++
     # Change workspace
     (map (n: 
-      "SUPER,${n},split-workspace,${azertyMapping.${n}}"
+      "SUPER,${n},workspace,${azertyMapping.${n}}"
     ) workspaces) ++
 
     # Move window to workspace
     (map (n: 
-      "SUPERSHIFT,${n},split-movetoworkspacesilent,${azertyMapping.${n}}"
+      "SUPERSHIFT,${n},movetoworkspacesilent,${azertyMapping.${n}}"
     ) workspaces);
   };
 }

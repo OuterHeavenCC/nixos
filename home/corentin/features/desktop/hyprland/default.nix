@@ -233,7 +233,7 @@ in {
       ) (lib.filter (m: m.enabled && m.workspace != null) config.monitors);
       };
 
-      plugins = [ pkgs.inputs.split-monitor-workspaces.split-monitor-workspaces ];
+      # plugins = [ pkgs.inputs.split-monitor-workspaces.split-monitor-workspaces ];
 
       extraConfig = ''
         # Passthrough mode (e.g. for VNC, Gaming)
