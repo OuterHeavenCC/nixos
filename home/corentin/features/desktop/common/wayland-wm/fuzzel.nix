@@ -1,7 +1,7 @@
 { config, ... }:
 
 let 
-  inherit (config.colorscheme) colors;
+  inherit (config.colorscheme) palette;
 in
 {
   programs.fuzzel = {
@@ -17,13 +17,13 @@ in
         layer = "overlay";
       };
 
-      colors = {
-        background = "${colors.base01}fa";
-        text = "${colors.base05}fa";
-        match = "${colors.base04}fa";
-        selection = "${colors.base07}fa";
-        selection-match = "${colors.base04}fa";
-        border = "${colors.base07}fa";
+      palette = {
+        background = "${palette.base01}fa";
+        text = "${palette.base05}fa";
+        match = "${palette.base04}fa";
+        selection = "${palette.base07}fa";
+        selection-match = "${palette.base04}fa";
+        border = "${palette.base07}fa";
       };
 
       border = {

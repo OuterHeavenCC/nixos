@@ -1,7 +1,6 @@
 { pkgs, lib, config, ... }:
 
 let
-  inherit (config.colorscheme) colors;
 
   swaylock = "${config.programs.swaylock.package}/bin/swaylock";
   actionLock = "${swaylock} --daemonize -i ${config.xdg.dataHome}/bg";

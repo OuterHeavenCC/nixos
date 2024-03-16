@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 let 
-  inherit (config.colorscheme) colors;
+  inherit (config.colorscheme) palette;
   pulsemixer = "${pkgs.pulsemixer}/bin/pulsemixer";
   networkManager = "${pkgs.networkmanager_dmenu}/bin/networkmanager_dmenu";
   jq = "${pkgs.jq}/bin/jq";
@@ -68,9 +68,9 @@ in
           };
             format = "{icon} {}";
             format-icons = {
-              "read" = "<span color='#${colors.base07}'>󰇯</span>";
-              "unread" = "<span color='#${colors.base07}'>󰇮</span>";
-              "syncing" = "<span color='#${colors.base07}'>󰁪</span>";
+              "read" = "<span color='#${palette.base07}'>󰇯</span>";
+              "unread" = "<span color='#${palette.base07}'>󰇮</span>";
+              "syncing" = "<span color='#${palette.base07}'>󰁪</span>";
             };
             on-click = mail;
           };
@@ -87,21 +87,21 @@ in
           };
 
           "clock" = {
-            format = "<span color='#${colors.base07}'></span> {:%H:%M}";
+            format = "<span color='#${palette.base07}'></span> {:%H:%M}";
             on-click = calendar;
           };
 
           backlight = {
             device = "radeon_b10";
-            format = "<span color='#${colors.base07}'>{icon}</span> {percent}%";
+            format = "<span color='#${palette.base07}'>{icon}</span> {percent}%";
             format-icons = [ "" "" "" "" "" "" "" "" "" ];
           };
 
           network = {
             format = "{ifname}";
-            format-wifi = "<span color='#${colors.base07}'></span> {essid}";
-            format-ethernet = "<span color='#${colors.base07}'>󰌗</span>";
-            format-disconnected = "<span color='#${colors.base07}'>󰖪</span> Non connecté";
+            format-wifi = "<span color='#${palette.base07}'></span> {essid}";
+            format-ethernet = "<span color='#${palette.base07}'>󰌗</span>";
+            format-disconnected = "<span color='#${palette.base07}'>󰖪</span> Non connecté";
             on-click = networkManager;
           };
 
@@ -112,15 +112,15 @@ in
 
 
           battery = {
-            format = "<span color='#${colors.base07}'>{icon}</span> {capacity}%";
+            format = "<span color='#${palette.base07}'>{icon}</span> {capacity}%";
             format-icons = [ "󰁺" "󰁻" "󰁼" "󰁽" "󰁾" "󰁿" "󰂀" "󰂁" "󰂂" "󰁹" ];
-            format-charging = "<span color='#${colors.base07}'>󰂄</span> {capacity}%";
+            format-charging = "<span color='#${palette.base07}'>󰂄</span> {capacity}%";
           };
 
           pulseaudio = {
             scroll-step = 2;
-            format = "<span color='#${colors.base07}'>{icon}</span>{volume}%";
-            format-muted = "<span color='#${colors.base07}'></span> ";
+            format = "<span color='#${palette.base07}'>{icon}</span>{volume}%";
+            format-muted = "<span color='#${palette.base07}'></span> ";
             format-icons.default = [ " " ];
             on-click = audioMonitor; };
   };

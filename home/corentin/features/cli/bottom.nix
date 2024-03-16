@@ -1,7 +1,7 @@
 { config, ... }:
 
 let 
-  inherit (config.colorscheme) colors;
+  inherit (config.colorscheme) palette;
 in
 {
   programs.bottom = {
@@ -10,28 +10,28 @@ in
       flags = {
         network_use_bytes = true;
       };
-      colors = {
-        table_header_color = "#${colors.base06}";
-        all_cpu_color = "#${colors.base06}";
-        avg_cpu_color = "#${colors.base0F}";
-        cpu_core_colors = [ "#${colors.base08}" "#${colors.base09}" "#${colors.base0A}" "#${colors.base0B}" "#${colors.base0C}" "#${colors.base0E}" ];
-        ram_color = "#${colors.base0B}";
-        swap_color = "#${colors.base09}";
-        rx_color = "#${colors.base0B}";
-        tx_color = "#${colors.base08}";
-        widget_title_color = "#${colors.base06}";
-        border_color = "#${colors.base04}";
-        highlighted_border_color = "#${colors.base0F}";
-        text_color = "#${colors.base05}";
-        graph_color = "#${colors.base04}";
-        cursor_color = "#${colors.base0F}";
-        selected_text_color = "#${colors.base01}";
-        selected_bg_color = "#${colors.base0E}";
-        high_battery_color = "#${colors.base0B}";
-        medium_battery_color = "#${colors.base0A}";
-        low_battery_color = "#${colors.base08}";
-        gpu_core_colors = [ "#${colors.base0C}" "#${colors.base0E}" "#${colors.base08}" "#${colors.base09}" "#${colors.base0A}" "#${colors.base0B}" ];
-        arc_color = "#${colors.base0D}";
+      palette = {
+        table_header_color = "#${palette.base06}";
+        all_cpu_color = "#${palette.base06}";
+        avg_cpu_color = "#${palette.base0F}";
+        cpu_core_palette = [ "#${palette.base08}" "#${palette.base09}" "#${palette.base0A}" "#${palette.base0B}" "#${palette.base0C}" "#${palette.base0E}" ];
+        ram_color = "#${palette.base0B}";
+        swap_color = "#${palette.base09}";
+        rx_color = "#${palette.base0B}";
+        tx_color = "#${palette.base08}";
+        widget_title_color = "#${palette.base06}";
+        border_color = "#${palette.base04}";
+        highlighted_border_color = "#${palette.base0F}";
+        text_color = "#${palette.base05}";
+        graph_color = "#${palette.base04}";
+        cursor_color = "#${palette.base0F}";
+        selected_text_color = "#${palette.base01}";
+        selected_bg_color = "#${palette.base0E}";
+        high_battery_color = "#${palette.base0B}";
+        medium_battery_color = "#${palette.base0A}";
+        low_battery_color = "#${palette.base08}";
+        gpu_core_palette = [ "#${palette.base0C}" "#${palette.base0E}" "#${palette.base08}" "#${palette.base09}" "#${palette.base0A}" "#${palette.base0B}" ];
+        arc_color = "#${palette.base0D}";
       };
     };
   };

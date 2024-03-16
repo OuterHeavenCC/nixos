@@ -1,7 +1,7 @@
 { lib, config, pkgs, inputs, ... }:
 let
   inherit (config.home.sessionVariables) BROWSER EDITOR TERMINAL MAILCLIENT;
-  inherit (config.colorscheme) colors;
+  inherit (config.colorscheme) palette;
   cfg = config.xdg;
 in {
 
@@ -135,8 +135,8 @@ in {
         gaps_in = "5";
         gaps_out = "20";
         border_size = "2";
-        "col.active_border" = "0xFF${colors.base07}";
-        "col.inactive_border" = "0x66${colors.base02}";
+        "col.active_border" = "0xFF${palette.base07}";
+        "col.inactive_border" = "0x66${palette.base02}";
         layout = "master";
         allow_tearing = true;
       };

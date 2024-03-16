@@ -1,6 +1,6 @@
 { pkgs, config, ... }:
 let
-  inherit (config.colorscheme) colors;
+  inherit (config.colorscheme) palette;
 in
 {
   services.dunst = {
@@ -16,12 +16,12 @@ in
         offset = "30x30";
         follow = "keyboard";
         frame_width = 2;
-        frame_color = "#${colors.base07}";
+        frame_color = "#${palette.base07}";
         separator_color = "frame"; 
         font = "Fira Code Nerd Font 10";
         corner_radius = 7;
-        background = "#${colors.base00}";
-        foreground = "#${colors.base05}";
+        background = "#${palette.base00}";
+        foreground = "#${palette.base05}";
       };
     };
   };

@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 let 
-  inherit (config.colorscheme) colors;
+  inherit (config.colorscheme) palette;
   pulsemixer = "${pkgs.pulsemixer}/bin/pulsemixer";
   networkManager = "${pkgs.networkmanager_dmenu}/bin/networkmanager_dmenu";
   jq = "${pkgs.jq}/bin/jq";
@@ -80,8 +80,8 @@ in
       on-click= "${playerctl} play-pause";
       on-click-right= "${playerctl} next";
       format-icons= {
-        Playing= "<span foreground='#${colors.base07}'>󰐌 </span>";
-        Paused= "<span foreground='#${colors.base05}'>󰏥 </span>";
+        Playing= "<span foreground='#${palette.base07}'>󰐌 </span>";
+        Paused= "<span foreground='#${palette.base05}'>󰏥 </span>";
       };
     };
 
@@ -94,8 +94,8 @@ in
       on-click= "${playerctl} play-pause";
       on-click-right= "${playerctl} next";
       format-icons= {
-        Playing= "<span foreground='#${colors.base07}'>󰐌 </span>";
-        Paused= "<span foreground='#${colors.base05}'>󰏥 </span>";
+        Playing= "<span foreground='#${palette.base07}'>󰐌 </span>";
+        Paused= "<span foreground='#${palette.base05}'>󰏥 </span>";
       };
     };
 
