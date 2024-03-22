@@ -53,7 +53,6 @@ in {
         "NIXOS_OZONE_WL,1"
         "MOZ_ENABLE_WAYLAND,1"
         "MOZ_WEBRENDER,1"
-        "WLR_DRM_NO_ATOMIC,1" # Allow Tearing
       ];
       windowrule = [
         "float, title:^(sfml)$"
@@ -65,18 +64,18 @@ in {
       ];
 
       windowrulev2 = [
-        "immediate, class:^(GameThread)$"
-        "immediate, class:^(gamescope-wl)$"
-        "immediate, class:^(Turbo-Overkill)$"
-        "immediate, class:^(teardown.exe)$"
-        "immediate, class:^(AlanWake2.exe)$"
-        "immediate, class:^(Subnautica.exe)$"
-        "immediate, class:^(ProjectCoral-Win64-Shipping.exe)$"
-        "immediate, class:^(ObraDinn.exe)$"
-        "immediate, class:^(Dead Space.exe)$"
-        "immediate, class:^(SubnauticaZero.exe)$"
-        "immediate, class:^(MonsterHunterWorld.exe)$"
-        "immediate, class:^(SummonersWar.exe)$"
+        # "immediate, class:^(GameThread)$"
+        # "immediate, class:^(gamescope-wl)$"
+        # "immediate, class:^(Turbo-Overkill)$"
+        # "immediate, class:^(teardown.exe)$"
+        # "immediate, class:^(AlanWake2.exe)$"
+        # "immediate, class:^(Subnautica.exe)$"
+        # "immediate, class:^(ProjectCoral-Win64-Shipping.exe)$"
+        # "immediate, class:^(ObraDinn.exe)$"
+        # "immediate, class:^(Dead Space.exe)$"
+        # "immediate, class:^(SubnauticaZero.exe)$"
+        # "immediate, class:^(MonsterHunterWorld.exe)$"
+        # "immediate, class:^(SummonersWar.exe)$"
       ];
       input = {
         kb_layout = "fr";
@@ -138,7 +137,7 @@ in {
         "col.active_border" = "0xFF${palette.base07}";
         "col.inactive_border" = "0x66${palette.base02}";
         layout = "master";
-        allow_tearing = true;
+        # allow_tearing = true;
       };
       master = { new_on_top = true; };
       bind = let

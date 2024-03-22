@@ -26,7 +26,7 @@
 
     nginxStable = prev.nginxStable.override { oppenssl = prev.pkgs.libressl; };
 
-    # inherit (inputs.nixos-master.legacyPackages.${final.system}) jellyfin;
+    inherit (inputs.nixos-master.legacyPackages.${final.system}) waybar;
 
   };
 

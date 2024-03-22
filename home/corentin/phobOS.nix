@@ -34,7 +34,7 @@
 
   monitors = [
     {
-      name = "DP-3";
+      name = "DP-2";
       width = 3840;
       height = 2160;
       x = 0;
@@ -47,10 +47,10 @@
       refreshRate = 240;
       x = 3840;
       primary = true;
-      vrr = 0;
+      vrr = 2;
     }
     {
-      name = "DP-2";
+      name = "DP-3";
       width = 3840;
       height = 2160;
       x = 5760;
