@@ -51,9 +51,9 @@
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-      networking.firewall = {
-    allowedTCPPorts = [ 8888 ];
-    allowedUDPPorts = [ 8888 ];
+  networking.firewall = {
+    allowedTCPPorts = [ 8888 27040 ];
+    allowedUDPPorts = [ 8888 27040 ];
   };
 
 

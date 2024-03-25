@@ -70,11 +70,17 @@
     };
   };
 
+
+
   boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.supportedFilesystems = [ "ntfs" ];
+
+  networking.firewall = {
+    allowedTCPPorts = [ 8080 8888 27040 ];
+    allowedUDPPorts = [ 8080 8888 27040 ];
+  };
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "23.11";
 
-  networking.firewall.allowedTCPPorts = [ 8080 ];
 }
