@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./ags
     ./dunst.nix
     ./foot.nix
     ./fuzzel.nix
@@ -9,7 +10,7 @@
     ./rofi
     ./swayidle.nix
     ./swaylock.nix
-    ./waybar-m4xshen
+    # ./waybar-m4xshen
   ];
 
     home.packages = with pkgs; [

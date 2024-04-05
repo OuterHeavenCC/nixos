@@ -42,6 +42,7 @@
     nginxStable = prev.nginxStable.override { oppenssl = prev.pkgs.libressl; };
 
     inherit (inputs.nixos-master.legacyPackages.${final.system}) waybar;
+    inherit (inputs.nixos-stable.legacyPackages.${final.system}) rpcs3;
 
     
 

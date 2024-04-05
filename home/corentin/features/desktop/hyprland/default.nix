@@ -21,7 +21,7 @@ in {
       exec-once = let 
         wbg = "${pkgs.wbg}/bin/wbg";
         foot = "${pkgs.foot}/bin/foot";
-        waybar = "${pkgs.waybar}/bin/waybar";
+        # waybar = "${pkgs.waybar}/bin/waybar";
         swayidle = "${pkgs.swayidle}/bin/swayidle";
         xrandr = "${pkgs.xorg.xrandr}/bin/xrandr";
         wl-paste = "${pkgs.wl-clipboard}/bin/wl-paste";
@@ -30,7 +30,7 @@ in {
       in [
         "${wbg} ${config.wallpaper}"
         "${foot} --server"
-        "${waybar}"
+        # "${waybar}"
         "${swayidle} -w"
         "${wl-paste} --type text --watch ${cliphist} store" 
         "${wl-paste} --type image --watch ${cliphist} store"
@@ -64,23 +64,23 @@ in {
       ];
 
       windowrulev2 = [
-        # "immediate, class:^(GameThread)$"
-        # "immediate, class:^(gamescope-wl)$"
-        # "immediate, class:^(Turbo-Overkill)$"
-        # "immediate, class:^(teardown.exe)$"
-        # "immediate, class:^(AlanWake2.exe)$"
-        # "immediate, class:^(Subnautica.exe)$"
-        # "immediate, class:^(ProjectCoral-Win64-Shipping.exe)$"
-        # "immediate, class:^(ObraDinn.exe)$"
-        # "immediate, class:^(Dead Space.exe)$"
-        # "immediate, class:^(SubnauticaZero.exe)$"
-        # "immediate, class:^(MonsterHunterWorld.exe)$"
-        # "immediate, class:^(SummonersWar.exe)$"
+        "immediate, class:^(GameThread)$"
+        "immediate, class:^(gamescope-wl)$"
+        "immediate, class:^(Turbo-Overkill)$"
+        "immediate, class:^(teardown.exe)$"
+        "immediate, class:^(AlanWake2.exe)$"
+        "immediate, class:^(Subnautica.exe)$"
+        "immediate, class:^(ProjectCoral-Win64-Shipping.exe)$"
+        "immediate, class:^(ObraDinn.exe)$"
+        "immediate, class:^(Dead Space.exe)$"
+        "immediate, class:^(SubnauticaZero.exe)$"
+        "immediate, class:^(MonsterHunterWorld.exe)$"
+        "immediate, class:^(SummonersWar.exe)$"
+        "immediate, class:^(mgsvtpp.exe)$"
       ];
       input = {
-        kb_layout = "fr";
-        kb_model = "pc105";
-        kb_options = "caps:super,terminate:ctrl_alt_bksp";
+        kb_layout = "fr,us";
+        kb_options = "caps:super,terminate:ctrl_alt_bksp,grp:alt_shift_toggle;";
         follow_mouse = "1";
         repeat_rate = "50";
         repeat_delay = "300";
@@ -137,7 +137,7 @@ in {
         "col.active_border" = "0xFF${palette.base07}";
         "col.inactive_border" = "0x66${palette.base02}";
         layout = "master";
-        # allow_tearing = true;
+        allow_tearing = true;
       };
       master = { new_on_top = true; };
       bind = let

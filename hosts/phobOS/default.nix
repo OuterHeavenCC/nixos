@@ -16,7 +16,7 @@
     ../common/optional/flatpak.nix
     ../common/optional/android.nix
     ../common/optional/printer.nix
-    # ../common/optional/gaming.nix
+    ../common/optional/gaming.nix
     ../common/optional/kdeconnect.nix
     ../common/optional/waydroid.nix
     ../common/optional/mimeApps.nix

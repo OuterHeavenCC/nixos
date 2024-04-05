@@ -16,5 +16,7 @@
     xdotool
     protontricks
     gamescope
+    r2modman
+    rpcs3
   ];
 }
