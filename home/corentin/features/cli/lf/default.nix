@@ -78,15 +78,16 @@ in {
         ''${{
           case $(file --mime-type $f -bL) in
             image/vnd.djvu|application/pdf|application/octet-stream) setsid -f zathura $fx >/dev/null 2>&1 ;;
-          text/*|application/json|x-tex) $EDITOR $fx;;
-                text/x-tex) $EDITOR $f;;
-                image/x-xcf) setsid -f gimp $f >/dev/null 2>&1 ;;
-                image/*) setsid -f imv-dir $f 2>/dev/null;;
-                audio/*) mpv --audio-display=no $f ;;
-                video/*) setsid -f mpv $f -quiet >/dev/null 2>&1 ;;
-                application/vnd.oasis.opendocument|application/vnd.openxmlformats-officedocument.wordprocessingml.document|application/vnd.oasis.opendocument.spreadsheet) setsid -f libreoffice $f ;;
-                application/vnd.openxmlformats-officedocument.wordprocessingml.document) setsid -f libreoffice $f ;;
-                application/pdf|application/vnd*|application/epub*|application/x-cbz) setsid -f zathura $fx >/dev/null 2>&1 ;;
+            text/*|application/json|x-tex) $EDITOR $fx;;
+            text/x-tex) $EDITOR $f;;
+            text/javascript) $EDITOR $f;;
+            image/x-xcf) setsid -f gimp $f >/dev/null 2>&1 ;;
+            image/*) setsid -f imv-dir $f 2>/dev/null;;
+            audio/*) mpv --audio-display=no $f ;;
+            video/*) setsid -f mpv $f -quiet >/dev/null 2>&1 ;;
+            application/vnd.oasis.opendocument|application/vnd.openxmlformats-officedocument.wordprocessingml.document|application/vnd.oasis.opendocument.spreadsheet) setsid -f libreoffice $f ;;
+            application/vnd.openxmlformats-officedocument.wordprocessingml.document) setsid -f libreoffice $f ;;
+            application/pdf|application/vnd*|application/epub*|application/x-cbz) setsid -f zathura $fx >/dev/null 2>&1 ;;
                *) for f in $fx; do setsid -f $OPENER $f >/dev/null 2>&1; done;;
                esac
                }}

@@ -19,6 +19,7 @@ in {
     package = pkgs.inputs.hyprland.hyprland;
     settings = {
       exec-once = let 
+        pointer = config.home.pointerCursor;
         wbg = "${pkgs.wbg}/bin/wbg";
         foot = "${pkgs.foot}/bin/foot";
         # waybar = "${pkgs.waybar}/bin/waybar";
@@ -27,7 +28,9 @@ in {
         wl-paste = "${pkgs.wl-clipboard}/bin/wl-paste";
         gammastep-indicator = "${pkgs.gammastep}/bin/gammastep-indicator";
         cliphist = "${pkgs.cliphist}/bin/cliphist";
+        hyprctl = "${pkgs.inputs.hyprland.hyprland}/bin/hyprcursor";
       in [
+        "${hyprctl} setcursor ${pointer.name} ${toString pointer.size}"
         "${wbg} ${config.wallpaper}"
         "${foot} --server"
         # "${waybar}"
@@ -65,7 +68,7 @@ in {
 
       windowrulev2 = [
         "immediate, class:^(GameThread)$"
-        "immediate, class:^(gamescope-wl)$"
+        # "immediate, class:^(gamescope-wl)$"
         "immediate, class:^(Turbo-Overkill)$"
         "immediate, class:^(teardown.exe)$"
         "immediate, class:^(AlanWake2.exe)$"

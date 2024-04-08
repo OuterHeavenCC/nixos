@@ -11,20 +11,20 @@
     ../common/global
     ../common/users/corentin
 
+    ../common/optional/android.nix
     ../common/optional/bluetooth.nix
     ../common/optional/fail2ban.nix
     ../common/optional/flatpak.nix
-    ../common/optional/android.nix
-    ../common/optional/printer.nix
     ../common/optional/gaming.nix
     ../common/optional/kdeconnect.nix
-    ../common/optional/waydroid.nix
     ../common/optional/mimeApps.nix
     ../common/optional/mullvad.nix
     ../common/optional/pipewire.nix
+    ../common/optional/printer.nix
     ../common/optional/ratbag.nix
     ../common/optional/sshfs.nix
     ../common/optional/systemd-boot.nix
+    ../common/optional/waydroid.nix
     ../common/optional/xdg.nix
     ./services
 
