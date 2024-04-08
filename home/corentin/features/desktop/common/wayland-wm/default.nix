@@ -14,6 +14,7 @@
   ];
 
     home.packages = with pkgs; [
+      gamescope
       grim                        # Grab images from a Wayland compositor
       hyprpicker                  # Color picking tool for wlroots
       rofi-wayland                # Rofi Wayland fork
