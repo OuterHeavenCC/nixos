@@ -21,6 +21,7 @@
     ../common/optional/printer.nix
     ../common/optional/fail2ban.nix
     ../common/optional/waydroid.nix
+    ../common/optional/tlp.nix
 
     ./hardware-configuration.nix
   ];
