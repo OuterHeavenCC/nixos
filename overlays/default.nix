@@ -24,22 +24,13 @@
       visualizerSupport = true;
     };
 
-    steam = prev.steam.override {
-      extraPkgs = pkgs: with pkgs; [
-        xorg.libXcursor
-        xorg.libXi
-        xorg.libXinerama
-        xorg.libXScrnSaver
-        libpng
-        libpulseaudio
-        libvorbis
-        stdenv.cc.cc.lib
-        libkrb5
-        keyutils
-      ];
-    };
-
     nginxStable = prev.nginxStable.override { oppenssl = prev.pkgs.libressl; };
+
+    nh = prev.nh.overrideAttrs (previousAttrs: {
+          patches = previousAttrs.patches ++ [
+            ./patches/nh/patch.txt # doas support in nh
+          ];
+    });
 
     inherit (inputs.nixos-master.legacyPackages.${final.system}) waybar;
     inherit (inputs.nixos-stable.legacyPackages.${final.system}) rpcs3;

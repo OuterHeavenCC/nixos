@@ -13,6 +13,7 @@
     ./ledger.nix
     ./lf
     ./newsboat.nix
+    ./nh.nix
     ./nix-index.nix
     ./taskwarrior.nix
     ./ytfzf.nix
@@ -81,18 +82,19 @@
     skim                          # fzf but faster
     sqlite                        # Basic programming stuff
     tealdeer                      # TLDR Man
+    tgpt                          # ChatGPT in terminal without API
     tokei                         # Count lines of codes
     transmission                  # Torrents
     unrar                         # Basic archiving tool
     unzip                         # Basic archiving tool
     vimv-rs                       # Batch rename
     wget                          # Download from CLI util
+    wtype
     xh                            # Better curl
     xmlstarlet                    # Preview xml in terminal
     xxd                           # Hex Viewer
     ydotool                       # Generic Linux command-line automation tool
     yt-dlp                        # Better youtube-dl
-    wtype
     zoxide                        # Better cd
   ];
 

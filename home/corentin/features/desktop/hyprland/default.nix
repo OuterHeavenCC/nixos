@@ -83,7 +83,7 @@ in {
       ];
       input = {
         kb_layout = "fr,us";
-        kb_options = "caps:super,terminate:ctrl_alt_bksp,grp:alt_shift_toggle;";
+        kb_options = "caps:super,terminate:ctrl_alt_bksp,grp;";
         follow_mouse = "1";
         repeat_rate = "50";
         repeat_delay = "300";
@@ -154,6 +154,7 @@ in {
         fuzzel = "${pkgs.fuzzel}/bin/fuzzel";
         gnome-calculator = "${pkgs.gnome.gnome-calculator}/bin/gnome-calculator";
         grimblast = "${inputs.hyprland-contrib.packages.${pkgs.system}.grimblast}/bin/grimblast";
+        hyprctl = "${pkgs.hyprland}/bin/hyprctl";
         killmenu = "${pkgs.killmenu}/bin/killmenu";
         lf = "${pkgs.lf}/bin/lf";
         light = "${pkgs.light}/bin/light";
@@ -212,6 +213,9 @@ in {
 
         ",XF86MonBrightnessUp,exec,${light} -A 5"
         ",XF86MonBrightnessDown,exec,${light} -U 5"
+
+        # Fix for switching layout with keyd
+        "SUPERSHIFT,X,exec,${hyprctl} switchxkblayout keyd-virtual-keyboard next"
 
       ];
 

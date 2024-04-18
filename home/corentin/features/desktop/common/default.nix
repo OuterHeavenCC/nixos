@@ -28,8 +28,6 @@
     krita
     lynx                     # Terminal browser
     obs-studio               # Screen capturing tool
-    piper                    # Gaming mouse management
-    prismlauncher            # Minecraft launcher
     minecraft                # En attendant que prism refonctionne
     swappy                   # Snapshot editing tool
     telegram-desktop         # Telegram

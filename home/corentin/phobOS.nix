@@ -12,10 +12,12 @@
     ./features/desktop/hyprland
     ./features/dev
     ./features/editor/nvim
+    ./features/games
     ./features/nvidia
     ./features/pass
     ./features/productivity
     ./features/scripts
+    ./features/tts
     ./features/website
     ./global
 
@@ -58,4 +60,5 @@
   ];
 
       programs.foot.settings.main.font = "Fira Code Nerd Font:size=14";
+
 }

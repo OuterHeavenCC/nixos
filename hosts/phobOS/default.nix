@@ -15,7 +15,6 @@
     ../common/optional/bluetooth.nix
     ../common/optional/fail2ban.nix
     ../common/optional/flatpak.nix
-    ../common/optional/gaming.nix
     ../common/optional/kdeconnect.nix
     ../common/optional/mimeApps.nix
     ../common/optional/mullvad.nix
@@ -76,8 +75,8 @@
   boot.supportedFilesystems = [ "ntfs" ];
 
   networking.firewall = {
-    allowedTCPPorts = [ 8080 8888 27040 ];
-    allowedUDPPorts = [ 8080 8888 27040 ];
+    allowedTCPPorts = [ 8080 8888 10200 27040 ];
+    allowedUDPPorts = [ 8080 8888 10200 27040 ];
   };
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion

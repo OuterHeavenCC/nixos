@@ -30,6 +30,10 @@ local plugins = {
     opts = overrides.treesitter,
   },
 
+  {
+    "vimwiki/vimwiki",
+  },
+
 }
 
 return plugins
