@@ -1,7 +1,7 @@
 {
   imports = [
     ./features/cli
-    ./features/editor/nvim
+    ./features/editor/lvim
     ./features/website
     ./global
   ];

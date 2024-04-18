@@ -62,7 +62,6 @@ in
       grep = "grep --color=auto";
       diff = "diff --color=auto";
       ka = "killall";
-      v = "$EDITOR";
       sdn = "doas shutdown -h now";
       wget = ''wget --hsts-file="${cfg.dataHome}/wget-hsts"'';
       groff = ''groff -k'';
