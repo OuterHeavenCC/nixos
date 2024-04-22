@@ -32,8 +32,8 @@
           ];
     });
 
-    inherit (inputs.nixos-master.legacyPackages.${final.system}) waybar;
     inherit (inputs.nixos-stable.legacyPackages.${final.system}) rpcs3;
+    inherit (inputs.nixos-stable.legacyPackages.${final.system}) calibre;
 
     
 

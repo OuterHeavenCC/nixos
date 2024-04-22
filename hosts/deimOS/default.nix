@@ -11,17 +11,18 @@
     ../common/global
     ../common/users/corentin
 
-    ../common/optional/pipewire.nix
-    ../common/optional/xdg.nix
+    ../common/optional/bluetooth.nix
+    ../common/optional/fail2ban.nix
+    ../common/optional/kdeconnect.nix
     ../common/optional/mimeApps.nix
     ../common/optional/mullvad.nix
-    ../common/optional/bluetooth.nix
-    ../common/optional/systemd-boot.nix
-    ../common/optional/kdeconnect.nix
+    ../common/optional/pipewire.nix
     ../common/optional/printer.nix
-    ../common/optional/fail2ban.nix
-    ../common/optional/waydroid.nix
+    ../common/optional/syncthing.nix
+    ../common/optional/systemd-boot.nix
     ../common/optional/tlp.nix
+    ../common/optional/waydroid.nix
+    ../common/optional/xdg.nix
 
     ./hardware-configuration.nix
   ];

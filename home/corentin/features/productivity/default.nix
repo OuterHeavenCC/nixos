@@ -1,8 +1,8 @@
 {
   imports = [
+    ./groff.nix
     ./mail.nix
     ./neomutt.nix
-    ./groff.nix
     ./texlive.nix
   ];
 }
