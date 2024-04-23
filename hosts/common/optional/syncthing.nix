@@ -23,21 +23,47 @@
           name = "phobOS";
           id = "77E4AOM-QIDFG5A-UMAK5CI-SLXY5DC-TM7U5TN-G4BCMZ7-K3ZEWFM-SLWSGAX";
         };
+        deimos = {
+          name = "deimOS";
+          id = "OZYOKKT-RTGLREG-6ZJKW6F-PUMV2AG-TARLRAP-QQYT5PH-5ZOFV25-FKY7KAZ";
+        };
       };
       folders = {
-        "/home/corentin/Documents/Notes" = {
+        Notes = {
           enable = true;
-          devices = [ "phone" "phobos" ];
+          path = "/home/corentin/Documents/Notes";
+          devices = [ "phone" "phobos" "deimos" ];
           id = "notes";
           versioning = {
             type = "simple";
             params.keep = "5";
           };
         };
-        "/home/corentin/Documents/Livres" = {
+        Livres = {
           enable = true;
-          devices = [ "phone" "phobos" ];
+          path = "/home/corentin/Documents/Livres";
+          devices = [ "phone" "phobos" "deimos" ];
           id = "livres";
+          versioning = {
+            type = "simple";
+            params.keep = "5";
+          };
+        };
+        Personnel = {
+          enable = true;
+          path = "/home/corentin/Documents/Personnel";
+          devices = [ "phone" "phobos" "deimos" ];
+          id = "personnel";
+          versioning = {
+            type = "simple";
+            params.keep = "5";
+          };
+        };
+        Professionnel = {
+          enable = true;
+          path = "/home/corentin/Documents/Professionnel";
+          devices = [ "phone" "phobos" "deimos" ];
+          id = "professionnel";
           versioning = {
             type = "simple";
             params.keep = "5";
