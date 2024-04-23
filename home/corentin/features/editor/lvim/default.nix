@@ -40,6 +40,7 @@
       lvim.colorscheme = "catppuccin-macchiato"
 
       vim.opt.relativenumber = true
+      vim.opt.textwidth = 80
 
       vim.g.vimwiki_list = {{path = '~/Documents/Notes/'}}
 
