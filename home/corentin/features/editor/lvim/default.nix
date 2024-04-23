@@ -64,7 +64,7 @@ in
       }
 
 
-      lvim.colorscheme = "catppuccin-macchiato"
+      lvim.colorscheme = "catppuccin-mocha"
 
       vim.opt.relativenumber = true
       vim.opt.textwidth = 80
