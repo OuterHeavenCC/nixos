@@ -22,6 +22,8 @@
     mission-center
     overskride
     wlogout
+    libdbusmenu-gtk3
+    gnome.gnome-bluetooth
   ];
 
   dependencies = requiredDeps ++ guiDeps;

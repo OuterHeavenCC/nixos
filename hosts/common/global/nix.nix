@@ -54,6 +54,8 @@
       # Deduplicate and optimize nix store
       auto-optimise-store = true;
 
+      trusted-users = [ "root" "corentin" ];
+
       # AI Stuff
       trusted-substituters = [ 
         "https://ai.cachix.org"

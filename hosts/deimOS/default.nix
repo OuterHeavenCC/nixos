@@ -20,7 +20,6 @@
     ../common/optional/printer.nix
     ../common/optional/syncthing.nix
     ../common/optional/systemd-boot.nix
-    ../common/optional/tlp.nix
     ../common/optional/upower.nix
     ../common/optional/waydroid.nix
     ../common/optional/xdg.nix
