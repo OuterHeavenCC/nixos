@@ -67,7 +67,7 @@ in
       lvim.colorscheme = "catppuccin-mocha"
 
       vim.opt.relativenumber = true
-      vim.opt.textwidth = 80
+      vim.opt.textwidth = 140
 
       vim.g.vimwiki_list = {{path = '~/Documents/Notes/'}}
 

@@ -50,13 +50,13 @@
       primary = true;
       vrr = 2;
     }
-    {
-      name = "DP-3";
-      width = 3840;
-      height = 2160;
-      x = 5760;
-      vrr = 0;
-    }
+    # {
+    #   name = "DP-3";
+    #   width = 3840;
+    #   height = 2160;
+    #   x = 5760;
+    #   vrr = 0;
+    # }
   ];
 
       programs.foot.settings.main.font = "Fira Code Nerd Font:size=14";
