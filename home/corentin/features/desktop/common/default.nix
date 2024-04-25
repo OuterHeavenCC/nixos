@@ -24,11 +24,12 @@
     gnome.gnome-boxes        # QEMU Made easy
     gnome.gnome-calculator   # When eva isn't enough
     gnome.nautilus           # When lf isn't enough
+    helvum                   # Pipewire gui
     imv                      # Simple Image Viewer
     krita
     lynx                     # Terminal browser
-    obs-studio               # Screen capturing tool
     minecraft                # En attendant que prism refonctionne
+    obs-studio               # Screen capturing tool
     swappy                   # Snapshot editing tool
     telegram-desktop         # Telegram
     warp                     # File transfer
