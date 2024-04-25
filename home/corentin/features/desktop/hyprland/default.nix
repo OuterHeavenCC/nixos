@@ -1,4 +1,4 @@
-{ lib, config, pkgs, inputs, ... }:
+{ lib, config, pkgs, ... }:
 let
   inherit (config.home.sessionVariables) BROWSER EDITOR TERMINAL MAILCLIENT;
   inherit (config.colorscheme) palette;
@@ -16,7 +16,6 @@ in {
 
   wayland.windowManager.hyprland = {
     enable = true;
-    package = pkgs.inputs.hyprland.hyprland;
     settings = {
       exec-once = let 
         pointer = config.home.pointerCursor;
@@ -28,9 +27,9 @@ in {
         wl-paste = "${pkgs.wl-clipboard}/bin/wl-paste";
         gammastep-indicator = "${pkgs.gammastep}/bin/gammastep-indicator";
         cliphist = "${pkgs.cliphist}/bin/cliphist";
-        hyprctl = "${pkgs.inputs.hyprland.hyprland}/bin/hyprcursor";
+        hyprcursor = "${pkgs.hyprcursor}/bin/hyprcursor";
       in [
-        "${hyprctl} setcursor ${pointer.name} ${toString pointer.size}"
+        "${hyprcursor} setcursor ${pointer.name} ${toString pointer.size}"
         "${wbg} ${config.wallpaper}"
         "${foot} --server"
         # "${waybar}"
@@ -153,7 +152,7 @@ in {
         cliphist = "${pkgs.cliphist}/bin/cliphist";
         fuzzel = "${pkgs.fuzzel}/bin/fuzzel";
         gnome-calculator = "${pkgs.gnome.gnome-calculator}/bin/gnome-calculator";
-        grimblast = "${inputs.hyprland-contrib.packages.${pkgs.system}.grimblast}/bin/grimblast";
+        grimblast = "${pkgs.grimblast}/bin/grimblast";
         hyprctl = "${pkgs.hyprland}/bin/hyprctl";
         killmenu = "${pkgs.killmenu}/bin/killmenu";
         lf = "${pkgs.lf}/bin/lf";
@@ -203,7 +202,7 @@ in {
 
         # Screenshots
 
-        ",Print,exec,${grimblast} --notify --freeze copy output"
+        ",Print,exec,${grimblast} --notify --freeze copy output" # TODO Remettre la variable
         "CONTROL,Print,exec,${grimblast} --notify --freeze copy screen"
         "SUPER,Print,exec,${grimblast} --notify --freeze copy area"
         "ALT,Print,exec,${grimblast} --notify --freeze copy active"
@@ -238,8 +237,6 @@ in {
         "${m.name},${m.workspace}"
       ) (lib.filter (m: m.enabled && m.workspace != null) config.monitors);
       };
-
-      # plugins = [ pkgs.inputs.split-monitor-workspaces.split-monitor-workspaces ];
 
       extraConfig = ''
         # Passthrough mode (e.g. for VNC, Gaming)
