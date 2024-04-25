@@ -69,7 +69,7 @@ in
       vim.opt.relativenumber = true
       vim.opt.textwidth = 140
 
-      vim.g.vimwiki_list = {{path = '~/Documents/Notes/'}}
+      vim.g.vimwiki_list = {{path = '~/Documents/Notes/', syntax = 'markdown', ext = 'md'}}
 
       lvim.builtin.alpha.dashboard.section.buttons.entries = {
           { "f", lvim.icons.ui.FindFile .. "  Find File", "<CMD>Telescope find_files<CR>" },
