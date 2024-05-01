@@ -155,7 +155,6 @@ in {
         grimblast = "${pkgs.grimblast}/bin/grimblast";
         hyprctl = "${pkgs.hyprland}/bin/hyprctl";
         killmenu = "${pkgs.killmenu}/bin/killmenu";
-        lf = "${pkgs.lf}/bin/lf";
         light = "${pkgs.light}/bin/light";
         mpc = "${pkgs.mpc-cli}/bin/mpc";
         ncmpcpp = "${pkgs.ncmpcpp}/bin/ncmpcpp";
@@ -185,7 +184,7 @@ in {
         "SUPERSHIFT,N,exec,${TERMINAL} -e ${newsboat}"
         "SUPER,P,exec,${mpc} toggle"
         "SUPERSHIFT,P,exec,${mpc} pause"
-        "SUPER,R,exec,${TERMINAL} -e ${lf}"
+        "SUPER,R,exec,${TERMINAL} -e zsh -l -ic 'ya; zsh'" # Trick sorti tout droit du ghetto pour faire fonctionner le wrapper de yazi
         "SUPER,S,exec,${TERMINAL} -e ${pulsemixer}"
         "SUPER,V,exec,${ytfzf} -D"
         "SUPER,T,exec,${TERMINAL} -e ${taskwarrior-tui}"

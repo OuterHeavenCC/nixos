@@ -15,7 +15,7 @@ in
           videos = "${HOME}/Vidéos";
           templates = "${HOME}/Modèles";
           extraConfig = {
-            XDG_GAME_DIR = "${HOME}/Jeux";
+            XDG_GAME_DIR = "/mnt/Jeux/SteamLibrary/steamapps/common/";
           };
         };
 

@@ -11,11 +11,11 @@
     ./git.nix
     ./gpg.nix
     ./ledger.nix
-    ./lf
     ./newsboat.nix
     ./nh.nix
     ./nix-index.nix
     ./taskwarrior.nix
+    ./yazi
     ./ytfzf.nix
     ./zsh.nix
   ];

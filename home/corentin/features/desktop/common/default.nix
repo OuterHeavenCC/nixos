@@ -28,7 +28,6 @@
     imv                      # Simple Image Viewer
     krita
     lynx                     # Terminal browser
-    minecraft                # En attendant que prism refonctionne
     obs-studio               # Screen capturing tool
     swappy                   # Snapshot editing tool
     telegram-desktop         # Telegram
