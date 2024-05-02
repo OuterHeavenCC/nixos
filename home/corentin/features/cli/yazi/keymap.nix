@@ -338,6 +338,11 @@ in {
           run = "plugin fzf";
           desc = "Jump to a directory; or reveal a file using fzf";
         }
+        {
+          on = [ "<C-n>" ];
+          run = "shell 'dragon -x -i -T \"$1\"' --confirm";
+          desc = "Drag a file with dragon";
+        }
 
         # Linemode
         {
@@ -601,8 +606,8 @@ in {
         }
         {
           on = [ "g" "m" ];
-          run = "cd ${cfg.userDirs.download}";
-          desc = "Go to the .local/share directory";
+          run = "cd ${cfg.userDirs.music}";
+          desc = "Go to the music directory";
         }
         {
           on = [ "g" "n" ];
