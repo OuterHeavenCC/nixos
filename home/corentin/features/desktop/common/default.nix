@@ -16,6 +16,7 @@
   ];
 
   home.packages = with pkgs; [
+    anki                     # SRS
     audacity                 # Audio recording
     bottles                  # Better lutris
     calibre                  # Ebook manager

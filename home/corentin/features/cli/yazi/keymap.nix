@@ -615,6 +615,11 @@ in {
           desc = "Go to the nixos flake directory";
         }
         {
+          on = [ "g" "s" ];
+          run = "cd ~/.local/bin";
+          desc = "Go to the nixos flake directory";
+        }
+        {
           on = [ "g" "t" ];
           run = "cd ${cfg.userDirs.download}";
           desc = "Go to the download directory";

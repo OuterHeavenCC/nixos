@@ -3,7 +3,6 @@
 {
   imports = [
     ./ags
-    ./dunst.nix
     ./foot.nix
     ./fuzzel.nix
     ./gammastep.nix
