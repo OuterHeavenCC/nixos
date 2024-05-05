@@ -69,6 +69,16 @@
             params.keep = "5";
           };
         };
+        Bookmarks = {
+          enable = true;
+          path = "/home/corentin/.config/bmks/";
+          devices = [ "phobos" "deimos" ];
+          id = "bookmarks";
+          versioning = {
+            type = "simple";
+            params.keep = "5";
+          };
+        };
       };
     };
 
