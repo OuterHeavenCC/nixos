@@ -62,6 +62,7 @@
         vaapiVdpau
         libvdpau-va-gl
         nvidia-vaapi-driver
+        ocl-icd
       ];
     };
     nvidia = {

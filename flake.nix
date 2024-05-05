@@ -16,9 +16,6 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-    # Hosts
-    hosts.url = "github:StevenBlack/hosts";
-
     hardware.url = "github:nixos/nixos-hardware";
 
     nix-minecraft.url = "github:Infinidoge/nix-minecraft";
