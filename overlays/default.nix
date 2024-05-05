@@ -34,6 +34,7 @@
 
     inherit (inputs.nixos-stable.legacyPackages.${final.system}) rpcs3;
     inherit (inputs.nixos-stable.legacyPackages.${final.system}) calibre;
+    inherit (inputs.nixos-stable.legacyPackages.${final.system}) anki;
 
     
 

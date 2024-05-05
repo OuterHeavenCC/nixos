@@ -16,6 +16,9 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
+    # Hosts
+    hosts.url = "github:StevenBlack/hosts";
+
     hardware.url = "github:nixos/nixos-hardware";
 
     nix-minecraft.url = "github:Infinidoge/nix-minecraft";
@@ -46,7 +49,6 @@
       inherit lib;
       nixosModules = import ./modules/nixos;
       homeManagerModules = import ./modules/home-manager;
-      templates = import ./templates;
 
       overlays = import ./overlays { inherit inputs outputs; };
 

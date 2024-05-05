@@ -7,6 +7,7 @@
     ./fonts.nix
     ./geoclue2.nix
     ./git.nix
+    ./hosts.nix
     ./input.nix
     ./locale.nix
     ./locate.nix
