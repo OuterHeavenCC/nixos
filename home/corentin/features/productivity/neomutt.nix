@@ -35,6 +35,36 @@
         binds = [
           {
             action = "noop";
+            key = "gT";
+            map = [ "index" "pager" ];
+          }
+          {
+            action = "noop";
+            key = "gg";
+            map = [ "index" "pager" ];
+          }
+          {
+            action = "noop";
+            key = "gt";
+            map = [ "index" "pager" ];
+          }
+          {
+            action = "noop";
+            key = "dT";
+            map = [ "index" ];
+          }
+          {
+            action = "noop";
+            key = "dd"; 
+            map = [ "index" ];
+          }
+          {
+            action = "noop";
+            key = "dt";
+            map = [ "index" ];
+          }
+          {
+            action = "noop";
             key = "i";
             map = [ "index" "pager" ];
           }
