@@ -1,10 +1,21 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 {
   networking.firewall = {
     allowedTCPPortRanges = [
-      { from = 80; to = 80; }
-      { from = 443; to = 443; }
-   ];
+      {
+        from = 80;
+        to = 80;
+      }
+      {
+        from = 443;
+        to = 443;
+      }
+    ];
   };
 
   services.nginx = {

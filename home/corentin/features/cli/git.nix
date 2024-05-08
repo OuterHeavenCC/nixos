@@ -6,6 +6,9 @@
     extraConfig = {
       init.defaultBranch = "main";
     };
-    ignores = [ ".direnv" "result" ];
+    ignores = [
+      ".direnv"
+      "result"
+    ];
   };
 }

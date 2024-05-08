@@ -1,4 +1,11 @@
-{ inputs, lib, pkgs, config, outputs, ... }:
+{
+  inputs,
+  lib,
+  pkgs,
+  config,
+  outputs,
+  ...
+}:
 let
   inherit (inputs.nix-colors) colorSchemes;
 in
@@ -8,20 +15,23 @@ in
     inputs.nix-colors.homeManagerModule
   ] ++ (builtins.attrValues outputs.homeManagerModules);
 
-    nixpkgs = {
-      overlays = builtins.attrValues outputs.overlays;
+  nixpkgs = {
+    overlays = builtins.attrValues outputs.overlays;
 
-      config = {
-        allowUnfree = true;
-        allowUnfreePredicate = (_: true);
-      };
-
+    config = {
+      allowUnfree = true;
+      allowUnfreePredicate = (_: true);
     };
+  };
 
-    nix = {
+  nix = {
     package = lib.mkDefault pkgs.nix;
     settings = {
-      experimental-features = [ "nix-command" "flakes" "repl-flake" ];
+      experimental-features = [
+        "nix-command"
+        "flakes"
+        "repl-flake"
+      ];
       warn-dirty = false;
     };
   };
@@ -47,6 +57,4 @@ in
   # colorscheme = lib.mkDefault colorSchemes.tokyo-night-storm;
   # colorscheme = lib.mkDefault colorSchemes.gruvbox-dark-hard;
   # colorscheme = lib.mkDefault colorSchemes.everforest;
-
-
 }

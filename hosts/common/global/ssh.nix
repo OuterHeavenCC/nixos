@@ -6,11 +6,11 @@
   services.openssh = {
     enable = true;
     # Forbid root login through SSH.
-      settings = {
+    settings = {
 
-        PermitRootLogin = lib.mkForce "no";
-        # Use keys only. Remove if you want to SSH using password (not recommended)
-        PasswordAuthentication = true;
+      PermitRootLogin = lib.mkForce "no";
+      # Use keys only. Remove if you want to SSH using password (not recommended)
+      PasswordAuthentication = true;
     };
   };
 }

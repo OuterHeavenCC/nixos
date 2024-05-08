@@ -21,7 +21,6 @@
     ./features/website
     ./global
 
-
     # outputs.homeManagerModules.monitors
     # If you want to use modules your own flake exports (from modules/home-manager):
     # outputs.homeManagerModules.example
@@ -39,7 +38,7 @@
       width = 3840;
       height = 2160;
       x = 0;
-      vrr = 0;        # 2 means only in fullscreen
+      vrr = 0; # 2 means only in fullscreen
     }
     {
       name = "DP-1";
@@ -59,6 +58,5 @@
     }
   ];
 
-      programs.foot.settings.main.font = "Fira Code Nerd Font:size=14";
-
+  programs.foot.settings.main.font = "Fira Code Nerd Font:size=14";
 }

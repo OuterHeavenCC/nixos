@@ -1,7 +1,11 @@
-{ inputs, lib, config, ... }:
+{
+  inputs,
+  lib,
+  config,
+  ...
+}:
 
 {
-
 
   programs.nix-ld.enable = true;
 
@@ -45,8 +49,7 @@
 
     # This will additionally add your inputs to the system's legacy channels
     # Making legacy nix commands consistent as well, awesome!
-    nixPath = lib.mapAttrsToList (key: value: "${key}=${value.to.path}")
-      config.nix.registry;
+    nixPath = lib.mapAttrsToList (key: value: "${key}=${value.to.path}") config.nix.registry;
 
     settings = {
       # Enable flakes and new 'nix' command
@@ -54,18 +57,20 @@
       # Deduplicate and optimize nix store
       auto-optimise-store = true;
 
-      trusted-users = [ "root" "corentin" ];
+      trusted-users = [
+        "root"
+        "corentin"
+      ];
 
       # AI Stuff
-      trusted-substituters = [ 
+      trusted-substituters = [
         "https://ai.cachix.org"
-        "https://hyprland.cachix.org" 
+        "https://hyprland.cachix.org"
       ];
       trusted-public-keys = [
-        "ai.cachix.org-1:N9dzRK+alWwoKXQlnn0H6aUx0lU/mspIoz8hMvGvbbc=" 
+        "ai.cachix.org-1:N9dzRK+alWwoKXQlnn0H6aUx0lU/mspIoz8hMvGvbbc="
         "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
       ];
-
     };
     extraOptions = ''
       use-xdg-base-directories = true

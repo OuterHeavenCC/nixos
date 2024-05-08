@@ -7,5 +7,4 @@
     hunspellDicts.fr-reforme1990
     hunspellDicts.en-us
   ];
-
 }

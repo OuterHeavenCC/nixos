@@ -1,5 +1,1 @@
-{
-  imports = [
-    ./nginx.nix
-  ];
-}
+{ imports = [ ./nginx.nix ]; }

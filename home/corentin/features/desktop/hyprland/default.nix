@@ -1,44 +1,56 @@
-{ lib, config, pkgs, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
 let
-  inherit (config.home.sessionVariables) BROWSER EDITOR TERMINAL MAILCLIENT;
+  inherit (config.home.sessionVariables)
+    BROWSER
+    EDITOR
+    TERMINAL
+    MAILCLIENT
+    ;
   inherit (config.colorscheme) palette;
   cfg = config.xdg;
-in {
+in
+{
 
-  imports = [ 
-  ../common
-  ../common/wayland-wm
+  imports = [
+    ../common
+    ../common/wayland-wm
 
-  ./basic-binds.nix
-  ./tty-init.nix
-  
+    ./basic-binds.nix
+    ./tty-init.nix
   ];
 
   wayland.windowManager.hyprland = {
     enable = true;
     settings = {
-      exec-once = let 
-        pointer = config.home.pointerCursor;
-        wbg = "${pkgs.wbg}/bin/wbg";
-        foot = "${pkgs.foot}/bin/foot";
-        # waybar = "${pkgs.waybar}/bin/waybar";
-        swayidle = "${pkgs.swayidle}/bin/swayidle";
-        xrandr = "${pkgs.xorg.xrandr}/bin/xrandr";
-        wl-paste = "${pkgs.wl-clipboard}/bin/wl-paste";
-        gammastep-indicator = "${pkgs.gammastep}/bin/gammastep-indicator";
-        cliphist = "${pkgs.cliphist}/bin/cliphist";
-        hyprcursor = "${pkgs.hyprcursor}/bin/hyprcursor";
-      in [
-        "${hyprcursor} setcursor ${pointer.name} ${toString pointer.size}"
-        "${wbg} ${config.wallpaper}"
-        "${foot} --server"
-        # "${waybar}"
-        "${swayidle} -w"
-        "${wl-paste} --type text --watch ${cliphist} store" 
-        "${wl-paste} --type image --watch ${cliphist} store"
-        "${xrandr} --output DP-1 --primary" # Fix Jeux Steam
-        "${gammastep-indicator}"
-      ];
+      exec-once =
+        let
+          pointer = config.home.pointerCursor;
+          wbg = "${pkgs.wbg}/bin/wbg";
+          foot = "${pkgs.foot}/bin/foot";
+          # waybar = "${pkgs.waybar}/bin/waybar";
+          swayidle = "${pkgs.swayidle}/bin/swayidle";
+          xrandr = "${pkgs.xorg.xrandr}/bin/xrandr";
+          wl-paste = "${pkgs.wl-clipboard}/bin/wl-paste";
+          gammastep-indicator = "${pkgs.gammastep}/bin/gammastep-indicator";
+          cliphist = "${pkgs.cliphist}/bin/cliphist";
+          hyprcursor = "${pkgs.hyprcursor}/bin/hyprcursor";
+        in
+        [
+          "${hyprcursor} setcursor ${pointer.name} ${toString pointer.size}"
+          "${wbg} ${config.wallpaper}"
+          "${foot} --server"
+          # "${waybar}"
+          "${swayidle} -w"
+          "${wl-paste} --type text --watch ${cliphist} store"
+          "${wl-paste} --type image --watch ${cliphist} store"
+          "${xrandr} --output DP-1 --primary" # Fix Jeux Steam
+          "${gammastep-indicator}"
+        ];
       env = [
         "GDK_BACKEND,wayland,x11"
         "QT_QPA_PLATFORM,wayland;xcb"
@@ -88,7 +100,7 @@ in {
         repeat_delay = "300";
       };
       decoration = {
-        blur = {                     
+        blur = {
           enabled = true;
           size = 5;
           passes = 3;
@@ -141,109 +153,113 @@ in {
         layout = "master";
         allow_tearing = true;
       };
-      master = { new_on_top = true; };
-      bind = let
+      master = {
+        new_on_top = true;
+      };
+      bind =
+        let
 
-        abook = "${pkgs.abook}/bin/abook";
-        blueman-manager = "${pkgs.blueman}/bin/blueman-manager";
-        bmks = "${pkgs.bmks}/bin/bmks";
-        btm = "${pkgs.bottom}/bin/btm";
-        calcurse = "${pkgs.calcurse}/bin/calcurse";
-        cliphist = "${pkgs.cliphist}/bin/cliphist";
-        fuzzel = "${pkgs.fuzzel}/bin/fuzzel";
-        gnome-calculator = "${pkgs.gnome.gnome-calculator}/bin/gnome-calculator";
-        grimblast = "${pkgs.grimblast}/bin/grimblast";
-        hyprctl = "${pkgs.hyprland}/bin/hyprctl";
-        killmenu = "${pkgs.killmenu}/bin/killmenu";
-        light = "${pkgs.light}/bin/light";
-        mpc = "${pkgs.mpc-cli}/bin/mpc";
-        ncmpcpp = "${pkgs.ncmpcpp}/bin/ncmpcpp";
-        networkmanager_dmenu = "${pkgs.networkmanager_dmenu}/bin/networkmanager_dmenu";
-        newsboat = "${pkgs.newsboat}/bin/newsboat";
-        pamixer = "${pkgs.pamixer}/bin/pamixer";
-        powermenu = "${pkgs.powermenu}/bin/powermenu";
-        pulsemixer = "${pkgs.pulsemixer}/bin/pulsemixer";
-        taskwarrior-tui = "${pkgs.taskwarrior-tui}/bin/taskwarrior-tui";
-        telegram-desktop = "${pkgs.telegram-desktop}/bin/telegram-desktop";
-        waybar = "${pkgs.waybar}/bin/waybar";
-        wl-copy = "${pkgs.wl-clipboard}/bin/wl-copy";
-        ytfzf = "${pkgs.ytfzf}/bin/ytfzf";
+          abook = "${pkgs.abook}/bin/abook";
+          blueman-manager = "${pkgs.blueman}/bin/blueman-manager";
+          bmks = "${pkgs.bmks}/bin/bmks";
+          btm = "${pkgs.bottom}/bin/btm";
+          calcurse = "${pkgs.calcurse}/bin/calcurse";
+          cliphist = "${pkgs.cliphist}/bin/cliphist";
+          fuzzel = "${pkgs.fuzzel}/bin/fuzzel";
+          gnome-calculator = "${pkgs.gnome.gnome-calculator}/bin/gnome-calculator";
+          grimblast = "${pkgs.grimblast}/bin/grimblast";
+          hyprctl = "${pkgs.hyprland}/bin/hyprctl";
+          killmenu = "${pkgs.killmenu}/bin/killmenu";
+          light = "${pkgs.light}/bin/light";
+          mpc = "${pkgs.mpc-cli}/bin/mpc";
+          ncmpcpp = "${pkgs.ncmpcpp}/bin/ncmpcpp";
+          networkmanager_dmenu = "${pkgs.networkmanager_dmenu}/bin/networkmanager_dmenu";
+          newsboat = "${pkgs.newsboat}/bin/newsboat";
+          pamixer = "${pkgs.pamixer}/bin/pamixer";
+          powermenu = "${pkgs.powermenu}/bin/powermenu";
+          pulsemixer = "${pkgs.pulsemixer}/bin/pulsemixer";
+          taskwarrior-tui = "${pkgs.taskwarrior-tui}/bin/taskwarrior-tui";
+          telegram-desktop = "${pkgs.telegram-desktop}/bin/telegram-desktop";
+          waybar = "${pkgs.waybar}/bin/waybar";
+          wl-copy = "${pkgs.wl-clipboard}/bin/wl-copy";
+          ytfzf = "${pkgs.ytfzf}/bin/ytfzf";
+        in
+        [
+          "SUPER,Return,exec,${TERMINAL}"
+          "SUPER,B,exec,${blueman-manager}"
+          "SUPERSHIFT,B,exec,pkill -USR1 ${waybar}"
+          "SUPER,C,exec,${TERMINAL} -e ${calcurse}"
+          "SUPERSHIFT,C,exec,${gnome-calculator}"
+          "SUPER,d,exec,${fuzzel}"
+          "SUPER,E,exec,${TERMINAL} -e ${MAILCLIENT}"
+          "SUPERSHIFT,E,exec,${TERMINAL} -e ${abook} -C ${cfg.configHome}/abook/abookrc --datafile ${cfg.configHome}/abook/addressbook"
+          "SUPER,M,exec,${TERMINAL} -e ${ncmpcpp}"
+          "SUPERSHIFT,M,exec,${pamixer} -t"
+          "SUPER,N,exec,${TERMINAL} -e ${EDITOR}"
+          "SUPERSHIFT,N,exec,${TERMINAL} -e ${newsboat}"
+          "SUPER,P,exec,${mpc} toggle"
+          "SUPERSHIFT,P,exec,${mpc} pause"
+          "SUPER,R,exec,${TERMINAL} -e zsh -l -ic 'ya; zsh'" # Trick sorti tout droit du ghetto pour faire fonctionner le wrapper de yazi
+          "SUPER,S,exec,${TERMINAL} -e ${pulsemixer}"
+          "SUPER,V,exec,${ytfzf} -D"
+          "SUPER,T,exec,${TERMINAL} -e ${taskwarrior-tui}"
+          "SUPERSHIFT,S,exec,${bmks}"
+          "SUPER,W,exec,${BROWSER}"
+          "SUPERSHIFT,W,exec,${networkmanager_dmenu}"
+          "SUPER,X,exec,${cliphist} list | ${fuzzel} -d | cliphist decode | ${wl-copy}"
+          "SUPER,F4,exec,${TERMINAL} -e ${btm}"
+          "SUPER,exclam,exec,${telegram-desktop}"
+          "SUPER,BackSpace,exec,${powermenu}"
+          "SUPERSHIFT,BackSpace,exec,passfuzzel"
+          "SUPER,Delete,exec,${killmenu}"
+          ",XF86AudioMute,exec,${pamixer} --toggle-mute"
 
-      in [
-        "SUPER,Return,exec,${TERMINAL}"
-        "SUPER,B,exec,${blueman-manager}"
-        "SUPERSHIFT,B,exec,pkill -USR1 ${waybar}"
-        "SUPER,C,exec,${TERMINAL} -e ${calcurse}"
-        "SUPERSHIFT,C,exec,${gnome-calculator}"
-        "SUPER,d,exec,${fuzzel}"
-        "SUPER,E,exec,${TERMINAL} -e ${MAILCLIENT}"
-        "SUPERSHIFT,E,exec,${TERMINAL} -e ${abook} -C ${cfg.configHome}/abook/abookrc --datafile ${cfg.configHome}/abook/addressbook"
-        "SUPER,M,exec,${TERMINAL} -e ${ncmpcpp}"
-        "SUPERSHIFT,M,exec,${pamixer} -t"
-        "SUPER,N,exec,${TERMINAL} -e ${EDITOR}"
-        "SUPERSHIFT,N,exec,${TERMINAL} -e ${newsboat}"
-        "SUPER,P,exec,${mpc} toggle"
-        "SUPERSHIFT,P,exec,${mpc} pause"
-        "SUPER,R,exec,${TERMINAL} -e zsh -l -ic 'ya; zsh'" # Trick sorti tout droit du ghetto pour faire fonctionner le wrapper de yazi
-        "SUPER,S,exec,${TERMINAL} -e ${pulsemixer}"
-        "SUPER,V,exec,${ytfzf} -D"
-        "SUPER,T,exec,${TERMINAL} -e ${taskwarrior-tui}"
-        "SUPERSHIFT,S,exec,${bmks}"
-        "SUPER,W,exec,${BROWSER}"
-        "SUPERSHIFT,W,exec,${networkmanager_dmenu}"
-        "SUPER,X,exec,${cliphist} list | ${fuzzel} -d | cliphist decode | ${wl-copy}"
-        "SUPER,F4,exec,${TERMINAL} -e ${btm}"
-        "SUPER,exclam,exec,${telegram-desktop}"
-        "SUPER,BackSpace,exec,${powermenu}"
-        "SUPERSHIFT,BackSpace,exec,passfuzzel"
-        "SUPER,Delete,exec,${killmenu}"
-        ",XF86AudioMute,exec,${pamixer} --toggle-mute"
+          # Screenshots
 
-        # Screenshots
+          ",Print,exec,${grimblast} --notify --freeze copy output" # TODO Remettre la variable
+          "CONTROL,Print,exec,${grimblast} --notify --freeze copy screen"
+          "SUPER,Print,exec,${grimblast} --notify --freeze copy area"
+          "ALT,Print,exec,${grimblast} --notify --freeze copy active"
 
-        ",Print,exec,${grimblast} --notify --freeze copy output" # TODO Remettre la variable
-        "CONTROL,Print,exec,${grimblast} --notify --freeze copy screen"
-        "SUPER,Print,exec,${grimblast} --notify --freeze copy area"
-        "ALT,Print,exec,${grimblast} --notify --freeze copy active"
+          # Lumière
 
+          ",XF86MonBrightnessUp,exec,${light} -A 5"
+          ",XF86MonBrightnessDown,exec,${light} -U 5"
 
-        # Lumière
+          # Fix for switching layout with keyd
+          "SUPERSHIFT,X,exec,${hyprctl} switchxkblayout keyd-virtual-keyboard next"
+        ];
 
-        ",XF86MonBrightnessUp,exec,${light} -A 5"
-        ",XF86MonBrightnessDown,exec,${light} -U 5"
+      binde =
+        let
+          pamixer = "${pkgs.pamixer}/bin/pamixer";
+        in
+        [
+          ",XF86AudioRaiseVolume,exec,${pamixer} -i 5"
+          ",XF86AudioLowerVolume,exec,${pamixer} -d 5"
+        ];
 
-        # Fix for switching layout with keyd
-        "SUPERSHIFT,X,exec,${hyprctl} switchxkblayout keyd-virtual-keyboard next"
-
-      ];
-
-      binde = let 
-        pamixer = "${pkgs.pamixer}/bin/pamixer";
-      in [
-        ",XF86AudioRaiseVolume,exec,${pamixer} -i 5"
-        ",XF86AudioLowerVolume,exec,${pamixer} -d 5"
-      ];
-
-      monitor = map (m: let
-        resolution = "${toString m.width}x${toString m.height}@${toString m.refreshRate}";
-        position = "${toString m.x}x${toString m.y}";
-        vrr = "${toString m.vrr}";
-      in
+      monitor = map (
+        m:
+        let
+          resolution = "${toString m.width}x${toString m.height}@${toString m.refreshRate}";
+          position = "${toString m.x}x${toString m.y}";
+          vrr = "${toString m.vrr}";
+        in
         "${m.name},${if m.enabled then "${resolution},${position},1,vrr,${vrr}" else "disable"}"
       ) (config.monitors);
 
-      workspace = map (m:
-        "${m.name},${m.workspace}"
-      ) (lib.filter (m: m.enabled && m.workspace != null) config.monitors);
-      };
+      workspace = map (m: "${m.name},${m.workspace}") (
+        lib.filter (m: m.enabled && m.workspace != null) config.monitors
+      );
+    };
 
-      extraConfig = ''
-        # Passthrough mode (e.g. for VNC, Gaming)
-        bind=SUPER,F12,submap,passthrough
-        submap=passthrough
-        bind=SUPER,F12,submap,reset
-        submap=reset
-      '';
-
+    extraConfig = ''
+      # Passthrough mode (e.g. for VNC, Gaming)
+      bind=SUPER,F12,submap,passthrough
+      submap=passthrough
+      bind=SUPER,F12,submap,reset
+      submap=reset
+    '';
   };
 }

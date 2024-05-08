@@ -29,8 +29,11 @@
 
   networking = {
     hostName = "deimOS";
-    nameservers = [ "1.1.1.1" "1.0.0.1" ];
-    networkmanager = { 
+    nameservers = [
+      "1.1.1.1"
+      "1.0.0.1"
+    ];
+    networkmanager = {
       enable = true;
       dns = "none";
       unmanaged = [ "rc-manager" ];
@@ -54,10 +57,15 @@
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
   networking.firewall = {
-    allowedTCPPorts = [ 8888 27040 ];
-    allowedUDPPorts = [ 8888 27040 ];
+    allowedTCPPorts = [
+      8888
+      27040
+    ];
+    allowedUDPPorts = [
+      8888
+      27040
+    ];
   };
-
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "23.11";

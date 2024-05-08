@@ -35,7 +35,6 @@
       notification.notifyall=flagged-only
       notification.warning=300
       format.appointmenttime=%H:%M
-'';
+    '';
   };
-
 }

@@ -1,45 +1,31 @@
-{ lib
-, stdenv
-, makeWrapper
-, fuzzel
-, findutils
-, coreutils
-, swaylock
-, gnugrep
-, systemd
+{
+  lib,
+  writeShellApplication,
+  fuzzel,
+  findutils,
+  coreutils,
+  swaylock,
+  gnugrep,
+  systemd,
+
 }:
-
-with lib;
-
-stdenv.mkDerivation {
+(writeShellApplication {
   name = "powermenu";
-  version = "1.1";
-  src = ./powermenu;
-
-  nativeBuildInputs = [ makeWrapper ];
-
-  dontUnpack = true;
-  dontBuild = true;
-  dontConfigure = true;
-
-  installPhase = ''
-    install -Dm 0755 $src $out/bin/powermenu
-    wrapProgram $out/bin/powermenu --set PATH \
-      "${
-        makeBinPath [
-          findutils
-          coreutils
-          swaylock
-          gnugrep
-          fuzzel
-          systemd
-        ]
-      }"
-  '';
-
-  meta = {
-    description = "A script for power menu";
-    license = licenses.mit;
+  runtimeInputs = [
+    fuzzel
+    findutils
+    coreutils
+    swaylock
+    gnugrep
+    systemd
+  ];
+  text = builtins.readFile ./powermenu.sh;
+})
+// {
+  meta = with lib; {
+    licenses = licenses.mit;
     platforms = platforms.all;
+    mainProgram = "powermenu";
   };
 }
+

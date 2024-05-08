@@ -45,7 +45,12 @@ in
         };
         neomutt = {
           enable = true;
-          extraMailboxes = [ "[Gmail]/Messages envoy&AOk-s" "[Gmail]/Brouillons" "[Gmail]/Spam" "[Gmail]/Corbeille" ];
+          extraMailboxes = [
+            "[Gmail]/Messages envoy&AOk-s"
+            "[Gmail]/Brouillons"
+            "[Gmail]/Spam"
+            "[Gmail]/Corbeille"
+          ];
         };
 
         smtp.host = "smtp.gmail.com";
@@ -58,5 +63,4 @@ in
     enable = true;
     frequency = "*:0/5";
   };
-
 }

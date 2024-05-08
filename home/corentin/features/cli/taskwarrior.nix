@@ -5,7 +5,5 @@
     enable = true;
   };
 
-  home.packages = with pkgs; [
-    taskwarrior-tui
-  ];
+  home.packages = with pkgs; [ taskwarrior-tui ];
 }

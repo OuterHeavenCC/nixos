@@ -6,6 +6,6 @@
     text = ''
       [dmenu]
       dmenu_command = fuzzel -d
-  '';
+    '';
   };
 }

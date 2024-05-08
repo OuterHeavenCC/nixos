@@ -1,7 +1,9 @@
 { config, ... }:
 
-let cfg = config.xdg;
-in {
+let
+  cfg = config.xdg;
+in
+{
   home.sessionVariables = {
     WLR_NO_HARDWARE_CURSORS = 1;
     GBM_BACKEND = "nvidia-drm";
@@ -10,5 +12,4 @@ in {
     CUDA_CACHE_PATH = "${cfg.cacheHome}/nv";
     WLR_EGL_NO_MODIFIRES = "1";
   };
-
 }

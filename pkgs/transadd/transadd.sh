@@ -4,6 +4,7 @@
 
 # transmission-daemon sometimes fails to take remote requests in its first moments, hence the sleep.
 
-pidof transmission-daemon >/dev/null || (transmission-daemon && notify-send "Starting transmission daemon...")
+pidof transmission-daemon >/dev/null || (transmission-daemon && notify-send "Starting transmission daemon...") && sleep 3
 
 transmission-remote -a "$@" && notify-send "🔽 Torrent added."
+

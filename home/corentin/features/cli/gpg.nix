@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [ gcr ];
-  
+
   xdg.configFile."pam-gnupg".text = "88921B907B0F39E17E3F734BF2D57789304EBD10";
 
   services.gpg-agent = {
@@ -10,11 +10,10 @@
     maxCacheTtl = 86400;
     extraConfig = ''
       allow-preset-passphrase
-  '';
+    '';
   };
 
   services.gpg-agent.pinentryPackage = pkgs.pinentry-gnome3;
-
 
   programs =
     let
@@ -23,7 +22,7 @@
       '';
     in
     {
-    zsh.loginExtra = fixGpg;
+      zsh.loginExtra = fixGpg;
       gpg = {
         enable = true;
         settings = {

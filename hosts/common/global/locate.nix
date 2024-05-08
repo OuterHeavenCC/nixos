@@ -5,5 +5,4 @@
     package = pkgs.mlocate;
     localuser = null;
   };
-
 }

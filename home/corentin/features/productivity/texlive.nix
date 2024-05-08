@@ -2,7 +2,7 @@
 
 {
   home.packages = with pkgs; [
-        texlive.combined.scheme-full  # LaTex language
-        pandoc
+    texlive.combined.scheme-full # LaTex language
+    pandoc
   ];
 }

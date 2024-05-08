@@ -39,5 +39,5 @@
     }
   ];
 
-    programs.foot.settings.main.font = "Fira Code Nerd Font:size=12";
+  programs.foot.settings.main.font = "Fira Code Nerd Font:size=12";
 }

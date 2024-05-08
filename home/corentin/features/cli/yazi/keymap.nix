@@ -1,7 +1,9 @@
 { config, ... }:
 
-let cfg = config.xdg;
-in {
+let
+  cfg = config.xdg;
+in
+{
   programs.yazi = {
     keymap = {
       manager.keymap = [
@@ -179,7 +181,10 @@ in {
         }
 
         {
-          on = [ "g" "g" ];
+          on = [
+            "g"
+            "g"
+          ];
           run = "arrow -99999999";
           desc = "Move cursor to the top";
         }
@@ -192,7 +197,10 @@ in {
         # Selection
         {
           on = [ "<Space>" ];
-          run = [ "select --state=none" "arrow 1" ];
+          run = [
+            "select --state=none"
+            "arrow 1"
+          ];
           desc = "Toggle the current selection state";
         }
         {
@@ -305,8 +313,7 @@ in {
         {
           on = [ ":" ];
           run = "shell --block";
-          desc =
-            "Run a shell command (block the UI until the command finishes)";
+          desc = "Run a shell command (block the UI until the command finishes)";
         }
         {
           on = [ "." ];
@@ -346,44 +353,68 @@ in {
 
         # Linemode
         {
-          on = [ "m" "s" ];
+          on = [
+            "m"
+            "s"
+          ];
           run = "linemode size";
           desc = "Set linemode to size";
         }
         {
-          on = [ "m" "p" ];
+          on = [
+            "m"
+            "p"
+          ];
           run = "linemode permissions";
           desc = "Set linemode to permissions";
         }
         {
-          on = [ "m" "m" ];
+          on = [
+            "m"
+            "m"
+          ];
           run = "linemode mtime";
           desc = "Set linemode to mtime";
         }
         {
-          on = [ "m" "n" ];
+          on = [
+            "m"
+            "n"
+          ];
           run = "linemode none";
           desc = "Set linemode to none";
         }
 
         # Copy
         {
-          on = [ "c" "c" ];
+          on = [
+            "c"
+            "c"
+          ];
           run = "copy path";
           desc = "Copy the absolute path";
         }
         {
-          on = [ "c" "d" ];
+          on = [
+            "c"
+            "d"
+          ];
           run = "copy dirname";
           desc = "Copy the path of the parent directory";
         }
         {
-          on = [ "c" "f" ];
+          on = [
+            "c"
+            "f"
+          ];
           run = "copy filename";
           desc = "Copy the name of the file";
         }
         {
-          on = [ "c" "n" ];
+          on = [
+            "c"
+            "n"
+          ];
           run = "copy name_without_ext";
           desc = "Copy the name of the file without the extension";
         }
@@ -419,62 +450,98 @@ in {
 
         # Sorting
         {
-          on = [ "," "m" ];
+          on = [
+            ","
+            "m"
+          ];
           run = "sort modified --dir-first";
           desc = "Sort by modified time";
         }
         {
-          on = [ "," "M" ];
+          on = [
+            ","
+            "M"
+          ];
           run = "sort modified --reverse --dir-first";
           desc = "Sort by modified time (reverse)";
         }
         {
-          on = [ "," "c" ];
+          on = [
+            ","
+            "c"
+          ];
           run = "sort created --dir-first";
           desc = "Sort by created time";
         }
         {
-          on = [ "," "C" ];
+          on = [
+            ","
+            "C"
+          ];
           run = "sort created --reverse --dir-first";
           desc = "Sort by created time (reverse)";
         }
         {
-          on = [ "," "e" ];
+          on = [
+            ","
+            "e"
+          ];
           run = "sort extension --dir-first";
           desc = "Sort by extension";
         }
         {
-          on = [ "," "E" ];
+          on = [
+            ","
+            "E"
+          ];
           run = "sort extension --reverse --dir-first";
           desc = "Sort by extension (reverse)";
         }
         {
-          on = [ "," "a" ];
+          on = [
+            ","
+            "a"
+          ];
           run = "sort alphabetical --dir-first";
           desc = "Sort alphabetically";
         }
         {
-          on = [ "," "A" ];
+          on = [
+            ","
+            "A"
+          ];
           run = "sort alphabetical --reverse --dir-first";
           desc = "Sort alphabetically (reverse)";
         }
         {
-          on = [ "," "n" ];
+          on = [
+            ","
+            "n"
+          ];
           run = "sort natural --dir-first";
           desc = "Sort naturally";
         }
         {
-          on = [ "," "N" ];
+          on = [
+            ","
+            "N"
+          ];
           run = "sort natural --reverse --dir-first";
           desc = "Sort naturally (reverse)";
         }
         {
-          on = [ "," "s" ];
+          on = [
+            ","
+            "s"
+          ];
           run = "sort size --dir-first";
           desc = "Sort by size";
         }
         {
-          on = [ "," "S" ];
+          on = [
+            ","
+            "S"
+          ];
           run = "sort size --reverse --dir-first";
           desc = "Sort by size (reverse)";
         }
@@ -570,76 +637,125 @@ in {
 
         # Goto
         {
-          on = [ "g" "c" ];
+          on = [
+            "g"
+            "c"
+          ];
           run = "cd ${cfg.configHome}";
           desc = "Go to the config directory";
         }
         {
-          on = [ "g" "d" ];
+          on = [
+            "g"
+            "d"
+          ];
           run = "cd ${cfg.userDirs.documents}";
           desc = "Go to the documents directory";
         }
         {
-          on = [ "g" "h" ];
+          on = [
+            "g"
+            "b"
+          ];
+          run = "cd ${cfg.userDirs.documents}/Livres";
+          desc = "Go to the book directory";
+        }
+        {
+          on = [
+            "g"
+            "h"
+          ];
           run = "cd ${config.home.homeDirectory}";
           desc = "Go to the home directory";
         }
         {
-          on = [ "g" "D" ];
+          on = [
+            "g"
+            "D"
+          ];
           run = "cd /mnt";
           desc = "Go to the mnt directory";
         }
         {
-          on = [ "g" "i" ];
+          on = [
+            "g"
+            "i"
+          ];
           run = "cd ${cfg.userDirs.pictures}";
           desc = "Go to the picture directory";
         }
         {
-          on = [ "g" "j" ];
+          on = [
+            "g"
+            "j"
+          ];
           run = "cd ${cfg.userDirs.extraConfig.XDG_GAME_DIR}";
           desc = "Go to the game directory";
         }
         {
-          on = [ "g" "l" ];
+          on = [
+            "g"
+            "l"
+          ];
           run = "cd ${cfg.dataHome}";
           desc = "Go to the .local/share directory";
         }
         {
-          on = [ "g" "m" ];
+          on = [
+            "g"
+            "m"
+          ];
           run = "cd ${cfg.userDirs.music}";
           desc = "Go to the music directory";
         }
         {
-          on = [ "g" "n" ];
+          on = [
+            "g"
+            "n"
+          ];
           run = "cd ~/Documents/git/nixos";
           desc = "Go to the nixos flake directory";
         }
         {
-          on = [ "g" "s" ];
+          on = [
+            "g"
+            "s"
+          ];
           run = "cd ~/.local/bin";
           desc = "Go to the nixos flake directory";
         }
         {
-          on = [ "g" "t" ];
+          on = [
+            "g"
+            "t"
+          ];
           run = "cd ${cfg.userDirs.download}";
           desc = "Go to the download directory";
         }
         {
-          on = [ "g" "T" ];
+          on = [
+            "g"
+            "T"
+          ];
           run = "cd /tmp";
           desc = "Go to the temporary directory";
         }
         {
-          on = [ "g" "v" ];
+          on = [
+            "g"
+            "v"
+          ];
           run = "cd ${cfg.userDirs.videos}";
           desc = "Go to the video directory";
         }
         {
-          on = [ "g" "<Space>" ];
+          on = [
+            "g"
+            "<Space>"
+          ];
           run = "cd --interactive";
           desc = "Go to a directory interactively";
         }
-
       ];
 
       tasks.keymap = [
@@ -703,7 +819,6 @@ in {
           run = "help";
           desc = "Open help";
         }
-
       ];
 
       select.keymap = [
@@ -778,7 +893,6 @@ in {
           run = "help";
           desc = "Open help";
         }
-
       ];
 
       input.keymap = [
@@ -817,12 +931,18 @@ in {
         }
         {
           on = [ "I" ];
-          run = [ "move -999" "insert" ];
+          run = [
+            "move -999"
+            "insert"
+          ];
           desc = "Move to the BOL; and enter insert mode";
         }
         {
           on = [ "A" ];
-          run = [ "move 999" "insert --append" ];
+          run = [
+            "move 999"
+            "insert --append"
+          ];
           desc = "Move to the EOL; and enter append mode";
         }
         {
@@ -832,7 +952,11 @@ in {
         }
         {
           on = [ "V" ];
-          run = [ "move -999" "visual" "move 999" ];
+          run = [
+            "move -999"
+            "visual"
+            "move 999"
+          ];
           desc = "Enter visual mode and select all";
         }
 
@@ -979,7 +1103,10 @@ in {
         }
         {
           on = [ "D" ];
-          run = [ "delete --cut" "move 999" ];
+          run = [
+            "delete --cut"
+            "move 999"
+          ];
           desc = "Cut until the EOL";
         }
         {
@@ -989,12 +1116,18 @@ in {
         }
         {
           on = [ "C" ];
-          run = [ "delete --cut --insert" "move 999" ];
+          run = [
+            "delete --cut --insert"
+            "move 999"
+          ];
           desc = "Cut until the EOL; and enter insert mode";
         }
         {
           on = [ "x" ];
-          run = [ "delete --cut" "move 1 --in-operating" ];
+          run = [
+            "delete --cut"
+            "move 1 --in-operating"
+          ];
           desc = "Cut the current character";
         }
         {
@@ -1031,7 +1164,6 @@ in {
           run = "help";
           desc = "Open help";
         }
-
       ];
 
       completion.keymap = [
@@ -1048,7 +1180,10 @@ in {
         }
         {
           on = [ "<Enter>" ];
-          run = [ "close --submit" "close_input --submit" ];
+          run = [
+            "close --submit"
+            "close_input --submit"
+          ];
           desc = "Submit the completion and input";
         }
 
@@ -1090,7 +1225,6 @@ in {
           run = "help";
           desc = "Open help";
         }
-
       ];
 
       help.keymap = [
@@ -1167,7 +1301,6 @@ in {
           run = "filter";
           desc = "Apply a filter for the help items";
         }
-
       ];
     };
   };

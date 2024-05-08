@@ -21,8 +21,9 @@
     '';
   };
 
-  services.mpd-mpris = { enable = true; };
+  services.mpd-mpris = {
+    enable = true;
+  };
 
   home.packages = with pkgs; [ mpc-cli ]; # Mpd controls via CLI
-
 }

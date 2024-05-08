@@ -12,10 +12,5 @@
     enable = true;
     enableBashIntegration = config.programs.bash.enable;
     enableZshIntegration = config.programs.zsh.enable;
-
-    settings = {
-      cache_dir = config.xdg.cacheHome;
-    };
   };
-
 }

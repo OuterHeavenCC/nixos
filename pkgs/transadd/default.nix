@@ -2,25 +2,25 @@
   lib,
   writeShellApplication,
   coreutils,
-  fuzzel,
-  gawk,
-  procps,
+  libnotify,
+  sysvtools,
+  transmission,
 }:
 (writeShellApplication {
-  name = "killmenu";
+  name = "transadd";
   runtimeInputs = [
     coreutils
-    fuzzel
-    gawk
-    procps
+    libnotify
+    sysvtools
+    transmission
   ];
-  text = builtins.readFile ./killmenu.sh;
+  text = builtins.readFile ./transadd.sh;
 })
 // {
   meta = with lib; {
     licenses = licenses.mit;
     platforms = platforms.all;
-    mainProgram = "killmenu";
+    mainProgram = "transadd";
   };
 }
 

@@ -1,6 +1,6 @@
 { config, ... }:
 
-let 
+let
   inherit (config.colorscheme) palette;
 in
 {
@@ -34,7 +34,6 @@ in
       dmenu = {
         exit-immediately-if-empty = "no";
       };
-
     };
   };
 }

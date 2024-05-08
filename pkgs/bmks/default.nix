@@ -1,15 +1,16 @@
-{ lib
-, stdenv
-, makeWrapper
-, rofi-wayland
-, fuzzel
-, findutils
-, coreutils
-, fzf
-, gawk
-, gnused
-, dmenu
-, firefox
+{
+  lib,
+  stdenv,
+  makeWrapper,
+  rofi-wayland,
+  fuzzel,
+  findutils,
+  coreutils,
+  fzf,
+  gawk,
+  gnused,
+  dmenu,
+  firefox,
 }:
 
 with lib;
@@ -17,7 +18,7 @@ with lib;
 stdenv.mkDerivation {
   name = "bmks";
   version = "1.1";
-  src = ./bmks;
+  src = ./bmks.sh;
 
   nativeBuildInputs = [ makeWrapper ];
 

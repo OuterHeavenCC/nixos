@@ -32,7 +32,11 @@
         Notes = {
           enable = true;
           path = "/home/corentin/Documents/Notes";
-          devices = [ "phone" "phobos" "deimos" ];
+          devices = [
+            "phone"
+            "phobos"
+            "deimos"
+          ];
           id = "notes";
           versioning = {
             type = "simple";
@@ -42,7 +46,11 @@
         Livres = {
           enable = true;
           path = "/home/corentin/Documents/Livres";
-          devices = [ "phone" "phobos" "deimos" ];
+          devices = [
+            "phone"
+            "phobos"
+            "deimos"
+          ];
           id = "livres";
           versioning = {
             type = "simple";
@@ -52,7 +60,11 @@
         Personnel = {
           enable = true;
           path = "/home/corentin/Documents/Personnel";
-          devices = [ "phone" "phobos" "deimos" ];
+          devices = [
+            "phone"
+            "phobos"
+            "deimos"
+          ];
           id = "personnel";
           versioning = {
             type = "simple";
@@ -62,7 +74,11 @@
         Professionnel = {
           enable = true;
           path = "/home/corentin/Documents/Professionnel";
-          devices = [ "phone" "phobos" "deimos" ];
+          devices = [
+            "phone"
+            "phobos"
+            "deimos"
+          ];
           id = "professionnel";
           versioning = {
             type = "simple";
@@ -72,7 +88,10 @@
         Bookmarks = {
           enable = true;
           path = "/home/corentin/.config/bmks/";
-          devices = [ "phobos" "deimos" ];
+          devices = [
+            "phobos"
+            "deimos"
+          ];
           id = "bookmarks";
           versioning = {
             type = "simple";
@@ -81,7 +100,5 @@
         };
       };
     };
-
-
   };
 }

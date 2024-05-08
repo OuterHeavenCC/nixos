@@ -9,10 +9,10 @@ in
     settings = {
       date-format = "%d-%m-%Y";
       no-pager = true;
-      file = [ 
+      file = [
         "${cfg.configHome}/ledger/professionnel.dat"
-        "${cfg.configHome}/ledger/2022-pro.dat" 
-        "${cfg.configHome}/ledger/2021-pro.dat" 
+        "${cfg.configHome}/ledger/2022-pro.dat"
+        "${cfg.configHome}/ledger/2021-pro.dat"
       ];
     };
   };

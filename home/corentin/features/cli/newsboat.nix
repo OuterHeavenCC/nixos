@@ -3,7 +3,7 @@
     enable = true;
     autoReload = true;
     urls = [
-      
+
       {
         title = "Mediapart";
         tags = [ "news" ];
@@ -16,7 +16,10 @@
       }
       {
         title = "Stronger By Science";
-        tags = [ "sciences" "sport" ];
+        tags = [
+          "sciences"
+          "sport"
+        ];
         url = "https://strongerbyscience.com/articles/feed";
       }
       {
@@ -26,7 +29,10 @@
       }
       {
         title = "Science étonnante";
-        tags = [ "sciences" "tech" ];
+        tags = [
+          "sciences"
+          "tech"
+        ];
         url = "https://scienceetonnante.com/feed/";
       }
       {
@@ -36,20 +42,28 @@
       }
       {
         title = "La Quadrature du Net";
-        tags = [ "tech" "news" ];
+        tags = [
+          "tech"
+          "news"
+        ];
         url = "https://www.laquadrature.net/feed/";
       }
       {
         title = "Gestion de la douleur en thérapie manuelle";
-        tags = [ "sciences" "travail" ];
+        tags = [
+          "sciences"
+          "travail"
+        ];
         url = "https://gestiondeladouleurenthrapiemanuelle.wordpress.com/rss";
       }
       {
         title = "Muscle and Feels";
-        tags = [ "sciences" "sport" ];
+        tags = [
+          "sciences"
+          "sport"
+        ];
         url = "https://feeds.buzzsprout.com/2050318.rss";
       }
-
     ];
 
     extraConfig = ''
@@ -90,6 +104,6 @@
       highlight article "\\((link|image|video)\\)" color8 default
       highlight article "https?://[^ ]+" color4 default
       highlight article "\[[0-9]+\]" color6 default bold
-  '';
+    '';
   };
 }

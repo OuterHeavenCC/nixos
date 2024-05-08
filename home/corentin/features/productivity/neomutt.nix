@@ -15,240 +15,300 @@
       text_flowed = "yes";
       reverse_name = "yes";
       mime_type_query_command = ''"file --mime-type -b %s"'';
-      date_format= ''"%d/%m/%y %H:%M"'';
-      index_format= ''"%2C %Z %?X?A& ? %D %-15.15F %s (%-4.4c)"'';
+      date_format = ''"%d/%m/%y %H:%M"'';
+      index_format = ''"%2C %Z %?X?A& ? %D %-15.15F %s (%-4.4c)"'';
       smtp_authenticators = ''"gssapi:login"'';
       query_command = ''"abook --mutt-query '%s'"'';
       rfc2047_parameters = "yes";
-      sleep_time = "0";		# Pause 0 seconds for informational messages
-      markers = "no";		# Disables the `+` displayed at line wraps
-      mime_forward = "yes";		# attachments are forwarded with mail
-      wait_key = "no";		# mutt won't ask "press key to continue"
-      fast_reply = "yes";			# skip to compose when replying
-      fcc_attach = "yes";			# save attachments with the body
-      forward_format = ''"Fwd: %s"'';	# format of subject when forwarding
-      forward_quote = "yes";		# include message in forwards
-      include = "yes";			# include message in replies
-      mail_check= "60"; # to avoid lags using IMAP with some email providers (yahoo for example)
-
+      sleep_time = "0"; # Pause 0 seconds for informational messages
+      markers = "no"; # Disables the `+` displayed at line wraps
+      mime_forward = "yes"; # attachments are forwarded with mail
+      wait_key = "no"; # mutt won't ask "press key to continue"
+      fast_reply = "yes"; # skip to compose when replying
+      fcc_attach = "yes"; # save attachments with the body
+      forward_format = ''"Fwd: %s"''; # format of subject when forwarding
+      forward_quote = "yes"; # include message in forwards
+      include = "yes"; # include message in replies
+      mail_check = "60"; # to avoid lags using IMAP with some email providers (yahoo for example)
     };
-        binds = [
-          {
-            action = "noop";
-            key = "gT";
-            map = [ "index" "pager" ];
-          }
-          {
-            action = "noop";
-            key = "gg";
-            map = [ "index" "pager" ];
-          }
-          {
-            action = "noop";
-            key = "gt";
-            map = [ "index" "pager" ];
-          }
-          {
-            action = "noop";
-            key = "dT";
-            map = [ "index" ];
-          }
-          {
-            action = "noop";
-            key = "dd"; 
-            map = [ "index" ];
-          }
-          {
-            action = "noop";
-            key = "dt";
-            map = [ "index" ];
-          }
-          {
-            action = "noop";
-            key = "i";
-            map = [ "index" "pager" ];
-          }
-          {
-            action = "noop";
-            key = "g";
-            map = [ "index" "pager" ];
-          }
-          {
-            action = "noop";
-            key = "\\Cf";
-            map = [ "index" ];
-          }
-          {
-            action = "noop";
-            key = "M";
-            map = [ "index" "pager" ];
-          }
-          {
-            action = "noop";
-            key = "C";
-            map = [ "index" "pager" ];
-          }
+    binds = [
+      {
+        action = "noop";
+        key = "gT";
+        map = [
+          "index"
+          "pager"
+        ];
+      }
+      {
+        action = "noop";
+        key = "gg";
+        map = [
+          "index"
+          "pager"
+        ];
+      }
+      {
+        action = "noop";
+        key = "gt";
+        map = [
+          "index"
+          "pager"
+        ];
+      }
+      {
+        action = "noop";
+        key = "dT";
+        map = [ "index" ];
+      }
+      {
+        action = "noop";
+        key = "dd";
+        map = [ "index" ];
+      }
+      {
+        action = "noop";
+        key = "dt";
+        map = [ "index" ];
+      }
+      {
+        action = "noop";
+        key = "i";
+        map = [
+          "index"
+          "pager"
+        ];
+      }
+      {
+        action = "noop";
+        key = "g";
+        map = [
+          "index"
+          "pager"
+        ];
+      }
+      {
+        action = "noop";
+        key = "\\Cf";
+        map = [ "index" ];
+      }
+      {
+        action = "noop";
+        key = "M";
+        map = [
+          "index"
+          "pager"
+        ];
+      }
+      {
+        action = "noop";
+        key = "C";
+        map = [
+          "index"
+          "pager"
+        ];
+      }
 
-          # General Bindings
-          {
-            action = "first-entry";
-            key = "gg";
-            map = [ "index" ];
-          }
-          {
-            action = "next-entry";
-            key = "j";
-            map = [ "index" ];
-          }
-          {
-            action = "previous-entry";
-            key = "k";
-            map = [ "index" ];
-          }
-          {
-            action = "view-mailcap";
-            key = "<return>";
-            map = [ "attach" ];
-          }
-          {
-            action = "view-mailcap";
-            key = "l";
-            map = [ "attach" ];
-          }
-          {
-            action = "noop";
-            key = "<space>";
-            map = [ "editor" ];
-          }
-          {
-            action = "last-entry";
-            key = "G";
-            map = [ "index" ];
-          }
-          {
-            action = "exit";
-            key = "h";
-            map = [ "pager" "attach" ];
-          }
-          {
-            action = "next-line";
-            key = "j";
-            map = [ "pager" ];
-          }
-          {
-            action = "previous-line";
-            key = "k";
-            map = [ "pager" ];
-          }
-          {
-            action = "view-attachments";
-            key = "l";
-            map = [ "pager" ];
-          }
-          {
-            action = "delete-message";
-            key = "D";
-            map = [ "index" ];
-          }
-          {
-            action = "undelete-message";
-            key = "U";
-            map = [ "index" ];
-          }
-          {
-            action = "limit";
-            key = "L";
-            map = [ "index" ];
-          }
-          {
-            action = "noop";
-            key = "h";
-            map = [ "index" ];
-          }
-          {
-            action = "display-message";
-            key = "l";
-            map = [ "index" ];
-          }
-          {
-            action = "tag-entry";
-            key = "<space>";
-            map = [ "index" "query" ];
-          }
-          {
-            action = "view-raw-message";
-            key = "H";
-            map = [ "index" "pager" ];
-          }
-          {
-            action = "select-entry";
-            key = "l";
-            map = [ "browser" ];
-          }
-          {
-            action = "top-page";
-            key = "gg";
-            map = [ "pager" "browser" ];
-          }
-          {
-            action = "bottom-page";
-            key = "G";
-            map = [ "pager" "browser" ];
-          }
-          {
-            action = "half-down";
-            key = "d";
-            map = [ "index" "pager" "browser" ];
-          }
-          {
-            action = "half-up";
-            key = "u";
-            map = [ "index" "pager" "browser" ];
-          }
-          {
-            action = "sync-mailbox";
-            key = "S";
-            map = [ "index" "pager" ];
-          }
-          {
-            action = "group-reply";
-            key = "R";
-            map = [ "index" "pager" ];
-          }
-          {
-            action = "complete-query";
-            key = "<Tab>";
-            map = [ "editor" ];
-          }
-          {
-            action = "sidebar-next";
-            key = "\\Cj";
-            map = [ "index" "pager" ];
-          }
-          {
-            action = "sidebar-prev";
-            key = "\\Ck";
-            map = [ "index" "pager" ];
-          }
-          {
-            action = "sidebar-open";
-            key = "\\Co";
-            map = [ "index" "pager" ];
-          }
-      ];
-          macros =
-      [
-        {
-          action = "<enter-command>set my_pipe_decode=\$pipe_decode pipe_decode<return><pipe-message>abook --add-email<return><enter-command>set pipe_decode=\$my_pipe_decode; unset my_pipe_decode<return>";
-          key = "a";
-          map = [ "index" "pager" ];
-        }
-        {
-          action = "<tag-pattern>~N<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter>";
-          key = "A";
-          map = [ "index" ];
-        }
-      ];
+      # General Bindings
+      {
+        action = "first-entry";
+        key = "gg";
+        map = [ "index" ];
+      }
+      {
+        action = "next-entry";
+        key = "j";
+        map = [ "index" ];
+      }
+      {
+        action = "previous-entry";
+        key = "k";
+        map = [ "index" ];
+      }
+      {
+        action = "view-mailcap";
+        key = "<return>";
+        map = [ "attach" ];
+      }
+      {
+        action = "view-mailcap";
+        key = "l";
+        map = [ "attach" ];
+      }
+      {
+        action = "noop";
+        key = "<space>";
+        map = [ "editor" ];
+      }
+      {
+        action = "last-entry";
+        key = "G";
+        map = [ "index" ];
+      }
+      {
+        action = "exit";
+        key = "h";
+        map = [
+          "pager"
+          "attach"
+        ];
+      }
+      {
+        action = "next-line";
+        key = "j";
+        map = [ "pager" ];
+      }
+      {
+        action = "previous-line";
+        key = "k";
+        map = [ "pager" ];
+      }
+      {
+        action = "view-attachments";
+        key = "l";
+        map = [ "pager" ];
+      }
+      {
+        action = "delete-message";
+        key = "D";
+        map = [ "index" ];
+      }
+      {
+        action = "undelete-message";
+        key = "U";
+        map = [ "index" ];
+      }
+      {
+        action = "limit";
+        key = "L";
+        map = [ "index" ];
+      }
+      {
+        action = "noop";
+        key = "h";
+        map = [ "index" ];
+      }
+      {
+        action = "display-message";
+        key = "l";
+        map = [ "index" ];
+      }
+      {
+        action = "tag-entry";
+        key = "<space>";
+        map = [
+          "index"
+          "query"
+        ];
+      }
+      {
+        action = "view-raw-message";
+        key = "H";
+        map = [
+          "index"
+          "pager"
+        ];
+      }
+      {
+        action = "select-entry";
+        key = "l";
+        map = [ "browser" ];
+      }
+      {
+        action = "top-page";
+        key = "gg";
+        map = [
+          "pager"
+          "browser"
+        ];
+      }
+      {
+        action = "bottom-page";
+        key = "G";
+        map = [
+          "pager"
+          "browser"
+        ];
+      }
+      {
+        action = "half-down";
+        key = "d";
+        map = [
+          "index"
+          "pager"
+          "browser"
+        ];
+      }
+      {
+        action = "half-up";
+        key = "u";
+        map = [
+          "index"
+          "pager"
+          "browser"
+        ];
+      }
+      {
+        action = "sync-mailbox";
+        key = "S";
+        map = [
+          "index"
+          "pager"
+        ];
+      }
+      {
+        action = "group-reply";
+        key = "R";
+        map = [
+          "index"
+          "pager"
+        ];
+      }
+      {
+        action = "complete-query";
+        key = "<Tab>";
+        map = [ "editor" ];
+      }
+      {
+        action = "sidebar-next";
+        key = "\\Cj";
+        map = [
+          "index"
+          "pager"
+        ];
+      }
+      {
+        action = "sidebar-prev";
+        key = "\\Ck";
+        map = [
+          "index"
+          "pager"
+        ];
+      }
+      {
+        action = "sidebar-open";
+        key = "\\Co";
+        map = [
+          "index"
+          "pager"
+        ];
+      }
+    ];
+    macros = [
+      {
+        action = "<enter-command>set my_pipe_decode=\$pipe_decode pipe_decode<return><pipe-message>abook --add-email<return><enter-command>set pipe_decode=\$my_pipe_decode; unset my_pipe_decode<return>";
+        key = "a";
+        map = [
+          "index"
+          "pager"
+        ];
+      }
+      {
+        action = "<tag-pattern>~N<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter>";
+        key = "A";
+        map = [ "index" ];
+      }
+    ];
     extraConfig = ''
       # Noms des dossiers
       named-mailboxes "Boite de réception" +Inbox

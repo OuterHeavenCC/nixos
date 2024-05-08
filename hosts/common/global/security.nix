@@ -1,6 +1,6 @@
 { pkgs, ... }:
 
-let 
+let
   user = "corentin";
 in
 {
@@ -9,10 +9,13 @@ in
   security.sudo.enable = false;
   security.doas.enable = true;
   # Configuration Doas
-  security.doas.extraRules = [{ users = [ "${user}" ];
+  security.doas.extraRules = [
+    {
+      users = [ "${user}" ];
       noPass = true;
       keepEnv = true;
-  }];
+    }
+  ];
 
   # Rentrer le mot de passe automatiquement gpg à la connexion
   security.pam.services.login.gnupg = {
@@ -21,5 +24,5 @@ in
   };
 
   # Fix Swaylock
-  security.pam.services.swaylock = {};
+  security.pam.services.swaylock = { };
 }

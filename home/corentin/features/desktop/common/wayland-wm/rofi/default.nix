@@ -1,8 +1,10 @@
 { config, pkgs, ... }:
 
 {
-  xdg.configFile."rofi/colors.rasi".text = import ./themes/colors.nix { inherit (config) colorscheme; };
-  xdg.configFile."rofi/askpass.rasi".text = import ./themes/askpass.nix ;
+  xdg.configFile."rofi/colors.rasi".text = import ./themes/colors.nix {
+    inherit (config) colorscheme;
+  };
+  xdg.configFile."rofi/askpass.rasi".text = import ./themes/askpass.nix;
   xdg.configFile."rofi/bluetooth.rasi".text = import ./themes/bluetooth.nix;
   xdg.configFile."rofi/confirm.rasi".text = import ./themes/confirm.nix;
   xdg.configFile."rofi/font.rasi".text = import ./themes/font.nix;
@@ -17,14 +19,14 @@
 
   # home.packages = with pkgs; [
   #   bmks
-    # passrofi
-    # rofi-kill
-    # rofi-launcher
-    # rofi-mount
-    # rofi-mullvad-toggle
-    # rofi-powermenu
-    # rofi-printscreen
-    # rofi-runner
-    # rofi-umount
+  # passrofi
+  # rofi-kill
+  # rofi-launcher
+  # rofi-mount
+  # rofi-mullvad-toggle
+  # rofi-powermenu
+  # rofi-printscreen
+  # rofi-runner
+  # rofi-umount
   # ];
 }

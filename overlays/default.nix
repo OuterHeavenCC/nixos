@@ -2,14 +2,14 @@
 { inputs, ... }:
 {
   flake-inputs = final: _: {
-    inputs = builtins.mapAttrs
-      (_: flake: let
-        legacyPackages = ((flake.legacyPackages or {}).${final.system} or {});
-        packages = ((flake.packages or {}).${final.system} or {});
+    inputs = builtins.mapAttrs (
+      _: flake:
+      let
+        legacyPackages = ((flake.legacyPackages or { }).${final.system} or { });
+        packages = ((flake.packages or { }).${final.system} or { });
       in
-        if legacyPackages != {} then legacyPackages else packages
-      )
-      inputs;
+      if legacyPackages != { } then legacyPackages else packages
+    ) inputs;
   };
   # This one brings our custom packages from the 'pkgs' directory
   additions = final: _prev: import ../pkgs { pkgs = final; };
@@ -20,26 +20,20 @@
 
   modifications = final: prev: {
 
-    ncmpcpp = prev.ncmpcpp.override {
-      visualizerSupport = true;
-    };
+    ncmpcpp = prev.ncmpcpp.override { visualizerSupport = true; };
 
     nginxStable = prev.nginxStable.override { oppenssl = prev.pkgs.libressl; };
 
     nh = prev.nh.overrideAttrs (previousAttrs: {
-          patches = previousAttrs.patches ++ [
-            ./patches/nh/patch.txt # doas support in nh
-          ];
+      patches = previousAttrs.patches ++ [
+        ./patches/nh/patch.txt # doas support in nh
+      ];
     });
 
     inherit (inputs.nixos-stable.legacyPackages.${final.system}) rpcs3;
     inherit (inputs.nixos-stable.legacyPackages.${final.system}) calibre;
     inherit (inputs.nixos-stable.legacyPackages.${final.system}) anki;
-
-    
-
   };
-
 
   # When applied, the unstable nixpkgs set (declared in the flake inputs) will
   # be accessible through 'pkgs.unstable'
@@ -49,5 +43,4 @@
       config.allowUnfree = true;
     };
   };
-
 }

@@ -1,7 +1,5 @@
 { pkgs, ... }:
-  
+
 {
-  home.packages = with pkgs; [
-    simple-mtpfs
-  ];
+  home.packages = with pkgs; [ simple-mtpfs ];
 }

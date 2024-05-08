@@ -1,4 +1,5 @@
-{ lib, pkgs, ... }: {
+{ lib, pkgs, ... }:
+{
   wayland.windowManager.hyprland.settings = {
     bindm = [
       "SUPER,mouse:272,movewindow"
@@ -14,56 +15,54 @@
       "SUPERSHIFT,k,swapnext,prev"
     ];
 
-    bind = let
+    bind =
+      let
 
-      azertyMapping = {
-        ampersand = "1";
-        eacute = "2";
-        quotedbl = "3";
-        apostrophe = "4";
-        parenleft = "5";
-        minus = "6";
-        egrave = "7";
-        underscore = "8";
-        ccedilla = "9";
-        agrave = "10";
-      };
+        azertyMapping = {
+          ampersand = "1";
+          eacute = "2";
+          quotedbl = "3";
+          apostrophe = "4";
+          parenleft = "5";
+          minus = "6";
+          egrave = "7";
+          underscore = "8";
+          ccedilla = "9";
+          agrave = "10";
+        };
 
-      workspaces = [ 
-        "ampersand"
-        "eacute"
-        "quotedbl"
-        "apostrophe"
-        "parenleft"
-        "minus"
-        "egrave"
-        "underscore"
-        "ccedilla"
-        "agrave"
-      ];
-
+        workspaces = [
+          "ampersand"
+          "eacute"
+          "quotedbl"
+          "apostrophe"
+          "parenleft"
+          "minus"
+          "egrave"
+          "underscore"
+          "ccedilla"
+          "agrave"
+        ];
+      in
       # Map keys (arrows and hjkl) to hyprland directions (l, r, u, d)
-    in [
+      [
 
-      "SUPER,q,killactive"
+        "SUPER,q,killactive"
 
-      "SUPER,f,fullscreen,0"
-      "SUPER,space,togglefloating"
+        "SUPER,f,fullscreen,0"
+        "SUPER,space,togglefloating"
 
-      "SUPER,left,focusmonitor,l"
-      "SUPER,right,focusmonitor,r"
-      "SUPERSHIFT,left,movewindow,mon:l"
-      "SUPERSHIFT,right,movewindow,mon:r"
+        "SUPER,left,focusmonitor,l"
+        "SUPER,right,focusmonitor,r"
+        "SUPERSHIFT,left,movewindow,mon:l"
+        "SUPERSHIFT,right,movewindow,mon:r"
+      ]
+      ++
+        # Change workspace
+        (map (n: "SUPER,${n},workspace,${azertyMapping.${n}}") workspaces)
+      ++
 
-    ] ++
-    # Change workspace
-    (map (n: 
-      "SUPER,${n},workspace,${azertyMapping.${n}}"
-    ) workspaces) ++
-
-    # Move window to workspace
-    (map (n: 
-      "SUPERSHIFT,${n},movetoworkspacesilent,${azertyMapping.${n}}"
-    ) workspaces);
+        # Move window to workspace
+        (map (n: "SUPERSHIFT,${n},movetoworkspacesilent,${azertyMapping.${n}}") workspaces);
   };
 }

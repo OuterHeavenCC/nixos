@@ -1,7 +1,5 @@
 { pkgs, ... }:
 
 {
-  home.packages = with pkgs; [
-    zola
-  ];
+  home.packages = with pkgs; [ zola ];
 }

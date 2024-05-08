@@ -1,13 +1,16 @@
 # This is the configuration required to run NixOS on GandiCloud.
 { lib, modulesPath, ... }:
 {
-  imports = [
-    (modulesPath + "/virtualisation/openstack-config.nix")
-  ];
+  imports = [ (modulesPath + "/virtualisation/openstack-config.nix") ];
   config = {
     boot.initrd.kernelModules = [
-      "xen-blkfront" "xen-tpmfront" "xen-kbdfront" "xen-fbfront"
-      "xen-netfront" "xen-pcifront" "xen-scsifront"
+      "xen-blkfront"
+      "xen-tpmfront"
+      "xen-kbdfront"
+      "xen-fbfront"
+      "xen-netfront"
+      "xen-pcifront"
+      "xen-scsifront"
     ];
 
     # Show debug kernel message on boot then reduce loglevel once booted
@@ -36,16 +39,17 @@
 
     system.stateVersion = "23.05";
 
-    fileSystems."/" =
-      { device = "/dev/disk/by-label/nixos";
-        fsType = "ext4";
-      };
+    fileSystems."/" = {
+      device = "/dev/disk/by-label/nixos";
+      fsType = "ext4";
+    };
 
-    swapDevices = [{
-      device = "/swap/swapfile";
-      size = 1024;
-    }];
-
+    swapDevices = [
+      {
+        device = "/swap/swapfile";
+        size = 1024;
+      }
+    ];
 
     # Enables DHCP on each ethernet and wireless interface. In case of scripted networking
     # (the default) this is the recommended approach. When using systemd-networkd it's
@@ -57,4 +61,3 @@
     nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   };
 }
-

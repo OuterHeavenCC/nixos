@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
-
 menu_command="fuzzel -d -l 5"
 
 shutdown="󰐥 Eteindre"
@@ -13,20 +11,20 @@ options="$lock\n$logout\n$suspend\n$reboot\n$shutdown"
 
 chosen="$(echo -e "$options" | $menu_command)"
 case $chosen in
-    $shutdown)
+    "$shutdown")
 			  systemctl poweroff
         ;;
-    $reboot)
+    "$reboot")
 			  systemctl reboot
         ;;
-    $suspend)
+    "$suspend")
         systemctl suspend
         ;;
-    $lock)
-        swaylock --daemonize -i ${XDG_DATA_HOME}/bg
+    "$lock")
+        swaylock --daemonize -i "${XDG_DATA_HOME}/bg"
         ;;
-    $logout)
-        loginctl kill-user $(whoami)
+    "$logout")
+        loginctl kill-user "$(whoami)"
         ;;
 esac
 
