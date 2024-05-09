@@ -64,10 +64,10 @@ bmks_display() {
             sort "$URL_FILE_PATH/$URL_FILE_NAME" | fzf | awk '{print $NF}' | xargs -I '{}' "$BROWSER" '{}'
             ;;
         rofi)
-            sort "$URL_FILE_PATH/$URL_FILE_NAME" | rofi -dmenu -l "$(wc -l < "$URL_FILE_PATH/$URL_FILE_NAME")" | awk '{print $NF}' | xargs -I '{}' $"BROWSER" '{}'
+            sort "$URL_FILE_PATH/$URL_FILE_NAME" | rofi -dmenu -l "$(wc -l < "$URL_FILE_PATH/$URL_FILE_NAME")" | awk '{print $NF}' | xargs -I '{}' "$BROWSER" '{}'
             ;;
         fuzzel)
-            sort "$URL_FILE_PATH/$URL_FILE_NAME" | fuzzel -d | awk '{print $NF}' | xargs -I '{}' $"BROWSER" '{}'
+            sort "$URL_FILE_PATH/$URL_FILE_NAME" | fuzzel -d | awk '{print $NF}' | xargs -I '{}' "$BROWSER" '{}'
             ;;
     esac
 }
