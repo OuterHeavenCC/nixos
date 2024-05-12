@@ -7,6 +7,7 @@
     bmks
     killmenu
     transadd # Mimeapp script for adding torrents to transmission
+    fuzzelunicode
   ];
   home.file = {
     ".local/bin/passfuzzel" = {

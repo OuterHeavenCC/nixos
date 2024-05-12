@@ -1,5 +1,3 @@
-#!/usr/bin/env bash
-
 # set preferred launcher
 PREFERRED_LAUNCHER="fuzzel"
 # set path where urls will be stored

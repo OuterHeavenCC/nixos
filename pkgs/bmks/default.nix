@@ -18,7 +18,7 @@ with lib;
 stdenv.mkDerivation {
   name = "bmks";
   version = "1.1";
-  src = ./bmks.sh;
+  src = ./src;
 
   nativeBuildInputs = [ makeWrapper ];
 
@@ -27,7 +27,7 @@ stdenv.mkDerivation {
   dontConfigure = true;
 
   installPhase = ''
-    install -Dm 0755 $src $out/bin/bmks
+    install -Dm 0755 $src/bmks.sh $out/bin/bmks
     wrapProgram $out/bin/bmks --set PATH \
       "${
         makeBinPath [

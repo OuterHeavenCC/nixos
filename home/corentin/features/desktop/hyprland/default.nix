@@ -180,6 +180,7 @@ in
           pulsemixer = "${pkgs.pulsemixer}/bin/pulsemixer";
           taskwarrior-tui = "${pkgs.taskwarrior-tui}/bin/taskwarrior-tui";
           telegram-desktop = "${pkgs.telegram-desktop}/bin/telegram-desktop";
+          fuzzelunicode = "${pkgs.fuzzelunicode}/bin/fuzzelunicode";
           waybar = "${pkgs.waybar}/bin/waybar";
           wl-copy = "${pkgs.wl-clipboard}/bin/wl-copy";
           ytfzf = "${pkgs.ytfzf}/bin/ytfzf";
@@ -213,6 +214,8 @@ in
           "SUPERSHIFT,BackSpace,exec,passfuzzel"
           "SUPER,Delete,exec,${killmenu}"
           ",XF86AudioMute,exec,${pamixer} --toggle-mute"
+          ",Insert,exec,${fuzzelunicode}"
+          "SHIFT,Insert,exec,${fuzzelunicode} copy"
 
           # Screenshots
 
