@@ -2,6 +2,7 @@
   lib,
   config,
   pkgs,
+  inputs,
   ...
 }:
 let
@@ -32,7 +33,6 @@ in
           pointer = config.home.pointerCursor;
           wbg = "${pkgs.wbg}/bin/wbg";
           foot = "${pkgs.foot}/bin/foot";
-          # waybar = "${pkgs.waybar}/bin/waybar";
           swayidle = "${pkgs.swayidle}/bin/swayidle";
           xrandr = "${pkgs.xorg.xrandr}/bin/xrandr";
           wl-paste = "${pkgs.wl-clipboard}/bin/wl-paste";
@@ -44,7 +44,6 @@ in
           "${hyprcursor} setcursor ${pointer.name} ${toString pointer.size}"
           "${wbg} ${config.wallpaper}"
           "${foot} --server"
-          # "${waybar}"
           "${swayidle} -w"
           "${wl-paste} --type text --watch ${cliphist} store"
           "${wl-paste} --type image --watch ${cliphist} store"
@@ -181,14 +180,12 @@ in
           taskwarrior-tui = "${pkgs.taskwarrior-tui}/bin/taskwarrior-tui";
           telegram-desktop = "${pkgs.telegram-desktop}/bin/telegram-desktop";
           fuzzelunicode = "${pkgs.fuzzelunicode}/bin/fuzzelunicode";
-          waybar = "${pkgs.waybar}/bin/waybar";
           wl-copy = "${pkgs.wl-clipboard}/bin/wl-copy";
           ytfzf = "${pkgs.ytfzf}/bin/ytfzf";
         in
         [
           "SUPER,Return,exec,${TERMINAL}"
           "SUPER,B,exec,${blueman-manager}"
-          "SUPERSHIFT,B,exec,pkill -USR1 ${waybar}"
           "SUPER,C,exec,${TERMINAL} -e ${calcurse}"
           "SUPERSHIFT,C,exec,${gnome-calculator}"
           "SUPER,d,exec,anyrun"
