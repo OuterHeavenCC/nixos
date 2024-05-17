@@ -191,7 +191,7 @@ in
           "SUPERSHIFT,B,exec,pkill -USR1 ${waybar}"
           "SUPER,C,exec,${TERMINAL} -e ${calcurse}"
           "SUPERSHIFT,C,exec,${gnome-calculator}"
-          "SUPER,d,exec,${fuzzel}"
+          "SUPER,d,exec,anyrun"
           "SUPER,E,exec,${TERMINAL} -e ${MAILCLIENT}"
           "SUPERSHIFT,E,exec,${TERMINAL} -e ${abook} -C ${cfg.configHome}/abook/abookrc --datafile ${cfg.configHome}/abook/addressbook"
           "SUPER,M,exec,${TERMINAL} -e ${ncmpcpp}"
