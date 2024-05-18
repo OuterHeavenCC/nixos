@@ -11,6 +11,7 @@
   gnused,
   dmenu,
   firefox,
+  inputs,
 }:
 
 with lib;
@@ -37,6 +38,7 @@ stdenv.mkDerivation {
           fuzzel
           fzf
           gawk
+          inputs.anyrun.anyrun
           gnused
           dmenu
           firefox

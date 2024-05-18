@@ -10,5 +10,4 @@
   bmks = pkgs.callPackage ./bmks { };
   killmenu = pkgs.callPackage ./killmenu { };
   transadd = pkgs.callPackage ./transadd { };
-  fuzzelunicode = pkgs.callPackage ./fuzzelunicode { };
 }

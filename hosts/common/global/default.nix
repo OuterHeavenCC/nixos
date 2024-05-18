@@ -13,6 +13,7 @@
     ./nix.nix
     ./podman.nix
     ./security.nix
+    ./shell.nix
     ./ssh.nix
   ];
 

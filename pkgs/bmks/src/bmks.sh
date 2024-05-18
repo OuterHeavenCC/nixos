@@ -1,5 +1,5 @@
 # set preferred launcher
-PREFERRED_LAUNCHER="fuzzel"
+PREFERRED_LAUNCHER="anyrun"
 # set path where urls will be stored
 URL_FILE_PATH="$HOME/.config/bmks"
 # name of file urls will be stored in
@@ -49,6 +49,9 @@ bmks_del() {
         fuzzel)
             sed -i "/$(sort "$URL_FILE_PATH/$URL_FILE_NAME" | fuzzel -d -l "$(wc -l < "$URL_FILE_PATH/$URL_FILE_NAME")")/d" "$URL_FILE_PATH/$URL_FILE_NAME"
             ;;
+        anyrun)
+          sed -i "/$(sort "$URL_FILE_PATH/$URL_FILE_NAME" | anyrun --max-entries 10 --show-results-immediately true --plugins "$ANYRUN_STDIN_PLUGIN_PATH" "$(wc -l < "$URL_FILE_PATH/$URL_FILE_NAME")")/d" "$URL_FILE_PATH/$URL_FILE_NAME"
+            ;;
     esac
 }
 
@@ -66,6 +69,9 @@ bmks_display() {
             ;;
         fuzzel)
             sort "$URL_FILE_PATH/$URL_FILE_NAME" | fuzzel -d | awk '{print $NF}' | xargs -I '{}' "$BROWSER" '{}'
+            ;;
+        anyrun)
+          sort "$URL_FILE_PATH/$URL_FILE_NAME" | anyrun --max-entries 10 --show-results-immediately true --plugins "$ANYRUN_STDIN_PLUGIN_PATH" | awk '{print $NF}' | xargs -I '{}' "$BROWSER" '{}'
             ;;
     esac
 }
@@ -107,6 +113,11 @@ case "$1" in
         PREFERRED_LAUNCHER="$1"
         bmks_display
         ;;
+    "anyrun")
+        PREFERRED_LAUNCHER="$1"
+        bmks_display
+        ;;
+
     *)
         bmks_display
         ;;

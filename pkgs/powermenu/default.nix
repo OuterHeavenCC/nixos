@@ -7,6 +7,7 @@
   swaylock,
   gnugrep,
   systemd,
+  inputs,
 
 }:
 (writeShellApplication {
@@ -15,6 +16,7 @@
     fuzzel
     findutils
     coreutils
+    inputs.anyrun.anyrun
     swaylock
     gnugrep
     systemd

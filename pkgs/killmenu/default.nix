@@ -2,7 +2,7 @@
   lib,
   writeShellApplication,
   coreutils,
-  fuzzel,
+  inputs,
   gawk,
   procps,
 }:
@@ -10,7 +10,7 @@
   name = "killmenu";
   runtimeInputs = [
     coreutils
-    fuzzel
+    inputs.anyrun.anyrun
     gawk
     procps
   ];

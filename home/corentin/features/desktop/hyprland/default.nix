@@ -2,7 +2,6 @@
   lib,
   config,
   pkgs,
-  inputs,
   ...
 }:
 let
@@ -53,7 +52,6 @@ in
       env = [
         "GDK_BACKEND,wayland,x11"
         "QT_QPA_PLATFORM,wayland;xcb"
-        # "SDL_VIDEODRIVER,wayland"
         "CLUTTER_BACKEND,wayland"
         "XDG_CURRENT_DESKTOP,Hyprland"
         "XDG_SESSION_TYPE,wayland"
@@ -78,7 +76,6 @@ in
 
       windowrulev2 = [
         "immediate, class:^(GameThread)$"
-        # "immediate, class:^(gamescope-wl)$"
         "immediate, class:^(Turbo-Overkill)$"
         "immediate, class:^(teardown.exe)$"
         "immediate, class:^(AlanWake2.exe)$"
@@ -179,7 +176,6 @@ in
           pulsemixer = "${pkgs.pulsemixer}/bin/pulsemixer";
           taskwarrior-tui = "${pkgs.taskwarrior-tui}/bin/taskwarrior-tui";
           telegram-desktop = "${pkgs.telegram-desktop}/bin/telegram-desktop";
-          fuzzelunicode = "${pkgs.fuzzelunicode}/bin/fuzzelunicode";
           wl-copy = "${pkgs.wl-clipboard}/bin/wl-copy";
           ytfzf = "${pkgs.ytfzf}/bin/ytfzf";
         in
@@ -211,8 +207,6 @@ in
           "SUPERSHIFT,BackSpace,exec,passfuzzel"
           "SUPER,Delete,exec,${killmenu}"
           ",XF86AudioMute,exec,${pamixer} --toggle-mute"
-          ",Insert,exec,${fuzzelunicode}"
-          "SHIFT,Insert,exec,${fuzzelunicode} copy"
 
           # Screenshots
 

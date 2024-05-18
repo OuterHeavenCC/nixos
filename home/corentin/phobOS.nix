@@ -13,7 +13,7 @@
     ./features/dev
     ./features/editor/lvim
     ./features/games
-    ./features/nvidia
+    # ./features/nvidia
     ./features/pass
     ./features/productivity
     ./features/scripts

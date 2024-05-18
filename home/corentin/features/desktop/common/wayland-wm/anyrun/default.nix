@@ -35,4 +35,9 @@
       )
     '';
   };
+  
+  programs.zsh.sessionVariables = {
+    ANYRUN_STDIN_PLUGIN_PATH = "${inputs.anyrun.packages.${pkgs.system}.stdin}/lib/libstdin.so";
+  };
+
 }

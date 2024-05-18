@@ -52,7 +52,7 @@
   services.xserver = {
     enable = true;
     xkb.layout = "fr";
-    videoDrivers = [ "nvidia" ];
+    # videoDrivers = [ "nvidia" ];
     displayManager.lightdm = {
       enable = false;
     };
@@ -71,11 +71,11 @@
         ocl-icd
       ];
     };
-    nvidia = {
-      modesetting.enable = true;
-      powerManagement.enable = false;
-      powerManagement.finegrained = false;
-    };
+    # nvidia = {
+    #   modesetting.enable = true;
+    #   powerManagement.enable = false;
+    #   powerManagement.finegrained = false;
+    # };
   };
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
