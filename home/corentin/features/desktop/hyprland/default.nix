@@ -1,6 +1,7 @@
 {
   lib,
   config,
+  inputs,
   pkgs,
   ...
 }:
@@ -161,7 +162,7 @@ in
           btm = "${pkgs.bottom}/bin/btm";
           calcurse = "${pkgs.calcurse}/bin/calcurse";
           cliphist = "${pkgs.cliphist}/bin/cliphist";
-          fuzzel = "${pkgs.fuzzel}/bin/fuzzel";
+          anyrun = "${pkgs.anyrun}/bin/anyrun";
           gnome-calculator = "${pkgs.gnome.gnome-calculator}/bin/gnome-calculator";
           grimblast = "${pkgs.grimblast}/bin/grimblast";
           hyprctl = "${pkgs.hyprland}/bin/hyprctl";
@@ -184,7 +185,7 @@ in
           "SUPER,B,exec,${blueman-manager}"
           "SUPER,C,exec,${TERMINAL} -e ${calcurse}"
           "SUPERSHIFT,C,exec,${gnome-calculator}"
-          "SUPER,d,exec,anyrun"
+          "SUPER,d,exec,{anyrun}"
           "SUPER,E,exec,${TERMINAL} -e ${MAILCLIENT}"
           "SUPERSHIFT,E,exec,${TERMINAL} -e ${abook} -C ${cfg.configHome}/abook/abookrc --datafile ${cfg.configHome}/abook/addressbook"
           "SUPER,M,exec,${TERMINAL} -e ${ncmpcpp}"
@@ -200,7 +201,7 @@ in
           "SUPERSHIFT,S,exec,${bmks}"
           "SUPER,W,exec,${BROWSER}"
           "SUPERSHIFT,W,exec,${networkmanager_dmenu}"
-          "SUPER,X,exec,${cliphist} list | ${fuzzel} -d | cliphist decode | ${wl-copy}"
+          "SUPER,X,exec,${cliphist} list | ${anyrun} --plugins $ANYRUN_STDIN_PLUGIN_PATH --show-results-immediately true | cliphist decode | ${wl-copy}"
           "SUPER,F4,exec,${TERMINAL} -e ${btm}"
           "SUPER,exclam,exec,${telegram-desktop}"
           "SUPER,BackSpace,exec,${powermenu}"
