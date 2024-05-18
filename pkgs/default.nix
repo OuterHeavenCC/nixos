@@ -10,4 +10,5 @@
   bmks = pkgs.callPackage ./bmks { };
   killmenu = pkgs.callPackage ./killmenu { };
   transadd = pkgs.callPackage ./transadd { };
+  lunarvim = pkgs.callPackage ./lunarvim { }; # TODO Enlever le temps que Lunarvim soit fixé pour la version 0.10
 }

@@ -185,7 +185,7 @@ in
           "SUPER,B,exec,${blueman-manager}"
           "SUPER,C,exec,${TERMINAL} -e ${calcurse}"
           "SUPERSHIFT,C,exec,${gnome-calculator}"
-          "SUPER,d,exec,{anyrun}"
+          "SUPER,d,exec,exec ${anyrun}"
           "SUPER,E,exec,${TERMINAL} -e ${MAILCLIENT}"
           "SUPERSHIFT,E,exec,${TERMINAL} -e ${abook} -C ${cfg.configHome}/abook/abookrc --datafile ${cfg.configHome}/abook/addressbook"
           "SUPER,M,exec,${TERMINAL} -e ${ncmpcpp}"
@@ -205,7 +205,7 @@ in
           "SUPER,F4,exec,${TERMINAL} -e ${btm}"
           "SUPER,exclam,exec,${telegram-desktop}"
           "SUPER,BackSpace,exec,${powermenu}"
-          "SUPERSHIFT,BackSpace,exec,passfuzzel"
+          "SUPERSHIFT,BackSpace,exec,anyrun-pass"
           "SUPER,Delete,exec,${killmenu}"
           ",XF86AudioMute,exec,${pamixer} --toggle-mute"
 

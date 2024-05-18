@@ -9,9 +9,9 @@
     transadd # Mimeapp script for adding torrents to transmission
   ];
   home.file = {
-    ".local/bin/passfuzzel" = {
+    ".local/bin/anyrun-pass" = {
       enable = true;
-      source = ./bin/passfuzzel;
+      source = ./bin/anyrun-pass;
       executable = true;
     };
   };
