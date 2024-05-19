@@ -11,7 +11,7 @@
     ./features/desktop/common/wayland-wm
     ./features/desktop/hyprland
     ./features/dev
-    ./features/editor/lvim
+    ./features/editor/nixvim
     ./features/games
     # ./features/nvidia
     ./features/pass
