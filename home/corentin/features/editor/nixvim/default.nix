@@ -22,5 +22,4 @@
     vim = "$EDITOR";
     nvim = "$EDITOR";
   };
-
 }

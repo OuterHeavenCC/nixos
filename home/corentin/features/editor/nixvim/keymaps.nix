@@ -2,9 +2,9 @@
   programs.nixvim.keymaps = [
     # Better indenting
     {
-        key = "<";
-        action = "<gv";
-        mode = "v";
+      key = "<";
+      action = "<gv";
+      mode = "v";
     }
     {
       key = ">";
