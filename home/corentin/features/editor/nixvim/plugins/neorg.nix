@@ -14,6 +14,7 @@
             workspaces = {
               notes = "~/Documents/Notes";
             };
+            default_workspace = "notes";
           };
         };
       };

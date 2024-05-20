@@ -1,5 +1,8 @@
 {
   programs.nixvim = {
+    globals = {
+      mapleader = "<Space>";
+    };
     options = {
       number = true;
       relativenumber = true;
