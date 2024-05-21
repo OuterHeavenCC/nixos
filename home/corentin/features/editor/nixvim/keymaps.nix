@@ -264,7 +264,7 @@
 
     {
       mode = "n";
-      key = "<leader>njt";
+      key = "<leader>nja";
       action = "<cmd>Neorg journal today<CR>";
       options = {
         desc = "Journal Neorg (Aujourd'hui)";
@@ -273,7 +273,7 @@
     }
     {
       mode = "n";
-      key = "<leader>njT";
+      key = "<leader>njd";
       action = "<cmd>Neorg journal tomorrow<CR>";
       options = {
         desc = "Journal Neorg (Demain)";
@@ -282,13 +282,57 @@
     }
     {
       mode = "n";
-      key = "<leader>njy";
+      key = "<leader>njh";
       action = "<cmd>Neorg journal yesterday<CR>";
       options = {
         desc = "Journal Neorg (Hier)";
         silent = true;
       };
     }
-
+    {
+      mode = "n";
+      key = "<leader>nc";
+      action = "<cmd>Neorg toggle-concealer<CR>";
+      options = {
+        desc = "Toggle concealer";
+        silent = true;
+      };
+    }
+    {
+      mode = "n";
+      key = "<leader>nn";
+      action = "<cmd>Neorg mode norg<CR>";
+      options = {
+        desc = "Norg Mode";
+        silent = true;
+      };
+    }
+    {
+      mode = "n";
+      key = "<leader>nh";
+      action = "<cmd>Neorg mode traverse-heading<CR>";
+      options = {
+        desc = "Traverse-heading mode";
+        silent = true;
+      };
+    }
+    {
+      mode = "n";
+      key = "<leader>nl";
+      action = "<cmd>Neorg mode traverse-link<CR>";
+      options = {
+        desc = "Traverse-link mode";
+        silent = true;
+      };
+    }
+    {
+      mode = "n";
+      key = "<leader>ns";
+      action = "<cmd>Neorg toc<CR>";
+      options = {
+        desc = "Sommaire";
+        silent = true;
+      };
+    }
   ];
 }

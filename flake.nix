@@ -20,6 +20,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    neorg-overlay.url = "github:nvim-neorg/nixpkgs-neorg-overlay";
 
     nixvim = {
       url = "github:nix-community/nixvim";

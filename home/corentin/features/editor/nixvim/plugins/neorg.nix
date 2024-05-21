@@ -1,15 +1,22 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 {
 
+  nixpkgs.overlays = [ inputs.neorg-overlay.overlays.default ];
+
   programs.nixvim = {
+    autoCmd = [
+    {
+      event = "FileType";
+      pattern = "norg";
+      command = "setlocal conceallevel=2";
+    }
+    ];
     plugins.neorg = {
       enable = true;
-      package = pkgs.stable.vimPlugins.neorg;
+      package = pkgs.vimPlugins.neorg;
       modules = {
-        "core.defaults" = {
-          __empty = null;
-        };
+        "core.defaults" = { __empty = null; };
         "core.dirman" = {
           config = {
             workspaces = {
@@ -21,15 +28,18 @@
         "core.concealer" = {
           config = {
             folds = true;
-            icon_preset = "basic";
+            icon_preset = "diamond";
             init_open_folds = "auto";
           };
         };
         "core.export" = {
           __empty = null;
           "markdown".__empty = null;
-          };
         };
+        "core.integrations.treesitter" = { __empty = null; };
+        "core.integrations.telescope" = { __empty = null; };
+        "core.summary" = { __empty = null; };
       };
     };
+  };
 }

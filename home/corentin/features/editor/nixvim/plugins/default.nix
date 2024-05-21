@@ -23,5 +23,6 @@
     ./telescope.nix
     ./treesitter.nix
     ./which-key.nix
+    ./zen.nix
   ];
 }
