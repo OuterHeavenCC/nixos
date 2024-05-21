@@ -1,7 +1,7 @@
 {
   programs.nixvim = {
     globals = {
-      mapleader = "<Space>";
+      mapleader = " ";
     };
     options = {
       backup = false; # creates a backup file

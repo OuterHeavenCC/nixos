@@ -1,7 +1,6 @@
 {
   lib,
   config,
-  inputs,
   pkgs,
   ...
 }:
@@ -54,8 +53,6 @@ in
         "GDK_BACKEND,wayland,x11"
         "QT_QPA_PLATFORM,wayland;xcb"
         "CLUTTER_BACKEND,wayland"
-        "XDG_CURRENT_DESKTOP,Hyprland"
-        "XDG_SESSION_TYPE,wayland"
         "XDG_SESSION_DESKTOP,Hyprland"
         "QT_AUTO_SCREEN_SCALE_FACTOR,1"
         "QT_WAYLAND_DISABLE_WINDOWDECORATION,1"
@@ -63,8 +60,6 @@ in
         "WLC_REPEAT_RATE,300"
         "WLC_REPEAT_DELAY,50"
         "NIXOS_OZONE_WL,1"
-        "MOZ_ENABLE_WAYLAND,1"
-        "MOZ_WEBRENDER,1"
       ];
       windowrule = [
         "float, title:^(sfml)$"

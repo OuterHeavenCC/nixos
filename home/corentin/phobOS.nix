@@ -13,7 +13,7 @@
     ./features/dev
     ./features/editor/nixvim
     ./features/games
-    # ./features/nvidia
+    ./features/nvidia
     ./features/pass
     ./features/productivity
     ./features/scripts

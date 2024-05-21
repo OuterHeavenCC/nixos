@@ -52,7 +52,7 @@
   services.xserver = {
     enable = true;
     xkb.layout = "fr";
-    # videoDrivers = [ "nvidia" ];
+    videoDrivers = [ "nvidia" ];
     displayManager.lightdm = {
       enable = false;
     };
@@ -67,18 +67,19 @@
       extraPackages = with pkgs; [
         vaapiVdpau
         libvdpau-va-gl
-        # nvidia-vaapi-driver
+        nvidia-vaapi-driver
         ocl-icd
       ];
     };
-    # nvidia = {
-    #   modesetting.enable = true;
-    #   powerManagement.enable = false;
-    #   powerManagement.finegrained = false;
-    # };
+    nvidia = {
+      modesetting.enable = true;
+      powerManagement.enable = false;
+      powerManagement.finegrained = false;
+    };
   };
 
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+
+  # boot.kernelPackages = pkgs.linuxPackages_latest;
   boot.supportedFilesystems = [ "ntfs" ];
 
   networking.firewall = {

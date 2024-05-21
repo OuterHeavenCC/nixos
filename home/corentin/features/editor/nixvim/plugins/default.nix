@@ -18,6 +18,7 @@
     ./neorg.nix
     ./nvim-autopairs.nix
     ./nvim-colorizer.nix
+    ./nvim-tree.nix
     ./surround.nix
     ./telescope.nix
     ./treesitter.nix
