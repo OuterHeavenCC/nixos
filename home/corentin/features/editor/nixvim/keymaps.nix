@@ -53,7 +53,7 @@
     }
     {
       key = "<C-Right>";
-      action = ":vertical resize -2<CR>";
+      action = ":vertical resize +2<CR>";
       mode = "n";
     }
 
