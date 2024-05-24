@@ -14,6 +14,7 @@
       rust-analyzer = {
         enable = true;
         installCargo = true;
+        installRustc = true;
       };
       texlab.enable = true;
       tsserver.enable = true;
