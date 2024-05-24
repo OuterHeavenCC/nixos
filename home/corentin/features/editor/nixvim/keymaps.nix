@@ -343,23 +343,5 @@
         silent = true;
       };
     }
-    {
-      mode = "n";
-      key = "<Tab>";
-      action = "core.integrations.treesitter.next.link";
-      options = {
-        desc = "[Neorg] Move to next link";
-        silent = true;
-      };
-    }
-    {
-      mode = "n";
-      key = "<S-Tab>";
-      action = "core.integrations.treesitter.previous.link";
-      options = {
-        desc = "[Neorg] Move to previous link";
-        silent = true;
-      };
-    }
   ];
 }
