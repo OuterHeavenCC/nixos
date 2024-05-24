@@ -1,5 +1,3 @@
-{ pkgs, ... }:
-
 let
   user = "corentin";
 in
@@ -23,6 +21,8 @@ in
     storeOnly = true;
   };
 
-  # Fix Swaylock
-  security.pam.services.swaylock = { };
+
+
+  # Fix Hyprlock
+  security.pam.services.hyprlock = {};
 }

@@ -21,7 +21,7 @@ case $chosen in
         systemctl suspend
         ;;
     "$lock")
-        swaylock --daemonize -i "${XDG_DATA_HOME}/bg"
+        hyprlock
         ;;
     "$logout")
         loginctl kill-user "$(whoami)"

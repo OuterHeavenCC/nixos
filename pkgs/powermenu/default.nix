@@ -4,7 +4,7 @@
   fuzzel,
   findutils,
   coreutils,
-  swaylock,
+  hyprlock,
   gnugrep,
   systemd,
   inputs,
@@ -17,8 +17,8 @@
     findutils
     coreutils
     inputs.anyrun.anyrun
-    swaylock
     gnugrep
+    hyprlock
     systemd
   ];
   text = builtins.readFile ./powermenu.sh;

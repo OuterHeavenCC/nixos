@@ -7,8 +7,8 @@
     ./foot.nix
     ./fuzzel.nix
     ./gammastep.nix
-    ./swayidle.nix
-    ./swaylock.nix
+    ./hypridle.nix
+    ./hyprlock.nix
   ];
 
   home.packages = with pkgs; [
