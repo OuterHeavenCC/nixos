@@ -1,8 +1,11 @@
-{config, ...}:
+{config, lib, ...}:
 
 let
   inherit (config.colorscheme) palette;
   font_family = "FiraCode Nerd Font";
+  
+  monitor = lib.head (lib.filter (m: m.primary) config.monitors);
+
 in
 {
   programs.hyprlock = {
@@ -24,7 +27,7 @@ in
 
       input-field = [
         {
-          monitor = "eDP-1";
+          monitor = "${monitor.name}";
 
           size = "300, 50";
 
