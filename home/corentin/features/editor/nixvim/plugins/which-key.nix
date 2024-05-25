@@ -6,7 +6,7 @@
         mode = "n";
         name = "Buffer";
       };
-      "<leader>s" = {
+      "<leader>f" = {
         mode = "n";
         name = "Rechercher";
       };
@@ -17,10 +17,6 @@
       "<leader>nj" = {
         mode = "n";
         name = "Neorg Journal";
-      };
-      "<leader>nf" = {
-        mode = "n";
-        name = "Rechercher";
       };
       "<leader>nt" = {
         mode = "n";

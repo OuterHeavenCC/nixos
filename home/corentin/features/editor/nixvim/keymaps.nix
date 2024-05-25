@@ -109,20 +109,20 @@
         desc = "Buffer suivant";
       };
     }
-    {
-      mode = "n";
-      key = "<leader>bf";
-      action = "<cmd>Telescope buffers previewer=false<CR>";
-      options = {
-        desc = "Rechercher un buffer";
-      };
-    }
 
     # Rechercher
 
     {
       mode = "n";
-      key = "<leader>sgb";
+      key = "<leader>fb";
+      action = "<cmd>Telescope buffers previewer=false<CR>";
+      options = {
+        desc = "Rechercher un buffer";
+      };
+    }
+    {
+      mode = "n";
+      key = "<leader>fgb";
       action = "<cmd>Telescope git_branches<cr>";
       options = {
         desc = "Rechercher une branche git";
@@ -130,7 +130,7 @@
     }
     {
       mode = "n";
-      key = "<leader>sc";
+      key = "<leader>fc";
       action = "<cmd>Telescope colorscheme<cr>";
       options = {
         desc = "Rechercher un colorscheme";
@@ -138,7 +138,7 @@
     }
     {
       mode = "n";
-      key = "<leader>sgc";
+      key = "<leader>fgc";
       action = "<cmd>Telescope git_commits<cr>";
       options = {
         desc = "Rechercher un commit";
@@ -146,7 +146,7 @@
     }
     {
       mode = "n";
-      key = "<leader>sf";
+      key = "<leader>ff";
       action = "<cmd>Telescope find_files<cr>";
       options = {
         desc = "Rechercher un fichier";
@@ -154,7 +154,7 @@
     }
     {
       mode = "n";
-      key = "<leader>sh";
+      key = "<leader>fh";
       action = "<cmd>Telescope help_tags<cr>";
       options = {
         desc = "Rechercher de l'aide";
@@ -162,7 +162,7 @@
     }
     {
       mode = "n";
-      key = "<leader>sr";
+      key = "<leader>fr";
       action = "<cmd>Telescope oldfiles<cr>";
       options = {
         desc = "Rechercher un fichier récent";
@@ -170,7 +170,7 @@
     }
     {
       mode = "n";
-      key = "<leader>sR";
+      key = "<leader>fR";
       action = "<cmd>Telescope registers<cr>";
       options = {
         desc = "Rechercher un registre";
@@ -178,7 +178,7 @@
     }
     {
       mode = "n";
-      key = "<leader>st";
+      key = "<leader>ft";
       action = "<cmd>Telescope live_grep<cr>";
       options = {
         desc = "Rechercher du texte";
@@ -186,7 +186,7 @@
     }
     {
       mode = "n";
-      key = "<leader>sk";
+      key = "<leader>fk";
       action = "<cmd>Telescope keymaps<cr>";
       options = {
         desc = "Rechercher dans les keymaps";
@@ -194,7 +194,7 @@
     }
     {
       mode = "n";
-      key = "<leader>sC";
+      key = "<leader>fC";
       action = "<cmd>Telescope commands<cr>";
       options = {
         desc = "Rechercher dans les commandes neovim";
@@ -363,19 +363,10 @@
     }
     {
       mode = "n";
-      key = "<leader>nff";
+      key = "<leader>fn";
       action = "<cmd>Neorg keybind all core.integrations.telescope.find_norg_files<CR>";
       options = {
         desc = "Rechercher un fichier norg";
-        silent = true;
-      };
-    }
-    {
-      mode = "n";
-      key = "<leader>nfh";
-      action = "<cmd>Neorg keybind all core.integrations.telescope.search_headings<CR>";
-      options = {
-        desc = "Rechercher un titre norg";
         silent = true;
       };
     }
