@@ -30,18 +30,15 @@ in
       exec-once =
         let
           pointer = config.home.pointerCursor;
-          wbg = "${pkgs.wbg}/bin/wbg";
           foot = "${pkgs.foot}/bin/foot";
           swayidle = "${pkgs.swayidle}/bin/swayidle";
           xrandr = "${pkgs.xorg.xrandr}/bin/xrandr";
           wl-paste = "${pkgs.wl-clipboard}/bin/wl-paste";
           gammastep-indicator = "${pkgs.gammastep}/bin/gammastep-indicator";
           cliphist = "${pkgs.cliphist}/bin/cliphist";
-          hyprcursor = "${pkgs.hyprcursor}/bin/hyprcursor";
         in
         [
-          "${hyprcursor} setcursor ${pointer.name} ${toString pointer.size}"
-          "${wbg} ${config.wallpaper}"
+          "hyprctl setcursor ${pointer.name} ${toString pointer.size}"
           "${foot} --server"
           "${swayidle} -w"
           "${wl-paste} --type text --watch ${cliphist} store"

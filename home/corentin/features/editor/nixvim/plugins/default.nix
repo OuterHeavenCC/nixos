@@ -12,6 +12,7 @@
     ./friendly-snippets.nix
     ./gitsigns.nix
     ./indent-blankline.nix
+    ./ledger.nix
     ./lsp.nix
     ./lualine.nix
     ./luasnip.nix

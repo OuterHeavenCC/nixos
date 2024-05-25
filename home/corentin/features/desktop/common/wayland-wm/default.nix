@@ -9,6 +9,7 @@
     ./gammastep.nix
     ./hypridle.nix
     ./hyprlock.nix
+    ./hyprpaper.nix
   ];
 
   home.packages = with pkgs; [
@@ -16,7 +17,6 @@
     grim # Grab images from a Wayland compositor
     hyprpicker # Color picking tool for wlroots
     slurp # Select a region in a Wayland compositor
-    wbg # Wallpaper manager
     wev # Show Wayland events
     wl-clipboard # Clipboard manager for wlroots
     grimblast
