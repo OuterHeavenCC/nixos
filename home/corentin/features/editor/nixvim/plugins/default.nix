@@ -19,6 +19,7 @@
     ./nvim-autopairs.nix
     ./nvim-colorizer.nix
     ./nvim-tree.nix
+    ./project-nvim.nix
     ./surround.nix
     ./telescope.nix
     ./treesitter.nix
