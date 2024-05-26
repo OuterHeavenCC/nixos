@@ -3,6 +3,13 @@
   programs.nixvim = {
     plugins.bufferline = {
       enable = true;
+      alwaysShowBufferline = false;
+      offsets = [
+        {
+          filetype = "NvimTree";
+          separator = false;
+        }
+      ];
     };
     keymaps = [
     {

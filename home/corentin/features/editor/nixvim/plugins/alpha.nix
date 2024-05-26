@@ -19,17 +19,24 @@
           };
           type = "text";
           val = [
-            "                                                    "
-              " ███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗ "
-              " ████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║ "
-              " ██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║ "
-              " ██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║ "
-              " ██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║ "
-              " ╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝ "
-              "                                                    "
+    "                                   "
+    "                                   "
+    "                                   "
+    "   ⣴⣶⣤⡤⠦⣤⣀⣤⠆     ⣈⣭⣿⣶⣿⣦⣼⣆          "
+    "    ⠉⠻⢿⣿⠿⣿⣿⣶⣦⠤⠄⡠⢾⣿⣿⡿⠋⠉⠉⠻⣿⣿⡛⣦       "
+    "          ⠈⢿⣿⣟⠦ ⣾⣿⣿⣷    ⠻⠿⢿⣿⣧⣄     "
+    "           ⣸⣿⣿⢧ ⢻⠻⣿⣿⣷⣄⣀⠄⠢⣀⡀⠈⠙⠿⠄    "
+    "          ⢠⣿⣿⣿⠈    ⣻⣿⣿⣿⣿⣿⣿⣿⣛⣳⣤⣀⣀   "
+    "   ⢠⣧⣶⣥⡤⢄ ⣸⣿⣿⠘  ⢀⣴⣿⣿⡿⠛⣿⣿⣧⠈⢿⠿⠟⠛⠻⠿⠄  "
+    "  ⣰⣿⣿⠛⠻⣿⣿⡦⢹⣿⣷   ⢊⣿⣿⡏  ⢸⣿⣿⡇ ⢀⣠⣄⣾⠄   "
+    " ⣠⣿⠿⠛ ⢀⣿⣿⣷⠘⢿⣿⣦⡀ ⢸⢿⣿⣿⣄ ⣸⣿⣿⡇⣪⣿⡿⠿⣿⣷⡄  "
+    " ⠙⠃   ⣼⣿⡟  ⠈⠻⣿⣿⣦⣌⡇⠻⣿⣿⣷⣿⣿⣿ ⣿⣿⡇ ⠛⠻⢷⣄ "
+    "      ⢻⣿⣿⣄   ⠈⠻⣿⣿⣿⣷⣿⣿⣿⣿⣿⡟ ⠫⢿⣿⡆     "
+    "       ⠻⣿⣿⣿⣿⣶⣶⣾⣿⣿⣿⣿⣿⣿⣿⣿⡟⢀⣀⣤⣾⡿⠃     "
+    "                                   "
           ];
         }
-      (padding 6)
+      (padding 4)
       {
         type = "button";
         val = "  Nouveau fichier";
@@ -58,12 +65,12 @@
       {
         type = "button";
         val = "  Rechercher un fichier";
-        on_press.raw = "<cmd>:Telescope find_files<CR>";
+        on_press.raw = "require('telescope.builtin').find_files";
         opts = {
           keymap = [
             "n"
               "f"
-              "<cmd>:Telescope find_files<CR>"
+              ":Telescope find_files<CR>"
               {
                 noremap = true;
                 silent = true;
@@ -83,12 +90,12 @@
       {
         type = "button";
         val = "  Projets";
-        on_press.raw = "<cmd>:Telescope projects<CR>";
+        on_press.raw = "require('project_nvim').get_recent_projects";
         opts = {
           keymap = [
             "n"
               "p"
-              "<cmd>:Telescope projects<CR>"
+              ":Telescope projects<CR>"
               {
                 noremap = true;
                 silent = true;
@@ -109,12 +116,12 @@
       {
         type = "button";
         val = "󰈚  Fichiers récents";
-        on_press.raw = "<cmd>:Telescope oldfiles<CR>";
+        on_press.raw = "require('telescope.builtin').oldfiles";
         opts = {
           keymap = [
             "n"
               "r"
-              "<cmd>:Telescope oldfiles<CR>"
+              ":Telescope oldfiles<CR>"
               {
                 noremap = true;
                 silent = true;
@@ -140,7 +147,7 @@
           keymap = [
             "n"
               "w"
-              "<cmd>:Neorg workspace notes<CR>"
+              ":Neorg workspace notes<CR>"
               {
                 noremap = true;
                 silent = true;
@@ -165,7 +172,7 @@
           keymap = [
             "n"
               "q"
-              "<cmd>:qa<CR>"
+              ":qa<CR>"
               {
                 noremap = true;
                 silent = true;
@@ -183,6 +190,7 @@
       }
       ];
     };
+
     keymaps = [
     {
       mode = "n";
