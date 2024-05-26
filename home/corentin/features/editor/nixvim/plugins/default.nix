@@ -12,6 +12,7 @@
     ./friendly-snippets.nix
     ./gitsigns.nix
     ./indent-blankline.nix
+    ./lazygit.nix
     ./ledger.nix
     ./lsp.nix
     ./lualine.nix
@@ -25,6 +26,5 @@
     ./telescope.nix
     ./treesitter.nix
     ./which-key.nix
-    ./zen.nix
   ];
 }

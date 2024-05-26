@@ -3,11 +3,12 @@
 {
   imports = [
     inputs.nixvim.homeManagerModules.nixvim
+    ./autoCmd.nix
     ./colorscheme.nix
     ./keymaps.nix
     ./opts.nix
-    ./spell.nix
     ./plugins
+    ./spell.nix
   ];
 
   programs.nixvim = {
