@@ -30,7 +30,7 @@
         "core.concealer" = {
           config = {
             folds = true;
-            icon_preset = "diamond";
+            icon_preset = "basic";
             init_open_folds = "auto";
           };
         };
