@@ -5,7 +5,7 @@
     };
     keymaps = [
       {
-        mode = "g";
+        mode = "n";
         key = "<leader>g";
         action = "<cmd>LazyGit<CR>";
         options = {
