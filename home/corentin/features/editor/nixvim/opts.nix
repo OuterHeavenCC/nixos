@@ -32,6 +32,7 @@
       shiftwidth = 2; # the number of spaces inserted for each indentation
       tabstop = 2; # insert 2 spaces for a tab
       cursorline = true; # highlight the current line
+      relativenumber = true; # numbered lines relative to position
       number = true; # set numbered lines
       numberwidth = 4; # set number column width to 2 {default 4}
       signcolumn = "yes"; # always show the sign column, otherwise it would shift the text each time

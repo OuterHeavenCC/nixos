@@ -5,7 +5,7 @@
     inputs.nixvim.homeManagerModules.nixvim
     ./colorscheme.nix
     ./keymaps.nix
-    ./options.nix
+    ./opts.nix
     ./spell.nix
     ./plugins
   ];

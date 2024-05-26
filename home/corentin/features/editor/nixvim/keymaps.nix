@@ -109,6 +109,15 @@
         desc = "Buffer suivant";
       };
     }
+    {
+      mode = "n";
+      key = "<leader>c";
+      action = "<cmd>bdelete<CR>";
+      options = {
+        desc = "Fermer le buffer";
+      };
+    }
+
 
     # Rechercher
 
