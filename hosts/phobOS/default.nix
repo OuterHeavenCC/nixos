@@ -26,7 +26,6 @@
     ../common/optional/pipewire.nix
     ../common/optional/printer.nix
     ../common/optional/ratbag.nix
-    ../common/optional/sshfs.nix
     ../common/optional/syncthing.nix
     ../common/optional/systemd-boot.nix
     ../common/optional/upower.nix

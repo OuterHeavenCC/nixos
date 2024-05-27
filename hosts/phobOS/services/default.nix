@@ -1,8 +1,6 @@
 {
   imports = [
-    ./minecraft
+    # ./minecraft
     ./jellyfin.nix
-    ./summonerswar
-    # ./ai.nix
   ];
 }

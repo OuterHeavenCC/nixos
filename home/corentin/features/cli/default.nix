@@ -5,7 +5,7 @@
     ./abook.nix
     ./android.nix
     ./bat.nix
-    ./bottom.nix
+    ./btop.nix
     ./calcurse.nix
     ./direnv.nix
     ./git.nix
@@ -14,9 +14,7 @@
     ./newsboat.nix
     ./nh.nix
     ./nix-index.nix
-    ./taskwarrior.nix
     ./yazi
-    ./ytfzf.nix
     ./zsh.nix
   ];
 
@@ -59,7 +57,7 @@
     killall # Better pkill -15
     lazygit # Git made easy
     libcdio # .iso preview in terminal
-    mcrcon # Minecraft server management
+    rconc # Minecraft server management
     mediainfo # Media metadata
     ncdu # Ncurses disk usage
     neofetch # Mandatory I use Nix btw flex

@@ -1,4 +1,3 @@
-{ lib, pkgs, ... }:
 {
   wayland.windowManager.hyprland.settings = {
     bindm = [
@@ -16,8 +15,8 @@
     ];
 
     bind =
+      # Azerty fix
       let
-
         azertyMapping = {
           ampersand = "1";
           eacute = "2";

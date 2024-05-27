@@ -11,6 +11,7 @@ in
       no-pager = true;
       file = [
         "${cfg.configHome}/ledger/professionnel.dat"
+        "${cfg.configHome}/ledger/2023-pro.dat"
         "${cfg.configHome}/ledger/2022-pro.dat"
         "${cfg.configHome}/ledger/2021-pro.dat"
       ];

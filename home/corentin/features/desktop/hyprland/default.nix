@@ -63,23 +63,11 @@ in
         "center, title:^(sfml)$"
         "tile, title:^(Battle.net)$"
         "opaque, class:^(mpv)$"
-        "float, title:^(Calculatrice)$" # Calculatrice flottante
         "float, title:^(Waydroid)$"
       ];
 
       windowrulev2 = [
-        "immediate, class:^(GameThread)$"
         "immediate, class:^(Turbo-Overkill)$"
-        "immediate, class:^(teardown.exe)$"
-        "immediate, class:^(AlanWake2.exe)$"
-        "immediate, class:^(Subnautica.exe)$"
-        "immediate, class:^(ProjectCoral-Win64-Shipping.exe)$"
-        "immediate, class:^(ObraDinn.exe)$"
-        "immediate, class:^(Dead Space.exe)$"
-        "immediate, class:^(SubnauticaZero.exe)$"
-        "immediate, class:^(MonsterHunterWorld.exe)$"
-        "immediate, class:^(SummonersWar.exe)$"
-        "immediate, class:^(mgsvtpp.exe)$"
       ];
       input = {
         kb_layout = "fr,us";
@@ -149,13 +137,13 @@ in
         let
 
           abook = "${pkgs.abook}/bin/abook";
+          anyrun = "${pkgs.anyrun}/bin/anyrun";
           blueman-manager = "${pkgs.blueman}/bin/blueman-manager";
           bmks = "${pkgs.bmks}/bin/bmks";
           btm = "${pkgs.bottom}/bin/btm";
           calcurse = "${pkgs.calcurse}/bin/calcurse";
           cliphist = "${pkgs.cliphist}/bin/cliphist";
-          anyrun = "${pkgs.anyrun}/bin/anyrun";
-          gnome-calculator = "${pkgs.gnome.gnome-calculator}/bin/gnome-calculator";
+          eva = "${pkgs.eva}/bin/eva";
           grimblast = "${pkgs.grimblast}/bin/grimblast";
           hyprctl = "${pkgs.hyprland}/bin/hyprctl";
           killmenu = "${pkgs.killmenu}/bin/killmenu";
@@ -167,16 +155,14 @@ in
           pamixer = "${pkgs.pamixer}/bin/pamixer";
           powermenu = "${pkgs.powermenu}/bin/powermenu";
           pulsemixer = "${pkgs.pulsemixer}/bin/pulsemixer";
-          taskwarrior-tui = "${pkgs.taskwarrior-tui}/bin/taskwarrior-tui";
           telegram-desktop = "${pkgs.telegram-desktop}/bin/telegram-desktop";
           wl-copy = "${pkgs.wl-clipboard}/bin/wl-copy";
-          ytfzf = "${pkgs.ytfzf}/bin/ytfzf";
         in
         [
           "SUPER,Return,exec,${TERMINAL}"
           "SUPER,B,exec,${blueman-manager}"
           "SUPER,C,exec,${TERMINAL} -e ${calcurse}"
-          "SUPERSHIFT,C,exec,${gnome-calculator}"
+          "SUPERSHIFT,C,exec,${TERMINAL} -e ${eva}"
           "SUPER,d,exec,exec ${anyrun}"
           "SUPER,E,exec,${TERMINAL} -e ${MAILCLIENT}"
           "SUPERSHIFT,E,exec,${TERMINAL} -e ${abook} -C ${cfg.configHome}/abook/abookrc --datafile ${cfg.configHome}/abook/addressbook"
@@ -188,8 +174,6 @@ in
           "SUPERSHIFT,P,exec,${mpc} pause"
           "SUPER,R,exec,${TERMINAL} -e zsh -l -ic 'ya; zsh'" # Trick sorti tout droit du ghetto pour faire fonctionner le wrapper de yazi
           "SUPER,S,exec,${TERMINAL} -e ${pulsemixer}"
-          "SUPER,V,exec,${ytfzf} -D"
-          "SUPER,T,exec,${TERMINAL} -e ${taskwarrior-tui}"
           "SUPERSHIFT,S,exec,${bmks}"
           "SUPER,W,exec,${BROWSER}"
           "SUPERSHIFT,W,exec,${networkmanager_dmenu}"

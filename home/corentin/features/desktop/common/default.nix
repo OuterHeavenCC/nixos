@@ -22,8 +22,7 @@
     calibre # Ebook manager
     gimp
     gnome.gnome-boxes # QEMU Made easy
-    gnome.gnome-calculator # When eva isn't enough
-    gnome.nautilus # When lf isn't enough
+    gnome.nautilus # When yazi isn't enough
     helvum # Pipewire gui
     imv # Simple Image Viewer
     krita
@@ -31,8 +30,6 @@
     obs-studio # Screen capturing tool
     swappy # Snapshot editing tool
     telegram-desktop # Telegram
-    warp # File transfer
-    xdragon # Transfer files from CLI to GUI apps
     xournalpp # Edition de PDF
   ];
 }
