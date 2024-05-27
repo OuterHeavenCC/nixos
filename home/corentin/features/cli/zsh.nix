@@ -58,6 +58,7 @@ in
       tsm = "transmission-remote";
       cd = "z";
       ledger = "ledger --init-file='${cfg.configHome}/ledger/ledgerrc'";
+      lg = "lazygit";
       ls = "eza -h --color=auto --group-directories-first --icons";
       grep = "grep --color=auto";
       diff = "diff --color=auto";
