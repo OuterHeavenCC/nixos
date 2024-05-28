@@ -7,7 +7,7 @@
   # Select internationalisation properties.
   i18n.defaultLocale = "fr_FR.UTF-8";
   console = {
-    font = "ter-i14b";
+    font = "ter-v24b";
     packages = with pkgs; [ terminus_font ];
     keyMap = "fr";
   };
