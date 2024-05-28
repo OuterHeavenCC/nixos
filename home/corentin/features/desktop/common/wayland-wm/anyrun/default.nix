@@ -2,7 +2,9 @@
   pkgs,
   inputs,
   ...
-}: {
+}:
+
+{
   imports = [
     inputs.anyrun.homeManagerModules.default
   ];
@@ -25,7 +27,7 @@
       closeOnClick = true;
     };
 
-    extraCss = builtins.readFile (./. + "/style-dark.css");
+    extraCss = import ./style.nix;
 
     extraConfigFiles."applications.ron".text = ''
       Config(

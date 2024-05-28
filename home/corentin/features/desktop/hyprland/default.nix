@@ -184,9 +184,9 @@ in
           "SUPERSHIFT,BackSpace,exec,anyrun-pass"
           "SUPER,Delete,exec,${killmenu}"
           ",XF86AudioMute,exec,${pamixer} --toggle-mute"
+          
 
           # Screenshots
-
           ",Print,exec,${grimblast} --notify --freeze copy output" # TODO Remettre la variable
           "CONTROL,Print,exec,${grimblast} --notify --freeze copy screen"
           "SUPER,Print,exec,${grimblast} --notify --freeze copy area"
@@ -199,6 +199,19 @@ in
 
           # Fix for switching layout with keyd
           "SUPERSHIFT,X,exec,${hyprctl} switchxkblayout keyd-virtual-keyboard next"
+
+          # Musisque
+          ",XF86Tools,exec,${TERMINAL} -e ${ncmpcpp}"
+          ",XF86AudioPrev,exec,${mpc} prev"
+          ",XF86AudioPlay,exec,${mpc} toggle"
+          ",XF86AudioNext,exec,${mpc} next"
+
+          # Calculatrice
+          ",XF86Calculator,exec,${TERMINAL} -e ${eva}"
+
+          # Search
+          ",XF86Search,exec,${anyrun}"
+
         ];
 
       binde =
