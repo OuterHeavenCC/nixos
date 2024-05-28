@@ -11,7 +11,7 @@ in
 
       main = {
         dpi-aware = "yes";
-        font = "FiraCode Nerd Font:weight=bold:size=12";
+        font = "${config.fontProfiles.monospace.family}:weight=bold:size=12";
         terminal = "footclient -e";
         prompt = ''"❯ "'';
         layer = "overlay";

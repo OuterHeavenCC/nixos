@@ -2,7 +2,7 @@
 
 let
   inherit (config.colorscheme) palette;
-  font_family = "FiraCode Nerd Font";
+  font_family = "${config.fontProfiles.monospace.family}";
   
   monitor = lib.head (lib.filter (m: m.primary) config.monitors);
 

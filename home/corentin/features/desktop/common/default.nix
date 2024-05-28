@@ -4,6 +4,7 @@
   imports = [
     ./cursor.nix
     ./firefox.nix
+    ./fonts.nix
     ./gtk.nix
     ./libreoffice.nix
     ./mpd.nix
@@ -30,6 +31,7 @@
     obs-studio # Screen capturing tool
     swappy # Snapshot editing tool
     telegram-desktop # Telegram
+    vesktop
     xournalpp # Edition de PDF
   ];
 }

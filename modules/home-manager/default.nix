@@ -5,5 +5,6 @@
   # List your module files here
   monitors = import ./monitors.nix;
   wallpaper = import ./wallpaper.nix;
+  fonts = import ./fonts.nix;
   # my-module = import ./my-module.nix;
 }

@@ -1,3 +1,5 @@
+{ config, ... }:
+
 # This is your home-manager configuration file
 # Use this to configure your home environment (it replaces ~/.config/nixpkgs/home.nix)
 
@@ -58,5 +60,5 @@
     }
   ];
 
-  programs.foot.settings.main.font = "Fira Code Nerd Font:size=14";
+  programs.foot.settings.main.font = "${config.fontProfiles.monospace.family}:size=14";
 }
