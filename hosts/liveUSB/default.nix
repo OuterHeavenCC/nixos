@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }:
+{ pkgs, modulesPath, ... }:
 # This is your system's configuration file.
 # Use this to configure your system environment (it replaces /etc/nixos/configuration.nix)
 
@@ -6,7 +6,7 @@
   # You can import other NixOS modules here
   imports = [
 
-    inputs.hardware.nixosModules.lenovo-thinkpad-t440p
+    "${modulesPath}/installer/cd-dvd/installation-cd-minimal.nix"
 
     ../common/global
     ../common/users/corentin
@@ -24,11 +24,12 @@
     ../common/optional/waydroid.nix
     ../common/optional/xdg.nix
 
-    ./hardware-configuration.nix
   ];
 
+  nixpkgs.hostPlatform = "x86_64-linux";
+
   networking = {
-    hostName = "deimOS";
+    hostName = "liveUSB";
     nameservers = [
       "1.1.1.1"
       "1.0.0.1"
@@ -43,7 +44,7 @@
   services.xserver = {
     enable = true;
     xkb.layout = "fr";
-    displayManager.lightdm.enable = false;
+    displayManager.lightdm.enable = true;
     libinput.touchpad = {
       middleEmulation = true;
       tapping = true;
@@ -55,17 +56,6 @@
   };
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
-
-  networking.firewall = {
-    allowedTCPPorts = [
-      8888
-      27040 # steam
-    ];
-    allowedUDPPorts = [
-      8888
-      27040 # steam
-    ];
-  };
 
   # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   system.stateVersion = "23.11";

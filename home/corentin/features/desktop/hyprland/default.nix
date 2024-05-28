@@ -198,7 +198,7 @@ in
           ",XF86MonBrightnessDown,exec,${light} -U 5"
 
           # Fix for switching layout with keyd
-          "SUPERSHIFT,X,exec,${hyprctl} switchxkblayout keyd-virtual-keyboard next"
+          "SHIFT,Alt_L,exec,${hyprctl} switchxkblayout keyd-virtual-keyboard next"
 
           # Musisque
           ",XF86Tools,exec,${TERMINAL} -e ${ncmpcpp}"

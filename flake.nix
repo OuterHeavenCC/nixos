@@ -98,6 +98,13 @@
             inherit inputs outputs;
           };
         };
+        liveUSB = lib.nixosSystem {
+          modules = [ ./hosts/liveUSB ];
+          specialArgs = {
+            inherit inputs outputs;
+          };
+        };
+
         # Serveur
         ares = lib.nixosSystem {
           modules = [ ./hosts/ares ];
@@ -124,6 +131,14 @@
         };
         "corentin@ares" = lib.homeManagerConfiguration {
           modules = [ ./home/corentin/ares.nix ];
+          pkgs = pkgsFor.x86_64-linux;
+          extraSpecialArgs = {
+            inherit inputs outputs;
+          };
+        };
+
+        "corentin@liveUSB" = lib.homeManagerConfiguration {
+          modules = [ ./home/corentin/liveUSB.nix ];
           pkgs = pkgsFor.x86_64-linux;
           extraSpecialArgs = {
             inherit inputs outputs;

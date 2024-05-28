@@ -19,12 +19,12 @@ let
   ];
 
   guiDeps = with pkgs; [
-    gnome.gnome-control-center
+    networkmanagerapplet
     mission-center
-    overskride
     wlogout
     libdbusmenu-gtk3
-    gnome.gnome-bluetooth
+    blueman
+    powermenu
   ];
 
   dependencies = requiredDeps ++ guiDeps;

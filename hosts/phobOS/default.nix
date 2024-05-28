@@ -79,7 +79,7 @@
       };
     };
 
-  # # boot.kernelPackages = pkgs.linuxPackages_latest;
+  # boot.kernelPackages = pkgs.linuxPackages_latest;
   # boot.supportedFilesystems = [ "ntfs" ];
 
   networking.firewall = {
@@ -87,13 +87,13 @@
       8080
       8888
       10200
-      27040
+      27040 # steam
     ];
     allowedUDPPorts = [
       8080
       8888
       10200
-      27040
+      27040 # steam
     ];
   };
 

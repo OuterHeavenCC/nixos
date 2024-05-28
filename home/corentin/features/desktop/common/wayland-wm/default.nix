@@ -22,7 +22,7 @@
     grimblast
   ];
 
-  # home.sessionVariables = {
-  #   LIBSEAT_BACKEND = "logind";
-  # };
+  home.sessionVariables = {
+    LIBSEAT_BACKEND = "logind";
+  };
 }

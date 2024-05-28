@@ -101,4 +101,13 @@
       };
     };
   };
+  networking.firewall = {
+    allowedUDPPorts = [
+      22000 # syncthing QUIC
+      21027 # syncthing discovery broadcast on ipv4 and multicast ipv6
+    ];
+    allowedTCPPorts = [
+      22000 # syncthing
+    ];
+  };
 }
