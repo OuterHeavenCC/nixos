@@ -1,6 +1,7 @@
 {
   pkgs,
   inputs,
+  config,
   ...
 }:
 
@@ -27,7 +28,7 @@
       closeOnClick = true;
     };
 
-    extraCss = import ./style.nix;
+    extraCss = import ./style.nix { inherit inputs config; };
 
     extraConfigFiles."applications.ron".text = ''
       Config(

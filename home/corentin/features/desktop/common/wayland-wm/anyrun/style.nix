@@ -1,5 +1,9 @@
-# rgba plutôt que #XXXXXXXX puisqu'incompatible avec l'opacité sous ce format
+{ config, inputs, ... }:
 
+let
+  inherit (config.colorscheme) palette;
+  hexToRGBString = inputs.nix-colors.lib.conversions.hexToRGBString;
+in 
 ''
 * {
   all: unset;
@@ -36,12 +40,12 @@
 #match:selected,
 #match:hover,
 #plugin:hover {
-  background: rgba(180, 190, 254, 0.1);
+  background: rgba(${hexToRGBString "," palette.base07}, 0.1);
 }
 
 #entry {
-  background: rgba(49, 50, 68, 0.05);
-  border: 1px solid rgba(49, 50, 68, 0.1);
+  background: rgba(${hexToRGBString "," palette.base02}, 0.05);
+  border: 1px solid rgba(${hexToRGBString "," palette.base02}, 0.1);
   border-radius: 16px;
   margin: 0.5rem;
   padding: 0.3rem 1rem;
@@ -62,7 +66,7 @@ list > #plugin:hover {
 }
 
 box#main {
-  background: rgba(30, 30, 46, 0.92);
+  background: rgba(${hexToRGBString "," palette.base00}, 0.92);
   box-shadow:
     inset 0 0 0 1px rgba(255, 255, 255, 0.1),
     0 0 0 1px rgba(0, 0, 0, 0.5);

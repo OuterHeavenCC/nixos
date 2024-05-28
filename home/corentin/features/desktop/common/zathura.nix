@@ -1,7 +1,8 @@
-{ config, ... }:
+{ config, inputs,... }:
 
 let
   inherit (config.colorscheme) palette;
+  hexToRGBString = inputs.nix-colors.lib.conversions.hexToRGBString;
 in
 {
   home.sessionVariables.READER = "zathura";
@@ -53,7 +54,7 @@ in
       index-active-bg = "#${palette.base02}";
       render-loading-bg = "#${palette.base00}";
       render-loading-fg = "#${palette.base05}";
-      highlight-color = "#${palette.base04}";
+      highlight-color = "rgba(${hexToRGBString "," palette.base04},0.5)";
       highlight-fg = "#${palette.base06}";
       highlight-active-color = "#${palette.base06}";
     };
