@@ -2,35 +2,36 @@
   xdg.mime = {
     enable = true;
     defaultApplications = {
-      "text/x-python" = [ "nvim.desktop" ];
-      "text/css" = [ "nvim.desktop" ];
-      "text/plain" = [ "nvim.desktop" ];
-      "application/x-subrip" = [ "nvim.desktop" ];
-      "application/x-trash" = [ "nvim.desktop" ];
+      "text/x-python" = [ "neovide.desktop" ];
+      "text/css" = [ "neovide.desktop" ];
+      "text/plain" = [ "neovide.desktop" ];
+      "application/x-subrip" = [ "neovide.desktop" ];
+      "application/x-trash" = [ "neovide.desktop" ];
       "x-scheme-handler/magnet" = [ "userapp-transmission-gtk-F8UY61.desktop" ];
       "application/x-bittorrent" = [ "torrent.desktop" ];
       "x-scheme-handler/tg" = [ "org.telegram.desktop.desktop" ];
       "application/x-xpinstall" = [
-        "nvim.desktop"
+        "neovide.desktop"
         "firefox.desktop"
       ];
       "application/json" = [
-        "nvim.desktop"
+        "neovide.desktop"
         "firefox.desktop"
       ];
       "text/html" = [
         "firefox.desktop"
-        "nvim.desktop"
+        "neovide.desktop"
       ];
       "text/xml" = [
         "firefox.desktop"
-        "nvim.desktop"
+        "neovide.desktop"
       ];
       "x-scheme-handler/http" = [ "firefox.desktop" ];
       "x-scheme-handler/https" = [ "firefox.desktop" ];
-      "pdf" = [ "zathura.desktop" ];
       "application/pdf" = [ "org.pwmt.zathura-pdf-mupdf.desktop" ];
-      "image/jpeg" = [ "imv.desktop" ];
+      "application/epub" = [ "org.pwmt.zathura-pdf-mupdf.desktop "];
+      "application/epub+zip" = [ "org.pwmt.zathura-pdf-mupdf.desktop "];
+      "image/jpeg" = [ "imv-dir.desktop" ];
       "video/mp4" = [ "mpv.desktop" ];
       "video/x-matroska" = [ "mpv.desktop" ];
       "image/png" = [ "imv-dir.desktop" ];

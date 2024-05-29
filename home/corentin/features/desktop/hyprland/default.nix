@@ -64,6 +64,7 @@ in
         "tile, title:^(Battle.net)$"
         "opaque, class:^(mpv)$"
         "float, title:^(Waydroid)$"
+        "tile, class:^(neovide)$"
       ];
 
       windowrulev2 = [

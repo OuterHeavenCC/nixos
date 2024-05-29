@@ -28,6 +28,7 @@
     imv # Simple Image Viewer
     krita
     lynx # Terminal browser
+    neovide
     obs-studio # Screen capturing tool
     swappy # Snapshot editing tool
     telegram-desktop # Telegram
