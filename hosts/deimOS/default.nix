@@ -13,6 +13,7 @@
 
     ../common/optional/bluetooth.nix
     ../common/optional/fail2ban.nix
+    ../common/optional/greetd.nix
     ../common/optional/kdeconnect.nix
     ../common/optional/mimeApps.nix
     ../common/optional/mullvad.nix

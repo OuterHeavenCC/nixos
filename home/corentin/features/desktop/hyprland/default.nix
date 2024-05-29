@@ -21,7 +21,6 @@ in
     ../common/wayland-wm
 
     ./basic-binds.nix
-    ./tty-init.nix
   ];
 
   wayland.windowManager.hyprland = {
