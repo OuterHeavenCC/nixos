@@ -41,6 +41,7 @@
       height = 2160;
       x = 0;
       vrr = 0; # 2 means only in fullscreen
+      displaySize = 32;
     }
     {
       name = "DP-1";
@@ -50,6 +51,7 @@
       x = 3840;
       primary = true;
       vrr = 2;
+      displaySize = 27;
     }
     {
       name = "DP-3";
@@ -57,8 +59,7 @@
       height = 2160;
       x = 5760;
       vrr = 0;
+      displaySize = 32;
     }
   ];
-
-  programs.foot.settings.main.font = "${config.fontProfiles.monospace.family}:size=14";
 }

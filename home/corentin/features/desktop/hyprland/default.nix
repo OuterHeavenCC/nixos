@@ -66,9 +66,7 @@ in
         "tile, class:^(neovide)$"
       ];
 
-      windowrulev2 = [
-        "immediate, class:^(Turbo-Overkill)$"
-      ];
+      windowrulev2 = [ "immediate, class:^(Turbo-Overkill)$" ];
       input = {
         kb_layout = "fr,us";
         kb_options = "caps:super,terminate:ctrl_alt_bksp,grp;";
@@ -119,6 +117,9 @@ in
       misc = {
         enable_swallow = true;
         swallow_regex = "${TERMINAL}";
+        force_default_wallpaper = "0";
+        disable_hyprland_logo = true;
+        disable_splash_rendering = true;
       };
       general = {
         sensitivity = "1.0";
@@ -184,7 +185,6 @@ in
           "SUPERSHIFT,BackSpace,exec,anyrun-pass"
           "SUPER,Delete,exec,${killmenu}"
           ",XF86AudioMute,exec,${pamixer} --toggle-mute"
-          
 
           # Screenshots
           ",Print,exec,${grimblast} --notify --freeze copy output" # TODO Remettre la variable
@@ -211,7 +211,6 @@ in
 
           # Search
           ",XF86Search,exec,${anyrun}"
-
         ];
 
       binde =

@@ -50,5 +50,4 @@
       config.allowUnfree = true;
     };
   };
-
 }

@@ -21,8 +21,11 @@ in
     storeOnly = true;
   };
 
-
+  security.pam.services.greetd.gnupg = {
+    enable = true;
+    storeOnly = true;
+  };
 
   # Fix Hyprlock
-  security.pam.services.hyprlock = {};
+  security.pam.services.hyprlock = { };
 }

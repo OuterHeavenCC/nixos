@@ -6,9 +6,7 @@
 }:
 
 {
-  imports = [
-    inputs.anyrun.homeManagerModules.default
-  ];
+  imports = [ inputs.anyrun.homeManagerModules.default ];
 
   programs.anyrun = {
     enable = true;
@@ -38,9 +36,8 @@
       )
     '';
   };
-  
+
   programs.zsh.sessionVariables = {
     ANYRUN_STDIN_PLUGIN_PATH = "${inputs.anyrun.packages.${pkgs.system}.stdin}/lib/libstdin.so";
   };
-
 }

@@ -77,8 +77,8 @@
       powerManagement.enable = false;
       powerManagement.finegrained = false;
       package = config.boot.kernelPackages.nvidiaPackages.beta;
-      };
     };
+  };
 
   # boot.kernelPackages = pkgs.linuxPackages_latest;
   # boot.supportedFilesystems = [ "ntfs" ];

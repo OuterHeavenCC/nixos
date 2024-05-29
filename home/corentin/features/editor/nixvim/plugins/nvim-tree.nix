@@ -4,14 +4,14 @@
       enable = true;
     };
     keymaps = [
-    {
-      mode = "n";
-      key = "<leader>e";
-      action = "<cmd>NvimTreeToggle<CR>";
-      options = {
-        desc = "Explorer";
-      };
-    }
+      {
+        mode = "n";
+        key = "<leader>e";
+        action = "<cmd>NvimTreeToggle<CR>";
+        options = {
+          desc = "Explorer";
+        };
+      }
     ];
   };
 }

@@ -37,7 +37,4 @@
       vrr = 0;
     }
   ];
-
-  programs.foot.settings.main.font = "${config.fontProfiles.monospace.family}:size=12";
 }
-

@@ -45,7 +45,6 @@
       ruler = false;
       laststatus = 3;
       virtualedit = "block"; # better block mode
-
     };
   };
 }

@@ -1,7 +1,8 @@
-{ config, ... }:
+{ config, lib, ... }:
 
 let
   inherit (config.colorscheme) palette;
+  monitor = lib.head (lib.filter (m: m.primary) config.monitors);
 in
 {
 
@@ -10,6 +11,13 @@ in
   programs.foot = {
     enable = true;
     settings = {
+      main = {
+        font =
+          if (monitor.displaySize <= 18) then
+            "${config.fontProfiles.monospace.family}:size=12"
+          else
+            "${config.fontProfiles.monospace.family}:size=14";
+      };
       mouse = {
         hide-when-typing = "yes";
       };

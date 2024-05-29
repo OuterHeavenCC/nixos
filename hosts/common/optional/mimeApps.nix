@@ -29,8 +29,8 @@
       "x-scheme-handler/http" = [ "firefox.desktop" ];
       "x-scheme-handler/https" = [ "firefox.desktop" ];
       "application/pdf" = [ "org.pwmt.zathura-pdf-mupdf.desktop" ];
-      "application/epub" = [ "org.pwmt.zathura-pdf-mupdf.desktop "];
-      "application/epub+zip" = [ "org.pwmt.zathura-pdf-mupdf.desktop "];
+      "application/epub" = [ "org.pwmt.zathura-pdf-mupdf.desktop " ];
+      "application/epub+zip" = [ "org.pwmt.zathura-pdf-mupdf.desktop " ];
       "image/jpeg" = [ "imv-dir.desktop" ];
       "video/mp4" = [ "mpv.desktop" ];
       "video/x-matroska" = [ "mpv.desktop" ];

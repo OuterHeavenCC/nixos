@@ -38,8 +38,7 @@
       x = 0;
       primary = true;
       vrr = 0;
+      display-size = 15;
     }
   ];
-
-  programs.foot.settings.main.font = "${config.fontProfiles.monospace.family}:size=12";
 }

@@ -23,7 +23,6 @@
     ../common/optional/upower.nix
     ../common/optional/waydroid.nix
     ../common/optional/xdg.nix
-
   ];
 
   nixpkgs.hostPlatform = "x86_64-linux";

@@ -1,11 +1,10 @@
-{config, lib, ...}:
+{ config, lib, ... }:
 
 let
   inherit (config.colorscheme) palette;
   font_family = "${config.fontProfiles.monospace.family}";
-  
-  monitor = lib.head (lib.filter (m: m.primary) config.monitors);
 
+  monitor = lib.head (lib.filter (m: m.primary) config.monitors);
 in
 {
   programs.hyprlock = {
@@ -62,4 +61,3 @@ in
     };
   };
 }
-

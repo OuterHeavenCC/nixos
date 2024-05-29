@@ -1,4 +1,4 @@
-{ config, inputs,... }:
+{ config, inputs, ... }:
 
 let
   inherit (config.colorscheme) palette;
