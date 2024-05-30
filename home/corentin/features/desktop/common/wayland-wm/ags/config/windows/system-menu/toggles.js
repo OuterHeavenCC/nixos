@@ -60,7 +60,7 @@ const net = {
         Utils.execAsync([
           "sh",
           "-c",
-          "nm-applet",
+          "XDG_CURRENT_DESKTOP=GNOME gnome-control-center",
         ]);
       };
     },
@@ -97,7 +97,7 @@ const bt = {
     buttonSetup: (self) => {
       self.onPrimaryClick = () => {
         App.toggleWindow("system-menu");
-        Utils.execAsync("blueman-manager");
+        Utils.execAsync("overskride");
       };
     },
   },

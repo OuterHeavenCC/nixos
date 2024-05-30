@@ -48,7 +48,7 @@ const PowerButton = () =>
 
     onPrimaryClick: () => {
       App.toggleWindow("system-menu");
-      Utils.exec("powermenu");
+      Utils.exec("wlogout");
     },
 
     child: Widget.Icon(Icons.powerButton),

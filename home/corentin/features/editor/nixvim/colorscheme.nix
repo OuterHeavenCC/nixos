@@ -1,8 +1,8 @@
 {
-  programs.nixvim.colorschemes.catppuccin = {
+  programs.nixvim.colorschemes.gruvbox = {
     enable = true;
     settings = {
-      background.dark = "mocha";
+      gruvbox_contrat = "hard";
       integrations = {
         cmp = true;
         gitsigns = true;
