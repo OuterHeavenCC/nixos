@@ -10,8 +10,7 @@
   gawk,
   gnused,
   dmenu,
-  firefox,
-  inputs,
+  xdg-utils,
 }:
 
 with lib;
@@ -19,7 +18,7 @@ with lib;
 stdenv.mkDerivation {
   name = "bmks";
   version = "1.1";
-  src = ./src;
+  src = ./src/bmks.sh;
 
   nativeBuildInputs = [ makeWrapper ];
 
@@ -28,8 +27,8 @@ stdenv.mkDerivation {
   dontConfigure = true;
 
   installPhase = ''
-    install -Dm 0755 $src/bmks.sh $out/bin/bmks
-    wrapProgram $out/bin/bmks --set PATH \
+      install -Dm 0755 $src $out/bin/bmks
+      wrapProgram $out/bin/bmks --prefix PATH ':' \
       "${
         makeBinPath [
           findutils
@@ -38,10 +37,9 @@ stdenv.mkDerivation {
           fuzzel
           fzf
           gawk
-          inputs.anyrun.anyrun
+          xdg-utils
           gnused
           dmenu
-          firefox
         ]
       }"
   '';

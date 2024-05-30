@@ -1,5 +1,5 @@
 # set preferred launcher
-PREFERRED_LAUNCHER="anyrun"
+PREFERRED_LAUNCHER="fuzzel"
 # set path where urls will be stored
 URL_FILE_PATH="$HOME/.config/bmks"
 # name of file urls will be stored in
@@ -59,19 +59,19 @@ bmks_display() {
     bmks_check
     case $PREFERRED_LAUNCHER in
         dmenu)
-            sort "$URL_FILE_PATH/$URL_FILE_NAME" | dmenu -c -i -l "$(wc -l < "$URL_FILE_PATH/$URL_FILE_NAME")" | awk '{print $NF}' | xargs -I '{}' "$BROWSER" '{}'
+            sort "$URL_FILE_PATH/$URL_FILE_NAME" | dmenu -c -i -l "$(wc -l < "$URL_FILE_PATH/$URL_FILE_NAME")" | awk '{print $NF}' | xargs -I '{}' xdg-open '{}'
             ;;
         fzf)
-            sort "$URL_FILE_PATH/$URL_FILE_NAME" | fzf | awk '{print $NF}' | xargs -I '{}' "$BROWSER" '{}'
+            sort "$URL_FILE_PATH/$URL_FILE_NAME" | fzf | awk '{print $NF}' | xargs -I '{}' xdg-open '{}'
             ;;
         rofi)
-            sort "$URL_FILE_PATH/$URL_FILE_NAME" | rofi -dmenu -l "$(wc -l < "$URL_FILE_PATH/$URL_FILE_NAME")" | awk '{print $NF}' | xargs -I '{}' "$BROWSER" '{}'
+            sort "$URL_FILE_PATH/$URL_FILE_NAME" | rofi -dmenu -l "$(wc -l < "$URL_FILE_PATH/$URL_FILE_NAME")" | awk '{print $NF}' | xargs -I '{}' xdg-open '{}'
             ;;
         fuzzel)
-            sort "$URL_FILE_PATH/$URL_FILE_NAME" | fuzzel -d | awk '{print $NF}' | xargs -I '{}' "$BROWSER" '{}'
+            sort "$URL_FILE_PATH/$URL_FILE_NAME" | fuzzel -d | awk '{print $NF}' | xargs -I '{}' xdg-open '{}'
             ;;
         anyrun)
-          sort "$URL_FILE_PATH/$URL_FILE_NAME" | anyrun --max-entries 10 --show-results-immediately true --plugins "$ANYRUN_STDIN_PLUGIN_PATH" | awk '{print $NF}' | xargs -I '{}' "$BROWSER" '{}'
+          sort "$URL_FILE_PATH/$URL_FILE_NAME" | anyrun --max-entries 10 --show-results-immediately true --plugins "$ANYRUN_STDIN_PLUGIN_PATH" | awk '{print $NF}' | xargs -I '{}' xdg-open '{}'
             ;;
     esac
 }

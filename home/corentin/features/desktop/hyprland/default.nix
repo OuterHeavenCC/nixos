@@ -66,7 +66,11 @@ in
         "tile, class:^(neovide)$"
       ];
 
-      windowrulev2 = [ "immediate, class:^(Turbo-Overkill)$" ];
+      windowrulev2 = [ 
+      "immediate, class:^(Turbo-Overkill)$" 
+      "noanim, class:^(anyrun)$"
+      "noanim, class:^(fuzzel)$"
+      ];
       input = {
         kb_layout = "fr,us";
         kb_options = "caps:super,terminate:ctrl_alt_bksp,grp;";
@@ -141,23 +145,24 @@ in
           anyrun = "${pkgs.anyrun}/bin/anyrun";
           blueman-manager = "${pkgs.blueman}/bin/blueman-manager";
           bmks = "${pkgs.bmks}/bin/bmks";
-          btm = "${pkgs.bottom}/bin/btm";
           calcurse = "${pkgs.calcurse}/bin/calcurse";
           cliphist = "${pkgs.cliphist}/bin/cliphist";
           eva = "${pkgs.eva}/bin/eva";
+          fuzzel = "${pkgs.fuzzel}/bin/fuzzel";
+          passmenu = "${pkgs.pass}/bin/passmenu";
           grimblast = "${pkgs.grimblast}/bin/grimblast";
           hyprctl = "${pkgs.hyprland}/bin/hyprctl";
-          killmenu = "${pkgs.killmenu}/bin/killmenu";
           light = "${pkgs.light}/bin/light";
           mpc = "${pkgs.mpc-cli}/bin/mpc";
           ncmpcpp = "${pkgs.ncmpcpp}/bin/ncmpcpp";
           networkmanager_dmenu = "${pkgs.networkmanager_dmenu}/bin/networkmanager_dmenu";
           newsboat = "${pkgs.newsboat}/bin/newsboat";
           pamixer = "${pkgs.pamixer}/bin/pamixer";
-          powermenu = "${pkgs.powermenu}/bin/powermenu";
+          btop = "${pkgs.btop}/bin/btop";
           pulsemixer = "${pkgs.pulsemixer}/bin/pulsemixer";
           telegram-desktop = "${pkgs.telegram-desktop}/bin/telegram-desktop";
           wl-copy = "${pkgs.wl-clipboard}/bin/wl-copy";
+          powermenu = "${pkgs.powermenu}/bin/powermenu";
         in
         [
           "SUPER,Return,exec,${TERMINAL}"
@@ -178,16 +183,15 @@ in
           "SUPERSHIFT,S,exec,${bmks}"
           "SUPER,W,exec,${BROWSER}"
           "SUPERSHIFT,W,exec,${networkmanager_dmenu}"
-          "SUPER,X,exec,${cliphist} list | ${anyrun} --plugins $ANYRUN_STDIN_PLUGIN_PATH --show-results-immediately true | cliphist decode | ${wl-copy}"
-          "SUPER,F4,exec,${TERMINAL} -e ${btm}"
+          "SUPER,X,exec,${cliphist} list | ${fuzzel} -d | cliphist decode | ${wl-copy}"
           "SUPER,exclam,exec,${telegram-desktop}"
           "SUPER,BackSpace,exec,${powermenu}"
-          "SUPERSHIFT,BackSpace,exec,anyrun-pass"
-          "SUPER,Delete,exec,${killmenu}"
+          "SUPERSHIFT,BackSpace,exec,${passmenu}"
+          "SUPER,Delete,exec,${TERMINAL} -e ${btop}"
           ",XF86AudioMute,exec,${pamixer} --toggle-mute"
 
           # Screenshots
-          ",Print,exec,${grimblast} --notify --freeze copy output" # TODO Remettre la variable
+          ",Print,exec,${grimblast} --notify --freeze copy output"
           "CONTROL,Print,exec,${grimblast} --notify --freeze copy screen"
           "SUPER,Print,exec,${grimblast} --notify --freeze copy area"
           "ALT,Print,exec,${grimblast} --notify --freeze copy active"

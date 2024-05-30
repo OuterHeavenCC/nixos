@@ -8,15 +8,16 @@
   gnugrep,
   systemd,
   inputs,
+  anyrun,
 
 }:
 (writeShellApplication {
   name = "powermenu";
   runtimeInputs = [
     fuzzel
+    anyrun
     findutils
     coreutils
-    inputs.anyrun.anyrun
     gnugrep
     hyprlock
     systemd

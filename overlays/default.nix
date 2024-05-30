@@ -1,5 +1,6 @@
 # This file defines overlays
 { inputs, ... }:
+
 {
   flake-inputs = final: _: {
     inputs = builtins.mapAttrs (
@@ -29,6 +30,16 @@
         ./patches/nh/patch.txt # doas support in nh
       ];
     });
+
+    pass = prev.pass.overrideAttrs (oldAttrs: {
+        waylandSupport = true;
+        dmenuSupport = true;
+        postPatch = oldAttrs.postPatch + ''
+        substituteInPlace "contrib/dmenu/passmenu" \
+        --replace "dmenu-wl" "\"${final.fuzzel}/bin/fuzzel -d\"" \
+        --replace '"$dmenu"' '$dmenu'
+        '';
+        });
 
     inherit (inputs.nixos-stable.legacyPackages.${final.system}) rpcs3;
     inherit (inputs.nixos-stable.legacyPackages.${final.system}) calibre;

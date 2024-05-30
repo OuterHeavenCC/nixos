@@ -1,4 +1,4 @@
-menu_command="anyrun --max-entries 10 --show-results-immediately true --plugins $ANYRUN_STDIN_PLUGIN_PATH"
+menu_command="fuzzel -d -l 5"
 
 shutdown="󰐥 Eteindre"
 reboot="󰜉 Redémarrer"

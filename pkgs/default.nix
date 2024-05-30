@@ -8,6 +8,5 @@
   # example = pkgs.callPackage ./example { };
   powermenu = pkgs.callPackage ./powermenu { };
   bmks = pkgs.callPackage ./bmks { };
-  killmenu = pkgs.callPackage ./killmenu { };
   transadd = pkgs.callPackage ./transadd { };
 }
