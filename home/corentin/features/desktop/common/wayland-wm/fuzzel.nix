@@ -1,7 +1,8 @@
-{ config, ... }:
+{ config, lib, ... }:
 
 let
   inherit (config.colorscheme) palette;
+  monitor = lib.head (lib.filter (m: m.primary) config.monitors);
 in
 {
   programs.fuzzel = {
@@ -11,10 +12,15 @@ in
 
       main = {
         dpi-aware = "yes";
-        font = "${config.fontProfiles.monospace.family}:weight=bold:size=12";
+        font =
+          if (monitor.displaySize <= 18) then
+            "${config.fontProfiles.monospace.family}:size=10"
+          else
+            "${config.fontProfiles.monospace.family}:size=12";
         terminal = "footclient -e";
         prompt = ''"❯ "'';
         layer = "overlay";
+        icon-theme = "Zafiro-icons-Dark";
       };
 
       colors = {

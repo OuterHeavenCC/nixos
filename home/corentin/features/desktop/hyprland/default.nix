@@ -68,7 +68,6 @@ in
 
       windowrulev2 = [
         "immediate, class:^(Turbo-Overkill)$"
-        "noanim, class:^(anyrun)$"
         "noanim, class:^(fuzzel)$"
       ];
       input = {
@@ -142,7 +141,6 @@ in
         let
 
           abook = "${pkgs.abook}/bin/abook";
-          anyrun = "${pkgs.anyrun}/bin/anyrun";
           blueman-manager = "${pkgs.blueman}/bin/blueman-manager";
           bmks = "${pkgs.bmks}/bin/bmks";
           calcurse = "${pkgs.calcurse}/bin/calcurse";
@@ -169,7 +167,7 @@ in
           "SUPER,B,exec,${blueman-manager}"
           "SUPER,C,exec,${TERMINAL} -e ${calcurse}"
           "SUPERSHIFT,C,exec,${TERMINAL} -e ${eva}"
-          "SUPER,d,exec,exec ${anyrun}"
+          "SUPER,d,exec,exec ${fuzzel}"
           "SUPER,E,exec,${TERMINAL} -e ${MAILCLIENT}"
           "SUPERSHIFT,E,exec,${TERMINAL} -e ${abook} -C ${cfg.configHome}/abook/abookrc --datafile ${cfg.configHome}/abook/addressbook"
           "SUPER,M,exec,${TERMINAL} -e ${ncmpcpp}"
@@ -214,7 +212,7 @@ in
           ",XF86Calculator,exec,${TERMINAL} -e ${eva}"
 
           # Search
-          ",XF86Search,exec,${anyrun}"
+          ",XF86Search,exec,${fuzzel}"
         ];
 
       binde =

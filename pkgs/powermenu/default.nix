@@ -7,21 +7,18 @@
   hyprlock,
   gnugrep,
   systemd,
-  inputs,
-  anyrun,
-
 }:
 (writeShellApplication {
   name = "powermenu";
   runtimeInputs = [
     fuzzel
-    anyrun
     findutils
     coreutils
     gnugrep
     hyprlock
     systemd
   ];
+
   text = builtins.readFile ./powermenu.sh;
 })
 // {
