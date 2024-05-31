@@ -6,6 +6,7 @@
       mapleader = " ";
     };
     opts = {
+      background = "dark";
       backup = false; # creates a backup file
       clipboard = "unnamedplus"; # allows neovim to access the system clipboard
       cmdheight = 1; # more space in the neovim command line for displaying messages

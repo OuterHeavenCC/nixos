@@ -8,7 +8,5 @@
     };
     package = pkgs.pass.withExtensions (p: [ p.pass-otp ]);
   };
-  home.packages = with pkgs; [
-      dmenu-wayland
-    ];
+  home.packages = with pkgs; [ dmenu-wayland ];
 }

@@ -782,7 +782,24 @@
         "nixos-master": "nixos-master",
         "nixos-stable": "nixos-stable",
         "nixpkgs": "nixpkgs_5",
-        "nixvim": "nixvim"
+        "nixvim": "nixvim",
+        "rose-pine-btop": "rose-pine-btop"
+      }
+    },
+    "rose-pine-btop": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1689701146,
+        "narHash": "sha256-sShQYfsyR5mq/e+pjeIsFzVZv3tCpQEdGC9bnTKlQ5c=",
+        "owner": "rose-pine",
+        "repo": "btop",
+        "rev": "6d6abdc0a8c8bcd3b056d9fe3256cfbe7e359312",
+        "type": "github"
+      },
+      "original": {
+        "owner": "rose-pine",
+        "repo": "btop",
+        "type": "github"
       }
     },
     "systems": {

@@ -55,11 +55,10 @@ in
     Install.WantedBy = [ "graphical-session.target" ];
   };
 
-xdg.configFile."ags/config.js".source = ./config/config.js;
-xdg.configFile."ags/imports.js".source = ./config/imports.js;
-xdg.configFile."ags/services".source = ./config/services;
-xdg.configFile."ags/windows".source = ./config/windows;
-xdg.configFile."ags/utils".source = ./config/utils;
-xdg.configFile."ags/style.css".text = import ./style.nix { inherit inputs config; };
-
+  xdg.configFile."ags/config.js".source = ./config/config.js;
+  xdg.configFile."ags/imports.js".source = ./config/imports.js;
+  xdg.configFile."ags/services".source = ./config/services;
+  xdg.configFile."ags/windows".source = ./config/windows;
+  xdg.configFile."ags/utils".source = ./config/utils;
+  xdg.configFile."ags/style.css".text = import ./style.nix { inherit inputs config; };
 }

@@ -66,10 +66,10 @@ in
         "tile, class:^(neovide)$"
       ];
 
-      windowrulev2 = [ 
-      "immediate, class:^(Turbo-Overkill)$" 
-      "noanim, class:^(anyrun)$"
-      "noanim, class:^(fuzzel)$"
+      windowrulev2 = [
+        "immediate, class:^(Turbo-Overkill)$"
+        "noanim, class:^(anyrun)$"
+        "noanim, class:^(fuzzel)$"
       ];
       input = {
         kb_layout = "fr,us";

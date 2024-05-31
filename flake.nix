@@ -41,6 +41,10 @@
       url = "github:catppuccin/btop";
       flake = false;
     };
+    rose-pine-btop = {
+      url = "github:rose-pine/btop";
+      flake = false;
+    };
 
     ags = {
       url = "github:Aylur/ags";

@@ -27,21 +27,21 @@ stdenv.mkDerivation {
   dontConfigure = true;
 
   installPhase = ''
-      install -Dm 0755 $src $out/bin/bmks
-      wrapProgram $out/bin/bmks --prefix PATH ':' \
-      "${
-        makeBinPath [
-          findutils
-          coreutils
-          rofi-wayland
-          fuzzel
-          fzf
-          gawk
-          xdg-utils
-          gnused
-          dmenu
-        ]
-      }"
+    install -Dm 0755 $src $out/bin/bmks
+    wrapProgram $out/bin/bmks --prefix PATH ':' \
+    "${
+      makeBinPath [
+        findutils
+        coreutils
+        rofi-wayland
+        fuzzel
+        fzf
+        gawk
+        xdg-utils
+        gnused
+        dmenu
+      ]
+    }"
   '';
 
   meta = {
