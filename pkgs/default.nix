@@ -9,4 +9,5 @@
   powermenu = pkgs.callPackage ./powermenu { };
   bmks = pkgs.callPackage ./bmks { };
   transadd = pkgs.callPackage ./transadd { };
+  fuzzelunicode = pkgs.callPackage ./fuzzelunicode { };
 }

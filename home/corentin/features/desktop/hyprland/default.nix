@@ -139,15 +139,15 @@ in
       };
       bind =
         let
-
           abook = "${pkgs.abook}/bin/abook";
           blueman-manager = "${pkgs.blueman}/bin/blueman-manager";
           bmks = "${pkgs.bmks}/bin/bmks";
+          btop = "${pkgs.btop}/bin/btop";
           calcurse = "${pkgs.calcurse}/bin/calcurse";
           cliphist = "${pkgs.cliphist}/bin/cliphist";
           eva = "${pkgs.eva}/bin/eva";
           fuzzel = "${pkgs.fuzzel}/bin/fuzzel";
-          passmenu = "${pkgs.pass}/bin/passmenu";
+          fuzzelunicode = "${pkgs.fuzzelunicode}/bin/fuzzelunicode";
           grimblast = "${pkgs.grimblast}/bin/grimblast";
           hyprctl = "${pkgs.hyprland}/bin/hyprctl";
           light = "${pkgs.light}/bin/light";
@@ -156,11 +156,11 @@ in
           networkmanager_dmenu = "${pkgs.networkmanager_dmenu}/bin/networkmanager_dmenu";
           newsboat = "${pkgs.newsboat}/bin/newsboat";
           pamixer = "${pkgs.pamixer}/bin/pamixer";
-          btop = "${pkgs.btop}/bin/btop";
+          passmenu = "${pkgs.pass}/bin/passmenu";
+          powermenu = "${pkgs.powermenu}/bin/powermenu";
           pulsemixer = "${pkgs.pulsemixer}/bin/pulsemixer";
           telegram-desktop = "${pkgs.telegram-desktop}/bin/telegram-desktop";
           wl-copy = "${pkgs.wl-clipboard}/bin/wl-copy";
-          powermenu = "${pkgs.powermenu}/bin/powermenu";
         in
         [
           "SUPER,Return,exec,${TERMINAL}"
@@ -187,6 +187,7 @@ in
           "SUPERSHIFT,BackSpace,exec,${passmenu}"
           "SUPER,Delete,exec,${TERMINAL} -e ${btop}"
           ",XF86AudioMute,exec,${pamixer} --toggle-mute"
+          "SUPER,Insert,exec,${fuzzelunicode}"
 
           # Screenshots
           ",Print,exec,${grimblast} --notify --freeze copy output"
