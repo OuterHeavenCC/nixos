@@ -20,10 +20,8 @@ let
   ];
 
   guiDeps = with pkgs; [
-    networkmanagerapplet
+    gnome.gnome-control-center
     mission-center
-    wlogout
-    libdbusmenu-gtk3
     blueman
     powermenu
   ];

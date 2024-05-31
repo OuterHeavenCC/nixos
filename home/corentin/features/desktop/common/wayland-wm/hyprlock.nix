@@ -21,6 +21,13 @@ in
         {
           monitor = "";
           path = config.wallpaper;
+          blur_size = "4";
+          blur_passes = "3";
+          noise = "0.0117";
+          contrast = "1.3000";
+          brightness = "0.2100";
+          vibrancy = "0.2100";
+          vibrancy_darkness = "0.0";
         }
       ];
 

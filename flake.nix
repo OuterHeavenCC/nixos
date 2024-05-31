@@ -32,6 +32,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    yazi.url = "github:sxyazi/yazi";
+
     catppuccin-btop = {
       url = "github:catppuccin/btop";
       flake = false;

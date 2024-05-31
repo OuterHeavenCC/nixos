@@ -60,7 +60,7 @@ const net = {
         Utils.execAsync([
           "sh",
           "-c",
-          "footclient -e btop",
+          "XDG_CURRENT_DESKTOP=GNOME gnome-control-center",
         ]);
       };
     },
