@@ -80,7 +80,7 @@
     };
   };
 
-  # boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages_zen;
   boot.supportedFilesystems = [ "ntfs" ];
 
   networking.firewall = {
