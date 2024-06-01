@@ -1,6 +1,7 @@
 {
   lib,
   config,
+  inputs,
   pkgs,
   ...
 }:
@@ -35,6 +36,7 @@ in
           wl-paste = "${pkgs.wl-clipboard}/bin/wl-paste";
           gammastep-indicator = "${pkgs.gammastep}/bin/gammastep-indicator";
           cliphist = "${pkgs.cliphist}/bin/cliphist";
+          waybar = "${pkgs.waybar}/bin/waybar";
         in
         [
           "hyprctl setcursor ${pointer.name} ${toString pointer.size}"
@@ -44,6 +46,7 @@ in
           "${wl-paste} --type image --watch ${cliphist} store"
           "${xrandr} --output DP-1 --primary" # Fix Jeux Steam
           "${gammastep-indicator}"
+          "${waybar}"
         ];
       env = [
         "GDK_BACKEND,wayland,x11"
