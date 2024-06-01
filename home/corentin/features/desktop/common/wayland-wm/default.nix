@@ -2,13 +2,13 @@
 
 {
   imports = [
+    ./ags
     ./foot.nix
     ./fuzzel.nix
     ./gammastep.nix
     ./hypridle.nix
     ./hyprlock.nix
     ./hyprpaper.nix
-    ./waybar-kaku
   ];
 
   home.packages = with pkgs; [
