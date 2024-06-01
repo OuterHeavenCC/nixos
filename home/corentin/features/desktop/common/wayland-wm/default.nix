@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ./ags
+    ./waybar
     ./foot.nix
     ./fuzzel.nix
     ./gammastep.nix
