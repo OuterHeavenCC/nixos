@@ -28,7 +28,7 @@ stdenv.mkDerivation {
   mkdir -p $out/share/
   cp $src/emoji_list.txt $out/share
   install -Dm 0755 $src/fuzzelunicode.sh $out/bin/fuzzelunicode
-  wrapProgram $out/bin/fuzzelunicode --set FUZZEL_EMOJI_FILE "$out/share/emoji_list.txt" --prefix PATH \
+  wrapProgram $out/bin/fuzzelunicode --set FUZZEL_EMOJI_FILE "$out/share/emoji_list.txt" --prefix PATH ':' \
       "${
         makeBinPath [
           fuzzel
