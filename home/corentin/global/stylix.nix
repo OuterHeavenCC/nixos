@@ -1,11 +1,14 @@
 { pkgs, ... }:
 
 let
-  colorscheme = "gruvbox-dark-hard";
+  colorscheme = "rose-pine";
 in
 {
   stylix = {
-    image = ./gruvbox.png;
+    image = pkgs.fetchurl {
+      url = "https://github.com/OuterHeavenCC/wallpapers/blob/main/${colorscheme}.jpg?raw=true";
+      sha256 = "YLHsj9SKuJNwiYxCQ5zFDrdEfTSEH89ue95yBvQZ+MI=";
+    };
     polarity = "dark";
     base16Scheme = "${pkgs.base16-schemes}/share/themes/${colorscheme}.yaml";
 
