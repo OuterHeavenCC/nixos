@@ -5,7 +5,6 @@
   imports = [
     ./plugins/smart-enter.nix
     ./keymap.nix
-    ./theme.nix
   ];
 
   programs.yazi = {
@@ -13,4 +12,9 @@
     enableBashIntegration = config.programs.bash.enable;
     enableZshIntegration = config.programs.zsh.enable;
   };
+
+  stylix.targets.yazi = {
+    enable = true;
+  };
+
 }

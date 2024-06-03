@@ -6,13 +6,12 @@
   outputs,
   ...
 }:
-let
-  inherit (inputs.nix-colors) colorSchemes;
-in
 {
   imports = [
     ../features/cli
-    inputs.nix-colors.homeManagerModule
+    ./stylix.nix
+    inputs.stylix.homeManagerModules.stylix
+    inputs.nixvim.homeManagerModules.nixvim
   ] ++ (builtins.attrValues outputs.homeManagerModules);
 
   nixpkgs = {
@@ -51,10 +50,4 @@ in
     sessionPath = [ "$HOME/.local/bin" ];
   };
 
-  # colorscheme = lib.mkDefault colorSchemes.catppuccin-mocha;
-  # colorscheme = lib.mkDefault colorSchemes.gruvbox-dark-hard;
-  # colorscheme = lib.mkDefault colorSchemes.rose-pine;
-  colorscheme = lib.mkDefault colorSchemes.nord;
-  # colorscheme = lib.mkDefault colorSchemes.tokyo-night-storm;
-  # colorscheme = lib.mkDefault colorSchemes.everforest;
 }

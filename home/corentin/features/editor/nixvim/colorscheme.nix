@@ -1,60 +1,55 @@
-{ config, ... }:
+{ config, pkgs, ...}:
 
 let
-colorscheme = config.colorscheme.slug;
+  commonIntegrations = {
+    cmp = true;
+    gitsigns = true;
+    nvimtree = true;
+    treesitter = true;
+  };
+
+  gruvboxSettings = {
+    gruvbox_contrast = "hard";
+    integrations = commonIntegrations;
+  };
+  catppuccinSettings = {
+    flavour = "mocha";
+    integrations = commonIntegrations;
+  };
+  nordSettings = {
+    integrations = commonIntegrations;
+  };
+
+  rosePineSettings = {
+    dark_variant = "main";
+    integrations = commonIntegrations;
+  };
+
+  colorscheme = config.stylix.base16Scheme;
 in
 {
+  
+  # TODO Vérifier quand base16 intégrera treesitter
   programs.nixvim.colorschemes =
-    if (colorscheme == "gruvbox-dark-hard") then {
+    if (colorscheme == "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml" ) then {
       gruvbox = {
         enable = true;
-        settings = {
-          gruvbox_contrast = "hard";
-          integrations = {
-            cmp = true;
-            gitsigns = true;
-            nvimtree = true;
-            treesitter = true;
-          };
+        settings = gruvboxSettings;
         };
-      };
-    } else if (colorscheme == "catppuccin-mocha") then {
+    } else if (colorscheme == "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml") then {
       catppuccin = {
         enable = true;
-        settings = {
-          flavour = "mocha";
-          integrations = {
-            cmp = true;
-            gitsigns = true;
-            nvimtree = true;
-            treesitter = true;
-          };
-        };
+        settings = catppuccinSettings;
       };
-    } else if (colorscheme == "nord") then {
+    } else if (colorscheme == "${pkgs.base16-schemes}/share/themes/nord.yaml") then {
       nord = {
         enable = true;
-        settings = {
-          integrations =  {
-            cmp = true;
-            gitsigns = true;
-            nvimtree = true;
-            treesitter = true;
-          };
-        };
+        settings = nordSettings;
       };
     } else {
       rose-pine = {
         enable = true;
-        settings = {
-          dark_variant = "main";
-          integrations = {
-            cmp = true;
-            gitsigns = true;
-            nvimtree = true;
-            treesitter = true;
-          };
-        };
+        settings = rosePineSettings;
       };
     };
 }

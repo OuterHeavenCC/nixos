@@ -1,7 +1,6 @@
-{ config, lib, ... }:
+{ lib, config, ... }:
 
 let
-  inherit (config.colorscheme) palette;
   monitor = lib.head (lib.filter (m: m.primary) config.monitors);
 in
 {
@@ -11,12 +10,12 @@ in
     settings = {
 
       main = {
-        dpi-aware = "yes";
+        dpi-aware = lib.mkForce "yes";
         font =
           if (monitor.displaySize <= 18) then
-            "${config.fontProfiles.monospace.family}:size=10"
+            lib.mkForce "${config.stylix.fonts.monospace.name}:size=10"
           else
-            "${config.fontProfiles.monospace.family}:size=12";
+            lib.mkForce "${config.stylix.fonts.monospace.name}:size=12";
         terminal = "footclient -e";
         prompt = ''"❯ "'';
         layer = "overlay";
@@ -24,13 +23,10 @@ in
       };
 
       colors = {
-        background = "${palette.base01}fa";
-        text = "${palette.base05}fa";
-        match = "${palette.base04}fa";
-        selection = "${palette.base07}fa";
-        selection-match = "${palette.base04}fa";
-        border = "${palette.base07}fa";
+        background = lib.mkForce "${config.lib.stylix.colors.base01}fa";
+        border = lib.mkForce "${config.lib.stylix.colors.base07}fa";
       };
+
 
       border = {
         radius = 20;

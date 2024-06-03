@@ -5,8 +5,8 @@
   home.packages = with pkgs; [ hyprpaper ];
 
   xdg.configFile."hypr/hyprpaper.conf".text = ''
-    preload = ${config.wallpaper}
-    wallpaper = , ${config.wallpaper}
+    preload = ${config.stylix.image}
+    wallpaper = , ${config.stylix.image}
   '';
 
   systemd.user.services.hyprpaper = {

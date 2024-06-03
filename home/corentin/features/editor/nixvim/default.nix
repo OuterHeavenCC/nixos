@@ -1,8 +1,5 @@
-{ inputs, ... }:
-
 {
   imports = [
-    inputs.nixvim.homeManagerModules.nixvim
     ./autoCmd.nix
     ./colorscheme.nix
     ./keymaps.nix
@@ -15,6 +12,8 @@
     enable = true;
     defaultEditor = true;
   };
+
+
 
   home.sessionVariables.EDITOR = "nvim";
   programs.zsh.shellAliases = {

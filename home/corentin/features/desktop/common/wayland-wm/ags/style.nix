@@ -1,9 +1,5 @@
-{ config, inputs, ... }:
+{ config, ... }:
 
-let
-  inherit (config.colorscheme) palette;
-  hexToRGBString = inputs.nix-colors.lib.conversions.hexToRGBString;
-in
 ''
   /* style aggregator */
   /* setup */
@@ -50,12 +46,12 @@ in
 
   .button {
     transition: 200ms;
-    background: #${palette.base0F};
+    background: #${config.lib.stylix.colors.base0F};
     border-radius: 5rem;
     padding: 0.4rem;
   }
   .button:hover {
-    background: #${palette.base0E};
+    background: #${config.lib.stylix.colors.base0E};
   }
 
   .button.disabled {
@@ -92,16 +88,16 @@ in
     min-width: 2rem;
   }
   .bar .workspaces .monitor0 {
-    background: #${palette.base08};
+    background: #${config.lib.stylix.colors.base08};
   }
   .bar .workspaces .monitor1 {
-    background: #${palette.base0A};
+    background: #${config.lib.stylix.colors.base0A};
   }
   .bar .workspaces .monitor2 {
-    background: #${palette.base0B};
+    background: #${config.lib.stylix.colors.base0B};
   }
   .bar .workspaces .monitor3 {
-    background: #${palette.base0D};
+    background: #${config.lib.stylix.colors.base0D};
   }
 
   /* music */

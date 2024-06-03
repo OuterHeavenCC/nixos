@@ -1,9 +1,6 @@
 { config, lib, ... }:
 
 let
-  inherit (config.colorscheme) palette;
-  font_family = "${config.fontProfiles.monospace.family}";
-
   monitor = lib.head (lib.filter (m: m.primary) config.monitors);
 in
 {
@@ -20,7 +17,6 @@ in
       background = [
         {
           monitor = "";
-          path = config.wallpaper;
           blur_size = "4";
           blur_passes = "3";
           noise = "0.0117";
@@ -39,12 +35,8 @@ in
 
           outline_thickness = 1;
 
-          outer_color = "rgb(${palette.base04})";
-          inner_color = "rgb(${palette.base07})";
-          font_color = "rgb(${palette.base00})";
 
           fade_on_empty = false;
-          placeholder_text = ''<span font_family="${font_family}" foreground="##${palette.base00}">Mot de passe...</span>'';
 
           dots_spacing = 0.2;
           dots_center = true;
@@ -55,9 +47,7 @@ in
         {
           monitor = "";
           text = "$TIME";
-          inherit font_family;
           font_size = 50;
-          color = "rgb(${palette.base05})";
 
           position = "0, 80";
 

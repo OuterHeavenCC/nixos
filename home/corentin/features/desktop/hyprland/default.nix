@@ -1,7 +1,6 @@
 {
   lib,
   config,
-  inputs,
   pkgs,
   ...
 }:
@@ -12,7 +11,6 @@ let
     TERMINAL
     MAILCLIENT
     ;
-  inherit (config.colorscheme) palette;
   cfg = config.xdg;
 in
 {
@@ -94,8 +92,8 @@ in
         shadow_range = 12;
         shadow_offset = "3 3";
         shadow_render_power = 5;
-        "col.shadow" = "0x44000000";
-        "col.shadow_inactive" = "0x66000000";
+        "col.shadow" = lib.mkForce "0x44000000";
+        "col.shadow_inactive" = lib.mkForce "0x66000000";
       };
       animations = {
         enabled = true;
@@ -130,8 +128,8 @@ in
         gaps_in = "5";
         gaps_out = "20";
         border_size = "2";
-        "col.active_border" = "0xFF${palette.base07}";
-        "col.inactive_border" = "0x66${palette.base02}";
+        "col.active_border" = lib.mkForce "0xFF${config.lib.stylix.colors.base07}";
+        "col.inactive_border" = lib.mkForce "0x66${config.lib.stylix.colors.base02}";
         layout = "master";
         allow_tearing = true;
       };

@@ -2,9 +2,7 @@
 
 {
   imports = [
-    ./cursor.nix
     ./firefox.nix
-    ./fonts.nix
     ./gtk.nix
     ./libreoffice.nix
     ./mpd.nix
