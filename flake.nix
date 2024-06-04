@@ -4,7 +4,7 @@
   inputs = {
     # Nixpkgs
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixos-stable.url = "github:nixos/nixpkgs/nixos-23.11";
+    nixos-stable.url = "github:nixos/nixpkgs/nixos-24.05";
 
     nixos-master.url = "github:nixos/nixpkgs/master";
     # You can access packages and modules from different nixpkgs revs

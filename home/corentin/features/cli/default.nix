@@ -86,6 +86,7 @@
     unrar # Basic archiving tool
     unzip # Basic archiving tool
     vimv-rs # Batch rename
+    wakeonlan
     wget # Download from CLI util
     wtype
     xh # Better curl
