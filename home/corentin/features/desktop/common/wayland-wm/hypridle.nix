@@ -1,17 +1,8 @@
-{
-  pkgs,
-  lib,
-  config,
-  ...
-}:
+{ pkgs, ... }:
+
 let
-  suspendScript = pkgs.writeShellScript "suspend-script" ''
-    ${pkgs.pipewire}/bin/pw-cli i all 2>&1 | ${pkgs.ripgrep}/bin/rg running -q
-    # only suspend if audio isn't running
-    if [ $? == 1 ]; then
-      ${pkgs.systemd}/bin/systemctl suspend
-    fi
-  '';
+  hyprlock = "${pkgs.hyprlock}/bin/hyprlock";
+  hyprctl = "${pkgs.hyprland}/bin/hyprctl";
 in
 {
   services.hypridle = {
@@ -19,15 +10,21 @@ in
 
     settings = {
       general = {
-        lock_cmd = lib.getExe config.programs.hyprlock.package;
-        before_sleep_cmd = "${pkgs.systemd}/bin/loginctl lock-session";
+        after_sleep_cmd = "${hyprctl} dispatch dpms on";
+        ignore_dbus_inhibit = false;
+        lock_cmd = "${hyprlock}";
       };
 
       listener = [
-        {
-          timeout = 300;
-          on-timeout = suspendScript.outPath;
-        }
+      {
+        timeout = 30;
+        on-timeout = "${hyprlock}";
+      }
+      {
+        timeout = 45;
+        on-timeout = "${hyprctl} dispatch dpms off";
+        on-resume = "${hyprctl} dispatch dpms on";
+      }
       ];
     };
   };

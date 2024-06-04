@@ -17,6 +17,7 @@ in
       background = [
         {
           monitor = "";
+          path = "${config.stylix.image}";
           blur_size = "4";
           blur_passes = "3";
           noise = "0.0117";
@@ -35,6 +36,12 @@ in
 
           outline_thickness = 1;
 
+          outer_color = "rgb(${config.lib.stylix.colors.base04})";
+          inner_color = "rgb(${config.lib.stylix.colors.base07})";
+          font_color = "rgb(${config.lib.stylix.colors.base00})";
+
+          placeholder_text = ''<span font_family="${config.stylix.fonts.monospace.name}" foreground="##${config.lib.stylix.colors.base00}">Mot de passe...</span>'';
+
 
           fade_on_empty = false;
 
@@ -48,6 +55,9 @@ in
           monitor = "";
           text = "$TIME";
           font_size = 50;
+
+          color = "rgb(${config.lib.stylix.colors.base05})";
+
 
           position = "0, 80";
 
