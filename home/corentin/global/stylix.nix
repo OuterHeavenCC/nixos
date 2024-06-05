@@ -44,8 +44,8 @@ in
     };
 
     cursor = {
-      package = pkgs.catppuccin-cursors.mochaDark;
-      name = "Catppuccin-Mocha-Dark-Cursors";
+      package = pkgs.phinger-cursors;
+      name = "phinger-cursors-light";
       size = 16;
     };
   };
