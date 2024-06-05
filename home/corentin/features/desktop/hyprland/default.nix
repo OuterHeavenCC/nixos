@@ -43,6 +43,7 @@ in
           "${wl-paste} --type image --watch ${cliphist} store"
           "${xrandr} --output DP-1 --primary" # Fix Jeux Steam
           "${gammastep-indicator}"
+          "ags -b hypr"
         ];
       env = [
         "GDK_BACKEND,wayland,x11"
@@ -98,22 +99,14 @@ in
       animations = {
         enabled = true;
         bezier = [
-          "easein,0.11, 0, 0.5, 0"
-          "easeout,0.5, 1, 0.89, 1"
-          "easeinback,0.36, 0, 0.66, -0.56"
-          "easeoutback,0.34, 1.56, 0.64, 1"
+            "myBezier, 0.05, 0.9, 0.1, 1.05"
         ];
         animation = [
-          "windowsIn,1,3,easeoutback,slide"
-          "windowsOut,1,3,easeinback,slide"
-          "windowsMove,1,3,easeoutback"
-          "workspaces,1,2,easeoutback,slide"
-          "fadeIn,1,3,easeout"
-          "fadeOut,1,3,easein"
-          "fadeSwitch,1,3,easeout"
-          "fadeShadow,1,3,easeout"
-          "fadeDim,1,3,easeout"
-          "border,1,3,easeout"
+          "windows, 1, 5, myBezier"
+          "windowsOut, 1, 7, default, popin 80%"
+          "border, 1, 10, default"
+          "fade, 1, 7, default"
+          "workspaces, 1, 6, default"
         ];
       };
       misc = {
@@ -164,6 +157,7 @@ in
         [
           "SUPER,Return,exec,${TERMINAL}"
           "SUPER,B,exec,${blueman-manager}"
+          "SUPERSHIFT,B,exec,ags -b hypr quit; ags -b hypr"
           "SUPER,C,exec,${TERMINAL} -e ${calcurse}"
           "SUPERSHIFT,C,exec,${TERMINAL} -e ${eva}"
           "SUPER,d,exec,exec ${fuzzel}"
