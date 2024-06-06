@@ -8,7 +8,7 @@
     ./gammastep.nix
     ./hypridle.nix
     ./hyprlock.nix
-    ./hyprpaper.nix
+    # ./hyprpaper.nix # No longer needed with ags
   ];
 
   home.packages = with pkgs; [

@@ -2,6 +2,7 @@ export const substitutes = {
     "transmission-gtk": "transmission",
     "blueberry.py": "blueberry",
     "Caprine": "facebook-messenger",
+    "foot-symbolic": "terminal-symbolic",
     "com.raggesilver.BlackBox-symbolic": "terminal-symbolic",
     "org.wezfurlong.wezterm-symbolic": "terminal-symbolic",
     "audio-headset-bluetooth": "audio-headphones-symbolic",
@@ -109,8 +110,8 @@ export default {
         recording: "media-record-symbolic",
     },
     notifications: {
-        noisy: "org.gnome.Settings-notifications-symbolic",
-        silent: "notifications-disabled-symbolic",
+        noisy: "radio-symbolic",
+        silent: "radio-mixed-symbolic",
         message: "chat-bubbles-symbolic",
     },
     trash: {

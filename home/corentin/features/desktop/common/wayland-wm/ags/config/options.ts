@@ -45,13 +45,13 @@ const options = mkOptions(OPTIONS, {
         scheme: opt<"dark" | "light">("dark"),
         widget: { opacity: opt(94) },
         border: {
-            width: opt(1),
+            width: opt(2),
             opacity: opt(96),
         },
 
         shadows: opt(true),
         padding: opt(7),
-        spacing: opt(12),
+        spacing: opt(5),
         radius: opt(11),
     },
 
@@ -66,7 +66,7 @@ const options = mkOptions(OPTIONS, {
         flatButtons: opt(true),
         position: opt<"top" | "bottom">("top"),
         corners: opt(true),
-        transparent: opt(false),
+        transparent: opt(true),
         layout: {
             start: opt<Array<import("widget/bar/Bar").BarWidget>>([
                 "launcher",
@@ -113,7 +113,7 @@ const options = mkOptions(OPTIONS, {
             low: opt(30),
         },
         workspaces: {
-            workspaces: opt(7),
+            workspaces: opt(9),
         },
         taskbar: {
             iconSize: opt(0),
@@ -169,7 +169,7 @@ const options = mkOptions(OPTIONS, {
 
     overview: {
         scale: opt(9),
-        workspaces: opt(7),
+        workspaces: opt(9),
         monochromeIcon: opt(true),
     },
 
@@ -235,7 +235,7 @@ const options = mkOptions(OPTIONS, {
     hyprland: {
         gaps: opt(2.4),
         inactiveBorder: opt("#282828"),
-        gapsWhenOnly: opt(false),
+        gapsWhenOnly: opt(true),
     },
 })
 

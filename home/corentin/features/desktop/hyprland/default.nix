@@ -149,10 +149,11 @@ in
           newsboat = "${pkgs.newsboat}/bin/newsboat";
           pamixer = "${pkgs.pamixer}/bin/pamixer";
           passmenu = "${pkgs.pass}/bin/passmenu";
-          powermenu = "${pkgs.powermenu}/bin/powermenu";
+          powermenu = "ags -b hypr -t powermenu";
           pulsemixer = "${pkgs.pulsemixer}/bin/pulsemixer";
           telegram-desktop = "${pkgs.telegram-desktop}/bin/telegram-desktop";
           wl-copy = "${pkgs.wl-clipboard}/bin/wl-copy";
+          applauncher = "ags -b hypr -t launcher";
         in
         [
           "SUPER,Return,exec,${TERMINAL}"
@@ -160,7 +161,7 @@ in
           "SUPERSHIFT,B,exec,ags -b hypr quit; ags -b hypr"
           "SUPER,C,exec,${TERMINAL} -e ${calcurse}"
           "SUPERSHIFT,C,exec,${TERMINAL} -e ${eva}"
-          "SUPER,d,exec,exec ${fuzzel}"
+          "SUPER,d,exec,exec ${applauncher}"
           "SUPER,E,exec,${TERMINAL} -e ${MAILCLIENT}"
           "SUPERSHIFT,E,exec,${TERMINAL} -e ${abook} -C ${cfg.configHome}/abook/abookrc --datafile ${cfg.configHome}/abook/addressbook"
           "SUPER,M,exec,${TERMINAL} -e ${ncmpcpp}"

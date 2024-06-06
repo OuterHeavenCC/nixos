@@ -1,12 +1,12 @@
 { pkgs, ... }:
 
 let
-  colorscheme = "rose-pine";
+  colorscheme = "gruvbox-dark-hard";
 in
 {
   stylix = {
     image = pkgs.fetchurl {
-      url = "https://github.com/OuterHeavenCC/wallpapers/blob/main/${colorscheme}.jpg?raw=true";
+      url = "https://github.com/OuterHeavenCC/wallpapers/blob/main/rose-pine.jpg?raw=true";
       sha256 = "YLHsj9SKuJNwiYxCQ5zFDrdEfTSEH89ue95yBvQZ+MI=";
     };
     polarity = "dark";
@@ -28,7 +28,7 @@ in
         name = "Fira Sans";
       };
       monospace = {
-        package = pkgs.nerdfonts.override { fonts =  [ "FiraCode" ];};
+        package = pkgs.nerdfonts.override { fonts =  [ "FiraCode" "Ubuntu" ];};
         name = "FiraCode Nerd Font";
       };
       emoji = {
