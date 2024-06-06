@@ -18,7 +18,7 @@ export default () => PopupWindow({
                     }),
                     Widget.Label({
                         class_name: "desc",
-                        label: "Are you sure?",
+                        label: "Êtes-vous certain ?",
                     }),
                 ],
             }),
@@ -29,7 +29,7 @@ export default () => PopupWindow({
                 homogeneous: true,
                 children: [
                     Widget.Button({
-                        child: Widget.Label("No"),
+                        child: Widget.Label("Non"),
                         on_clicked: () => App.toggleWindow("verification"),
                         setup: self => self.hook(App, (_, name: string, visible: boolean) => {
                             if (name === "verification" && visible)
@@ -37,7 +37,7 @@ export default () => PopupWindow({
                         }),
                     }),
                     Widget.Button({
-                        child: Widget.Label("Yes"),
+                        child: Widget.Label("Oui"),
                         on_clicked: powermenu.exec,
                     }),
                 ],

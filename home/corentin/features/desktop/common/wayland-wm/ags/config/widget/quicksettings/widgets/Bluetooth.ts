@@ -9,12 +9,12 @@ export const BluetoothToggle = () => ArrowToggleButton({
     icon: bluetooth.bind("enabled").as(p => icons.bluetooth[p ? "enabled" : "disabled"]),
     label: Utils.watch("Disabled", bluetooth, () => {
         if (!bluetooth.enabled)
-            return "Disabled"
+            return "Désactivé"
 
         if (bluetooth.connected_devices.length === 1)
             return bluetooth.connected_devices[0].alias
 
-        return `${bluetooth.connected_devices.length} Connected`
+        return `${bluetooth.connected_devices.length} Connecté`
     }),
     connection: [bluetooth, () => bluetooth.enabled],
     deactivate: () => bluetooth.enabled = false,

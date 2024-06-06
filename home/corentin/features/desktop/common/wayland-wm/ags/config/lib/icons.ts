@@ -111,7 +111,7 @@ export default {
     },
     notifications: {
         noisy: "radio-symbolic",
-        silent: "radio-mixed-symbolic",
+        silent: "notifications-disabled-symbolic",
         message: "chat-bubbles-symbolic",
     },
     trash: {

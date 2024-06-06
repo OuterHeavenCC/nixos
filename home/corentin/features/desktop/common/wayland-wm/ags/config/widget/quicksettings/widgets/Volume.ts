@@ -115,7 +115,7 @@ const SettingsButton = () => Widget.Button({
     child: Widget.Box({
         children: [
             Widget.Icon(icons.ui.settings),
-            Widget.Label("Settings"),
+            Widget.Label("Options"),
         ],
     }),
 })
@@ -138,7 +138,7 @@ export const AppMixer = () => Menu({
 export const SinkSelector = () => Menu({
     name: "sink-selector",
     icon: icons.audio.type.headset,
-    title: "Sink Selector",
+    title: "Choix du canal",
     content: [
         Widget.Box({
             vertical: true,

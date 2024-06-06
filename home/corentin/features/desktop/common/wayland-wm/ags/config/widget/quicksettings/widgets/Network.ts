@@ -19,7 +19,7 @@ export const NetworkToggle = () => ArrowToggleButton({
 export const WifiSelection = () => Menu({
     name: "network",
     icon: wifi.bind("icon_name"),
-    title: "Wifi Selection",
+    title: "Sélection de Wifi",
     content: [
         Widget.Box({
             vertical: true,
@@ -56,7 +56,7 @@ export const WifiSelection = () => Menu({
             child: Widget.Box({
                 children: [
                     Widget.Icon(icons.ui.settings),
-                    Widget.Label("Network"),
+                    Widget.Label("Réseau"),
                 ],
             }),
         }),

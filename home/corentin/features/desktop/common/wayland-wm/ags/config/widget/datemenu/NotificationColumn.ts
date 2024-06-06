@@ -21,7 +21,7 @@ const ClearButton = () => Widget.Button({
     sensitive: notifs.as(n => n.length > 0),
     child: Widget.Box({
         children: [
-            Widget.Label("Clear "),
+            Widget.Label("Supprimer "),
             Widget.Icon({
                 icon: notifs.as(n => icons.trash[n.length > 0 ? "full" : "empty"]),
             }),
@@ -86,7 +86,7 @@ const Placeholder = () => Widget.Box({
     visible: notifs.as(n => n.length === 0),
     children: [
         Widget.Icon(icons.notifications.silent),
-        Widget.Label("Your inbox is empty"),
+        Widget.Label("Vous n'avez pas de notifications"),
     ],
 })
 
