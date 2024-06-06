@@ -34,6 +34,7 @@
     direnv # Better dev environment management
     distrobox
     dog # Better dig
+    xdragon # dragon and drop source/target for X
     du-dust # Better du
     duf # Better df
     elinks # Terminal browser

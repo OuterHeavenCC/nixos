@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 
 let
   cfg = config.xdg;
@@ -347,7 +347,7 @@ in
         }
         {
           on = [ "<C-n>" ];
-          run = "shell 'dragon -x -i -T \"$1\"' --confirm";
+          run = "shell '${pkgs.xdragon}/bin/xdragon -x -i -T \"$1\"' --confirm";
           desc = "Drag a file with dragon";
         }
 
