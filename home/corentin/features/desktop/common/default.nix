@@ -30,7 +30,7 @@
     obs-studio # Screen capturing tool
     swappy # Snapshot editing tool
     telegram-desktop # Telegram
-    vesktop
+    vesktop # better discord for linux
     xournalpp # Edition de PDF
   ];
 }
