@@ -20,6 +20,7 @@ in
     ../common/wayland-wm
 
     ./basic-binds.nix
+    ./pyprland.nix
   ];
 
   wayland.windowManager.hyprland = {
@@ -34,6 +35,7 @@ in
           wl-paste = "${pkgs.wl-clipboard}/bin/wl-paste";
           gammastep-indicator = "${pkgs.gammastep}/bin/gammastep-indicator";
           cliphist = "${pkgs.cliphist}/bin/cliphist";
+          pypr = "${pkgs.pyprland}/bin/pypr";
         in
         [
           "hyprctl setcursor ${pointer.name} ${toString pointer.size}"
@@ -44,6 +46,7 @@ in
           "${xrandr} --output DP-1 --primary" # Fix Jeux Steam
           "${gammastep-indicator}"
           "ags -b hypr"
+          "${pypr}"
         ];
       env = [
         "GDK_BACKEND,wayland,x11"
@@ -69,6 +72,11 @@ in
       windowrulev2 = [
         "immediate, class:^(Turbo-Overkill)$"
         "noanim, class:^(fuzzel)$"
+
+       "float,class:^(scratchpad)$"
+       "size 80% 85%,class:^(scratchpad)$"
+       "workspace special silent,class:^(scratchpad)$"
+       "center,class:^(scratchpad)$"
       ];
       input = {
         kb_layout = "fr,us";
@@ -157,10 +165,11 @@ in
         in
         [
           "SUPER,Return,exec,${TERMINAL}"
+          "SUPERSHIFT,Return,exec,pypr toggle term && hyprctl dispatch bringactivetotop"
           "SUPER,B,exec,${blueman-manager}"
           "SUPERSHIFT,B,exec,ags -b hypr quit; ags -b hypr"
           "SUPER,C,exec,${TERMINAL} -e ${calcurse}"
-          "SUPERSHIFT,C,exec,${TERMINAL} -e ${eva}"
+          "SUPERSHIFT,C,exec,pypr toggle eva && hyprctl dispatch bringactivetotop"
           "SUPER,d,exec,exec ${applauncher}"
           "SUPER,E,exec,${TERMINAL} -e ${MAILCLIENT}"
           "SUPERSHIFT,E,exec,${TERMINAL} -e ${abook} -C ${cfg.configHome}/abook/abookrc --datafile ${cfg.configHome}/abook/addressbook"
@@ -171,15 +180,17 @@ in
           "SUPER,P,exec,${mpc} toggle"
           "SUPERSHIFT,P,exec,${mpc} pause"
           "SUPER,R,exec,${TERMINAL} -e zsh -l -ic 'ya; zsh'" # Trick sorti tout droit du ghetto pour faire fonctionner le wrapper de yazi
-          "SUPER,S,exec,${TERMINAL} -e ${pulsemixer}"
+          "SUPERSHIFT,R,exec,pypr toggle yazi && hyprctl dispatch bringactivetotop"
+          "SUPER,S,exec,pypr toggle pulsemixer && hyprctl dispatch bringactivetotop"
           "SUPERSHIFT,S,exec,${bmks}"
+          "SUPER,T,exec,pypr toggle tgpt && hyprctl dispatch bringactivetotop"
           "SUPER,W,exec,${BROWSER}"
           "SUPERSHIFT,W,exec,${networkmanager_dmenu}"
           "SUPER,X,exec,${cliphist} list | ${fuzzel} -d | cliphist decode | ${wl-copy}"
           "SUPER,exclam,exec,${telegram-desktop}"
           "SUPER,BackSpace,exec,${powermenu}"
           "SUPERSHIFT,BackSpace,exec,${passmenu}"
-          "SUPER,Delete,exec,${TERMINAL} -e ${btop}"
+          "SUPER,Delete,exec,pypr toggle btop && hyprctl dispatch bringactivetotop"
           ",XF86AudioMute,exec,${pamixer} --toggle-mute"
           "SUPER,Insert,exec,${fuzzelunicode}"
 
