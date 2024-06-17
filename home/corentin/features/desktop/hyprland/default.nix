@@ -239,10 +239,6 @@ in
         in
         "${m.name},${if m.enabled then "${resolution},${position},1,vrr,${vrr},bitdepth,10" else "disable"}"
       ) (config.monitors);
-
-      workspace = map (m: "${m.name},${m.workspace}") (
-        lib.filter (m: m.enabled && m.workspace != null) config.monitors
-      );
     };
 
     extraConfig = ''
