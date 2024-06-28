@@ -58,7 +58,7 @@
     killall # Better pkill -15
     lazygit # Git made easy
     libcdio # .iso preview in terminal
-    rconc # Minecraft server management
+    mcrcon # Minecraft server management
     mediainfo # Media metadata
     ncdu # Ncurses disk usage
     neofetch # Mandatory I use Nix btw flex

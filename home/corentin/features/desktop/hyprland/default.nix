@@ -179,7 +179,7 @@ in
           "SUPERSHIFT,N,exec,${TERMINAL} -e ${newsboat}"
           "SUPER,P,exec,${mpc} toggle"
           "SUPERSHIFT,P,exec,${mpc} pause"
-          "SUPER,R,exec,${TERMINAL} -e zsh -l -ic 'ya; zsh'" # Trick sorti tout droit du ghetto pour faire fonctionner le wrapper de yazi
+          "SUPER,R,exec,${TERMINAL} -e zsh -l -ic 'yy; zsh'" # Trick sorti tout droit du ghetto pour faire fonctionner le wrapper de yazi
           "SUPERSHIFT,R,exec,pypr toggle yazi && hyprctl dispatch bringactivetotop"
           "SUPER,S,exec,pypr toggle pulsemixer && hyprctl dispatch bringactivetotop"
           "SUPERSHIFT,S,exec,${bmks}"

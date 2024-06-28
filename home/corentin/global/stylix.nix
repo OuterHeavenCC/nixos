@@ -5,6 +5,7 @@ let
 in
 {
   stylix = {
+    enable = true;
     image = pkgs.fetchurl {
       url = "https://github.com/OuterHeavenCC/wallpapers/blob/main/rose-pine.jpg?raw=true";
       sha256 = "YLHsj9SKuJNwiYxCQ5zFDrdEfTSEH89ue95yBvQZ+MI=";
