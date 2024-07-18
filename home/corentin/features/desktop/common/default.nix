@@ -17,7 +17,6 @@
   home.packages = with pkgs; [
     anki # SRS
     audacity # Audio recording
-    bottles # Better lutris
     calibre # Ebook manager
     gimp
     gnome.gnome-boxes # QEMU Made easy

@@ -11,7 +11,7 @@
     serverProperties = {
       motd = "☭ OURCRAFT ☭";
       difficulty = "hard";
-      enable-command-block = false;
+      enable-command-block = true;
       enable-query = false;
       enable-rcon = true;
       white-list = true;
@@ -51,18 +51,18 @@
               url = "https://cdn.modrinth.com/data/joEfVgkn/versions/EvDx8gEe/carryon-fabric-1.20.4-2.1.3.13.jar";
               sha512 = "b66a7cb6b96c94921a8d7516e2cbad69ee1844130c359c88612792b5176f2aa0b650688424585c062e3a18de700df503bdcebe459f2e76e60dba69094dcf096b";
             };
-            Tectonic = fetchurl {
-              url = "https://cdn.modrinth.com/data/lWDHr9jE/versions/GxY5oM7Y/tectonic-fabric-1.20-2.3.5b.jar";
-              sha512 = "02d7cc6d5c4a87012b28db8ce4608dff6dcfa6b97a900abcb21c28abf50676d6b37f5b7350977f04d04946408c6d41c8998158cf1dfdb1e235c95200ad71d0a5";
-            };
+            # Tectonic = fetchurl {
+            #   url = "https://cdn.modrinth.com/data/lWDHr9jE/versions/GxY5oM7Y/tectonic-fabric-1.20-2.3.5b.jar";
+            #   sha512 = "02d7cc6d5c4a87012b28db8ce4608dff6dcfa6b97a900abcb21c28abf50676d6b37f5b7350977f04d04946408c6d41c8998158cf1dfdb1e235c95200ad71d0a5";
+            # };
             JourneyMap = fetchurl {
               url = "https://cdn.modrinth.com/data/lfHFW1mp/versions/mMICqfH9/journeymap-1.20.4-5.9.28-fabric.jar";
               sha512 = "3c867f5dac319f2e7b5426d56bf737835e1c4a79f9d61f112dcfcd5b87b01cef2230cab0533271aa7134c3d0a0439b51b7d50dd31423203b48ad69685d8a231d";
             };
-            Terralith = fetchurl {
-              url = "https://cdn.modrinth.com/data/8oi3bsk5/versions/rWmFwtGy/Terralith_1.20_v2.5.1.jar";
-              sha512 = "459fec3da3474011195dff101c8303a5d9d8f1e431d99b4398cc087d0c4045fd42b49b16720ca4ea17e18180e9bc9d19a327361a58fe0ebae7a3f7f6db34b5d1";
-            };
+            # Terralith = fetchurl {
+            #   url = "https://cdn.modrinth.com/data/8oi3bsk5/versions/rWmFwtGy/Terralith_1.20_v2.5.1.jar";
+            #   sha512 = "459fec3da3474011195dff101c8303a5d9d8f1e431d99b4398cc087d0c4045fd42b49b16720ca4ea17e18180e9bc9d19a327361a58fe0ebae7a3f7f6db34b5d1";
+            # };
             InfinityAndMending = fetchurl {
               url = "https://cdn.modrinth.com/data/tUvQMFwZ/versions/fFn78X1h/infinity-and-mending-1.20.x-1.0.0.jar";
               sha512 = "7e75161b50b4745d64a3373c07f00c43b288089be3d27e3984448abfa750dd38495cb18af7bbfedfeacfacccb2440bdf549fb850fd2b577e9c7745c24041c177";

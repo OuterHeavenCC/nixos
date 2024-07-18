@@ -46,6 +46,7 @@
     inherit (inputs.nixos-stable.legacyPackages.${final.system}) rpcs3;
     inherit (inputs.nixos-stable.legacyPackages.${final.system}) calibre;
     inherit (inputs.nixos-stable.legacyPackages.${final.system}) anki;
+    inherit (inputs.nixos-stable.legacyPackages.${final.system}) transmission;
   };
 
   # When applied, the unstable nixpkgs set (declared in the flake inputs) will

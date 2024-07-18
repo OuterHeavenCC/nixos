@@ -64,6 +64,7 @@
   hardware = {
     opengl = {
       enable = true;
+      driSupport32Bit = true;
       extraPackages = with pkgs; [
         vaapiVdpau
         libvdpau-va-gl
@@ -75,11 +76,10 @@
       modesetting.enable = true;
       powerManagement.enable = false;
       powerManagement.finegrained = false;
-      package = config.boot.kernelPackages.nvidiaPackages.beta;
     };
   };
 
-  boot.kernelPackages = pkgs.linuxPackages_zen;
+  # boot.kernelPackages = pkgs.linuxPackages_zen;
   boot.supportedFilesystems = [ "ntfs" ];
 
   networking.firewall = {

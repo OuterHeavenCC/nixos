@@ -23,9 +23,9 @@
         url = "https://strongerbyscience.com/articles/feed";
       }
       {
-        title = "Le Pharmachien";
-        tags = [ "sciences" ];
-        url = "https://lepharmachien.com/feed/";
+        title = "Initiative communiste";
+        tags = [ "politique" ];
+        url = "https://www.initiative-communiste.fr/feed/";
       }
       {
         title = "Science étonnante";
@@ -55,14 +55,6 @@
           "travail"
         ];
         url = "https://gestiondeladouleurenthrapiemanuelle.wordpress.com/rss";
-      }
-      {
-        title = "Muscle and Feels";
-        tags = [
-          "sciences"
-          "sport"
-        ];
-        url = "https://feeds.buzzsprout.com/2050318.rss";
       }
     ];
 

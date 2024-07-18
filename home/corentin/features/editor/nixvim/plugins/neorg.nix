@@ -11,6 +11,11 @@
         pattern = "norg";
         command = "setlocal conceallevel=2";
       }
+      {
+        event = "FileType";
+        pattern = "norg";
+        command = "TSEnable highlight";
+      }
     ];
     plugins.neorg = {
       enable = true;
@@ -128,87 +133,6 @@
         action = "<cmd>Neorg toc<CR>";
         options = {
           desc = "Sommaire";
-          silent = true;
-        };
-      }
-      {
-        mode = "n";
-        key = "<Tab>";
-        action = "<cmd>Neorg keybind all core.integrations.treesitter.next.link<CR>";
-        options = {
-          desc = "Trouver le lien suivant";
-          silent = true;
-        };
-      }
-      {
-        mode = "n";
-        key = "<S-Tab>";
-        action = "<cmd>Neorg keybind all core.integrations.treesitter.previous.link<CR>";
-        options = {
-          desc = "Trouver le lien précédent";
-          silent = true;
-        };
-      }
-      {
-        mode = "n";
-        key = "<leader>fn";
-        action = "<cmd>Neorg keybind all core.integrations.telescope.find_norg_files<CR>";
-        options = {
-          desc = "Rechercher un fichier norg";
-          silent = true;
-        };
-      }
-      {
-        mode = "n";
-        key = "<leader>ntd";
-        action = "<cmd>Neorg keybind all core.qol.todo_items.todo.task_done<CR>";
-        options = {
-          desc = "Task done";
-          silent = true;
-        };
-      }
-      {
-        mode = "n";
-        key = "<leader>ntu";
-        action = "<cmd>Neorg keybind all core.qol.todo_items.todo.task_undone<CR>";
-        options = {
-          desc = "Task undone";
-          silent = true;
-        };
-      }
-      {
-        mode = "n";
-        key = "<leader>ntp";
-        action = "<cmd>Neorg keybind all core.qol.todo_items.todo.task_pending<CR>";
-        options = {
-          desc = "Task pending";
-          silent = true;
-        };
-      }
-      {
-        mode = "n";
-        key = "<leader>nti";
-        action = "<cmd>Neorg keybind all core.qol.todo_items.todo.task_important<CR>";
-        options = {
-          desc = "Task important";
-          silent = true;
-        };
-      }
-      {
-        mode = "n";
-        key = "<leader>nta";
-        action = "<cmd>Neorg keybind all core.qol.todo_items.todo.task_ambiguous<CR>";
-        options = {
-          desc = "Task ambiguous";
-          silent = true;
-        };
-      }
-      {
-        mode = "n";
-        key = "<leader>nth";
-        action = "<cmd>Neorg keybind all core.qol.todo_items.todo.task_on_hold<CR>";
-        options = {
-          desc = "Task on hold";
           silent = true;
         };
       }
