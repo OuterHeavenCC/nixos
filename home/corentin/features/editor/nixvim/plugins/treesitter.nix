@@ -4,7 +4,6 @@
       enable = true;
       nixGrammars = true;
       nixvimInjections = true;
-      settings.ensure_installed = "all";
     };
   };
 }

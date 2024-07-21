@@ -20,7 +20,7 @@ in
   home.packages = with pkgs; [
     theme.package
     iconTheme.package
-    gnome.adwaita-icon-theme    # Needed for ags symbols
+    adwaita-icon-theme    # Needed for ags symbols
   ];
 
   gtk = {

@@ -67,6 +67,13 @@ in
         "opaque, class:^(mpv)$"
         "float, title:^(Waydroid)$"
         "tile, class:^(neovide)$"
+
+        "noblur, kando"
+        "size 100% 100%, kando"
+        "noborder, kando"
+        "noanim, kando"
+        "float, kando"
+        "pin, kando"
       ];
 
       windowrulev2 = [

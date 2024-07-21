@@ -55,6 +55,18 @@
       };
     };
     keymaps = [
+      
+      # Global stuff
+
+      {
+        mode = "n";
+        key = "<leader>ns";
+        action = "<cmd>Neorg toc<CR>";
+        options = {
+          desc = "Sommaire";
+          silent = true;
+        };
+      }
       {
         mode = "n";
         key = "<leader>ni";
@@ -64,33 +76,7 @@
           silent = true;
         };
       }
-      {
-        mode = "n";
-        key = "<leader>nja";
-        action = "<cmd>Neorg journal today<CR>";
-        options = {
-          desc = "Journal Neorg (Aujourd'hui)";
-          silent = true;
-        };
-      }
-      {
-        mode = "n";
-        key = "<leader>njd";
-        action = "<cmd>Neorg journal tomorrow<CR>";
-        options = {
-          desc = "Journal Neorg (Demain)";
-          silent = true;
-        };
-      }
-      {
-        mode = "n";
-        key = "<leader>njh";
-        action = "<cmd>Neorg journal yesterday<CR>";
-        options = {
-          desc = "Journal Neorg (Hier)";
-          silent = true;
-        };
-      }
+
       {
         mode = "n";
         key = "<leader>nc";
@@ -100,6 +86,9 @@
           silent = true;
         };
       }
+
+      # Modes
+
       {
         mode = "n";
         key = "<leader>nn";
@@ -127,12 +116,142 @@
           silent = true;
         };
       }
+
+
+      # Journal 
+
       {
         mode = "n";
-        key = "<leader>ns";
-        action = "<cmd>Neorg toc<CR>";
+        key = "<leader>nja";
+        action = "<cmd>Neorg journal today<CR>";
         options = {
-          desc = "Sommaire";
+          desc = "Journal Neorg (Aujourd'hui)";
+          silent = true;
+        };
+      }
+      {
+        mode = "n";
+        key = "<leader>njd";
+        action = "<cmd>Neorg journal tomorrow<CR>";
+        options = {
+          desc = "Journal Neorg (Demain)";
+          silent = true;
+        };
+      }
+      {
+        mode = "n";
+        key = "<leader>njh";
+        action = "<cmd>Neorg journal yesterday<CR>";
+        options = {
+          desc = "Journal Neorg (Hier)";
+          silent = true;
+        };
+      }
+
+      # Telescope integration
+
+      {
+        mode = "n";
+        key = "<leader>fn";
+        action = "<Plug>(neorg.telescope.find_norg_files)";
+        options = {
+          desc = "Rechercher un fichier norg";
+          silent = true;
+        };
+      }
+
+      # Treesitter integration
+
+      {
+        mode = "n";
+        key = "<Tab>";
+        action = "<Plug>(neorg.treesitter.next.link)";
+        options = {
+          desc = "Treesitter (lien suivant)";
+          silent = true;
+        };
+      }
+      {
+        mode = "n";
+        key = "<S-Tab>";
+        action = "<Plug>(neorg.treesitter.previous.link)";
+        options = {
+          desc = "Treesitter (lien précédent)";
+          silent = true;
+        };
+      }
+
+      # Tasks
+
+      {
+        mode = "n";
+        key = "<leader>nta";
+        action = "<Plug>(neorg.qol.todo-items.todo.task-ambiguous)";
+        options = {
+          desc = "Task Ambiguous";
+          silent = true;
+        };
+      }
+      {
+        mode = "n";
+        key = "<leader>ntc";
+        action = "<Plug>(neorg.qol.todo-items.todo.task-cancelled)";
+        options = {
+          desc = "Task Cancelled";
+          silent = true;
+        };
+      }
+      {
+        mode = "n";
+        key = "<leader>ntd";
+        action = "<Plug>(neorg.qol.todo-items.todo.task-done)";
+        options = {
+          desc = "Task Done";
+          silent = true;
+        };
+      }
+      {
+        mode = "n";
+        key = "<leader>nth";
+        action = "<Plug>(neorg.qol.todo-items.todo.task-on-hold)";
+        options = {
+          desc = "Task On Hold";
+          silent = true;
+        };
+      }
+      {
+        mode = "n";
+        key = "<leader>nti";
+        action = "<Plug>(neorg.qol.todo-items.todo.task-important)";
+        options = {
+          desc = "Task Important";
+          silent = true;
+        };
+      }
+      {
+        mode = "n";
+        key = "<leader>ntp";
+        action = "<Plug>(neorg.qol.todo-items.todo.task-pending)";
+        options = {
+          desc = "Task Pending";
+          silent = true;
+        };
+      }
+      {
+        mode = "n";
+        key = "<leader>ntr";
+        action = "<Plug>(neorg.qol.todo-items.todo.task-recurring)";
+        options = {
+          desc = "Task Recurring";
+          silent = true;
+        };
+      }
+      {
+        mode = "n";
+        key = "<leader>ntu";
+        action = "<Plug>(neorg.qol.todo-items.todo.task-undone)";
+        options = {
+          desc = "Task Undone";
           silent = true;
         };
       }
