@@ -20,6 +20,7 @@
       smtp_authenticators = ''"gssapi:login"'';
       query_command = ''"abook --mutt-query '%s'"'';
       rfc2047_parameters = "yes";
+      editor = "nvim";
       sleep_time = "0"; # Pause 0 seconds for informational messages
       markers = "no"; # Disables the `+` displayed at line wraps
       mime_forward = "yes"; # attachments are forwarded with mail
