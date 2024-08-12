@@ -53,6 +53,7 @@
   };
   hardware = {
     opengl.enable = true;
+    opengl.driSupport32Bit = true;
   };
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
