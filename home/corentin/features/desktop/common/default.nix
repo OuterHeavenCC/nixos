@@ -19,7 +19,7 @@
     audacity # Audio recording
     calibre # Ebook manager
     gimp
-    gnome.gnome-boxes # QEMU Made easy
+    gnome-boxes # QEMU Made easy
     nautilus # When yazi isn't enough
     helvum # Pipewire gui
     imv # Simple Image Viewer

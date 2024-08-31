@@ -83,6 +83,14 @@
               url = "https://cdn.modrinth.com/data/s86X568j/versions/22AFyYWv/ChunkyBorder-1.1.63.jar";
               sha512 = "56bbcd124a0c727366ca40152e4f79aef0c84c66720033eb362be60c464fa11ebaf8649c0a29d0b60e2868dc830d26558f4ebc0744435b526db57f637526a8e0";
             };
+            Carpet = fetchurl {
+              url = "https://cdn.modrinth.com/data/TQTTVgYE/versions/yYzR60Xd/fabric-carpet-1.20.3-1.4.128%2Bv231205.jar";
+              sha512 = "6ca0bd328a76b7c3c10eb0253cb57eba8791087775467fbe2217c7f938c0064700bdca4cbf358e7f2f3427ae50a6d63f520f2b1a549cb36da1cc718812f86375";
+            };
+            CarpetExtra = fetchurl {
+              url = "https://cdn.modrinth.com/data/VX3TgwQh/versions/APnGg1O6/carpet-extra-1.20.3-1.4.128.jar";
+              sha512 = "68c14e3661faeb81d13129193372fbd9e3c1b3a0ff496a5fe93404c96d791d4c5cec53d030ad63d8e1112db4660ea65f5ffb1f7fb1c76f7935fcb800a34d10c3";
+            };
           }
         );
     };

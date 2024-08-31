@@ -45,6 +45,6 @@
               "<A-j>" = ":m '>+1<CR>gv=gv";
             };
       in
-      config.nixvim.helpers.keymaps.mkKeymaps { options.silent = true; } (normal ++ visual);
+      config.lib.nixvim.keymaps.mkKeymaps { options.silent = true; } (normal ++ visual);
   };
 }

@@ -61,6 +61,7 @@
       trusted-users = [
         "root"
         "corentin"
+        "jade"
       ];
 
       # AI Stuff

@@ -2,7 +2,6 @@
   programs.nixvim = {
     plugins.alpha = {
       enable = true;
-      iconsEnabled = true;
       layout =
         let
           padding = val: {

@@ -58,6 +58,7 @@
     killall # Better pkill -15
     lazygit # Git made easy
     libcdio # .iso preview in terminal
+    libfaketime # fake time for commands
     mcrcon # Minecraft server management
     mediainfo # Media metadata
     ncdu # Ncurses disk usage

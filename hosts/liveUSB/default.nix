@@ -51,7 +51,7 @@
     };
   };
   hardware = {
-    opengl.enable = true;
+    graphics.enable = true;
   };
 
   boot.kernelPackages = pkgs.linuxPackages_latest;

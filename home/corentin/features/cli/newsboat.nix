@@ -23,9 +23,9 @@
         url = "https://strongerbyscience.com/articles/feed";
       }
       {
-        title = "Initiative communiste";
-        tags = [ "politique" ];
-        url = "https://www.initiative-communiste.fr/feed/";
+        title = "Revolution Permanente";
+        tags = [ "politique" "news" ];
+        url = "https://www.revolutionpermanente.fr/spip.php?page=backend_portada";
       }
       {
         title = "Science étonnante";
