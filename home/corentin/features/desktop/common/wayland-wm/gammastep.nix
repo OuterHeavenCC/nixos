@@ -6,7 +6,7 @@
     longitude = -4.00;
     temperature = {
       day = 6000;
-      night = 2000;
+      night = 2700;
     };
 
     settings = {

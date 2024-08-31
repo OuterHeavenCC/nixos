@@ -307,7 +307,7 @@ in
         }
         {
           on = [ ";" ];
-          run = "shell";
+          run = "shell --interactive";
           desc = "Run a shell command";
         }
         {
