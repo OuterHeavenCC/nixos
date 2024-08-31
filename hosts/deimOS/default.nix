@@ -55,6 +55,7 @@
     graphics = {
       enable = true;
       enable32Bit = true;
+    };
   };
 
   boot.kernelPackages = pkgs.linuxPackages_latest;
