@@ -132,7 +132,6 @@ in
         disable_splash_rendering = true;
       };
       general = {
-        sensitivity = "1.0";
         gaps_in = "5";
         gaps_out = "20";
         border_size = "2";

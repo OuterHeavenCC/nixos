@@ -28,7 +28,7 @@
     neovide
     obs-studio # Screen capturing tool
     swappy # Snapshot editing tool
-    telegram-desktop # Telegram
+    signal-desktop # Signal
     vesktop # better discord for linux
     xournalpp # Edition de PDF
   ];

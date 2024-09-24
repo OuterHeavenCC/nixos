@@ -25,12 +25,6 @@
 
     nginxStable = prev.nginxStable.override { oppenssl = prev.pkgs.libressl; };
 
-    nh = prev.nh.overrideAttrs (previousAttrs: {
-      patches = previousAttrs.patches ++ [
-        ./patches/nh/patch.txt # doas support in nh
-      ];
-    });
-
     pass = prev.pass.overrideAttrs (oldAttrs: {
       waylandSupport = true;
       dmenuSupport = true;
