@@ -165,7 +165,7 @@ in
           passmenu = "${pkgs.pass}/bin/passmenu";
           powermenu = "ags -b hypr -t powermenu";
           pulsemixer = "${pkgs.pulsemixer}/bin/pulsemixer";
-          telegram-desktop = "${pkgs.telegram-desktop}/bin/telegram-desktop";
+          signal-desktop = "${pkgs.signal-desktop}/bin/signal-desktop";
           wl-copy = "${pkgs.wl-clipboard}/bin/wl-copy";
           applauncher = "ags -b hypr -t launcher";
         in
@@ -193,7 +193,7 @@ in
           "SUPER,W,exec,${BROWSER}"
           "SUPERSHIFT,W,exec,${networkmanager_dmenu}"
           "SUPER,X,exec,${cliphist} list | ${fuzzel} -d | cliphist decode | ${wl-copy}"
-          "SUPER,exclam,exec,${telegram-desktop}"
+          "SUPER,exclam,exec,${signal-desktop}"
           "SUPER,BackSpace,exec,${powermenu}"
           "SUPERSHIFT,BackSpace,exec,${passmenu}"
           "SUPER,Delete,exec,pypr toggle btop && hyprctl dispatch bringactivetotop"
