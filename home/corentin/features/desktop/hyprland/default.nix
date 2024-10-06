@@ -168,6 +168,22 @@ in
           signal-desktop = "${pkgs.signal-desktop}/bin/signal-desktop";
           wl-copy = "${pkgs.wl-clipboard}/bin/wl-copy";
           applauncher = "ags -b hypr -t launcher";
+          hyprgamemode = pkgs.writeShellScript "hyprgamemode.sh" ''
+            #!/usr/bin/env sh
+            HYPRGAMEMODE=$(hyprctl getoption animations:enabled | awk 'NR==1{print $2}')
+            if [ "$HYPRGAMEMODE" = 1 ] ; then
+              hyprctl --batch "\
+                keyword animations:enabled 0;\
+                keyword decoration:drop_shadow 0;\
+                keyword decoration:blur:enabled 0;\
+                keyword general:gaps_in 0;\
+                keyword general:gaps_out 0;\
+                keyword general:border_size 1;\
+                keyword decoration:rounding 0"
+                exit
+                fi
+                hyprctl reload
+          '';
         in
         [
           "SUPER,Return,exec,${TERMINAL}"
@@ -199,6 +215,10 @@ in
           "SUPER,Delete,exec,pypr toggle btop && hyprctl dispatch bringactivetotop"
           ",XF86AudioMute,exec,${pamixer} --toggle-mute"
           "SUPER,Insert,exec,${fuzzelunicode}"
+
+          # Function
+
+          "SUPER,F1,exec,${hyprgamemode}"
 
           # Screenshots
           ",Print,exec,${grimblast} --notify --freeze copy output"

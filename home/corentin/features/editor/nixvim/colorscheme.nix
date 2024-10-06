@@ -25,6 +25,11 @@ let
     integrations = commonIntegrations;
   };
 
+  everforrestSettings = {
+    background = "hard";
+    integrations = commonIntegrations;
+  };
+
   colorscheme = config.stylix.base16Scheme;
 in
 {
@@ -42,6 +47,11 @@ in
         settings = catppuccinSettings;
       };
     } else if (colorscheme == "${pkgs.base16-schemes}/share/themes/nord.yaml") then {
+      nord = {
+        enable = true;
+        settings = nordSettings;
+      };
+    } else if (colorscheme == "${pkgs.base16-schemes}/share/themes/everforest.yaml") then {
       nord = {
         enable = true;
         settings = nordSettings;
