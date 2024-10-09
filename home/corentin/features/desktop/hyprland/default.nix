@@ -218,7 +218,7 @@ in
 
           # Function
 
-          "SUPER,F1,exec,${hyprgamemode}"
+          "SUPER,g,exec,${hyprgamemode}"
 
           # Screenshots
           ",Print,exec,${grimblast} --notify --freeze copy output"
