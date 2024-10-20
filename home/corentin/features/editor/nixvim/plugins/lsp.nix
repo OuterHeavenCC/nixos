@@ -6,18 +6,18 @@
       html.enable = true;
       clangd.enable = true;
       cssls.enable = true;
-      lua-ls.enable = true;
+      lua_ls.enable = true;
       jsonls.enable = true;
       marksman.enable = true;
-      nil-ls.enable = true;
+      nil_ls.enable = true;
       pyright.enable = true;
-      rust-analyzer = {
+      rust_analyzer = {
         enable = true;
         installCargo = true;
         installRustc = true;
       };
       texlab.enable = true;
-      tsserver.enable = true;
+      ts_ls.enable = true;
     };
   };
 }

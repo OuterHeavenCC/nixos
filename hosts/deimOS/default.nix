@@ -41,16 +41,18 @@
     };
   };
 
+  services.libinput.touchpad = {
+    middleEmulation = true;
+    tapping = true;
+    disableWhileTyping = true;
+  };
+
   services.xserver = {
     enable = true;
     xkb.layout = "fr";
     displayManager.lightdm.enable = false;
-    libinput.touchpad = {
-      middleEmulation = true;
-      tapping = true;
-      disableWhileTyping = true;
-    };
   };
+
   hardware = {
     graphics = {
       enable = true;
