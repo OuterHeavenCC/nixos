@@ -18,7 +18,6 @@
     ./features/productivity
     ./features/scripts
     ./features/website
-    ./features/games/prismlauncher.nix
     ./global
 
     # If you want to use modules your own flake exports (from modules/home-manager):
