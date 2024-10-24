@@ -45,8 +45,8 @@ in
           "${wl-paste} --type image --watch ${cliphist} store"
           "${xrandr} --output DP-1 --primary" # Fix Jeux Steam
           "${gammastep-indicator}"
-          "ags -b hypr"
           "${pypr}"
+          "ags -b hypr"
         ];
       env = [
         "GDK_BACKEND,wayland,x11"
@@ -143,6 +143,11 @@ in
       master = {
         new_on_top = true;
       };
+
+      cursor = {
+        no_hardware_cursors = true;
+      };
+
       bind =
         let
           abook = "${pkgs.abook}/bin/abook";

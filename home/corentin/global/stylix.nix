@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 let
-  colorscheme = "everforest";
+  colorscheme = "catppuccin-mocha";
 in
 {
   stylix = {

@@ -52,6 +52,14 @@
         "core.summary" = {
           __empty = null;
         };
+        "core.ui.calendar" = {
+          __empty = null;
+        };
+        "core.completion" = {
+          config = {
+            engine = "nvim-cmp";
+          };
+        };
       };
     };
     keymaps = [
