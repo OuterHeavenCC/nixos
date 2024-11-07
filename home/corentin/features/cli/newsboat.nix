@@ -24,7 +24,10 @@
       }
       {
         title = "Revolution Permanente";
-        tags = [ "politique" "news" ];
+        tags = [
+          "politique"
+          "news"
+        ];
         url = "https://www.revolutionpermanente.fr/spip.php?page=backend_portada";
       }
       {

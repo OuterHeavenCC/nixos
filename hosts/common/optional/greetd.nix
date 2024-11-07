@@ -1,8 +1,15 @@
-{ pkgs, lib, inputs, ... }:
+{
+  pkgs,
+  lib,
+  inputs,
+  ...
+}:
 
 let
   tuigreet = "${lib.getExe pkgs.greetd.tuigreet}";
-  hyprland-session = "${inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland}/share/wayland-sessions";
+  hyprland-session = "${
+    inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland
+  }/share/wayland-sessions";
 in
 {
   services.greetd = {

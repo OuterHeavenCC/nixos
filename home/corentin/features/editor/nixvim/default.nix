@@ -13,8 +13,6 @@
     defaultEditor = true;
   };
 
-
-
   home.sessionVariables.EDITOR = "nvim";
   programs.zsh.shellAliases = {
     v = "$EDITOR";

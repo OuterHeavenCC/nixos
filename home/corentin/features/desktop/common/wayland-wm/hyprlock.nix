@@ -42,7 +42,6 @@ in
 
           placeholder_text = ''<span font_family="${config.stylix.fonts.monospace.name}" foreground="##${config.lib.stylix.colors.base00}">Mot de passe...</span>'';
 
-
           fade_on_empty = false;
 
           dots_spacing = 0.2;
@@ -57,7 +56,6 @@ in
           font_size = 50;
 
           color = "rgb(${config.lib.stylix.colors.base05})";
-
 
           position = "0, 80";
 

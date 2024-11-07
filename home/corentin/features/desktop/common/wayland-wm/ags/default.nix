@@ -21,8 +21,6 @@
     gtk3
   ];
 
-
-
   programs.ags = {
     enable = true;
     configDir = ./config;

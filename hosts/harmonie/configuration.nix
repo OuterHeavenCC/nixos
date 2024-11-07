@@ -5,38 +5,40 @@
 { pkgs, inputs, ... }:
 
 {
-  imports =
-    [ 
+  imports = [
 
-      inputs.hardware.nixosModules.common-cpu-intel
+    inputs.hardware.nixosModules.common-cpu-intel
 
-      ../common/global/git.nix
-      ../common/global/locale.nix
-      ../common/global/locate.nix
-      ../common/global/nix.nix
-      ../common/global/security.nix
-      ../common/global/shell.nix
-      ../common/global/ssh.nix
+    ../common/global/git.nix
+    ../common/global/locale.nix
+    ../common/global/locate.nix
+    ../common/global/nix.nix
+    ../common/global/security.nix
+    ../common/global/shell.nix
+    ../common/global/ssh.nix
 
-      ../common/optional/android.nix
-      ../common/optional/bluetooth.nix
-      ../common/optional/fail2ban.nix
-      ../common/optional/flatpak.nix
-      ../common/optional/kdeconnect.nix
-      ../common/optional/pipewire.nix
-      ../common/optional/printer.nix
-      ../common/optional/systemd-boot.nix
-      ../common/optional/upower.nix
-      
-      ../common/users/jade
+    ../common/optional/android.nix
+    ../common/optional/bluetooth.nix
+    ../common/optional/fail2ban.nix
+    ../common/optional/flatpak.nix
+    ../common/optional/kdeconnect.nix
+    ../common/optional/pipewire.nix
+    ../common/optional/printer.nix
+    ../common/optional/systemd-boot.nix
+    ../common/optional/upower.nix
 
-      ./hardware-configuration.nix
+    ../common/users/jade
 
-    ];
+    ./hardware-configuration.nix
 
-  networking  = {
+  ];
+
+  networking = {
     hostName = "harmonie";
-    nameservers = [ "1.1.1.1" "1.0.0.1" ];
+    nameservers = [
+      "1.1.1.1"
+      "1.0.0.1"
+    ];
   };
 
   networkmanager = {
@@ -48,7 +50,7 @@
   # Enable the X11 windowing system.
   services.xserver = {
     enable = true;
-    videoDrivers = ["nvidia"];
+    videoDrivers = [ "nvidia" ];
   };
 
   hardware = {
@@ -85,7 +87,10 @@
   users.users.jade = {
     isNormalUser = true;
     description = "jade";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
     packages = with pkgs; [
       bottles
       duf
@@ -118,7 +123,6 @@
     ];
   };
 
-
   programs.neovim = {
     enable = true;
     viAlias = true;
@@ -134,11 +138,11 @@
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
-   programs.mtr.enable = true;
-   programs.gnupg.agent = {
-     enable = true;
-     enableSSHSupport = true;
-   };
+  programs.mtr.enable = true;
+  programs.gnupg.agent = {
+    enable = true;
+    enableSSHSupport = true;
+  };
 
   # List services that you want to enable:
 

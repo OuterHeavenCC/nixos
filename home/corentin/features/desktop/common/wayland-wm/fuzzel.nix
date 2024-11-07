@@ -27,7 +27,6 @@ in
         border = lib.mkForce "${config.lib.stylix.colors.base07}fa";
       };
 
-
       border = {
         radius = 20;
         width = 2;

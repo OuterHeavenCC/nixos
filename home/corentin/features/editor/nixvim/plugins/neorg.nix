@@ -63,7 +63,7 @@
       };
     };
     keymaps = [
-      
+
       # Global stuff
 
       {
@@ -124,7 +124,6 @@
           silent = true;
         };
       }
-
 
       # Journal 
 

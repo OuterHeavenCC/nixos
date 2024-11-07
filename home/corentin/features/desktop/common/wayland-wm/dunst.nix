@@ -13,7 +13,7 @@
         offset = "30x30";
         follow = "keyboard";
         frame_width = 2;
-        separator_color = "frame"; 
+        separator_color = "frame";
         corner_radius = 7;
       };
     };

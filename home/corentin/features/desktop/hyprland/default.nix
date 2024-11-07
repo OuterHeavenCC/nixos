@@ -79,10 +79,10 @@ in
         "immediate, class:^(Turbo-Overkill)$"
         "noanim, class:^(fuzzel)$"
 
-       "float,class:^(scratchpad)$"
-       "size 80% 85%,class:^(scratchpad)$"
-       "workspace special silent,class:^(scratchpad)$"
-       "center,class:^(scratchpad)$"
+        "float,class:^(scratchpad)$"
+        "size 80% 85%,class:^(scratchpad)$"
+        "workspace special silent,class:^(scratchpad)$"
+        "center,class:^(scratchpad)$"
       ];
       input = {
         kb_layout = "fr,us";
@@ -118,7 +118,7 @@ in
       animations = {
         enabled = true;
         bezier = [
-            "myBezier, 0.05, 0.9, 0.1, 1.05"
+          "myBezier, 0.05, 0.9, 0.1, 1.05"
         ];
         animation = [
           "windows, 1, 5, myBezier"

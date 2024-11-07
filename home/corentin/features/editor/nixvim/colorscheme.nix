@@ -1,4 +1,4 @@
-{ config, pkgs, ...}:
+{ config, pkgs, ... }:
 
 let
   commonIntegrations = {
@@ -33,33 +33,42 @@ let
   colorscheme = config.stylix.base16Scheme;
 in
 {
-  
+
   # TODO Vérifier quand base16 intégrera treesitter
   programs.nixvim.colorschemes =
-    if (colorscheme == "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml" ) then {
-      gruvbox = {
-        enable = true;
-        settings = gruvboxSettings;
+    if (colorscheme == "${pkgs.base16-schemes}/share/themes/gruvbox-dark-hard.yaml") then
+      {
+        gruvbox = {
+          enable = true;
+          settings = gruvboxSettings;
         };
-    } else if (colorscheme == "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml") then {
-      catppuccin = {
-        enable = true;
-        settings = catppuccinSettings;
+      }
+    else if (colorscheme == "${pkgs.base16-schemes}/share/themes/catppuccin-mocha.yaml") then
+      {
+        catppuccin = {
+          enable = true;
+          settings = catppuccinSettings;
+        };
+      }
+    else if (colorscheme == "${pkgs.base16-schemes}/share/themes/nord.yaml") then
+      {
+        nord = {
+          enable = true;
+          settings = nordSettings;
+        };
+      }
+    else if (colorscheme == "${pkgs.base16-schemes}/share/themes/everforest.yaml") then
+      {
+        nord = {
+          enable = true;
+          settings = nordSettings;
+        };
+      }
+    else
+      {
+        rose-pine = {
+          enable = true;
+          settings = rosePineSettings;
+        };
       };
-    } else if (colorscheme == "${pkgs.base16-schemes}/share/themes/nord.yaml") then {
-      nord = {
-        enable = true;
-        settings = nordSettings;
-      };
-    } else if (colorscheme == "${pkgs.base16-schemes}/share/themes/everforest.yaml") then {
-      nord = {
-        enable = true;
-        settings = nordSettings;
-      };
-    } else {
-      rose-pine = {
-        enable = true;
-        settings = rosePineSettings;
-      };
-    };
 }
