@@ -1,6 +1,6 @@
 {
   imports = [
     ./minecraft
-    ./jellyfin.nix
+    # ./jellyfin.nix
   ];
 }

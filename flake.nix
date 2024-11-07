@@ -15,6 +15,8 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
+    hyprland.url = "github:hyprwm/Hyprland";
+
     neorg-overlay.url = "github:nvim-neorg/nixpkgs-neorg-overlay";
 
     nixvim.url = "github:nix-community/nixvim";

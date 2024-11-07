@@ -18,6 +18,7 @@
     ./features/nvidia
     ./features/pass
     ./features/productivity
+    ./features/productivity/texlive.nix
     ./features/scripts
     ./features/tts
     ./features/website

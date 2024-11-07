@@ -34,7 +34,6 @@
     direnv # Better dev environment management
     distrobox
     dog # Better dig
-    xdragon # dragon and drop source/target for X
     du-dust # Better du
     duf # Better df
     elinks # Terminal browser
@@ -59,6 +58,7 @@
     lazygit # Git made easy
     libcdio # .iso preview in terminal
     libfaketime # fake time for commands
+    macchina # neofetch
     mcrcon # Minecraft server management
     mediainfo # Media metadata
     ncdu # Ncurses disk usage
@@ -70,6 +70,7 @@
     p7zip # Basic archiving tool
     pamixer # Pulseaudio command line mixer
     pciutils # PCI listing
+    pdfgrep # Grep inside pdf
     poppler_utils # PDF manipulations
     procs # Better ps
     pulsemixer # Ncurses Pulseaudio/Pipewire control
@@ -91,6 +92,7 @@
     wakeonlan
     wget # Download from CLI util
     wtype
+    xdragon # dragon and drop source/target for X
     xh # Better curl
     xmlstarlet # Preview xml in terminal
     xxd # Hex Viewer

@@ -2,6 +2,7 @@
   lib,
   config,
   pkgs,
+  inputs,
   ...
 }:
 let
@@ -20,11 +21,11 @@ in
     ../common/wayland-wm
 
     ./basic-binds.nix
-    ./pyprland.nix
   ];
 
   wayland.windowManager.hyprland = {
     enable = true;
+    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
     settings = {
       exec-once =
         let
@@ -35,7 +36,6 @@ in
           wl-paste = "${pkgs.wl-clipboard}/bin/wl-paste";
           gammastep-indicator = "${pkgs.gammastep}/bin/gammastep-indicator";
           cliphist = "${pkgs.cliphist}/bin/cliphist";
-          pypr = "${pkgs.pyprland}/bin/pypr";
         in
         [
           "hyprctl setcursor ${pointer.name} ${toString pointer.size}"
@@ -45,7 +45,6 @@ in
           "${wl-paste} --type image --watch ${cliphist} store"
           "${xrandr} --output DP-1 --primary" # Fix Jeux Steam
           "${gammastep-indicator}"
-          "${pypr}"
           "ags -b hypr"
         ];
       env = [
@@ -100,16 +99,21 @@ in
           ignore_opacity = 1;
           new_optimizations = 1;
         };
+
+        shadow = {
+          enabled = true;
+          range = 12;
+          offset = "3 3";
+          render_power = 5;
+          color = lib.mkForce "0x44000000";
+          color_inactive = lib.mkForce "0x66000000";
+        };
+
         active_opacity = 0.92;
         inactive_opacity = 0.75;
         fullscreen_opacity = 1.0;
         rounding = 5;
-        drop_shadow = true;
-        shadow_range = 12;
-        shadow_offset = "3 3";
-        shadow_render_power = 5;
-        "col.shadow" = lib.mkForce "0x44000000";
-        "col.shadow_inactive" = lib.mkForce "0x66000000";
+
       };
       animations = {
         enabled = true;
@@ -192,11 +196,10 @@ in
         in
         [
           "SUPER,Return,exec,${TERMINAL}"
-          "SUPERSHIFT,Return,exec,pypr toggle term && hyprctl dispatch bringactivetotop"
           "SUPER,B,exec,${blueman-manager}"
           "SUPERSHIFT,B,exec,ags -b hypr quit; ags -b hypr"
           "SUPER,C,exec,${TERMINAL} -e ${calcurse}"
-          "SUPERSHIFT,C,exec,pypr toggle eva && hyprctl dispatch bringactivetotop"
+          "SUPERSHIFT,C,exec,${TERMINAL} -e ${eva}"
           "SUPER,d,exec,exec ${applauncher}"
           "SUPER,E,exec,${TERMINAL} -e ${MAILCLIENT}"
           "SUPERSHIFT,E,exec,${TERMINAL} -e ${abook} -C ${cfg.configHome}/abook/abookrc --datafile ${cfg.configHome}/abook/addressbook"
@@ -207,17 +210,15 @@ in
           "SUPER,P,exec,${mpc} toggle"
           "SUPERSHIFT,P,exec,${mpc} pause"
           "SUPER,R,exec,${TERMINAL} -e zsh -l -ic 'yy; zsh'" # Trick sorti tout droit du ghetto pour faire fonctionner le wrapper de yazi
-          "SUPERSHIFT,R,exec,pypr toggle yazi && hyprctl dispatch bringactivetotop"
-          "SUPER,S,exec,pypr toggle pulsemixer && hyprctl dispatch bringactivetotop"
+          "SUPER,S,exec,${TERMINAL} -e ${pulsemixer}"
           "SUPERSHIFT,S,exec,${bmks}"
-          "SUPER,T,exec,pypr toggle tgpt && hyprctl dispatch bringactivetotop"
           "SUPER,W,exec,${BROWSER}"
           "SUPERSHIFT,W,exec,${networkmanager_dmenu}"
           "SUPER,X,exec,${cliphist} list | ${fuzzel} -d | cliphist decode | ${wl-copy}"
           "SUPER,exclam,exec,${signal-desktop}"
           "SUPER,BackSpace,exec,${powermenu}"
           "SUPERSHIFT,BackSpace,exec,${passmenu}"
-          "SUPER,Delete,exec,pypr toggle btop && hyprctl dispatch bringactivetotop"
+          "SUPER,Delete,exec,${btop}"
           ",XF86AudioMute,exec,${pamixer} --toggle-mute"
           "SUPER,Insert,exec,${fuzzelunicode}"
 
